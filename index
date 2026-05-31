@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minjae Kwon — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f6f7f9;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #2563a8;
+    --accent-soft: #eef4fb;
+    --sans: 'Source Sans 3', sans-serif;
+    --serif: 'Source Serif 4', serif;
+    --maxw: 860px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+  a { color: var(--accent); }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .nav-name {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+  }
+  .nav-links { display: flex; gap: 1.25rem; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    font-size: 13.5px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* LAYOUT */
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 56px 0 16px; }
+  section:not(:last-child) { border-bottom: 1px solid var(--line); }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.75rem;
+    color: var(--text);
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  .section-title::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 42px; height: 3px; background: var(--accent); border-radius: 2px;
+  }
+
+  /* ABOUT / HEADER */
+  .about { padding-top: 48px; }
+  .about-head {
+    display: flex; gap: 2rem; align-items: center;
+    margin-bottom: 1.5rem; flex-wrap: wrap;
+  }
+  .profile-photo {
+    width: 140px; height: 140px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 6px; overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+  .profile-photo svg { width: 38px; height: 38px; color: #c2c8d0; }
+  .profile-photo .ph-label { font-size: 10px; color: var(--muted); text-align: center; padding: 0 8px; }
+  .about-intro h1 {
+    font-family: var(--serif);
+    font-size: 2.1rem; font-weight: 600;
+    letter-spacing: -0.01em; line-height: 1.15;
+    margin-bottom: 0.35rem;
+  }
+  .about-intro .role { font-size: 1.05rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+  .about-intro .affil { font-size: 0.95rem; color: var(--muted); }
+  .about-meta {
+    font-size: 0.85rem; color: var(--muted);
+    margin-top: 0.75rem; display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .about-meta span { display: inline-flex; align-items: center; gap: 5px; }
+  .research-interest {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .research-interest strong { font-weight: 600; }
+
+  /* ENTRY (education, research, etc.) */
+  .entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .entry:last-child { border-bottom: none; }
+  .entry-head { font-weight: 600; font-size: 1.02rem; }
+  .entry-date { font-size: 0.85rem; color: var(--muted); white-space: nowrap; text-align: right; }
+  .entry-sub { font-style: italic; color: var(--text); font-size: 0.92rem; grid-column: 1 / -1; margin-top: 1px; }
+  .entry-detail { grid-column: 1 / -1; font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
+  .entry-detail .gpa { color: var(--accent); font-weight: 600; }
+
+  /* AWARDS */
+  .award-list { list-style: none; }
+  .award-list li {
+    display: flex; justify-content: space-between; gap: 1rem;
+    padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+    font-size: 0.95rem; flex-wrap: wrap;
+  }
+  .award-list li:last-child { border-bottom: none; }
+  .award-name strong { font-weight: 600; }
+  .award-date { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+
+  /* SKILLS */
+  .skill-intro { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.25rem; }
+  .skill-cat { margin-bottom: 1.5rem; }
+  .skill-cat h3 {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 0.75rem; font-weight: 600;
+  }
+  .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-chip {
+    font-size: 0.875rem;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex; align-items: center; gap: 6px;
+    user-select: none;
+  }
+  .skill-chip:hover { border-color: var(--accent); color: var(--accent); }
+  .skill-chip.open { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .skill-chip::after {
+    content: '+'; font-size: 14px; line-height: 1; opacity: 0.5;
+  }
+  .skill-chip.open::after { content: '\2212'; opacity: 1; }
+  .skill-panel {
+    display: none;
+    margin-top: 12px;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .skill-panel.open { display: block; animation: slidein 0.25s ease; }
+  @keyframes slidein { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  .skill-panel-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; color: var(--accent); }
+  .skill-panel-desc { font-size: 0.92rem; color: var(--text); margin-bottom: 1rem; }
+  .skill-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .skill-img-slot {
+    aspect-ratio: 4 / 3;
+    background: #fff;
+    border: 1px dashed #cbd2da;
+    border-radius: 6px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 6px; color: #aab2bd;
+    overflow: hidden;
+  }
+  .skill-img-slot svg { width: 26px; height: 26px; }
+  .skill-img-slot span { font-size: 10px; }
+  .skill-img-slot img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .contact-box .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.5rem; }
+  .contact-box a { font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .contact-box a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem 1.5rem; color: var(--muted); font-size: 0.8rem; }
+
+  @media (max-width: 600px) {
+    .about-head { flex-direction: column; text-align: center; }
+    .about-meta { justify-content: center; }
+    .entry { grid-template-columns: 1fr; }
+    .entry-date { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Minjae Kwon</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-head">
+      <div class="profile-photo" title="프로필 사진을 넣으세요">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+        </svg>
+        <span class="ph-label">Photo</span>
+      </div>
+      <div class="about-intro">
+        <h1>Minjae Kwon</h1>
+        <div class="role">Combined M.S./Ph.D Program Candidate</div>
+        <div class="affil">Ryu Group · School of Biomedical Engineering, Korea University</div>
+        <div class="about-meta">
+          <span>📍 Seoul, Republic of Korea</span>
+          <span>✉ rnjs0830@korea.ac.kr</span>
+        </div>
+      </div>
+    </div>
+    <div class="research-interest">
+      <strong>Research Interests:</strong> Nano-scale fabrication; molecule / particle detecting biosensors utilizing optical &amp; electrokinetic phenomena; Finite Element Analysis (FEA); Surface Enhanced Raman Spectroscopy (SERS).
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <h2 class="section-title">Education</h2>
+
+    <div class="entry">
+      <div class="entry-head">Korea University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
+      <div class="entry-date">Sep 2025 – Present</div>
+      <div class="entry-sub">Combined M.S./Ph.D Program Candidate in Biomedical Engineering</div>
+      <div class="entry-detail">Advised by Prof. Yong-Sang Ryu</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Korea University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
+      <div class="entry-date">Mar 2023 – Aug 2025</div>
+      <div class="entry-sub">B.S. in Biomedical Engineering &amp; Electrical Engineering (Double Major)</div>
+      <div class="entry-detail"><span class="gpa">GPA: 4.11 / 4.5</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Konkuk University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
+      <div class="entry-date">Mar 2017 – Feb 2023</div>
+      <div class="entry-sub">Majored in Electronic and Electrical Engineering</div>
+      <div class="entry-detail">Transferred to Korea University. Leave of absence for national military service (Jul 2019 – Jan 2021).</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="wrap">
+    <h2 class="section-title">Research Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">Researcher, Ryu Group</div>
+      <div class="entry-date">Sep 2025 – Present</div>
+      <div class="entry-sub">School of Biomedical Engineering, Korea University</div>
+      <div class="entry-detail">Advised by Prof. Yong-Sang Ryu.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Undergraduate Researcher, Ryu Group</div>
+      <div class="entry-date">Aug 2024 – Aug 2025</div>
+      <div class="entry-sub">School of Biomedical Engineering, Korea University</div>
+      <div class="entry-detail">Advised by Prof. Yong-Sang Ryu. Contributed to government-led research initiatives such as ROK ARPA-H, developing nano-scale biosensors for biomarkers of neurodegenerative diseases.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Founder &amp; Chief Technological Officer</div>
+      <div class="entry-date">Mar 2024 – Aug 2025</div>
+      <div class="entry-sub">Radicheck (Seoul, Republic of Korea)</div>
+      <div class="entry-detail">Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment. Two patents pending regarding the radiation detection platform.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <div class="wrap">
+    <h2 class="section-title">Extracurricular Activities &amp; Services</h2>
+
+    <div class="entry">
+      <div class="entry-head">Biosensor Team Lead Organizer, BEAT</div>
+      <div class="entry-date">Aug 2025 – Present</div>
+      <div class="entry-sub">Biomedical Engineering Academic Team, Korea University</div>
+      <div class="entry-detail">Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Founder &amp; President, KUBEAM</div>
+      <div class="entry-date">Aug 2025 – Present</div>
+      <div class="entry-sub">KU Biomedical Eng. Abroad Mentorship</div>
+      <div class="entry-detail">Founded an initiative connecting 50+ Biomedical Engineering students and alumni to pursue opportunities abroad, organizing study groups, lectures, and feedback sessions for Ph.D. applications and international careers.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Senior Advisor &amp; Vice President, Department Student Council</div>
+      <div class="entry-date">Nov 2024 – Nov 2025</div>
+      <div class="entry-sub">School of Biomedical Engineering, Korea University</div>
+      <div class="entry-detail">Advised and supported planning and execution of academic, cultural, and community events for 500+ undergraduates. Led a 30+ member committee to organize the department alumni day, securing ₩30M+ in departmental and corporate sponsorships.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Project Leader, Vine Robot Colonoscopy Project</div>
+      <div class="entry-date">Aug 2023 – Feb 2024</div>
+      <div class="entry-sub">Creative Challenger Program, Korea University</div>
+      <div class="entry-detail">Developed and validated a novel soft-robot colonoscopy platform; conducted in-vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center. Advised by Prof. Daehee Hong and Dr. Sang-Hyun Kim.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">President, International Student Volunteer (ISV)</div>
+      <div class="entry-date">Jul 2021 – Aug 2022</div>
+      <div class="entry-sub">Office of International Affairs, Konkuk University</div>
+      <div class="entry-detail">Assisted inbound and outbound exchange students with language support, administrative assistance, and cultural exchange programs. Accommodated and supported over 600 students.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Combat Medic &amp; Medical Support Assistant</div>
+      <div class="entry-date">Jul 2019 – Jan 2021</div>
+      <div class="entry-sub">65th Medical Brigade, 8th U.S. Army (BDAACH, 549th Hospital Center)</div>
+      <div class="entry-detail">Selected for the KATUSA program. Served in the Physical Performance Service Line for outpatient care and the COVID-19 Response Team. Honorably discharged as Sergeant (E-5); recipient of the Army Achievement Medal and Army Commendation Medal.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="wrap">
+    <h2 class="section-title">Awards &amp; Fellowships</h2>
+    <ul class="award-list">
+      <li>
+        <span class="award-name"><strong>Best Poster Presentation Award</strong> — Korean Biochip Fall Symposium 2025</span>
+        <span class="award-date">Nov 2025</span>
+      </li>
+      <li>
+        <span class="award-name"><strong>Runner-up</strong> — Changemakers Forum</span>
+        <span class="award-date">Nov 2024</span>
+      </li>
+      <li>
+        <span class="award-name"><strong>Best Startup Award</strong> — STARKIUM</span>
+        <span class="award-date">Nov 2024</span>
+      </li>
+      <li>
+        <span class="award-name"><strong>Third Place</strong> — Capstone Design Fair</span>
+        <span class="award-date">Sep 2024</span>
+      </li>
+      <li>
+        <span class="award-name"><strong>Presidential Award</strong> — 15th Creative Challenger Program</span>
+        <span class="award-date">Feb 2024</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Technical Proficiency</h2>
+    <p class="skill-intro">각 항목을 클릭하면 관련 장비 사진이나 결과물, 설명을 볼 수 있습니다. (Click any skill to view related equipment photos, results, and descriptions.)</p>
+
+    <div class="skill-cat">
+      <h3>Micro / Nano-scale Fabrication</h3>
+      <div class="skill-chips" data-group="fab"></div>
+      <div class="skill-panel" data-panel="fab"></div>
+    </div>
+
+    <div class="skill-cat">
+      <h3>Material Analysis</h3>
+      <div class="skill-chips" data-group="analysis"></div>
+      <div class="skill-panel" data-panel="analysis"></div>
+    </div>
+
+    <div class="skill-cat">
+      <h3>Electronic Design &amp; Computation</h3>
+      <div class="skill-chips" data-group="compute"></div>
+      <div class="skill-panel" data-panel="compute"></div>
+    </div>
+
+    <div class="skill-cat">
+      <h3>Languages</h3>
+      <div class="skill-chips" data-group="lang"></div>
+      <div class="skill-panel" data-panel="lang"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-box">
+      <div class="label">Email</div>
+      <a href="mailto:rnjs0830@korea.ac.kr">rnjs0830@korea.ac.kr</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Minjae Kwon · Curriculum Vitae · Last updated April 2026
+</footer>
+
+<script>
+// =====================================================================
+//  사진/설명 편집 구역 — 여기만 고치면 됩니다!
+//  imgs: [] 안에 사진 파일명을 적으면 자동으로 사진이 들어갑니다.
+//  예) imgs: ["sem-1.jpg", "sem-2.jpg"]   ← 사진 2장
+//      imgs: []                            ← 사진 없음 (빈 칸도 안 보임)
+//  사진 파일은 이 HTML 파일과 같은 폴더에 두세요.
+// =====================================================================
+const SKILLS = {
+  fab: [
+    { name: "Photolithography", desc: "Aligner-assisted photolithography for micro-patterning.", imgs: [] },
+    { name: "Laser Interference Lithography", desc: "Large-area periodic nano-grating fabrication via LIL.", imgs: [] },
+    { name: "Electron Beam Lithography", desc: "High-resolution direct-write nanopatterning.", imgs: [] },
+    { name: "PVD (Thermal / Sputter / E-beam)", desc: "Physical vapor deposition of thin films.", imgs: [] },
+    { name: "CVD (Atomic Layer Deposition)", desc: "Conformal thin-film deposition via ALD.", imgs: [] },
+    { name: "Etching (RIE / ICP-RIE / FIB)", desc: "Dry etching and focused ion beam milling.", imgs: [] },
+    { name: "Plasma Ashing", desc: "Photoresist stripping and surface cleaning.", imgs: [] },
+  ],
+  analysis: [
+    { name: "SEM (JEOL)", desc: "Scanning electron microscopy for nanostructure imaging.", imgs: [] },
+    { name: "Reflectance Spectroscopy", desc: "Optical reflectance characterization of thin films.", imgs: [] },
+    { name: "Stylus Profiler", desc: "Surface profile and step-height measurement.", imgs: [] },
+    { name: "Raman Spectroscopy", desc: "Bruker RAMANtouch & Renishaw inVia for SERS analysis.", imgs: [] },
+    { name: "Biological / Metallographic Microscope", desc: "Optical microscopy for samples and devices.", imgs: [] },
+  ],
+  compute: [
+    { name: "PCB / Breadboard Circuit Design", desc: "Circuit-level electronic design and prototyping.", imgs: [] },
+    { name: "OrCAD (PSpice)", desc: "Circuit simulation and verification.", imgs: [] },
+    { name: "3D Printing", desc: "Rapid prototyping of fixtures and parts.", imgs: [] },
+    { name: "COMSOL Multiphysics", desc: "FEA simulation of optical/electrical phenomena.", imgs: [] },
+    { name: "ML / Data Analysis", desc: "NN/ML models with SHAP, LIME; analysis in Origin.", imgs: [] },
+    { name: "Rhino / AutoCAD / Keyshot", desc: "2D/3D design and rendering.", imgs: [] },
+    { name: "Arduino IDE", desc: "Embedded programming for sensors and devices.", imgs: [] },
+  ],
+  lang: [
+    { name: "Python", desc: "Primary language for data analysis & automation.", imgs: [] },
+    { name: "C / C++", desc: "Systems and embedded programming.", imgs: [] },
+    { name: "MATLAB", desc: "Numerical computing and signal processing.", imgs: [] },
+    { name: "LaTeX", desc: "Scientific document preparation.", imgs: [] },
+  ],
+};
+
+const photoSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M3 17l5-4 4 3 3-2 6 5"/></svg>';
+
+function buildSkills() {
+  for (const group in SKILLS) {
+    const chipWrap = document.querySelector(`[data-group="${group}"]`);
+    SKILLS[group].forEach((skill, i) => {
+      const chip = document.createElement('div');
+      chip.className = 'skill-chip';
+      chip.textContent = skill.name;
+      chip.dataset.group = group;
+      chip.dataset.idx = i;
+      chip.addEventListener('click', () => toggleSkill(group, i, chip));
+      chipWrap.appendChild(chip);
+    });
+  }
+}
+
+let activeChip = null;
+function toggleSkill(group, idx, chip) {
+  const panel = document.querySelector(`[data-panel="${group}"]`);
+  const skill = SKILLS[group][idx];
+  const isSame = activeChip === chip;
+
+  document.querySelectorAll('.skill-chip.open').forEach(c => c.classList.remove('open'));
+  document.querySelectorAll('.skill-panel.open').forEach(p => { if (p !== panel) p.classList.remove('open'); });
+
+  if (isSame) {
+    panel.classList.remove('open');
+    activeChip = null;
+    return;
+  }
+
+  let galleryHTML = '';
+  if (skill.imgs && skill.imgs.length > 0) {
+    galleryHTML = '<div class="skill-gallery">';
+    skill.imgs.forEach(src => {
+      galleryHTML += `<div class="skill-img-slot"><img src="${src}" alt="${skill.name}" onerror="this.parentElement.innerHTML='${photoSVG.replace(/'/g,"\\'")}<span>이미지를 찾을 수 없음: ${src}</span>'"></div>`;
+    });
+    galleryHTML += '</div>';
+  } else {
+    galleryHTML = '<div style="font-size:0.85rem;color:var(--muted);">사진을 추가하려면 코드의 imgs 칸에 파일명을 적으세요.</div>';
+  }
+
+  panel.innerHTML = `
+    <div class="skill-panel-title">${skill.name}</div>
+    <div class="skill-panel-desc">${skill.desc}</div>
+    ${galleryHTML}
+  `;
+  panel.classList.add('open');
+  chip.classList.add('open');
+  activeChip = chip;
+}
+
+buildSkills();
+
+// ---- Nav active-state on scroll ----
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section');
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+sections.forEach(s => navObs.observe(s));
+</script>
+</body>
+</html>
