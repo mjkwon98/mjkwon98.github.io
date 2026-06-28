@@ -98,6 +98,7 @@
   }
   .profile-photo svg { width: 38px; height: 38px; color: #c2c8d0; }
   .profile-photo .ph-label { font-size: 10px; color: var(--muted); text-align: center; padding: 0 8px; }
+  .profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .about-intro h1 {
     font-family: var(--serif);
     font-size: 2.1rem; font-weight: 600;
@@ -184,20 +185,68 @@
   @keyframes slidein { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
   .skill-panel-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; color: var(--accent); }
   .skill-panel-desc { font-size: 0.92rem; color: var(--text); margin-bottom: 1rem; }
-  .skill-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .skill-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
   .skill-img-slot {
-    aspect-ratio: 4 / 3;
+    margin: 0;
     background: #fff;
-    border: 1px dashed #cbd2da;
-    border-radius: 6px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 6px; color: #aab2bd;
+    border: 1px solid #e2e7ee;
+    border-radius: 8px;
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex; flex-direction: column;
   }
-  .skill-img-slot svg { width: 26px; height: 26px; }
-  .skill-img-slot span { font-size: 10px; }
-  .skill-img-slot img { width: 100%; height: 100%; object-fit: cover; }
+  .skill-img-slot:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+  .skill-img-slot img {
+    width: 100%; aspect-ratio: 4 / 3;
+    object-fit: cover; display: block;
+  }
+  .skill-img-slot figcaption {
+    font-size: 0.72rem; line-height: 1.35; color: var(--muted);
+    padding: 7px 9px; border-top: 1px solid #eef1f5;
+  }
+  .skill-img-slot.img-missing {
+    aspect-ratio: 4 / 3; border-style: dashed; color: #aab2bd;
+    align-items: center; justify-content: center; gap: 6px; cursor: default;
+  }
+  .skill-img-slot.img-missing:hover { transform: none; box-shadow: none; }
+  .skill-img-slot.img-missing svg { width: 26px; height: 26px; }
+  .skill-img-slot.img-missing span { font-size: 10px; text-align: center; padding: 0 6px; }
+
+  /* IMAGE MODAL (lightbox) */
+  .img-modal {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(15,18,22,0.82);
+    align-items: center; justify-content: center;
+    padding: 4vh 4vw;
+    animation: fadein 0.18s ease;
+  }
+  .img-modal.open { display: flex; }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+  .img-modal-inner {
+    max-width: 900px; max-height: 92vh;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .img-modal img {
+    max-width: 100%; max-height: 82vh;
+    object-fit: contain;
+    border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+    background: #fff;
+  }
+  .img-modal-cap {
+    color: #f0f2f5; font-size: 0.95rem; line-height: 1.5;
+    margin-top: 14px; text-align: center; max-width: 700px;
+  }
+  .img-modal-close {
+    position: absolute; top: 18px; right: 24px;
+    width: 42px; height: 42px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: #fff; border: none; cursor: pointer;
+    font-size: 22px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s ease;
+  }
+  .img-modal-close:hover { background: rgba(255,255,255,0.25); }
 
   /* CONTACT */
   .contact-box {
@@ -243,11 +292,13 @@
 <section id="about" class="about">
   <div class="wrap">
     <div class="about-head">
-      <div class="profile-photo" title="프로필 사진을 넣으세요">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <div class="profile-photo" onclick="openModal('Kwon_profile.jpeg','')" title="클릭하면 크게 보기">
+        <img src="Kwon_profile.jpeg" alt="Minjae Kwon"
+             onerror="this.style.display='none';this.parentElement.removeAttribute('onclick');this.nextElementSibling.style.display='block';this.parentElement.querySelector('.ph-label').style.display='block';">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none">
           <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
         </svg>
-        <span class="ph-label">Photo</span>
+        <span class="ph-label" style="display:none">Photo</span>
       </div>
       <div class="about-intro">
         <h1>Minjae Kwon</h1>
@@ -442,6 +493,15 @@
   </div>
 </section>
 
+<!-- IMAGE MODAL (lightbox) -->
+<div class="img-modal" id="imgModal" onclick="closeModal(event)">
+  <button class="img-modal-close" onclick="closeModal(event)" aria-label="닫기">✕</button>
+  <div class="img-modal-inner">
+    <img id="imgModalImg" src="" alt="">
+    <div class="img-modal-cap" id="imgModalCap"></div>
+  </div>
+</div>
+
 <footer>
   © 2026 Minjae Kwon · Curriculum Vitae · Last updated April 2026
 </footer>
@@ -449,18 +509,36 @@
 <script>
 // =====================================================================
 //  사진/설명 편집 구역 — 여기만 고치면 됩니다!
-//  imgs: [] 안에 사진 파일명을 적으면 자동으로 사진이 들어갑니다.
-//  예) imgs: ["sem-1.jpg", "sem-2.jpg"]   ← 사진 2장
-//      imgs: []                            ← 사진 없음 (빈 칸도 안 보임)
-//  사진 파일은 이 HTML 파일과 같은 폴더에 두세요.
+//
+//  각 사진은 { src: "파일명.jpeg", cap: "사진 설명" } 형태입니다.
+//   - src : 사진 파일명 (이 HTML과 같은 폴더에 두세요. ※ .jpg/.png만! HEIC는 웹에서 안 보입니다)
+//   - cap : 사진 아래에 뜰 설명 (장비 모델명·공정·결과 등). 비우려면 cap: ""
+//
+//  예)  imgs: [ {src:"sem-1.jpeg", cap:"JEOL SEM — 300nm 나노홀 어레이"} ]
+//       imgs: []   ← 사진 없음
+//
+//  ▶ 썸네일을 클릭하면 큰 사진 + 설명이 가운데 팝업으로 뜹니다.
+//  ▶ 아래 cap:"..." 안의 설명을 자유롭게 채워 넣으세요. (지금은 예시/빈칸 상태)
 // =====================================================================
 const SKILLS = {
   fab: [
-    { name: "Photolithography", desc: "Aligner-assisted photolithography for micro-patterning.", imgs: ["Ryu-Aligner.HEIC","Ryu-Aligner2.HEIC"]},
-    { name: "Laser Interference Lithography", desc: "Large-area periodic nano-grating fabrication via LIL.", imgs: ["Ryu-LIL.HEIC"] },
-    { name: "Electron Beam Lithography", desc: "High-resolution direct-write nanopatterning.", imgs: [] },
-    { name: "PVD (Thermal / Sputter / E-beam)", desc: "Physical vapor deposition of thin films.", imgs: ["Ryu-Thermal.HEIC","Ryu-ebeam.HEIC", "Ryu-ebeam2.HEIC"]},
-    { name: "CVD (Atomic Layer Deposition)", desc: "Conformal thin-film deposition via ALD.", imgs: ["Ryu-ALD.HEIC"] },
+    { name: "Photolithography", desc: "Aligner-assisted photolithography for micro-patterning.", imgs: [
+        {src:"Ryu-Aligner.jpeg",  cap:"설명을 적으세요 — 예: Karl Suss MA6 mask aligner (KU Ryu Lab)"},
+        {src:"Ryu-Aligner2.jpeg", cap:"설명을 적으세요 — 예: UV 노광으로 마이크로 패턴 형성"},
+    ]},
+    { name: "Laser Interference Lithography", desc: "Large-area periodic nano-grating fabrication via LIL.", imgs: [
+        {src:"Ryu-LIL.jpeg", cap:"설명을 적으세요 — 예: Lloyd's-mirror LIL 셋업, 주기 나노그레이팅 제작"},
+    ]},
+    { name: "Electron Beam Lithography", desc: "High-resolution direct-write nanopatterning.", imgs: [
+        {src:"Ryu-ebeam.jpeg",  cap:"설명을 적으세요 — 예: EBL 장비 셋업"},
+        {src:"Ryu-ebeam2.jpeg", cap:"설명을 적으세요 — 예: 고해상 direct-write 나노패턴"},
+    ]},
+    { name: "PVD (Thermal / Sputter / E-beam)", desc: "Physical vapor deposition of thin films.", imgs: [
+        {src:"Ryu-Thermal.jpeg", cap:"설명을 적으세요 — 예: Thermal evaporator (금속 박막 증착)"},
+    ]},
+    { name: "CVD (Atomic Layer Deposition)", desc: "Conformal thin-film deposition via ALD.", imgs: [
+        {src:"Ryu-ALD.jpeg", cap:"설명을 적으세요 — 예: ALD 장비, conformal 박막 증착"},
+    ]},
     { name: "Etching (RIE / ICP-RIE / FIB)", desc: "Dry etching and focused ion beam milling.", imgs: [] },
     { name: "Plasma Ashing", desc: "Photoresist stripping and surface cleaning.", imgs: [] },
   ],
@@ -468,8 +546,14 @@ const SKILLS = {
     { name: "SEM (JEOL)", desc: "Scanning electron microscopy for nanostructure imaging.", imgs: [] },
     { name: "Reflectance Spectroscopy", desc: "Optical reflectance characterization of thin films.", imgs: [] },
     { name: "Stylus Profiler", desc: "Surface profile and step-height measurement.", imgs: [] },
-    { name: "Raman Spectroscopy", desc: "Bruker RAMANtouch & Renishaw inVia for SERS analysis.", imgs: ["Ryu-RAMANtouch.HEIC", "KIST-Renishaw.HEIC"]},
-    { name: "Biological / Metallographic Microscope", desc: "Optical microscopy for samples and devices.", imgs: ["Ryu-microscope.HEIC", "Ryu-microscope2.HEIC"] },
+    { name: "Raman Spectroscopy", desc: "Bruker RAMANtouch & Renishaw inVia for SERS analysis.", imgs: [
+        {src:"Ryu-RAMANtouch.jpeg", cap:"설명을 적으세요 — 예: Bruker RAMANtouch (KU Ryu Lab)"},
+        {src:"KIST-Renishaw.jpeg",  cap:"설명을 적으세요 — 예: Renishaw inVia confocal Raman (KIST)"},
+    ]},
+    { name: "Biological / Metallographic Microscope", desc: "Optical microscopy for samples and devices.", imgs: [
+        {src:"Ryu-microscope.jpeg",  cap:"설명을 적으세요 — 예: 광학 현미경 셋업"},
+        {src:"Ryu-microscope2.jpeg", cap:"설명을 적으세요 — 예: 소자/시료 광학 이미징"},
+    ]},
   ],
   compute: [
     { name: "PCB / Breadboard Circuit Design", desc: "Circuit-level electronic design and prototyping.", imgs: [] },
@@ -487,6 +571,9 @@ const SKILLS = {
     { name: "LaTeX", desc: "Scientific document preparation.", imgs: [] },
   ],
 };
+
+// 스킨코터/Thermal 등 남는 사진을 쓰고 싶으면 위 imgs 배열에 같은 형식으로 추가하세요.
+// 예: {src:"Ryu-Spincoater.jpeg", cap:"스핀코터 — PR 도포"}
 
 const photoSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M3 17l5-4 4 3 3-2 6 5"/></svg>';
 
@@ -523,12 +610,17 @@ function toggleSkill(group, idx, chip) {
   let galleryHTML = '';
   if (skill.imgs && skill.imgs.length > 0) {
     galleryHTML = '<div class="skill-gallery">';
-    skill.imgs.forEach(src => {
-      galleryHTML += `<div class="skill-img-slot"><img src="${src}" alt="${skill.name}" onerror="this.parentElement.innerHTML='${photoSVG.replace(/'/g,"\\'")}<span>이미지를 찾을 수 없음: ${src}</span>'"></div>`;
+    skill.imgs.forEach(im => {
+      const src = im.src, cap = im.cap || '';
+      const capEsc = cap.replace(/"/g,'&quot;').replace(/'/g,"\\'");
+      galleryHTML += `<figure class="skill-img-slot" onclick="openModal('${src}','${capEsc}')" title="클릭하면 크게 보기">
+        <img src="${src}" alt="${skill.name}" onerror="this.parentElement.classList.add('img-missing');this.parentElement.removeAttribute('onclick');this.parentElement.innerHTML='${photoSVG.replace(/'/g,"\\'")}<span>이미지 없음: ${src}</span>'">
+        ${cap ? `<figcaption>${cap}</figcaption>` : ''}
+      </figure>`;
     });
     galleryHTML += '</div>';
   } else {
-    galleryHTML = '<div style="font-size:0.85rem;color:var(--muted);">사진을 추가하려면 코드의 imgs 칸에 파일명을 적으세요.</div>';
+    galleryHTML = '<div style="font-size:0.85rem;color:var(--muted);">사진을 추가하려면 코드의 imgs 칸에 {src, cap}를 적으세요.</div>';
   }
 
   panel.innerHTML = `
@@ -542,6 +634,25 @@ function toggleSkill(group, idx, chip) {
 }
 
 buildSkills();
+
+// ---- Image modal (lightbox) ----
+function openModal(src, cap) {
+  const modal = document.getElementById('imgModal');
+  const img = document.getElementById('imgModalImg');
+  const capEl = document.getElementById('imgModalCap');
+  img.src = src;
+  capEl.textContent = cap || '';
+  capEl.style.display = cap ? 'block' : 'none';
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  // 배경/닫기버튼 클릭 시 닫힘 (사진 자체 클릭은 유지)
+  if (e && e.target.id === 'imgModalImg') return;
+  document.getElementById('imgModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
 // ---- Nav active-state on scroll ----
 const navLinks = document.querySelectorAll('.nav-links a');
