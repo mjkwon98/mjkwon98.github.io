@@ -522,19 +522,21 @@
 // =====================================================================
 const SKILLS = {
   fab: [
-    { name: "Photolithography", desc: "Aligner-assisted photolithography for micro-patterning.", imgs: [
-        {src:"Ryu-Aligner.jpeg",  cap:"설명을 적으세요 — 예: Karl Suss MA6 mask aligner (KU Ryu Lab)"},
-        {src:"Ryu-Aligner2.jpeg", cap:"설명을 적으세요 — 예: UV 노광으로 마이크로 패턴 형성"},
+    { name: "Photolithography", desc: "Aligner-assisted photolithography for micro-patterning & secondary exposure on ROI.", imgs: [
+        {src:"Ryu-Aligner.jpeg",  cap:"Equipment setup"},
+        {src:"Ryu-Aligner2.jpeg", cap:"UV exposure"},
     ]},
     { name: "Laser Interference Lithography", desc: "Large-area periodic nano-grating fabrication via LIL.", imgs: [
         {src:"Ryu-LIL.jpeg", cap:"설명을 적으세요 — 예: Lloyd's-mirror LIL 셋업, 주기 나노그레이팅 제작"},
     ]},
-    { name: "Electron Beam Lithography", desc: "High-resolution direct-write nanopatterning.", imgs: [
-        {src:"Ryu-ebeam.jpeg",  cap:"설명을 적으세요 — 예: EBL 장비 셋업"},
-        {src:"Ryu-ebeam2.jpeg", cap:"설명을 적으세요 — 예: 고해상 direct-write 나노패턴"},
+    { name: "Electron Beam Evaporator", desc: "Thin-film deposition of metal / oxide source in high resolution, complex condition", imgs: [
+        {src:"Ryu-ebeamlitho.jpeg",  cap:"N/A"},
+        {src:"Ryu-ebeamlitho2.jpeg", cap:"N/A"},
     ]},
     { name: "PVD (Thermal / Sputter / E-beam)", desc: "Physical vapor deposition of thin films.", imgs: [
-        {src:"Ryu-Thermal.jpeg", cap:"설명을 적으세요 — 예: Thermal evaporator (금속 박막 증착)"},
+        {src:"Ryu-Thermal.jpeg", cap:"Equipment setup, ULTEC, Thin-film deposition of metal source in large quantity of wafers."},
+        {src:"Ryu-ebeam.jpeg",  cap:"Equipment setup, KVE-E2000, Thin-film deposition of metal / oxide source in high resolution, complex condition."},
+        {src:"Ryu-ebeam2.jpeg", cap:"HVAC chamber with 6 crucibles, GLAD-enabled substrate holder."},
     ]},
     { name: "CVD (Atomic Layer Deposition)", desc: "Conformal thin-film deposition via ALD.", imgs: [
         {src:"Ryu-ALD.jpeg", cap:"설명을 적으세요 — 예: ALD 장비, conformal 박막 증착"},
