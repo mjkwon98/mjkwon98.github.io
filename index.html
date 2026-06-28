@@ -511,7 +511,7 @@
 //  사진/설명 편집 구역 — 여기만 고치면 됩니다!
 //
 //  각 사진은 { src: "파일명.jpeg", cap: "사진 설명" } 형태입니다.
-//   - src : 사진 파일명 (이 HTML과 같은 폴더에 두세요. ※ .jpg/.png만! HEIC는 웹에서 안 보입니다)
+//   - src : 사진 파일명 (이 HTML과 같은 폴더에 두세요. ※ .jpeg/.png만! HEIC는 웹에서 안 보입니다)
 //   - cap : 사진 아래에 뜰 설명 (장비 모델명·공정·결과 등). 비우려면 cap: ""
 //
 //  예)  imgs: [ {src:"sem-1.jpeg", cap:"JEOL SEM — 300nm 나노홀 어레이"} ]
@@ -614,7 +614,7 @@ function toggleSkill(group, idx, chip) {
       const src = im.src, cap = im.cap || '';
       const capEsc = cap.replace(/"/g,'&quot;').replace(/'/g,"\\'");
       galleryHTML += `<figure class="skill-img-slot" onclick="openModal('${src}','${capEsc}')" title="클릭하면 크게 보기">
-        <img src="${src}" alt="${skill.name}" onerror="this.parentElement.classList.add('img-missing');this.parentElement.removeAttribute('onclick');this.parentElement.innerHTML='${photoSVG.replace(/'/g,"\\'")}<span>이미지 없음: ${src}</span>'">
+        <img src="${src}" alt="${skill.name}" data-src="${src}" onerror="imgFail(this)">
         ${cap ? `<figcaption>${cap}</figcaption>` : ''}
       </figure>`;
     });
@@ -636,6 +636,13 @@ function toggleSkill(group, idx, chip) {
 buildSkills();
 
 // ---- Image modal (lightbox) ----
+function imgFail(img) {
+  const fig = img.parentElement;
+  const src = img.getAttribute('data-src') || '';
+  fig.classList.add('img-missing');
+  fig.removeAttribute('onclick');
+  fig.innerHTML = photoSVG + '<span>이미지 없음: ' + src + '</span>';
+}
 function openModal(src, cap) {
   const modal = document.getElementById('imgModal');
   const img = document.getElementById('imgModalImg');
