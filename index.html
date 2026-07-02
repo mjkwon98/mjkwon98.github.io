@@ -549,13 +549,17 @@ const SKILLS = {
     { name: "CVD (Atomic Layer Deposition)", desc: "Conformal thin-film deposition via ALD.", imgs: [
         {src:"Ryu-ALD.jpeg", cap:"Equipment setup, ULTEC, SiO2 / Al2O3 deposition with DIPAS/TMA & O3"},
     ]},
-    { name: "Etching (RIE / ICP-RIE / FIB)", desc: "Dry etching and focused ion beam milling.", imgs: [
+    { name: "Etching (RIE / ICP-RIE)", desc: "Dry etching for metal / oxide thin film", imgs: [
+      {src:"Ryu-RIE.jpeg", cap:"Equipment setup, Femto Science COVANCE-RF, RIE system with 3 gas lines"},
       {src:"KIST-ICPRIE.jpeg", cap:"Equipment setup, Plasmart Miniplasma, ICP-RIE system with 6 gas lines"},
       {src:"KIST-ICPRIE1.jpeg", cap:"System setup"},
       {src:"ICPRIE_example_sio2.jpeg", cap:"oxide etching with high anisotropy with ICP-RIE"},
       {src:"ICPRIE_example_mold.jpeg", cap:"Nanoimprint mold by etching Si wafer with ICP-RIE"}
     ] },
-    { name: "Plasma Ashing", desc: "Photoresist stripping and surface cleaning.", imgs: [] },
+    { name: "Plasma Ashing", desc: "Photoresist stripping and surface cleaning.", imgs: [
+      {src:"Ryu-RIE.jpeg", cap:"Equipment setup, Femto Science CUTE, oxygen plasma ashing for surface treatment"},
+      {src:"Ryu-UVOzone.jpeg", cap:"Equipment setup, Omniscience UVC-150, UV-Ozone generator for surface treatment"}
+    ] },
   ],
   analysis: [
     { name: "SEM (JEOL)", desc: "Scanning electron microscopy for nanostructure imaging.", imgs: [
@@ -570,8 +574,8 @@ const SKILLS = {
         {src:"Ryu-BWTEK.jpeg",  cap:"BWTEK i-Raman Plus for preliminary raman spectrum analysis."},
     ]},
     { name: "Biological / Metallographic Microscope", desc: "Optical microscopy for samples and devices.", imgs: [
-        {src:"Ryu-microscope.jpeg",  cap:"설명을 적으세요 — 예: 광학 현미경 셋업"},
-        {src:"Ryu-microscope2.jpeg", cap:"설명을 적으세요 — 예: 소자/시료 광학 이미징"},
+        {src:"Ryu-microscope.jpeg",  cap:"Metallographic Microscope"},
+        {src:"Ryu-microscope2.jpeg", cap:"Biological Microscope"},
     ]},
   ],
   compute: [
