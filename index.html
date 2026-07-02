@@ -7,268 +7,110 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #ffffff;
-    --bg-alt: #f6f7f9;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --line: #e5e7eb;
-    --accent: #2563a8;
-    --accent-soft: #eef4fb;
-    --sans: 'Source Sans 3', sans-serif;
-    --serif: 'Source Serif 4', serif;
-    --maxw: 860px;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: var(--sans);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.65;
-    font-size: 16px;
-  }
-  a { color: var(--accent); }
+:root{
+  --bg:#ffffff;
+  --bg-alt:#f6f7f9;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --accent:#2563a8;
+  --accent-soft:#eef4fb;
+  --sans:'Source Sans 3',sans-serif;
+  --serif:'Source Serif 4',serif;
+  --maxw:860px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+a{color:var(--accent);}
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    height: 56px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .nav-name {
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.01em;
-  }
-  .nav-links { display: flex; gap: 1.25rem; list-style: none; flex-wrap: wrap; }
-  .nav-links a {
-    font-size: 13.5px;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 4px 2px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.nav-name{font-weight:700;font-size:15px;letter-spacing:0.01em;}
+.nav-links{display:flex;gap:1.25rem;list-style:none;flex-wrap:wrap;}
+.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);border-bottom-color:var(--accent);}
 
-  /* LAYOUT */
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
-  section { padding: 56px 0 16px; }
-  section:not(:last-child) { border-bottom: 1px solid var(--line); }
-  .section-title {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1.75rem;
-    color: var(--text);
-    position: relative;
-    padding-bottom: 0.5rem;
-  }
-  .section-title::after {
-    content: ''; position: absolute; left: 0; bottom: 0;
-    width: 42px; height: 3px; background: var(--accent); border-radius: 2px;
-  }
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;}
+section{padding:56px 0 16px;}
+section:not(:last-child){border-bottom:1px solid var(--line);}
+.section-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;margin-bottom:1.75rem;color:var(--text);position:relative;padding-bottom:0.5rem;}
+.section-title::after{content:'';position:absolute;left:0;bottom:0;width:42px;height:3px;background:var(--accent);border-radius:2px;}
 
-  /* ABOUT / HEADER */
-  .about { padding-top: 48px; }
-  .about-head {
-    display: flex; gap: 2rem; align-items: center;
-    margin-bottom: 1.5rem; flex-wrap: wrap;
-  }
-  .profile-photo {
-    width: 140px; height: 140px; flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--bg-alt);
-    border: 1px solid var(--line);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 6px; overflow: hidden;
-    cursor: pointer;
-    position: relative;
-  }
-  .profile-photo svg { width: 38px; height: 38px; color: #c2c8d0; }
-  .profile-photo .ph-label { font-size: 10px; color: var(--muted); text-align: center; padding: 0 8px; }
-  .profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .about-intro h1 {
-    font-family: var(--serif);
-    font-size: 2.1rem; font-weight: 600;
-    letter-spacing: -0.01em; line-height: 1.15;
-    margin-bottom: 0.35rem;
-  }
-  .about-intro .role { font-size: 1.05rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-  .about-intro .affil { font-size: 0.95rem; color: var(--muted); }
-  .about-meta {
-    font-size: 0.85rem; color: var(--muted);
-    margin-top: 0.75rem; display: flex; gap: 1rem; flex-wrap: wrap;
-  }
-  .about-meta span { display: inline-flex; align-items: center; gap: 5px; }
-  .research-interest {
-    background: var(--accent-soft);
-    border-left: 3px solid var(--accent);
-    padding: 1rem 1.25rem;
-    border-radius: 0 6px 6px 0;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-  }
-  .research-interest strong { font-weight: 600; }
+.about{padding-top:48px;}
+.about-head{display:flex;gap:2rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;}
+.profile-photo{width:140px;height:140px;flex-shrink:0;border-radius:50%;background:var(--bg-alt);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;cursor:pointer;position:relative;}
+.profile-photo svg{width:38px;height:38px;color:#c2c8d0;}
+.profile-photo .ph-label{font-size:10px;color:var(--muted);text-align:center;padding:0 8px;}
+.profile-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.about-intro h1{font-family:var(--serif);font-size:2.1rem;font-weight:600;letter-spacing:-0.01em;line-height:1.15;margin-bottom:0.35rem;}
+.about-intro .role{font-size:1.05rem;color:var(--accent);font-weight:600;margin-bottom:0.5rem;}
+.about-intro .affil{font-size:0.95rem;color:var(--muted);}
+.about-meta{font-size:0.85rem;color:var(--muted);margin-top:0.75rem;display:flex;gap:1rem;flex-wrap:wrap;}
+.about-meta span{display:inline-flex;align-items:center;gap:5px;}
+.research-interest{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin-top:1.5rem;font-size:0.95rem;}
+.research-interest strong{font-weight:600;}
 
-  /* ENTRY (education, research, etc.) */
-  .entry {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0.25rem 1.5rem;
-    padding: 1.1rem 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .entry:last-child { border-bottom: none; }
-  .entry-head { font-weight: 600; font-size: 1.02rem; }
-  .entry-date { font-size: 0.85rem; color: var(--muted); white-space: nowrap; text-align: right; }
-  .entry-sub { font-style: italic; color: var(--text); font-size: 0.92rem; grid-column: 1 / -1; margin-top: 1px; }
-  .entry-detail { grid-column: 1 / -1; font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }
-  .entry-detail .gpa { color: var(--accent); font-weight: 600; }
+.entry{display:grid;grid-template-columns:1fr auto;gap:0.25rem 1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line);}
+.entry:last-child{border-bottom:none;}
+.entry-head{font-weight:600;font-size:1.02rem;}
+.entry-date{font-size:0.85rem;color:var(--muted);white-space:nowrap;text-align:right;}
+.entry-sub{font-style:italic;color:var(--text);font-size:0.92rem;grid-column:1 / -1;margin-top:1px;}
+.entry-detail{grid-column:1 / -1;font-size:0.9rem;color:var(--muted);margin-top:0.4rem;}
+.entry-detail .gpa{color:var(--accent);font-weight:600;}
 
-  /* AWARDS */
-  .award-list { list-style: none; }
-  .award-list li {
-    display: flex; justify-content: space-between; gap: 1rem;
-    padding: 0.7rem 0; border-bottom: 1px solid var(--line);
-    font-size: 0.95rem; flex-wrap: wrap;
-  }
-  .award-list li:last-child { border-bottom: none; }
-  .award-name strong { font-weight: 600; }
-  .award-date { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+.award-list{list-style:none;}
+.award-list li{display:flex;justify-content:space-between;gap:1rem;padding:0.7rem 0;border-bottom:1px solid var(--line);font-size:0.95rem;flex-wrap:wrap;}
+.award-list li:last-child{border-bottom:none;}
+.award-name strong{font-weight:600;}
+.award-date{color:var(--muted);font-size:0.85rem;white-space:nowrap;}
 
-  /* SKILLS */
-  .skill-intro { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.25rem; }
-  .skill-cat { margin-bottom: 1.5rem; }
-  .skill-cat h3 {
-    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--muted); margin-bottom: 0.75rem; font-weight: 600;
-  }
-  .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .skill-chip {
-    font-size: 0.875rem;
-    background: var(--bg-alt);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 6px 13px;
-    cursor: pointer;
-    transition: all 0.15s;
-    display: inline-flex; align-items: center; gap: 6px;
-    user-select: none;
-  }
-  .skill-chip:hover { border-color: var(--accent); color: var(--accent); }
-  .skill-chip.open { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .skill-chip::after {
-    content: '+'; font-size: 14px; line-height: 1; opacity: 0.5;
-  }
-  .skill-chip.open::after { content: '\2212'; opacity: 1; }
-  .skill-panel {
-    display: none;
-    margin-top: 12px;
-    background: var(--bg-alt);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 1.25rem;
-  }
-  .skill-panel.open { display: block; animation: slidein 0.25s ease; }
-  @keyframes slidein { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-  .skill-panel-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.25rem; color: var(--accent); }
-  .skill-panel-desc { font-size: 0.92rem; color: var(--text); margin-bottom: 1rem; }
-  .skill-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
-  .skill-img-slot {
-    margin: 0;
-    background: #fff;
-    border: 1px solid #e2e7ee;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    display: flex; flex-direction: column;
-  }
-  .skill-img-slot:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
-  .skill-img-slot img {
-    width: 100%; aspect-ratio: 4 / 3;
-    object-fit: cover; display: block;
-  }
-  .skill-img-slot figcaption {
-    font-size: 0.72rem; line-height: 1.35; color: var(--muted);
-    padding: 7px 9px; border-top: 1px solid #eef1f5;
-  }
-  .skill-img-slot.img-missing {
-    aspect-ratio: 4 / 3; border-style: dashed; color: #aab2bd;
-    align-items: center; justify-content: center; gap: 6px; cursor: default;
-  }
-  .skill-img-slot.img-missing:hover { transform: none; box-shadow: none; }
-  .skill-img-slot.img-missing svg { width: 26px; height: 26px; }
-  .skill-img-slot.img-missing span { font-size: 10px; text-align: center; padding: 0 6px; }
+.skill-intro{font-size:0.92rem;color:var(--muted);margin-bottom:1.25rem;}
+.skill-cat{margin-bottom:1.5rem;}
+.skill-cat h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;font-weight:600;}
+.skill-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.skill-chip{font-size:0.875rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:6px;padding:6px 13px;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:6px;user-select:none;}
+.skill-chip:hover{border-color:var(--accent);color:var(--accent);}
+.skill-chip.open{background:var(--accent);color:#fff;border-color:var(--accent);}
+.skill-chip::after{content:'+';font-size:14px;line-height:1;opacity:0.5;}
+.skill-chip.open::after{content:'\2212';opacity:1;}
+.skill-panel{display:none;margin-top:12px;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:1.25rem;}
+.skill-panel.open{display:block;animation:slidein 0.25s ease;}
+@keyframes slidein{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.skill-panel-title{font-weight:600;font-size:1rem;margin-bottom:0.25rem;color:var(--accent);}
+.skill-panel-desc{font-size:0.92rem;color:var(--text);margin-bottom:1rem;}
+.skill-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;}
+.skill-img-slot{margin:0;background:#fff;border:1px solid #e2e7ee;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.15s ease,box-shadow 0.15s ease;display:flex;flex-direction:column;}
+.skill-img-slot:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
+.skill-img-slot img{width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;}
+.skill-img-slot figcaption{font-size:0.72rem;line-height:1.35;color:var(--muted);padding:7px 9px;border-top:1px solid #eef1f5;}
+.skill-img-slot.img-missing{aspect-ratio:4 / 3;border-style:dashed;color:#aab2bd;align-items:center;justify-content:center;gap:6px;cursor:default;}
+.skill-img-slot.img-missing:hover{transform:none;box-shadow:none;}
+.skill-img-slot.img-missing svg{width:26px;height:26px;}
+.skill-img-slot.img-missing span{font-size:10px;text-align:center;padding:0 6px;}
 
-  /* IMAGE MODAL (lightbox) */
-  .img-modal {
-    display: none; position: fixed; inset: 0; z-index: 1000;
-    background: rgba(15,18,22,0.82);
-    align-items: center; justify-content: center;
-    padding: 4vh 4vw;
-    animation: fadein 0.18s ease;
-  }
-  .img-modal.open { display: flex; }
-  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-  .img-modal-inner {
-    max-width: 900px; max-height: 92vh;
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .img-modal img {
-    max-width: 100%; max-height: 82vh;
-    object-fit: contain;
-    border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.45);
-    background: #fff;
-  }
-  .img-modal-cap {
-    color: #f0f2f5; font-size: 0.95rem; line-height: 1.5;
-    margin-top: 14px; text-align: center; max-width: 700px;
-  }
-  .img-modal-close {
-    position: absolute; top: 18px; right: 24px;
-    width: 42px; height: 42px; border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    color: #fff; border: none; cursor: pointer;
-    font-size: 22px; line-height: 1;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.15s ease;
-  }
-  .img-modal-close:hover { background: rgba(255,255,255,0.25); }
+.img-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(15,18,22,0.82);align-items:center;justify-content:center;padding:4vh 4vw;animation:fadein 0.18s ease;}
+.img-modal.open{display:flex;}
+@keyframes fadein{from{opacity:0;}to{opacity:1;}}
+.img-modal-inner{max-width:900px;max-height:92vh;display:flex;flex-direction:column;align-items:center;}
+.img-modal img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.45);background:#fff;}
+.img-modal-cap{color:#f0f2f5;font-size:0.95rem;line-height:1.5;margin-top:14px;text-align:center;max-width:700px;}
+.img-modal-close{position:absolute;top:18px;right:24px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.12);color:#fff;border:none;cursor:pointer;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.15s ease;}
+.img-modal-close:hover{background:rgba(255,255,255,0.25);}
 
-  /* CONTACT */
-  .contact-box {
-    background: var(--bg-alt);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-  }
-  .contact-box .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.5rem; }
-  .contact-box a { font-size: 1.25rem; font-weight: 600; text-decoration: none; }
-  .contact-box a:hover { text-decoration: underline; }
+.contact-box{background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:1.5rem;text-align:center;}
+.contact-box .label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.5rem;}
+.contact-box a{font-size:1.25rem;font-weight:600;text-decoration:none;}
+.contact-box a:hover{text-decoration:underline;}
 
-  /* FOOTER */
-  footer { text-align: center; padding: 2rem 1.5rem; color: var(--muted); font-size: 0.8rem; }
+footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem;}
 
-  @media (max-width: 600px) {
-    .about-head { flex-direction: column; text-align: center; }
-    .about-meta { justify-content: center; }
-    .entry { grid-template-columns: 1fr; }
-    .entry-date { text-align: left; }
-  }
+@media (max-width:600px){
+  .about-head{flex-direction:column;text-align:center;}
+  .about-meta{justify-content:center;}
+  .entry{grid-template-columns:1fr;}
+  .entry-date{text-align:left;}
+}
 </style>
 </head>
 <body>
@@ -288,17 +130,15 @@
   </div>
 </nav>
 
-<!-- ABOUT -->
 <section id="about" class="about">
   <div class="wrap">
     <div class="about-head">
-      <div class="profile-photo" onclick="openModal('Kwon_profile.jpeg','')" title="click to enlarge">
-        <img src="Kwon_profile.jpeg" alt="Minjae Kwon"
-             onerror="this.style.display='none';this.parentElement.removeAttribute('onclick');this.nextElementSibling.style.display='block';this.parentElement.querySelector('.ph-label').style.display='block';">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none">
+      <div class="profile-photo" id="profilePhoto">
+        <img src="Kwon_profile.jpeg" alt="Minjae Kwon" id="profileImg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none" id="profileSvg">
           <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
         </svg>
-        <span class="ph-label" style="display:none">Photo</span>
+        <span class="ph-label" style="display:none" id="profileLabel">Photo</span>
       </div>
       <div class="about-intro">
         <h1>Minjae Kwon</h1>
@@ -316,7 +156,6 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
     <h2 class="section-title">Education</h2>
@@ -344,7 +183,6 @@
   </div>
 </section>
 
-<!-- RESEARCH -->
 <section id="research">
   <div class="wrap">
     <h2 class="section-title">Research Experience</h2>
@@ -372,7 +210,6 @@
   </div>
 </section>
 
-<!-- ACTIVITIES -->
 <section id="activities">
   <div class="wrap">
     <h2 class="section-title">Extracurricular Activities &amp; Services</h2>
@@ -421,7 +258,6 @@
   </div>
 </section>
 
-<!-- AWARDS -->
 <section id="awards">
   <div class="wrap">
     <h2 class="section-title">Awards &amp; Fellowships</h2>
@@ -450,7 +286,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
     <h2 class="section-title">Technical Proficiency</h2>
@@ -482,7 +317,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
     <h2 class="section-title">Contact</h2>
@@ -493,9 +327,8 @@
   </div>
 </section>
 
-<!-- IMAGE MODAL (lightbox) -->
-<div class="img-modal" id="imgModal" onclick="closeModal(event)">
-  <button class="img-modal-close" onclick="closeModal(event)" aria-label="close">&times;</button>
+<div class="img-modal" id="imgModal">
+  <button class="img-modal-close" id="modalCloseBtn" aria-label="close">&times;</button>
   <div class="img-modal-inner">
     <img id="imgModalImg" src="" alt="">
     <div class="img-modal-cap" id="imgModalCap"></div>
@@ -503,196 +336,296 @@
 </div>
 
 <footer>
-  &copy; 2026 Minjae Kwon &middot; Curriculum Vitae &middot; Last updated July 2026
+  &copy; 2026 Minjae Kwon &middot; Curriculum Vitae &middot; rebuilt July 2026 (build 3)
 </footer>
 
 <script>
-// =====================================================================
-//  PHOTO / CAPTION EDIT ZONE - edit only here.
-//
-//  Each photo is { src: "filename.jpeg", cap: "caption text" }.
-//   - src : image filename (place in the same folder as this HTML. JPEG/PNG only - HEIC will NOT display in browsers)
-//   - cap : caption shown under the thumbnail and in the enlarged view. Use cap:"" to leave blank.
-//
-//  IMPORTANT: always use straight quotes " and ' when editing this file.
-//  Editing captions in Notes/Word/Pages can silently convert quotes to
-//  curly quotes (" " or ' '), which will break the whole page.
-//  Edit in a plain code editor (VS Code, Notepad, etc.) instead.
-// =====================================================================
-const SKILLS = {
+(function(){
+"use strict";
+
+/* =====================================================================
+   PHOTO / CAPTION DATA
+   Each photo: { src: "filename.jpeg", cap: "caption text" }
+   Place image files in the same folder as this HTML.
+   Use plain straight quotes only. Edit in a code editor, not Notes/Word.
+===================================================================== */
+var SKILLS = {
   fab: [
-    { name: "Photolithography", desc: "Aligner-assisted photolithography for micro-patterning, including secondary exposure on selected regions of interest.", imgs: [
-        {src:"Ryu-Aligner.jpeg",  cap:"Mask aligner setup used for UV photolithography."},
-        {src:"Ryu-Aligner2.jpeg", cap:"UV exposure step during photolithography."},
-    ]},
-    { name: "Laser Interference Lithography", desc: "Large-area, periodic nanopatterning via laser interference for metasurface fabrication.", imgs: [
-        {src:"Ryu-LIL.jpeg", cap:"Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure."},
-        {src:"Ryu-LIL1.jpeg", cap:"Periodic post-shaped nanopattern produced by LIL."},
-        {src:"Ryu-LIL1-1.jpeg", cap:"Sub-200 nm nanohole array (512 nm period) after metal deposition and lift-off."},
-        {src:"Ryu-LIL2.jpeg", cap:"Periodic hole-shaped nanopattern produced by LIL."},
-        {src:"Ryu-LIL2-1.jpeg", cap:"Sub-130 nm nanopost array (500 nm period), 4-layer Cr/SiO2/Cr/Au stack over a large-area substrate."},
-    ]},
-    { name: "Electron Beam Lithography", desc: "High-resolution direct-write nanopatterning for complex, arbitrary geometries beyond the resolution limit of optical lithography.", imgs: [
-        {src:"Ryu-ebeamlitho.jpeg",  cap:"Please add a description here - e.g. pattern written and its resolution."},
-        {src:"Ryu-ebeamlitho2.jpeg", cap:"Please add a description here - e.g. pattern written and its resolution."},
-    ]},
-    { name: "Nanoimprint Lithography", desc: "Nanostructure replication via mold-based, UV-curable nanoimprint lithography.", imgs: [
-        {src:"Ryu-Nanoimprint.jpeg",  cap:"Lab-built nanoimprint setup for large-area imprinting."},
-        {src:"Ryu-Nanoimprint1.jpeg", cap:"Vacuum chamber with UV-curing exposure module."},
-    ]},
-    { name: "PVD (Thermal / Sputter / E-beam)", desc: "Physical vapor deposition of thin films.", imgs: [
-        {src:"Ryu-Thermal.jpeg", cap:"ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers."},
-        {src:"Ryu-Thermal_example.jpeg", cap:"4-inch wafers"}
-        {src:"Ryu-ebeam.jpeg",  cap:"KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions."},
-        {src:"Ryu-ebeam2.jpeg", cap:"High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder."},
-        {src:"Ryu-ebeam_example.jpeg", cap:"E-beam evaporated Cr/Au/SiO2/Ti/Au multilayer stack."},
-    ]},
-    { name: "CVD (Atomic Layer Deposition)", desc: "Conformal thin-film deposition via ALD.", imgs: [
-        {src:"Ryu-ALD.jpeg", cap:"ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant."},
-    ]},
-    { name: "Etching (RIE / ICP-RIE)", desc: "Dry etching of metal and oxide thin films.", imgs: [
-      {src:"Ryu-RIE.jpeg", cap:"Femto Science COVANCE-RF (RIE, left) and CUTE (plasma asher, right) on the same cleanroom bench: RIE system with 3 gas lines."},
-      {src:"KIST-ICPRIE.jpeg", cap:"Plasmart Miniplasma ICP-RIE system with 6 gas lines."},
-      {src:"KIST-ICPRIE1.jpeg", cap:"ICP-RIE chamber and control system."},
-      {src:"ICPRIE_example_sio2.jpeg", cap:"Highly anisotropic oxide etching via ICP-RIE."},
-      {src:"ICPRIE_example_mold.jpeg", cap:"Silicon nanoimprint mold fabricated via ICP-RIE etching."},
-    ] },
-    { name: "Plasma Ashing", desc: "Photoresist stripping and surface cleaning.", imgs: [
-      {src:"Ryu-RIE.jpeg", cap:"Femto Science CUTE (plasma asher, right) and COVANCE-RF (RIE, left) on the same cleanroom bench: oxygen plasma ashing for surface treatment."},
-      {src:"Ryu-UVOzone.jpeg", cap:"Omniscience UVC-150 UV-Ozone generator for surface treatment."},
-    ] },
+    {
+      name: "Photolithography",
+      desc: "Aligner-assisted photolithography for micro-patterning, including secondary exposure on selected regions of interest.",
+      imgs: [
+        { src: "Ryu-Aligner.jpeg", cap: "Mask aligner setup used for UV photolithography." },
+        { src: "Ryu-Aligner2.jpeg", cap: "UV exposure step during photolithography." }
+      ]
+    },
+    {
+      name: "Laser Interference Lithography",
+      desc: "Large-area, periodic nanopatterning via laser interference for metasurface fabrication.",
+      imgs: [
+        { src: "Ryu-LIL.jpeg", cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
+        { src: "Ryu-LIL1.jpeg", cap: "Periodic post-shaped nanopattern produced by LIL." },
+        { src: "Ryu-LIL1-1.jpeg", cap: "Sub-200 nm nanohole array (512 nm period) after metal deposition and lift-off." },
+        { src: "Ryu-LIL2.jpeg", cap: "Periodic hole-shaped nanopattern produced by LIL." },
+        { src: "Ryu-LIL2-1.jpeg", cap: "Sub-130 nm nanopost array (500 nm period), 4-layer Cr/SiO2/Cr/Au stack over a large-area substrate." }
+      ]
+    },
+    {
+      name: "Electron Beam Lithography",
+      desc: "High-resolution direct-write nanopatterning for complex, arbitrary geometries beyond the resolution limit of optical lithography.",
+      imgs: [
+        { src: "Ryu-ebeamlitho.jpeg", cap: "Please add a description here - e.g. pattern written and its resolution." },
+        { src: "Ryu-ebeamlitho2.jpeg", cap: "Please add a description here - e.g. pattern written and its resolution." }
+      ]
+    },
+    {
+      name: "Nanoimprint Lithography",
+      desc: "Nanostructure replication via mold-based, UV-curable nanoimprint lithography.",
+      imgs: [
+        { src: "Ryu-Nanoimprint.jpeg", cap: "Lab-built nanoimprint setup for large-area imprinting." },
+        { src: "Ryu-Nanoimprint1.jpeg", cap: "Vacuum chamber with UV-curing exposure module." }
+      ]
+    },
+    {
+      name: "PVD (Thermal / Sputter / E-beam)",
+      desc: "Physical vapor deposition of thin films.",
+      imgs: [
+        { src: "Ryu-Thermal.jpeg", cap: "ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers." },
+        { src: "Ryu-ebeam.jpeg", cap: "KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions." },
+        { src: "Ryu-ebeam2.jpeg", cap: "High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder." },
+        { src: "Ryu-ebeam_example.jpeg", cap: "E-beam evaporated Cr/Au/SiO2/Ti/Au multilayer stack." }
+      ]
+    },
+    {
+      name: "CVD (Atomic Layer Deposition)",
+      desc: "Conformal thin-film deposition via ALD.",
+      imgs: [
+        { src: "Ryu-ALD.jpeg", cap: "ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant." }
+      ]
+    },
+    {
+      name: "Etching (RIE / ICP-RIE)",
+      desc: "Dry etching of metal and oxide thin films.",
+      imgs: [
+        { src: "Ryu-RIE.jpeg", cap: "Femto Science COVANCE-RF (RIE, left) and CUTE (plasma asher, right) on the same cleanroom bench: RIE system with 3 gas lines." },
+        { src: "KIST-ICPRIE.jpeg", cap: "Plasmart Miniplasma ICP-RIE system with 6 gas lines." },
+        { src: "KIST-ICPRIE1.jpeg", cap: "ICP-RIE chamber and control system." },
+        { src: "ICPRIE_example_sio2.jpeg", cap: "Highly anisotropic oxide etching via ICP-RIE." },
+        { src: "ICPRIE_example_mold.jpeg", cap: "Silicon nanoimprint mold fabricated via ICP-RIE etching." }
+      ]
+    },
+    {
+      name: "Plasma Ashing",
+      desc: "Photoresist stripping and surface cleaning.",
+      imgs: [
+        { src: "Ryu-RIE.jpeg", cap: "Femto Science CUTE (plasma asher, right) and COVANCE-RF (RIE, left) on the same cleanroom bench: oxygen plasma ashing for surface treatment." },
+        { src: "Ryu-UVOzone.jpeg", cap: "Omniscience UVC-150 UV-Ozone generator for surface treatment." }
+      ]
+    }
   ],
   analysis: [
-    { name: "SEM (JEOL)", desc: "Scanning electron microscopy for nanostructure imaging.", imgs: [
-        {src:"Ryu-SEM.jpeg",  cap:"JEOL JSM-6701F FE-SEM."},
-    ] },
+    {
+      name: "SEM (JEOL)",
+      desc: "Scanning electron microscopy for nanostructure imaging.",
+      imgs: [
+        { src: "Ryu-SEM.jpeg", cap: "JEOL JSM-6701F FE-SEM." }
+      ]
+    },
     { name: "Reflectance Spectroscopy", desc: "Optical reflectance characterization of thin films.", imgs: [] },
     { name: "Stylus Profiler", desc: "Surface profile and step-height measurement.", imgs: [] },
-    { name: "Raman Spectroscopy", desc: "Raman spectroscopy systems for SERS analysis.", imgs: [
-        {src:"Ryu-RAMANtouch.jpeg", cap:"Bruker RAMANtouch confocal Raman microscope for single-nanohole SERS analysis."},
-        {src:"KIST-Renishaw.jpeg",  cap:"Renishaw inVia confocal Raman microscope for large-area surface mapping and signal analysis."},
-        {src:"Ryu-Exopert.jpeg",  cap:"Exopert ARM-Dx for AI-assisted target spectrum analysis."},
-        {src:"Ryu-BWTEK.jpeg",  cap:"BWTEK i-Raman Plus for preliminary Raman spectrum screening."},
-    ]},
-    { name: "Biological / Metallographic Microscope", desc: "Optical microscopy for samples and devices.", imgs: [
-        {src:"Ryu-microscope.jpeg",  cap:"Metallographic microscope."},
-        {src:"Ryu-microscope2.jpeg", cap:"Biological microscope."},
-    ]},
+    {
+      name: "Raman Spectroscopy",
+      desc: "Raman spectroscopy systems for SERS analysis.",
+      imgs: [
+        { src: "Ryu-RAMANtouch.jpeg", cap: "Bruker RAMANtouch confocal Raman microscope for single-nanohole SERS analysis." },
+        { src: "KIST-Renishaw.jpeg", cap: "Renishaw inVia confocal Raman microscope for large-area surface mapping and signal analysis." },
+        { src: "Ryu-Exopert.jpeg", cap: "Exopert ARM-Dx for AI-assisted target spectrum analysis." },
+        { src: "Ryu-BWTEK.jpeg", cap: "BWTEK i-Raman Plus for preliminary Raman spectrum screening." }
+      ]
+    },
+    {
+      name: "Biological / Metallographic Microscope",
+      desc: "Optical microscopy for samples and devices.",
+      imgs: [
+        { src: "Ryu-microscope.jpeg", cap: "Metallographic microscope." },
+        { src: "Ryu-microscope2.jpeg", cap: "Biological microscope." }
+      ]
+    }
   ],
   compute: [
-    { name: "PCB / Breadboard Circuit Design", desc: "Circuit-level electronic design and prototyping."},
-    { name: "OrCAD (PSpice)", desc: "Circuit simulation and verification."},
+    { name: "PCB / Breadboard Circuit Design", desc: "Circuit-level electronic design and prototyping.", imgs: [] },
+    { name: "OrCAD (PSpice)", desc: "Circuit simulation and verification.", imgs: [] },
     { name: "3D Printing", desc: "Rapid prototyping of fixtures and parts.", imgs: [] },
-    { name: "COMSOL Multiphysics", desc: "FEA simulation of optical/electrical phenomena."},
-    { name: "Rhino / AutoCAD / Keyshot", desc: "2D/3D design and rendering."},
-    { name: "Arduino IDE", desc: "Embedded programming for sensors and devices."},
+    { name: "COMSOL Multiphysics", desc: "FEA simulation of optical/electrical phenomena.", imgs: [] },
+    { name: "Rhino / AutoCAD / Keyshot", desc: "2D/3D design and rendering.", imgs: [] },
+    { name: "Arduino IDE", desc: "Embedded programming for sensors and devices.", imgs: [] }
   ],
   lang: [
-    { name: "Python", desc: "Primary language for data analysis and automation."},
-    { name: "C / C++", desc: "Systems and embedded programming."},
-    { name: "MATLAB", desc: "Numerical computing and signal processing."},
-    { name: "LaTeX", desc: "Scientific document preparation."},
-  ],
+    { name: "Python", desc: "Primary language for data analysis and automation.", imgs: [] },
+    { name: "C / C++", desc: "Systems and embedded programming.", imgs: [] },
+    { name: "MATLAB", desc: "Numerical computing and signal processing.", imgs: [] },
+    { name: "LaTeX", desc: "Scientific document preparation.", imgs: [] }
+  ]
 };
-// =====================================================================
 
-const photoSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M3 17l5-4 4 3 3-2 6 5"/></svg>';
+var PHOTO_SVG = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M3 17l5-4 4 3 3-2 6 5\"/></svg>";
 
-function buildSkills() {
-  for (const group in SKILLS) {
-    const chipWrap = document.querySelector(`[data-group="${group}"]`);
-    SKILLS[group].forEach((skill, i) => {
-      const chip = document.createElement('div');
-      chip.className = 'skill-chip';
-      chip.textContent = skill.name;
-      chip.dataset.group = group;
-      chip.dataset.idx = i;
-      chip.addEventListener('click', () => toggleSkill(group, i, chip));
-      chipWrap.appendChild(chip);
-    });
+var activeChip = null;
+
+function buildSkillChips(){
+  var groups = Object.keys(SKILLS);
+  for (var g = 0; g < groups.length; g++){
+    var group = groups[g];
+    var chipWrap = document.querySelector('[data-group="' + group + '"]');
+    if (!chipWrap) continue;
+    var list = SKILLS[group];
+    for (var i = 0; i < list.length; i++){
+      (function(group, idx, skill){
+        var chip = document.createElement('div');
+        chip.className = 'skill-chip';
+        chip.textContent = skill.name;
+        chip.addEventListener('click', function(){ toggleSkillPanel(group, idx, chip); });
+        chipWrap.appendChild(chip);
+      })(group, i, list[i]);
+    }
   }
 }
 
-let activeChip = null;
-function toggleSkill(group, idx, chip) {
-  const panel = document.querySelector(`[data-panel="${group}"]`);
-  const skill = SKILLS[group][idx];
-  const isSame = activeChip === chip;
+function renderGallery(skill){
+  if (!skill.imgs || skill.imgs.length === 0){
+    return '<div style="font-size:0.85rem;color:var(--muted);">Add photos by filling in the imgs field with {src, cap} in the code.</div>';
+  }
+  var html = '<div class="skill-gallery">';
+  for (var i = 0; i < skill.imgs.length; i++){
+    var im = skill.imgs[i];
+    var fig = document.createElement('figure');
+    fig.className = 'skill-img-slot';
+    fig.title = 'click to enlarge';
 
-  document.querySelectorAll('.skill-chip.open').forEach(c => c.classList.remove('open'));
-  document.querySelectorAll('.skill-panel.open').forEach(p => { if (p !== panel) p.classList.remove('open'); });
+    var img = document.createElement('img');
+    img.src = im.src;
+    img.alt = skill.name;
+    img.addEventListener('error', function(el, src){
+      return function(){
+        el.classList.add('img-missing');
+        el.innerHTML = PHOTO_SVG + '<span>Image not found: ' + src + '</span>';
+      };
+    }(fig, im.src));
 
-  if (isSame) {
+    fig.appendChild(img);
+
+    if (im.cap){
+      var figcap = document.createElement('figcaption');
+      figcap.textContent = im.cap;
+      fig.appendChild(figcap);
+    }
+
+    fig.addEventListener('click', function(src, cap){
+      return function(){ openModal(src, cap); };
+    }(im.src, im.cap || ''));
+
+    html += fig.outerHTML;
+  }
+  html += '</div>';
+  return html;
+}
+
+function toggleSkillPanel(group, idx, chip){
+  var panel = document.querySelector('[data-panel="' + group + '"]');
+  var skill = SKILLS[group][idx];
+  var isSame = (activeChip === chip);
+
+  var openChips = document.querySelectorAll('.skill-chip.open');
+  for (var a = 0; a < openChips.length; a++){ openChips[a].classList.remove('open'); }
+
+  var openPanels = document.querySelectorAll('.skill-panel.open');
+  for (var b = 0; b < openPanels.length; b++){
+    if (openPanels[b] !== panel){ openPanels[b].classList.remove('open'); }
+  }
+
+  if (isSame){
     panel.classList.remove('open');
     activeChip = null;
     return;
   }
 
-  let galleryHTML = '';
-  if (skill.imgs && skill.imgs.length > 0) {
-    galleryHTML = '<div class="skill-gallery">';
-    skill.imgs.forEach(im => {
-      const src = im.src, cap = im.cap || '';
-      const capEsc = cap.replace(/"/g,'&quot;').replace(/'/g,"\\'");
-      galleryHTML += `<figure class="skill-img-slot" onclick="openModal('${src}','${capEsc}')" title="click to enlarge">
-        <img src="${src}" alt="${skill.name}" data-src="${src}" onerror="imgFail(this)">
-        ${cap ? `<figcaption>${cap}</figcaption>` : ''}
-      </figure>`;
-    });
-    galleryHTML += '</div>';
-  } else {
-    galleryHTML = '<div style="font-size:0.85rem;color:var(--muted);">Add photos by filling in the imgs field with {src, cap} in the code.</div>';
-  }
+  panel.innerHTML =
+    '<div class="skill-panel-title"></div>' +
+    '<div class="skill-panel-desc"></div>' +
+    '<div class="gallery-slot"></div>';
+  panel.querySelector('.skill-panel-title').textContent = skill.name;
+  panel.querySelector('.skill-panel-desc').textContent = skill.desc;
+  panel.querySelector('.gallery-slot').outerHTML = renderGallery(skill);
 
-  panel.innerHTML = `
-    <div class="skill-panel-title">${skill.name}</div>
-    <div class="skill-panel-desc">${skill.desc}</div>
-    ${galleryHTML}
-  `;
   panel.classList.add('open');
   chip.classList.add('open');
   activeChip = chip;
 }
 
-buildSkills();
-
-// ---- Image modal (lightbox) ----
-function imgFail(img) {
-  const fig = img.parentElement;
-  const src = img.getAttribute('data-src') || '';
-  fig.classList.add('img-missing');
-  fig.removeAttribute('onclick');
-  fig.innerHTML = photoSVG + '<span>Image not found: ' + src + '</span>';
-}
-function openModal(src, cap) {
-  const modal = document.getElementById('imgModal');
-  const img = document.getElementById('imgModalImg');
-  const capEl = document.getElementById('imgModalCap');
+/* ---- Image lightbox modal ---- */
+function openModal(src, cap){
+  var modal = document.getElementById('imgModal');
+  var img = document.getElementById('imgModalImg');
+  var capEl = document.getElementById('imgModalCap');
   img.src = src;
   capEl.textContent = cap || '';
   capEl.style.display = cap ? 'block' : 'none';
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeModal(e) {
-  if (e && e.target.id === 'imgModalImg') return;
+function closeModal(){
   document.getElementById('imgModal').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-// ---- Nav active-state on scroll ----
-const navLinks = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('section');
-const navObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const id = e.target.id;
-      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+/* ---- wire up static events ---- */
+function init(){
+  buildSkillChips();
+
+  var modal = document.getElementById('imgModal');
+  modal.addEventListener('click', function(e){
+    if (e.target === modal){ closeModal(); }
+  });
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ closeModal(); }
+  });
+
+  var profileImg = document.getElementById('profileImg');
+  var profilePhoto = document.getElementById('profilePhoto');
+  profilePhoto.addEventListener('click', function(){
+    if (profileImg.style.display !== 'none'){
+      openModal('Kwon_profile.jpeg', '');
     }
   });
-}, { rootMargin: '-30% 0px -60% 0px' });
-sections.forEach(s => navObs.observe(s));
+  profileImg.addEventListener('error', function(){
+    profileImg.style.display = 'none';
+    document.getElementById('profileSvg').style.display = 'block';
+    document.getElementById('profileLabel').style.display = 'block';
+  });
+
+  var navLinks = document.querySelectorAll('.nav-links a');
+  var sections = document.querySelectorAll('section');
+  var navObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        var id = entry.target.id;
+        navLinks.forEach(function(l){
+          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function(s){ navObs.observe(s); });
+}
+
+if (document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
 </script>
 </body>
 </html>
