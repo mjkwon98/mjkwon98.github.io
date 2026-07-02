@@ -526,12 +526,20 @@ const SKILLS = {
         {src:"Ryu-Aligner.jpeg",  cap:"Equipment setup"},
         {src:"Ryu-Aligner2.jpeg", cap:"UV exposure"},
     ]},
-    { name: "Laser Interference Lithography", desc: "Large-area periodic nano-grating fabrication via LIL.", imgs: [
-        {src:"Ryu-LIL.jpeg", cap:"설명을 적으세요 — 예: Lloyd's-mirror LIL 셋업, 주기 나노그레이팅 제작"},
+    { name: "Laser Interference Lithography", desc: "Large-area periodic nanoscale lithography for metasurface fabrication.", imgs: [
+        {src:"Ryu-LIL.jpeg", cap:"Equipment setup, comprised of 325nm He-Cd Laser, two mirrors, expender & pinhole, Lloyd mirror for sample holding."}
+        {src:"Ryu-LIL1.jpeg", cap:"Lithography example, periodic post shape nanolithography in scale."},
+        {src:"Ryu-LIL1-1.jpeg", cap:"After deposition, sub-200nm scale nano-hole (period of 512nm) pattern can be achieved."},
+        {src:"Ryu-LIL2.jpeg", cap:"Lithography example, periodic hole shape nanolithography in scale."},
+        {src:"Ryu-LIL2-1.jpeg", cap:"After deposition, sub-130nm scale nano-post (period of 500nm) with 4 levels (Cr - SiO2 - Cr - Au)."},
     ]},
-    { name: "Electron Beam Evaporator", desc: "Thin-film deposition of metal / oxide source in high resolution, complex condition", imgs: [
+    { name: "Electron Beam Lithography", desc: "Thin-film deposition of metal / oxide source in high resolution, complex condition", imgs: [
         {src:"Ryu-ebeamlitho.jpeg",  cap:"N/A"},
         {src:"Ryu-ebeamlitho2.jpeg", cap:"N/A"},
+    ]},
+    { name: "Nanoimprint Lithography", desc: "Nanostructure fabrication via mold-UV cure imprint lithography", imgs: [
+        {src:"Ryu-Nanoimprint.jpeg",  cap:"Equipment setup, lab-made imprint setup for large-area imprinting"},
+        {src:"Ryu-Nanoimprint1.jpeg", cap:"Vaccum chamber, with UV-laser setup."},
     ]},
     { name: "PVD (Thermal / Sputter / E-beam)", desc: "Physical vapor deposition of thin films.", imgs: [
         {src:"Ryu-Thermal.jpeg", cap:"Equipment setup, ULTEC, Thin-film deposition of metal source in large quantity of wafers."},
@@ -539,18 +547,27 @@ const SKILLS = {
         {src:"Ryu-ebeam2.jpeg", cap:"HVAC chamber with 6 crucibles, GLAD-enabled substrate holder."},
     ]},
     { name: "CVD (Atomic Layer Deposition)", desc: "Conformal thin-film deposition via ALD.", imgs: [
-        {src:"Ryu-ALD.jpeg", cap:"설명을 적으세요 — 예: ALD 장비, conformal 박막 증착"},
+        {src:"Ryu-ALD.jpeg", cap:"Equipment setup, ULTEC, SiO2 / Al2O3 deposition with DIPAS/TMA & O3"},
     ]},
-    { name: "Etching (RIE / ICP-RIE / FIB)", desc: "Dry etching and focused ion beam milling.", imgs: [] },
+    { name: "Etching (RIE / ICP-RIE / FIB)", desc: "Dry etching and focused ion beam milling.", imgs: [
+      {src:"KIST-ICPRIE.jpeg", cap:"Equipment setup, Plasmart Miniplasma, ICP-RIE system with 6 gas lines"},
+      {src:"KIST-ICPRIE1.jpeg", cap:"System setup"},
+      {src:"ICPRIE_example_sio2.jpeg", cap:"oxide etching with high anisotropy with ICP-RIE"},
+      {src:"ICPRIE_example_mold.jpeg", cap:"Nanoimprint mold by etching Si wafer with ICP-RIE"}
+    ] },
     { name: "Plasma Ashing", desc: "Photoresist stripping and surface cleaning.", imgs: [] },
   ],
   analysis: [
-    { name: "SEM (JEOL)", desc: "Scanning electron microscopy for nanostructure imaging.", imgs: [] },
+    { name: "SEM (JEOL)", desc: "Scanning electron microscopy for nanostructure imaging.", imgs: [
+        {src:"Ryu-SEM.jpeg",  cap:"Equipment setup, JEOL JSM-6701F FE-SEM."},
+    ] },
     { name: "Reflectance Spectroscopy", desc: "Optical reflectance characterization of thin films.", imgs: [] },
     { name: "Stylus Profiler", desc: "Surface profile and step-height measurement.", imgs: [] },
-    { name: "Raman Spectroscopy", desc: "Bruker RAMANtouch & Renishaw inVia for SERS analysis.", imgs: [
-        {src:"Ryu-RAMANtouch.jpeg", cap:"설명을 적으세요 — 예: Bruker RAMANtouch (KU Ryu Lab)"},
-        {src:"KIST-Renishaw.jpeg",  cap:"설명을 적으세요 — 예: Renishaw inVia confocal Raman (KIST)"},
+    { name: "Raman Spectroscopy", desc: "Raman Spectroscopy Systems for SERS analysis.", imgs: [
+        {src:"Ryu-RAMANtouch.jpeg", cap:"Bruker RAMANtouch Confocal Raman Microscope for single nanohole SERS analysis."},
+        {src:"KIST-Renishaw.jpeg",  cap:"Renishaw inVia confocal Raman Microscope for large surface mapping & signal analysis."},
+        {src:"Ryu-Exopert.jpeg",  cap:"Exopert ARM-Dx for AI-assisted target spectrum analysis."},
+        {src:"Ryu-BWTEK.jpeg",  cap:"BWTEK i-Raman Plus for preliminary raman spectrum analysis."},
     ]},
     { name: "Biological / Metallographic Microscope", desc: "Optical microscopy for samples and devices.", imgs: [
         {src:"Ryu-microscope.jpeg",  cap:"설명을 적으세요 — 예: 광학 현미경 셋업"},
@@ -558,19 +575,18 @@ const SKILLS = {
     ]},
   ],
   compute: [
-    { name: "PCB / Breadboard Circuit Design", desc: "Circuit-level electronic design and prototyping.", imgs: [] },
-    { name: "OrCAD (PSpice)", desc: "Circuit simulation and verification.", imgs: [] },
+    { name: "PCB / Breadboard Circuit Design", desc: "Circuit-level electronic design and prototyping."},
+    { name: "OrCAD (PSpice)", desc: "Circuit simulation and verification."},
     { name: "3D Printing", desc: "Rapid prototyping of fixtures and parts.", imgs: [] },
-    { name: "COMSOL Multiphysics", desc: "FEA simulation of optical/electrical phenomena.", imgs: [] },
-    { name: "ML / Data Analysis", desc: "NN/ML models with SHAP, LIME; analysis in Origin.", imgs: [] },
-    { name: "Rhino / AutoCAD / Keyshot", desc: "2D/3D design and rendering.", imgs: [] },
-    { name: "Arduino IDE", desc: "Embedded programming for sensors and devices.", imgs: [] },
+    { name: "COMSOL Multiphysics", desc: "FEA simulation of optical/electrical phenomena."},
+    { name: "Rhino / AutoCAD / Keyshot", desc: "2D/3D design and rendering."},
+    { name: "Arduino IDE", desc: "Embedded programming for sensors and devices."},
   ],
   lang: [
-    { name: "Python", desc: "Primary language for data analysis & automation.", imgs: [] },
-    { name: "C / C++", desc: "Systems and embedded programming.", imgs: [] },
-    { name: "MATLAB", desc: "Numerical computing and signal processing.", imgs: [] },
-    { name: "LaTeX", desc: "Scientific document preparation.", imgs: [] },
+    { name: "Python", desc: "Primary language for data analysis & automation."},
+    { name: "C / C++", desc: "Systems and embedded programming."},
+    { name: "MATLAB", desc: "Numerical computing and signal processing."},
+    { name: "LaTeX", desc: "Scientific document preparation."},
   ],
 };
 
