@@ -39,10 +39,13 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 
 .about{padding-top:48px;}
 .about-head{display:flex;gap:2rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;}
-.profile-photo{width:140px;height:140px;flex-shrink:0;border-radius:50%;background:var(--bg-alt);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;cursor:pointer;position:relative;}
+
+/* Profile photo: rectangular, not circular */
+.profile-photo{width:150px;height:190px;flex-shrink:0;border-radius:12px;background:var(--bg-alt);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;cursor:pointer;position:relative;}
 .profile-photo svg{width:38px;height:38px;color:#c2c8d0;}
 .profile-photo .ph-label{font-size:10px;color:var(--muted);text-align:center;padding:0 8px;}
 .profile-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
 .about-intro h1{font-family:var(--serif);font-size:2.1rem;font-weight:600;letter-spacing:-0.01em;line-height:1.15;margin-bottom:0.35rem;}
 .about-intro .role{font-size:1.05rem;color:var(--accent);font-weight:600;margin-bottom:0.5rem;}
 .about-intro .affil{font-size:0.95rem;color:var(--muted);}
@@ -59,11 +62,17 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .entry-detail{grid-column:1 / -1;font-size:0.9rem;color:var(--muted);margin-top:0.4rem;}
 .entry-detail .gpa{color:var(--accent);font-weight:600;}
 
+/* Optional per-entry photo strip (Research / Activities) */
+.entry-gallery{grid-column:1 / -1;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:0.65rem;}
+
 .award-list{list-style:none;}
-.award-list li{display:flex;justify-content:space-between;gap:1rem;padding:0.7rem 0;border-bottom:1px solid var(--line);font-size:0.95rem;flex-wrap:wrap;}
+.award-list li{padding:0.7rem 0;border-bottom:1px solid var(--line);font-size:0.95rem;}
 .award-list li:last-child{border-bottom:none;}
+.award-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
 .award-name strong{font-weight:600;}
 .award-date{color:var(--muted);font-size:0.85rem;white-space:nowrap;}
+/* Optional per-award photo strip */
+.award-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:0.6rem;max-width:420px;}
 
 .skill-intro{font-size:0.92rem;color:var(--muted);margin-bottom:1.25rem;}
 .skill-cat{margin-bottom:1.5rem;}
@@ -79,22 +88,25 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 @keyframes slidein{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
 .skill-panel-title{font-weight:600;font-size:1rem;margin-bottom:0.25rem;color:var(--accent);}
 .skill-panel-desc{font-size:0.92rem;color:var(--text);margin-bottom:1rem;}
-.skill-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;}
-.skill-img-slot{margin:0;background:#fff;border:1px solid #e2e7ee;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.15s ease,box-shadow 0.15s ease;display:flex;flex-direction:column;}
-.skill-img-slot:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
-.skill-img-slot img{width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;}
-.skill-img-slot figcaption{font-size:0.72rem;line-height:1.35;color:var(--muted);padding:7px 9px;border-top:1px solid #eef1f5;}
-.skill-img-slot.img-missing{aspect-ratio:4 / 3;border-style:dashed;color:#aab2bd;align-items:center;justify-content:center;gap:6px;cursor:default;}
-.skill-img-slot.img-missing:hover{transform:none;box-shadow:none;}
-.skill-img-slot.img-missing svg{width:26px;height:26px;}
-.skill-img-slot.img-missing span{font-size:10px;text-align:center;padding:0 6px;}
 
-.img-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(15,18,22,0.82);align-items:center;justify-content:center;padding:4vh 4vw;animation:fadein 0.18s ease;}
+/* Thumbnail gallery — shared by Skills / Research / Activities / Awards */
+.skill-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;}
+.lightbox-thumb{margin:0;background:#fff;border:1px solid #e2e7ee;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.15s ease,box-shadow 0.15s ease;display:flex;flex-direction:column;}
+.lightbox-thumb:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
+.lightbox-thumb img{width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;}
+.lightbox-thumb figcaption{font-size:0.72rem;line-height:1.35;color:var(--muted);padding:7px 9px;border-top:1px solid #eef1f5;}
+.lightbox-thumb.img-missing{aspect-ratio:4 / 3;border-style:dashed;color:#aab2bd;align-items:center;justify-content:center;gap:6px;cursor:default;}
+.lightbox-thumb.img-missing:hover{transform:none;box-shadow:none;}
+.lightbox-thumb.img-missing svg{width:26px;height:26px;}
+.lightbox-thumb.img-missing span{font-size:10px;text-align:center;padding:0 6px;}
+
+/* Image lightbox modal */
+.img-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(15,18,22,0.85);align-items:center;justify-content:center;padding:4vh 4vw;animation:fadein 0.18s ease;}
 .img-modal.open{display:flex;}
 @keyframes fadein{from{opacity:0;}to{opacity:1;}}
-.img-modal-inner{max-width:900px;max-height:92vh;display:flex;flex-direction:column;align-items:center;}
-.img-modal img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.45);background:#fff;}
-.img-modal-cap{color:#f0f2f5;font-size:0.95rem;line-height:1.5;margin-top:14px;text-align:center;max-width:700px;}
+.img-modal-inner{max-width:820px;max-height:92vh;display:flex;flex-direction:column;align-items:center;}
+.img-modal img{max-width:100%;max-height:68vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.45);background:#fff;}
+.img-modal-cap{color:#f5f6f8;font-size:1rem;line-height:1.65;margin-top:16px;text-align:left;max-width:640px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:14px 20px;}
 .img-modal-close{position:absolute;top:18px;right:24px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.12);color:#fff;border:none;cursor:pointer;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.15s ease;}
 .img-modal-close:hover{background:rgba(255,255,255,0.25);}
 
@@ -110,6 +122,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   .about-meta{justify-content:center;}
   .entry{grid-template-columns:1fr;}
   .entry-date{text-align:left;}
+  .award-row{flex-direction:column;gap:2px;}
 }
 </style>
 </head>
@@ -186,103 +199,21 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 <section id="research">
   <div class="wrap">
     <h2 class="section-title">Research Experience</h2>
-
-    <div class="entry">
-      <div class="entry-head">Researcher, Ryu Group</div>
-      <div class="entry-date">Sep 2025 - Present</div>
-      <div class="entry-sub">School of Biomedical Engineering, Korea University</div>
-      <div class="entry-detail">Advised by Prof. Yong-Sang Ryu.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">Undergraduate Researcher, Ryu Group</div>
-      <div class="entry-date">Aug 2024 - Aug 2025</div>
-      <div class="entry-sub">School of Biomedical Engineering, Korea University</div>
-      <div class="entry-detail">Advised by Prof. Yong-Sang Ryu. Contributed to government-led research initiatives such as ROK ARPA-H, developing nano-scale biosensors for biomarkers of neurodegenerative diseases.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">Founder &amp; Chief Technological Officer</div>
-      <div class="entry-date">Mar 2024 - Aug 2025</div>
-      <div class="entry-sub">Radicheck (Seoul, Republic of Korea)</div>
-      <div class="entry-detail">Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment. Two patents pending regarding the radiation detection platform.</div>
-    </div>
+    <div class="entry-list" id="researchList"></div>
   </div>
 </section>
 
 <section id="activities">
   <div class="wrap">
     <h2 class="section-title">Extracurricular Activities &amp; Services</h2>
-
-    <div class="entry">
-      <div class="entry-head">Biosensor Team Lead Organizer, BEAT</div>
-      <div class="entry-date">Aug 2025 - Present</div>
-      <div class="entry-sub">Biomedical Engineering Academic Team, Korea University</div>
-      <div class="entry-detail">Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">Founder &amp; President, KUBEAM</div>
-      <div class="entry-date">Aug 2025 - Present</div>
-      <div class="entry-sub">KU Biomedical Eng. Abroad Mentorship</div>
-      <div class="entry-detail">Founded an initiative connecting 50+ Biomedical Engineering students and alumni to pursue opportunities abroad, organizing study groups, lectures, and feedback sessions for Ph.D. applications and international careers.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">Senior Advisor &amp; Vice President, Department Student Council</div>
-      <div class="entry-date">Nov 2024 - Nov 2025</div>
-      <div class="entry-sub">School of Biomedical Engineering, Korea University</div>
-      <div class="entry-detail">Advised and supported planning and execution of academic, cultural, and community events for 500+ undergraduates. Led a 30+ member committee to organize the department alumni day, securing 30M+ KRW in departmental and corporate sponsorships.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">Project Leader, Vine Robot Colonoscopy Project</div>
-      <div class="entry-date">Aug 2023 - Feb 2024</div>
-      <div class="entry-sub">Creative Challenger Program, Korea University</div>
-      <div class="entry-detail">Developed and validated a novel soft-robot colonoscopy platform; conducted in-vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center. Advised by Prof. Daehee Hong and Dr. Sang-Hyun Kim.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">President, International Student Volunteer (ISV)</div>
-      <div class="entry-date">Jul 2021 - Aug 2022</div>
-      <div class="entry-sub">Office of International Affairs, Konkuk University</div>
-      <div class="entry-detail">Assisted inbound and outbound exchange students with language support, administrative assistance, and cultural exchange programs. Accommodated and supported over 600 students.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">Combat Medic &amp; Medical Support Assistant</div>
-      <div class="entry-date">Jul 2019 - Jan 2021</div>
-      <div class="entry-sub">65th Medical Brigade, 8th U.S. Army (BDAACH, 549th Hospital Center)</div>
-      <div class="entry-detail">Selected for the KATUSA program. Served in the Physical Performance Service Line for outpatient care and the COVID-19 Response Team. Honorably discharged as Sergeant (E-5); recipient of the Army Achievement Medal and Army Commendation Medal.</div>
-    </div>
+    <div class="entry-list" id="activitiesList"></div>
   </div>
 </section>
 
 <section id="awards">
   <div class="wrap">
     <h2 class="section-title">Awards &amp; Fellowships</h2>
-    <ul class="award-list">
-      <li>
-        <span class="award-name"><strong>Best Poster Presentation Award</strong> - Korean Biochip Fall Symposium 2025</span>
-        <span class="award-date">Nov 2025</span>
-      </li>
-      <li>
-        <span class="award-name"><strong>Runner-up</strong> - Changemakers Forum</span>
-        <span class="award-date">Nov 2024</span>
-      </li>
-      <li>
-        <span class="award-name"><strong>Best Startup Award</strong> - STARKIUM</span>
-        <span class="award-date">Nov 2024</span>
-      </li>
-      <li>
-        <span class="award-name"><strong>Third Place</strong> - Capstone Design Fair</span>
-        <span class="award-date">Sep 2024</span>
-      </li>
-      <li>
-        <span class="award-name"><strong>Presidential Award</strong> - 15th Creative Challenger Program</span>
-        <span class="award-date">Feb 2024</span>
-      </li>
-    </ul>
+    <ul class="award-list" id="awardsList"></ul>
   </div>
 </section>
 
@@ -336,7 +267,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 </div>
 
 <footer>
-  &copy; 2026 Minjae Kwon &middot; Curriculum Vitae &middot; rebuilt July 2026 (build 3)
+  &copy; 2026 Minjae Kwon &middot; Curriculum Vitae &middot; rebuilt July 2026 (build 4)
 </footer>
 
 <script>
@@ -344,11 +275,14 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 "use strict";
 
 /* =====================================================================
-   PHOTO / CAPTION DATA
-   Each photo: { src: "filename.jpeg", cap: "caption text" }
-   Place image files in the same folder as this HTML.
-   Use plain straight quotes only. Edit in a code editor, not Notes/Word.
+   DATA EDIT ZONE
+   - Skills: each item can have imgs: [ {src, cap}, ... ]
+   - Research / Activities: each entry can have imgs: [ {src, cap}, ... ]
+     (optional - leave imgs: [] for entries with no photo)
+   - Awards: each item can have imgs: [ {src, cap}, ... ] (optional)
+   Always use plain straight quotes. Edit in a code editor, not Notes/Word.
 ===================================================================== */
+
 var SKILLS = {
   fab: [
     {
@@ -468,10 +402,135 @@ var SKILLS = {
   ]
 };
 
+/* Each entry: head, date, sub, detail, imgs (optional, default []) */
+var RESEARCH = [
+  {
+    head: "Researcher, Ryu Group",
+    date: "Sep 2025 - Present",
+    sub: "School of Biomedical Engineering, Korea University",
+    detail: "Advised by Prof. Yong-Sang Ryu.",
+    imgs: []
+  },
+  {
+    head: "Undergraduate Researcher, Ryu Group",
+    date: "Aug 2024 - Aug 2025",
+    sub: "School of Biomedical Engineering, Korea University",
+    detail: "Advised by Prof. Yong-Sang Ryu. Contributed to government-led research initiatives such as ROK ARPA-H, developing nano-scale biosensors for biomarkers of neurodegenerative diseases.",
+    imgs: []
+  },
+  {
+    head: "Founder &amp; Chief Technological Officer",
+    date: "Mar 2024 - Aug 2025",
+    sub: "Radicheck (Seoul, Republic of Korea)",
+    detail: "Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment. Two patents pending regarding the radiation detection platform.",
+    imgs: []
+  }
+];
+
+var ACTIVITIES = [
+  {
+    head: "Biosensor Team Lead Organizer, BEAT",
+    date: "Aug 2025 - Present",
+    sub: "Biomedical Engineering Academic Team, Korea University",
+    detail: "Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors.",
+    imgs: []
+  },
+  {
+    head: "Founder &amp; President, KUBEAM",
+    date: "Aug 2025 - Present",
+    sub: "KU Biomedical Eng. Abroad Mentorship",
+    detail: "Founded an initiative connecting 50+ Biomedical Engineering students and alumni to pursue opportunities abroad, organizing study groups, lectures, and feedback sessions for Ph.D. applications and international careers.",
+    imgs: []
+  },
+  {
+    head: "Senior Advisor &amp; Vice President, Department Student Council",
+    date: "Nov 2024 - Nov 2025",
+    sub: "School of Biomedical Engineering, Korea University",
+    detail: "Advised and supported planning and execution of academic, cultural, and community events for 500+ undergraduates. Led a 30+ member committee to organize the department alumni day, securing 30M+ KRW in departmental and corporate sponsorships.",
+    imgs: []
+  },
+  {
+    head: "Project Leader, Vine Robot Colonoscopy Project",
+    date: "Aug 2023 - Feb 2024",
+    sub: "Creative Challenger Program, Korea University",
+    detail: "Developed and validated a novel soft-robot colonoscopy platform; conducted in-vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center. Advised by Prof. Daehee Hong and Dr. Sang-Hyun Kim.",
+    imgs: []
+  },
+  {
+    head: "President, International Student Volunteer (ISV)",
+    date: "Jul 2021 - Aug 2022",
+    sub: "Office of International Affairs, Konkuk University",
+    detail: "Assisted inbound and outbound exchange students with language support, administrative assistance, and cultural exchange programs. Accommodated and supported over 600 students.",
+    imgs: []
+  },
+  {
+    head: "Combat Medic &amp; Medical Support Assistant",
+    date: "Jul 2019 - Jan 2021",
+    sub: "65th Medical Brigade, 8th U.S. Army (BDAACH, 549th Hospital Center)",
+    detail: "Selected for the KATUSA program. Served in the Physical Performance Service Line for outpatient care and the COVID-19 Response Team. Honorably discharged as Sergeant (E-5); recipient of the Army Achievement Medal and Army Commendation Medal.",
+    imgs: []
+  }
+];
+
+/* Each award: name, org, date, imgs (optional, default []) */
+var AWARDS = [
+  { name: "Best Poster Presentation Award", org: "Korean Biochip Fall Symposium 2025", date: "Nov 2025", imgs: [] },
+  { name: "Runner-up", org: "Changemakers Forum", date: "Nov 2024", imgs: [] },
+  { name: "Best Startup Award", org: "STARKIUM", date: "Nov 2024", imgs: [] },
+  { name: "Third Place", org: "Capstone Design Fair", date: "Sep 2024", imgs: [] },
+  { name: "Presidential Award", org: "15th Creative Challenger Program", date: "Feb 2024", imgs: [] }
+];
+
 var PHOTO_SVG = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M3 17l5-4 4 3 3-2 6 5\"/></svg>";
 
 var activeChip = null;
 
+/* ---------------------------------------------------------------
+   Core fix: build the actual DOM node here and RETURN THE NODE
+   itself (never serialize to a string via outerHTML). Whoever
+   calls this appends the real node, so the click/error listeners
+   stay attached.
+--------------------------------------------------------------- */
+function createLightboxThumb(src, cap){
+  var fig = document.createElement('figure');
+  fig.className = 'lightbox-thumb';
+  fig.title = 'Click to enlarge';
+
+  var img = document.createElement('img');
+  img.src = src;
+  img.alt = cap || 'photo';
+  img.addEventListener('error', function(){
+    fig.classList.add('img-missing');
+    fig.innerHTML = PHOTO_SVG + '<span>Image not found: ' + src + '</span>';
+  });
+  fig.appendChild(img);
+
+  if (cap){
+    var figcap = document.createElement('figcaption');
+    figcap.textContent = cap;
+    fig.appendChild(figcap);
+  }
+
+  fig.addEventListener('click', function(){
+    if (!fig.classList.contains('img-missing')){
+      openModal(src, cap || '');
+    }
+  });
+
+  return fig;
+}
+
+function buildGalleryInto(container, imgs){
+  if (!imgs || imgs.length === 0) return;
+  var wrap = document.createElement('div');
+  wrap.className = 'skill-gallery';
+  for (var i = 0; i < imgs.length; i++){
+    wrap.appendChild(createLightboxThumb(imgs[i].src, imgs[i].cap || ''));
+  }
+  container.appendChild(wrap);
+}
+
+/* ---------------- Skills ---------------- */
 function buildSkillChips(){
   var groups = Object.keys(SKILLS);
   for (var g = 0; g < groups.length; g++){
@@ -489,45 +548,6 @@ function buildSkillChips(){
       })(group, i, list[i]);
     }
   }
-}
-
-function renderGallery(skill){
-  if (!skill.imgs || skill.imgs.length === 0){
-    return '<div style="font-size:0.85rem;color:var(--muted);">Add photos by filling in the imgs field with {src, cap} in the code.</div>';
-  }
-  var html = '<div class="skill-gallery">';
-  for (var i = 0; i < skill.imgs.length; i++){
-    var im = skill.imgs[i];
-    var fig = document.createElement('figure');
-    fig.className = 'skill-img-slot';
-    fig.title = 'click to enlarge';
-
-    var img = document.createElement('img');
-    img.src = im.src;
-    img.alt = skill.name;
-    img.addEventListener('error', function(el, src){
-      return function(){
-        el.classList.add('img-missing');
-        el.innerHTML = PHOTO_SVG + '<span>Image not found: ' + src + '</span>';
-      };
-    }(fig, im.src));
-
-    fig.appendChild(img);
-
-    if (im.cap){
-      var figcap = document.createElement('figcaption');
-      figcap.textContent = im.cap;
-      fig.appendChild(figcap);
-    }
-
-    fig.addEventListener('click', function(src, cap){
-      return function(){ openModal(src, cap); };
-    }(im.src, im.cap || ''));
-
-    html += fig.outerHTML;
-  }
-  html += '</div>';
-  return html;
 }
 
 function toggleSkillPanel(group, idx, chip){
@@ -549,20 +569,112 @@ function toggleSkillPanel(group, idx, chip){
     return;
   }
 
-  panel.innerHTML =
-    '<div class="skill-panel-title"></div>' +
-    '<div class="skill-panel-desc"></div>' +
-    '<div class="gallery-slot"></div>';
-  panel.querySelector('.skill-panel-title').textContent = skill.name;
-  panel.querySelector('.skill-panel-desc').textContent = skill.desc;
-  panel.querySelector('.gallery-slot').outerHTML = renderGallery(skill);
+  panel.innerHTML = '';
+
+  var title = document.createElement('div');
+  title.className = 'skill-panel-title';
+  title.textContent = skill.name;
+  panel.appendChild(title);
+
+  var desc = document.createElement('div');
+  desc.className = 'skill-panel-desc';
+  desc.textContent = skill.desc;
+  panel.appendChild(desc);
+
+  if (skill.imgs && skill.imgs.length > 0){
+    buildGalleryInto(panel, skill.imgs);
+  } else {
+    var empty = document.createElement('div');
+    empty.style.fontSize = '0.85rem';
+    empty.style.color = 'var(--muted)';
+    empty.textContent = 'Add photos by filling in the imgs field with {src, cap} in the code.';
+    panel.appendChild(empty);
+  }
 
   panel.classList.add('open');
   chip.classList.add('open');
   activeChip = chip;
 }
 
-/* ---- Image lightbox modal ---- */
+/* ---------------- Research / Activities entry lists ---------------- */
+function buildEntryList(containerId, data){
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  for (var i = 0; i < data.length; i++){
+    var e = data[i];
+    var row = document.createElement('div');
+    row.className = 'entry';
+
+    var head = document.createElement('div');
+    head.className = 'entry-head';
+    head.innerHTML = e.head;
+    row.appendChild(head);
+
+    var date = document.createElement('div');
+    date.className = 'entry-date';
+    date.textContent = e.date;
+    row.appendChild(date);
+
+    var sub = document.createElement('div');
+    sub.className = 'entry-sub';
+    sub.innerHTML = e.sub;
+    row.appendChild(sub);
+
+    var detail = document.createElement('div');
+    detail.className = 'entry-detail';
+    detail.innerHTML = e.detail;
+    row.appendChild(detail);
+
+    if (e.imgs && e.imgs.length > 0){
+      var gwrap = document.createElement('div');
+      gwrap.className = 'entry-gallery';
+      for (var k = 0; k < e.imgs.length; k++){
+        gwrap.appendChild(createLightboxThumb(e.imgs[k].src, e.imgs[k].cap || ''));
+      }
+      row.appendChild(gwrap);
+    }
+
+    container.appendChild(row);
+  }
+}
+
+/* ---------------- Awards list ---------------- */
+function buildAwardsList(){
+  var ul = document.getElementById('awardsList');
+  if (!ul) return;
+  for (var i = 0; i < AWARDS.length; i++){
+    var a = AWARDS[i];
+    var li = document.createElement('li');
+
+    var rowDiv = document.createElement('div');
+    rowDiv.className = 'award-row';
+
+    var nameSpan = document.createElement('span');
+    nameSpan.className = 'award-name';
+    nameSpan.innerHTML = '<strong>' + a.name + '</strong> - ' + a.org;
+    rowDiv.appendChild(nameSpan);
+
+    var dateSpan = document.createElement('span');
+    dateSpan.className = 'award-date';
+    dateSpan.textContent = a.date;
+    rowDiv.appendChild(dateSpan);
+
+    li.appendChild(rowDiv);
+
+    if (a.imgs && a.imgs.length > 0){
+      var gwrap = document.createElement('div');
+      gwrap.className = 'award-gallery';
+      for (var k = 0; k < a.imgs.length; k++){
+        gwrap.appendChild(createLightboxThumb(a.imgs[k].src, a.imgs[k].cap || ''));
+      }
+      li.appendChild(gwrap);
+    }
+
+    ul.appendChild(li);
+  }
+}
+
+/* ---------------- Image lightbox modal ---------------- */
 function openModal(src, cap){
   var modal = document.getElementById('imgModal');
   var img = document.getElementById('imgModalImg');
@@ -578,9 +690,12 @@ function closeModal(){
   document.body.style.overflow = '';
 }
 
-/* ---- wire up static events ---- */
+/* ---------------- init ---------------- */
 function init(){
   buildSkillChips();
+  buildEntryList('researchList', RESEARCH);
+  buildEntryList('activitiesList', ACTIVITIES);
+  buildAwardsList();
 
   var modal = document.getElementById('imgModal');
   modal.addEventListener('click', function(e){
@@ -606,17 +721,19 @@ function init(){
 
   var navLinks = document.querySelectorAll('.nav-links a');
   var sections = document.querySelectorAll('section');
-  var navObs = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting){
-        var id = entry.target.id;
-        navLinks.forEach(function(l){
-          l.classList.toggle('active', l.getAttribute('href') === '#' + id);
-        });
-      }
-    });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-  sections.forEach(function(s){ navObs.observe(s); });
+  if (typeof IntersectionObserver !== 'undefined'){
+    var navObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          var id = entry.target.id;
+          navLinks.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function(s){ navObs.observe(s); });
+  }
 }
 
 if (document.readyState === 'loading'){
