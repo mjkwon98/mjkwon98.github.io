@@ -27,8 +27,8 @@ a{color:var(--accent);}
 nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
 .nav-name{font-weight:700;font-size:15px;letter-spacing:0.01em;}
-.nav-links{display:flex;gap:1.25rem;list-style:none;flex-wrap:wrap;}
-.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;}
+.nav-links{display:flex;gap:1.1rem;list-style:none;flex-wrap:wrap;}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;white-space:nowrap;}
 .nav-links a:hover,.nav-links a.active{color:var(--accent);border-bottom-color:var(--accent);}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;}
@@ -40,7 +40,6 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .about{padding-top:48px;}
 .about-head{display:flex;gap:2rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;}
 
-/* Profile photo: rectangular, not circular */
 .profile-photo{width:150px;height:190px;flex-shrink:0;border-radius:12px;background:var(--bg-alt);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;cursor:pointer;position:relative;}
 .profile-photo svg{width:38px;height:38px;color:#c2c8d0;}
 .profile-photo .ph-label{font-size:10px;color:var(--muted);text-align:center;padding:0 8px;}
@@ -61,8 +60,10 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .entry-sub{font-style:italic;color:var(--text);font-size:0.92rem;grid-column:1 / -1;margin-top:1px;}
 .entry-detail{grid-column:1 / -1;font-size:0.9rem;color:var(--muted);margin-top:0.4rem;}
 .entry-detail .gpa{color:var(--accent);font-weight:600;}
+.entry-bullets{grid-column:1 / -1;margin-top:0.4rem;padding-left:1.1rem;}
+.entry-bullets li{font-size:0.9rem;color:var(--muted);margin-bottom:0.25rem;}
+.entry-bullets li:last-child{margin-bottom:0;}
 
-/* Optional per-entry photo strip (Research / Activities) */
 .entry-gallery{grid-column:1 / -1;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:0.65rem;}
 
 .award-list{list-style:none;}
@@ -71,10 +72,30 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .award-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
 .award-name strong{font-weight:600;}
 .award-date{color:var(--muted);font-size:0.85rem;white-space:nowrap;}
-/* Optional per-award photo strip */
 .award-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:0.6rem;max-width:420px;}
 
+.pub-item{padding:0.9rem 0;border-bottom:1px solid var(--line);font-size:0.94rem;}
+.pub-item:last-child{border-bottom:none;}
+.pub-num{color:var(--accent);font-weight:600;margin-right:0.3rem;}
+.pub-title{font-style:italic;}
+.pub-venue{color:var(--text);}
+.pub-legend{font-size:0.8rem;color:var(--muted);margin-top:0.5rem;}
+
+.teach-item{display:grid;grid-template-columns:1fr auto;gap:0.2rem 1.5rem;padding:0.9rem 0;border-bottom:1px solid var(--line);}
+.teach-item:last-child{border-bottom:none;}
+.teach-role{font-weight:600;font-size:0.98rem;}
+.teach-date{font-size:0.85rem;color:var(--muted);white-space:nowrap;text-align:right;}
+.teach-advisor{grid-column:1 / -1;font-style:italic;font-size:0.88rem;color:var(--muted);margin-top:1px;}
+
+.lang-list{display:flex;flex-direction:column;gap:0.5rem;}
+.lang-row{display:flex;justify-content:space-between;font-size:0.95rem;padding:0.4rem 0;border-bottom:1px solid var(--line);}
+.lang-row:last-child{border-bottom:none;}
+.lang-row .lang-name{font-weight:600;}
+.lang-row .lang-detail{color:var(--muted);}
+
 .skill-intro{font-size:0.92rem;color:var(--muted);margin-bottom:1.25rem;}
+.skill-supergroup{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:700;margin:1.75rem 0 0.75rem;}
+.skill-supergroup:first-of-type{margin-top:0;}
 .skill-cat{margin-bottom:1.5rem;}
 .skill-cat h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;font-weight:600;}
 .skill-chips{display:flex;flex-wrap:wrap;gap:8px;}
@@ -89,7 +110,6 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .skill-panel-title{font-weight:600;font-size:1rem;margin-bottom:0.25rem;color:var(--accent);}
 .skill-panel-desc{font-size:0.92rem;color:var(--text);margin-bottom:1rem;}
 
-/* Thumbnail gallery — shared by Skills / Research / Activities / Awards */
 .skill-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;}
 .lightbox-thumb{margin:0;background:#fff;border:1px solid #e2e7ee;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.15s ease,box-shadow 0.15s ease;display:flex;flex-direction:column;}
 .lightbox-thumb:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
@@ -100,7 +120,6 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .lightbox-thumb.img-missing svg{width:26px;height:26px;}
 .lightbox-thumb.img-missing span{font-size:10px;text-align:center;padding:0 6px;}
 
-/* Image lightbox modal */
 .img-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(15,18,22,0.85);align-items:center;justify-content:center;padding:4vh 4vw;animation:fadein 0.18s ease;}
 .img-modal.open{display:flex;}
 @keyframes fadein{from{opacity:0;}to{opacity:1;}}
@@ -123,6 +142,8 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   .entry{grid-template-columns:1fr;}
   .entry-date{text-align:left;}
   .award-row{flex-direction:column;gap:2px;}
+  .teach-item{grid-template-columns:1fr;}
+  .teach-date{text-align:left;}
 }
 </style>
 </head>
@@ -134,10 +155,12 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#activities">Activities</a></li>
       <li><a href="#awards">Awards</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#teaching">Teaching</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -155,17 +178,15 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
       </div>
       <div class="about-intro">
         <h1>Minjae Kwon</h1>
-        <div class="role">Combined M.S./Ph.D Program Candidate</div>
-        <div class="affil">Ryu Group &middot; School of Biomedical Engineering, Korea University</div>
+        <div class="role">Master's Program Candidate, Ryu Group</div>
+        <div class="affil">Department of Bioengineering, Korea University</div>
         <div class="about-meta">
           <span>Seoul, Republic of Korea</span>
           <span>rnjs0830@korea.ac.kr</span>
         </div>
       </div>
     </div>
-    <div class="research-interest">
-      <strong>Research Interests:</strong> Nano-scale fabrication; molecule / particle detecting biosensors utilizing optical &amp; electrokinetic phenomena; Finite Element Analysis (FEA); Surface Enhanced Raman Spectroscopy (SERS).
-    </div>
+    <div class="research-interest" id="researchInterestBox"></div>
   </div>
 </section>
 
@@ -175,24 +196,31 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 
     <div class="entry">
       <div class="entry-head">Korea University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
-      <div class="entry-date">Sep 2025 - Present</div>
-      <div class="entry-sub">Combined M.S./Ph.D Program Candidate in Biomedical Engineering</div>
+      <div class="entry-date">Sep 2025 &ndash; Present</div>
+      <div class="entry-sub">Master's Program Candidate in Department of Bioengineering</div>
       <div class="entry-detail">Advised by Prof. Yong-Sang Ryu</div>
     </div>
 
     <div class="entry">
       <div class="entry-head">Korea University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
-      <div class="entry-date">Mar 2023 - Aug 2025</div>
+      <div class="entry-date">Mar 2023 &ndash; Aug 2025</div>
       <div class="entry-sub">B.S. in Biomedical Engineering &amp; Electrical Engineering (Double Major)</div>
       <div class="entry-detail"><span class="gpa">GPA: 4.11 / 4.5</span></div>
     </div>
 
     <div class="entry">
       <div class="entry-head">Konkuk University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
-      <div class="entry-date">Mar 2017 - Feb 2023</div>
+      <div class="entry-date">Mar 2017 &ndash; Feb 2023</div>
       <div class="entry-sub">Majored in Electronic and Electrical Engineering</div>
-      <div class="entry-detail">Transferred to Korea University. Leave of absence for national military service (Jul 2019 - Jan 2021).</div>
+      <div class="entry-detail">Transferred to Korea University. Leave of absence due to national military service: Jul 2019 &ndash; Jan 2021.</div>
     </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2 class="section-title">Publications</h2>
+    <div id="publicationsList"></div>
   </div>
 </section>
 
@@ -212,7 +240,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 
 <section id="awards">
   <div class="wrap">
-    <h2 class="section-title">Awards &amp; Fellowships</h2>
+    <h2 class="section-title">Awards &amp; Scholarships</h2>
     <ul class="award-list" id="awardsList"></ul>
   </div>
 </section>
@@ -221,30 +249,17 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   <div class="wrap">
     <h2 class="section-title">Technical Proficiency</h2>
     <p class="skill-intro">Click any skill to view related equipment photos, results, and descriptions.</p>
+    <div id="skillsContainer"></div>
 
-    <div class="skill-cat">
-      <h3>Micro / Nano-scale Fabrication</h3>
-      <div class="skill-chips" data-group="fab"></div>
-      <div class="skill-panel" data-panel="fab"></div>
-    </div>
+    <h3 class="skill-supergroup" style="margin-top:2.25rem;">Languages</h3>
+    <div class="lang-list" id="languagesList"></div>
+  </div>
+</section>
 
-    <div class="skill-cat">
-      <h3>Material Analysis</h3>
-      <div class="skill-chips" data-group="analysis"></div>
-      <div class="skill-panel" data-panel="analysis"></div>
-    </div>
-
-    <div class="skill-cat">
-      <h3>Electronic Design &amp; Computation</h3>
-      <div class="skill-chips" data-group="compute"></div>
-      <div class="skill-panel" data-panel="compute"></div>
-    </div>
-
-    <div class="skill-cat">
-      <h3>Languages</h3>
-      <div class="skill-chips" data-group="lang"></div>
-      <div class="skill-panel" data-panel="lang"></div>
-    </div>
+<section id="teaching">
+  <div class="wrap">
+    <h2 class="section-title">Teaching Experience</h2>
+    <div id="teachingList"></div>
   </div>
 </section>
 
@@ -267,230 +282,301 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 </div>
 
 <footer>
-  &copy; 2026 Minjae Kwon &middot; Curriculum Vitae &middot; rebuilt July 2026 (build 4)
+  &copy; 2026 Minjae Kwon &middot; Curriculum Vitae &middot; rebuilt July 2026 (build 5, synced with CV last updated Jul 4, 2026)
 </footer>
 
 <script>
 (function(){
 "use strict";
 
-/* =====================================================================
-   DATA EDIT ZONE
-   - Skills: each item can have imgs: [ {src, cap}, ... ]
-   - Research / Activities: each entry can have imgs: [ {src, cap}, ... ]
-     (optional - leave imgs: [] for entries with no photo)
-   - Awards: each item can have imgs: [ {src, cap}, ... ] (optional)
-   Always use plain straight quotes. Edit in a code editor, not Notes/Word.
-===================================================================== */
+var RESEARCH_INTEREST_HTML =
+  '<strong>Nanofabrication</strong> of periodic/3D nanostructures with tailored optical/mechanical/interfacial properties; ' +
+  '<strong>Plasmonic/metasurface-based optical sensing</strong>; <strong>Structure-mediated particle and fluid control</strong> via ' +
+  'electrokinetic phenomena; <strong>Finite Element Analysis (FEA)</strong> for optical/electrical simulations.';
 
-var SKILLS = {
-  fab: [
-    {
-      name: "Photolithography",
-      desc: "Aligner-assisted photolithography for micro-patterning, including secondary exposure on selected regions of interest.",
-      imgs: [
-        { src: "Ryu-Aligner.jpeg", cap: "Mask aligner setup used for UV photolithography." },
-        { src: "Ryu-Aligner2.jpeg", cap: "UV exposure step during photolithography." }
-      ]
-    },
-    {
-      name: "Laser Interference Lithography",
-      desc: "Large-area, periodic nanopatterning via laser interference for metasurface fabrication.",
-      imgs: [
-        { src: "Ryu-LIL.jpeg", cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
-        { src: "Ryu-LIL1.jpeg", cap: "Periodic post-shaped nanopattern produced by LIL." },
-        { src: "Ryu-LIL1-1.jpeg", cap: "Sub-200 nm nanohole array (512 nm period) after metal deposition and lift-off." },
-        { src: "Ryu-LIL2.jpeg", cap: "Periodic hole-shaped nanopattern produced by LIL." },
-        { src: "Ryu-LIL2-1.jpeg", cap: "Sub-130 nm nanopost array (500 nm period), 4-layer Cr/SiO2/Cr/Au stack over a large-area substrate." }
-      ]
-    },
-    {
-      name: "Electron Beam Lithography",
-      desc: "High-resolution direct-write nanopatterning for complex, arbitrary geometries beyond the resolution limit of optical lithography.",
-      imgs: [
-        { src: "Ryu-ebeamlitho.jpeg", cap: "Please add a description here - e.g. pattern written and its resolution." },
-        { src: "Ryu-ebeamlitho2.jpeg", cap: "Please add a description here - e.g. pattern written and its resolution." }
-      ]
-    },
-    {
-      name: "Nanoimprint Lithography",
-      desc: "Nanostructure replication via mold-based, UV-curable nanoimprint lithography.",
-      imgs: [
-        { src: "Ryu-Nanoimprint.jpeg", cap: "Lab-built nanoimprint setup for large-area imprinting." },
-        { src: "Ryu-Nanoimprint1.jpeg", cap: "Vacuum chamber with UV-curing exposure module." }
-      ]
-    },
-    {
-      name: "PVD (Thermal / Sputter / E-beam)",
-      desc: "Physical vapor deposition of thin films.",
-      imgs: [
-        { src: "Ryu-Thermal.jpeg", cap: "ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers." },
-        { src: "Ryu-ebeam.jpeg", cap: "KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions." },
-        { src: "Ryu-ebeam2.jpeg", cap: "High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder." },
-        { src: "Ryu-ebeam_example.jpeg", cap: "E-beam evaporated Cr/Au/SiO2/Ti/Au multilayer stack." }
-      ]
-    },
-    {
-      name: "CVD (Atomic Layer Deposition)",
-      desc: "Conformal thin-film deposition via ALD.",
-      imgs: [
-        { src: "Ryu-ALD.jpeg", cap: "ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant." }
-      ]
-    },
-    {
-      name: "Etching (RIE / ICP-RIE)",
-      desc: "Dry etching of metal and oxide thin films.",
-      imgs: [
-        { src: "Ryu-RIE.jpeg", cap: "Femto Science COVANCE-RF (RIE, left) and CUTE (plasma asher, right) on the same cleanroom bench: RIE system with 3 gas lines." },
-        { src: "KIST-ICPRIE.jpeg", cap: "Plasmart Miniplasma ICP-RIE system with 6 gas lines." },
-        { src: "KIST-ICPRIE1.jpeg", cap: "ICP-RIE chamber and control system." },
-        { src: "ICPRIE_example_sio2.jpeg", cap: "Highly anisotropic oxide etching via ICP-RIE." },
-        { src: "ICPRIE_example_mold.jpeg", cap: "Silicon nanoimprint mold fabricated via ICP-RIE etching." }
-      ]
-    },
-    {
-      name: "Plasma Ashing",
-      desc: "Photoresist stripping and surface cleaning.",
-      imgs: [
-        { src: "Ryu-RIE.jpeg", cap: "Femto Science CUTE (plasma asher, right) and COVANCE-RF (RIE, left) on the same cleanroom bench: oxygen plasma ashing for surface treatment." },
-        { src: "Ryu-UVOzone.jpeg", cap: "Omniscience UVC-150 UV-Ozone generator for surface treatment." }
-      ]
-    }
-  ],
-  analysis: [
-    {
-      name: "SEM (JEOL)",
-      desc: "Scanning electron microscopy for nanostructure imaging.",
-      imgs: [
-        { src: "Ryu-SEM.jpeg", cap: "JEOL JSM-6701F FE-SEM." }
-      ]
-    },
-    { name: "Reflectance Spectroscopy", desc: "Optical reflectance characterization of thin films.", imgs: [] },
-    { name: "Stylus Profiler", desc: "Surface profile and step-height measurement.", imgs: [] },
-    {
-      name: "Raman Spectroscopy",
-      desc: "Raman spectroscopy systems for SERS analysis.",
-      imgs: [
-        { src: "Ryu-RAMANtouch.jpeg", cap: "Bruker RAMANtouch confocal Raman microscope for single-nanohole SERS analysis." },
-        { src: "KIST-Renishaw.jpeg", cap: "Renishaw inVia confocal Raman microscope for large-area surface mapping and signal analysis." },
-        { src: "Ryu-Exopert.jpeg", cap: "Exopert ARM-Dx for AI-assisted target spectrum analysis." },
-        { src: "Ryu-BWTEK.jpeg", cap: "BWTEK i-Raman Plus for preliminary Raman spectrum screening." }
-      ]
-    },
-    {
-      name: "Biological / Metallographic Microscope",
-      desc: "Optical microscopy for samples and devices.",
-      imgs: [
-        { src: "Ryu-microscope.jpeg", cap: "Metallographic microscope." },
-        { src: "Ryu-microscope2.jpeg", cap: "Biological microscope." }
-      ]
-    }
-  ],
-  compute: [
-    { name: "PCB / Breadboard Circuit Design", desc: "Circuit-level electronic design and prototyping.", imgs: [] },
-    { name: "OrCAD (PSpice)", desc: "Circuit simulation and verification.", imgs: [] },
-    { name: "3D Printing", desc: "Rapid prototyping of fixtures and parts.", imgs: [] },
-    { name: "COMSOL Multiphysics", desc: "FEA simulation of optical/electrical phenomena.", imgs: [] },
-    { name: "Rhino / AutoCAD / Keyshot", desc: "2D/3D design and rendering.", imgs: [] },
-    { name: "Arduino IDE", desc: "Embedded programming for sensors and devices.", imgs: [] }
-  ],
-  lang: [
-    { name: "Python", desc: "Primary language for data analysis and automation.", imgs: [] },
-    { name: "C / C++", desc: "Systems and embedded programming.", imgs: [] },
-    { name: "MATLAB", desc: "Numerical computing and signal processing.", imgs: [] },
-    { name: "LaTeX", desc: "Scientific document preparation.", imgs: [] }
-  ]
-};
+var PUBLICATIONS = [
+  {
+    authorsHTML: 'S. Lee<sup>&#8225;</sup>, S. Choi<sup>&#8225;</sup>, T. Kim, <strong>M. Kwon</strong>, T. J. Mun, S. Son, H. Seong, K. Lee, H. Im, E.-S. Yu, M.-K. Kim<sup>*</sup>, and Y.-S. Ryu<sup>*</sup>',
+    title: 'Analyte-accessible field volume as a governing design principle for nanophotonic sensing',
+    venue: 'submitted to Nature Communications (2026).'
+  }
+];
+var PUBLICATIONS_LEGEND = '<sup>&#8225;</sup>Equal contribution, <sup>*</sup>Corresponding author';
 
-/* Each entry: head, date, sub, detail, imgs (optional, default []) */
+var SKILLS_GROUPS = [
+  {
+    supergroup: 'Experiment related',
+    categories: [
+      {
+        key: 'lithography',
+        title: 'Lithography',
+        items: [
+          { name: 'Aligner-assisted Photolithography', desc: 'UV photolithography for micro-patterning, including secondary exposure on selected regions of interest.', imgs: [
+              { src: 'Ryu-Aligner.jpeg', cap: 'Mask aligner setup used for UV photolithography.' },
+              { src: 'Ryu-Aligner2.jpeg', cap: 'UV exposure step during photolithography.' }
+          ]},
+          { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication.', imgs: [
+              { src: 'Ryu-LIL.jpeg', cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
+              { src: 'Ryu-LIL1.jpeg', cap: 'Periodic post-shaped nanopattern produced by LIL.' },
+              { src: 'Ryu-LIL1-1.jpeg', cap: 'Sub-200 nm nanohole array (512 nm period) after metal deposition and lift-off.' },
+              { src: 'Ryu-LIL2.jpeg', cap: 'Periodic hole-shaped nanopattern produced by LIL.' },
+              { src: 'Ryu-LIL2-1.jpeg', cap: 'Sub-130 nm nanopost array (500 nm period), 4-layer Cr/SiO2/Cr/Au stack over a large-area substrate.' }
+          ]},
+          { name: 'Electron Beam Lithography (EBL)', desc: 'High-resolution direct-write nanopatterning for complex, arbitrary geometries beyond the resolution limit of optical lithography.', imgs: [
+              { src: 'Ryu-ebeamlitho.jpeg', cap: 'Please add a description here - e.g. pattern written and its resolution.' },
+              { src: 'Ryu-ebeamlitho2.jpeg', cap: 'Please add a description here - e.g. pattern written and its resolution.' }
+          ]},
+          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer.', imgs: [] },
+          { name: 'Nanoimprint Lithography (NIL)', desc: 'Nanostructure replication via mold-based, UV-curable nanoimprint lithography.', imgs: [
+              { src: 'Ryu-Nanoimprint.jpeg', cap: 'Lab-built nanoimprint setup for large-area imprinting.' },
+              { src: 'Ryu-Nanoimprint1.jpeg', cap: 'Vacuum chamber with UV-curing exposure module.' }
+          ]}
+        ]
+      },
+      {
+        key: 'pvd',
+        title: 'PVD (Physical Vapor Deposition)',
+        items: [
+          { name: 'Thermal Deposition', desc: 'Resistive thermal evaporation of metal thin films.', imgs: [
+              { src: 'Ryu-Thermal.jpeg', cap: 'ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers.' }
+          ]},
+          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum.', imgs: [
+              { src: 'Ryu-ebeam.jpeg', cap: 'KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions.' },
+              { src: 'Ryu-ebeam2.jpeg', cap: 'High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder.' },
+              { src: 'Ryu-ebeam_example.jpeg', cap: 'E-beam evaporated Cr/Au/SiO2/Ti/Au multilayer stack.' }
+          ]},
+          { name: 'Sputter Deposition', desc: 'Sputter deposition of thin films.', imgs: [] }
+        ]
+      },
+      {
+        key: 'cvd',
+        title: 'CVD (Chemical Vapor Deposition)',
+        items: [
+          { name: 'Atomic Layer Deposition (ALD)', desc: 'Conformal thin-film deposition via ALD.', imgs: [
+              { src: 'Ryu-ALD.jpeg', cap: 'ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant.' }
+          ]},
+          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition.', imgs: [] }
+        ]
+      },
+      {
+        key: 'etching',
+        title: 'Etching',
+        items: [
+          { name: 'Reactive Ion Etching (RIE)', desc: 'Dry etching of metal and oxide thin films.', imgs: [
+              { src: 'Ryu-RIE.jpeg', cap: 'Femto Science COVANCE-RF (RIE, left) and CUTE (plasma asher, right) on the same cleanroom bench: RIE system with 3 gas lines.' }
+          ]},
+          { name: 'Inductively Coupled Plasma Reactive Ion Etching (ICP-RIE)', desc: 'High-anisotropy dry etching for deep, fine-featured nanostructures.', imgs: [
+              { src: 'KIST-ICPRIE.jpeg', cap: 'Plasmart Miniplasma ICP-RIE system with 6 gas lines.' },
+              { src: 'KIST-ICPRIE1.jpeg', cap: 'ICP-RIE chamber and control system.' },
+              { src: 'ICPRIE_example_sio2.jpeg', cap: 'Highly anisotropic oxide etching via ICP-RIE.' },
+              { src: 'ICPRIE_example_mold.jpeg', cap: 'Silicon nanoimprint mold fabricated via ICP-RIE etching.' }
+          ]}
+        ]
+      },
+      {
+        key: 'surface',
+        title: 'Surface Treatment',
+        items: [
+          { name: 'Oxygen Plasma Ashing', desc: 'Photoresist stripping and surface cleaning.', imgs: [
+              { src: 'Ryu-RIE.jpeg', cap: 'Femto Science CUTE (plasma asher, right) and COVANCE-RF (RIE, left) on the same cleanroom bench: oxygen plasma ashing for surface treatment.' }
+          ]},
+          { name: 'UV-Ozone', desc: 'UV-ozone surface activation and organic contaminant removal.', imgs: [
+              { src: 'Ryu-UVOzone.jpeg', cap: 'Omniscience UVC-150 UV-Ozone generator for surface treatment.' }
+          ]}
+        ]
+      },
+      {
+        key: 'analysis',
+        title: 'Material / Structure Analysis',
+        items: [
+          { name: 'Field Emission Scanning Electron Microscope (FE-SEM)', desc: 'Scanning electron microscopy for nanostructure imaging.', imgs: [
+              { src: 'Ryu-SEM.jpeg', cap: 'JEOL JSM-6701F FE-SEM.' }
+          ]},
+          { name: 'Atomic Force Microscope (AFM)', desc: 'Surface topography and nanoscale roughness measurement.', imgs: [] },
+          { name: 'Stylus / Optical Surface Profiler', desc: 'Surface profile and step-height measurement.', imgs: [] },
+          { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant characterization.', imgs: [] },
+          { name: 'Reflectance Spectroscopy', desc: 'Optical reflectance characterization of thin films.', imgs: [] },
+          { name: 'Raman Spectroscopy', desc: 'Raman spectroscopy systems for SERS analysis.', imgs: [
+              { src: 'Ryu-RAMANtouch.jpeg', cap: 'Bruker RAMANtouch confocal Raman microscope for single-nanohole SERS analysis.' },
+              { src: 'KIST-Renishaw.jpeg', cap: 'Renishaw inVia confocal Raman microscope for large-area surface mapping and signal analysis.' },
+              { src: 'Ryu-Exopert.jpeg', cap: 'Exopert ARM-Dx for AI-assisted target spectrum analysis.' },
+              { src: 'Ryu-BWTEK.jpeg', cap: 'BWTEK i-Raman Plus for preliminary Raman spectrum screening.' }
+          ]},
+          { name: 'Biological / Metallographic Microscope', desc: 'Optical microscopy for samples and devices.', imgs: [
+              { src: 'Ryu-microscope.jpeg', cap: 'Metallographic microscope.' },
+              { src: 'Ryu-microscope2.jpeg', cap: 'Biological microscope.' }
+          ]}
+        ]
+      },
+      {
+        key: 'design',
+        title: 'Design',
+        items: [
+          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [] },
+          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [] },
+          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [] },
+          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [] }
+        ]
+      }
+    ]
+  },
+  {
+    supergroup: 'Computer related',
+    categories: [
+      {
+        key: 'language',
+        title: 'Language',
+        items: [
+          { name: 'Python', desc: 'Primary language for data analysis and automation.', imgs: [] },
+          { name: 'C / C++', desc: 'Systems and embedded programming.', imgs: [] },
+          { name: 'LaTeX', desc: 'Scientific document preparation.', imgs: [] },
+          { name: 'MATLAB', desc: 'Numerical computing and signal processing.', imgs: [] }
+        ]
+      },
+      {
+        key: 'fea',
+        title: 'FEA Simulation',
+        items: [
+          { name: 'COMSOL Multiphysics', desc: 'FEA simulation of optical/electrical phenomena.', imgs: [] },
+          { name: 'Lumerical FDTD', desc: 'Finite-difference time-domain electromagnetic simulation for nanophotonic structures.', imgs: [] }
+        ]
+      },
+      {
+        key: 'dataanalysis',
+        title: 'Data Analysis',
+        items: [
+          { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [] },
+          { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [] },
+          { name: 'Python-based data analysis', desc: 'Custom data processing and analysis scripts.', imgs: [] }
+        ]
+      },
+      {
+        key: '2d3d',
+        title: '2D/3D Design',
+        items: [
+          { name: 'Rhino / AutoCAD / Keyshot', desc: '2D/3D design and rendering.', imgs: [] }
+        ]
+      }
+    ]
+  }
+];
+
+var LANGUAGES = [
+  { name: 'Korean', detail: 'Native speaker' },
+  { name: 'English', detail: 'TOEFL 100' }
+];
+
 var RESEARCH = [
   {
-    head: "Researcher, Ryu Group",
-    date: "Sep 2025 - Present",
-    sub: "School of Biomedical Engineering, Korea University",
-    detail: "Advised by Prof. Yong-Sang Ryu.",
+    head: 'Researcher, Ryu Group',
+    date: 'Sep 2025 &ndash; Present',
+    sub: 'Department of Bioengineering, Korea University',
+    bullets: [
+      'Advised by Prof. Yong-Sang Ryu',
+      'Current work: Fabricating nanohole plasmonic metasurface sensors capable of concentrating nanoparticles/biomolecules via electrokinetic phenomena for enhanced optical (SERS) detection.',
+      'Affiliated Researcher of KIST (Korea Institute of Science and Technology)'
+    ],
     imgs: []
   },
   {
-    head: "Undergraduate Researcher, Ryu Group",
-    date: "Aug 2024 - Aug 2025",
-    sub: "School of Biomedical Engineering, Korea University",
-    detail: "Advised by Prof. Yong-Sang Ryu. Contributed to government-led research initiatives such as ROK ARPA-H, developing nano-scale biosensors for biomarkers of neurodegenerative diseases.",
+    head: 'Undergraduate Researcher, Ryu Group',
+    date: 'Aug 2024 &ndash; Aug 2025',
+    sub: 'School of Biomedical Engineering, Korea University',
+    bullets: [
+      'Advised by Prof. Yong-Sang Ryu'
+    ],
     imgs: []
   },
   {
-    head: "Founder &amp; Chief Technological Officer",
-    date: "Mar 2024 - Aug 2025",
-    sub: "Radicheck (Seoul, Republic of Korea)",
-    detail: "Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment. Two patents pending regarding the radiation detection platform.",
+    head: 'Founder &amp; Chief Technology Officer',
+    date: 'Mar 2024 &ndash; Aug 2025',
+    sub: 'Radicheck (Seoul, Republic of Korea)',
+    bullets: [
+      'Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment; two patents are currently pending on the radiation detection platform.'
+    ],
     imgs: []
   }
 ];
 
 var ACTIVITIES = [
   {
-    head: "Biosensor Team Lead Organizer, BEAT",
-    date: "Aug 2025 - Present",
-    sub: "Biomedical Engineering Academic Team, Korea University",
-    detail: "Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors.",
+    head: 'Biosensor Team Lead Organizer, Biomedical Engineering Academic Team (BEAT)',
+    date: 'Aug 2025 &ndash; Present',
+    sub: 'School of Biomedical Engineering, Korea University',
+    bullets: [
+      'Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors.'
+    ],
     imgs: []
   },
   {
-    head: "Founder &amp; President, KUBEAM",
-    date: "Aug 2025 - Present",
-    sub: "KU Biomedical Eng. Abroad Mentorship",
-    detail: "Founded an initiative connecting 50+ Biomedical Engineering students and alumni to pursue opportunities abroad, organizing study groups, lectures, and feedback sessions for Ph.D. applications and international careers.",
+    head: 'Founder &amp; President, KU Biomedical Eng. Abroad Mentorship (KUBEAM)',
+    date: 'Aug 2025 &ndash; Present',
+    sub: '',
+    bullets: [
+      'Founded an initiative connecting 50+ Biomedical Engineering students and alumni to pursue opportunities abroad, organizing study groups, lectures, and feedback sessions for Ph.D. applications and international careers.'
+    ],
     imgs: []
   },
   {
-    head: "Senior Advisor &amp; Vice President, Department Student Council",
-    date: "Nov 2024 - Nov 2025",
-    sub: "School of Biomedical Engineering, Korea University",
-    detail: "Advised and supported planning and execution of academic, cultural, and community events for 500+ undergraduates. Led a 30+ member committee to organize the department alumni day, securing 30M+ KRW in departmental and corporate sponsorships.",
+    head: 'Senior Advisor &amp; Vice President, Department Student Council',
+    date: 'Nov 2024 &ndash; Nov 2025',
+    sub: 'School of Biomedical Engineering, Korea University',
+    bullets: [
+      'Advised and supported planning and execution of academic, cultural, and community events for 500+ undergraduates.',
+      'Led a 30+ member committee to organize the department alumni day, securing over $22,000 in departmental and corporate sponsorships to deliver a large-scale event.'
+    ],
     imgs: []
   },
   {
-    head: "Project Leader, Vine Robot Colonoscopy Project",
-    date: "Aug 2023 - Feb 2024",
-    sub: "Creative Challenger Program, Korea University",
-    detail: "Developed and validated a novel soft-robot colonoscopy platform; conducted in-vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center. Advised by Prof. Daehee Hong and Dr. Sang-Hyun Kim.",
+    head: 'Project Leader, Vine Robot Colonoscopy Project',
+    date: 'Aug 2023 &ndash; Feb 2024',
+    sub: 'Creative Challenger Program, Korea University',
+    bullets: [
+      'Developed and validated a novel soft-robot colonoscopy platform; conducted in-vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center.',
+      'Advised by Prof. Daehee Hong (Mechanical Engineering) and Dr. Sang-Hyun Kim (Gastroenterology).'
+    ],
     imgs: []
   },
   {
-    head: "President, International Student Volunteer (ISV)",
-    date: "Jul 2021 - Aug 2022",
-    sub: "Office of International Affairs, Konkuk University",
-    detail: "Assisted inbound and outbound exchange students with language support, administrative assistance, and cultural exchange programs. Accommodated and supported over 600 students.",
+    head: 'President, International Student Volunteer (ISV)',
+    date: 'Jul 2021 &ndash; Aug 2022',
+    sub: 'Office of International Affairs, Konkuk University',
+    bullets: [
+      'Assisted inbound and outbound exchange students by providing language support, administrative assistance, and organizing cultural exchange programs. Accommodated and supported over 600 students throughout the term.'
+    ],
     imgs: []
   },
   {
-    head: "Combat Medic &amp; Medical Support Assistant",
-    date: "Jul 2019 - Jan 2021",
-    sub: "65th Medical Brigade, 8th U.S. Army (BDAACH, 549th Hospital Center)",
-    detail: "Selected for the KATUSA program. Served in the Physical Performance Service Line for outpatient care and the COVID-19 Response Team. Honorably discharged as Sergeant (E-5); recipient of the Army Achievement Medal and Army Commendation Medal.",
+    head: 'Combat Medic &amp; Medical Support Assistant, BDAACH (549th Hospital Center)',
+    date: 'Jul 2019 &ndash; Jan 2021',
+    sub: '65th Medical Brigade, 8th U.S. Army',
+    bullets: [
+      'Selected for the KATUSA (Korean Augmentation to the U.S. Army) program. Served in the Physical Performance Service Line for outpatient care and on the COVID-19 Response Team for quarantine operations and vaccine administration.',
+      'Contributed to the accountability of over $10M worth of medical equipment and supplies for the entire clinic. Honorably discharged as Sergeant (E-5); recipient of the Army Achievement Medal and Army Commendation Medal.'
+    ],
     imgs: []
   }
 ];
 
-/* Each award: name, org, date, imgs (optional, default []) */
 var AWARDS = [
-  { name: "Best Poster Presentation Award", org: "Korean Biochip Fall Symposium 2025", date: "Nov 2025", imgs: [] },
-  { name: "Runner-up", org: "Changemakers Forum", date: "Nov 2024", imgs: [] },
-  { name: "Best Startup Award", org: "STARKIUM", date: "Nov 2024", imgs: [] },
-  { name: "Third Place", org: "Capstone Design Fair", date: "Sep 2024", imgs: [] },
-  { name: "Presidential Award", org: "15th Creative Challenger Program", date: "Feb 2024", imgs: [] }
+  { name: 'Best Poster Presentation Award', org: 'Korean Biochip Fall Symposium 2025', date: 'Nov 2025', imgs: [] },
+  { name: 'BK21 FOUR Graduate Research Scholarship', org: 'Ministry of Education (Full Tuition)', date: 'Sep 2025 &ndash; Present', imgs: [] },
+  { name: 'Outstanding New Student Scholarships', org: 'Korea University', date: 'Sep 2025', imgs: [] },
+  { name: 'Runner-up', org: 'Changemakers Forum', date: 'Nov 2024', imgs: [] },
+  { name: 'Best Startup Award', org: 'Korea University', date: 'Nov 2024', imgs: [] },
+  { name: 'Third Place', org: 'Capstone Design Fair', date: 'Sep 2024', imgs: [] },
+  { name: 'Presidential Award', org: '15th Creative Challenger Program', date: 'Feb 2024', imgs: [] }
+];
+
+var TEACHING = [
+  { course: 'BMED442', title: 'Biomedical Semiconductor Process', advisor: 'Prof. Yong-Sang Ryu', date: 'Fall 2025, Fall 2026' },
+  { course: 'HBL514', title: 'Biomedical Design', advisor: 'Prof. Yong-Sang Ryu', date: 'Spring 2026' }
 ];
 
 var PHOTO_SVG = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M3 17l5-4 4 3 3-2 6 5\"/></svg>";
 
 var activeChip = null;
 
-/* ---------------------------------------------------------------
-   Core fix: build the actual DOM node here and RETURN THE NODE
-   itself (never serialize to a string via outerHTML). Whoever
-   calls this appends the real node, so the click/error listeners
-   stay attached.
---------------------------------------------------------------- */
 function createLightboxThumb(src, cap){
   var fig = document.createElement('figure');
   fig.className = 'lightbox-thumb';
@@ -530,29 +616,75 @@ function buildGalleryInto(container, imgs){
   container.appendChild(wrap);
 }
 
-/* ---------------- Skills ---------------- */
-function buildSkillChips(){
-  var groups = Object.keys(SKILLS);
-  for (var g = 0; g < groups.length; g++){
-    var group = groups[g];
-    var chipWrap = document.querySelector('[data-group="' + group + '"]');
-    if (!chipWrap) continue;
-    var list = SKILLS[group];
-    for (var i = 0; i < list.length; i++){
-      (function(group, idx, skill){
+function buildResearchInterest(){
+  var box = document.getElementById('researchInterestBox');
+  if (!box) return;
+  box.innerHTML = '<strong>Research Interests:</strong> ' + RESEARCH_INTEREST_HTML;
+}
+
+function buildPublications(){
+  var container = document.getElementById('publicationsList');
+  if (!container) return;
+  PUBLICATIONS.forEach(function(p, i){
+    var item = document.createElement('div');
+    item.className = 'pub-item';
+    item.innerHTML =
+      '<span class="pub-num">[' + (i + 1) + ']</span>' +
+      p.authorsHTML + ', &ldquo;<span class="pub-title">' + p.title + '</span>,&rdquo; ' +
+      '<span class="pub-venue">' + p.venue + '</span>';
+    container.appendChild(item);
+  });
+  var legend = document.createElement('div');
+  legend.className = 'pub-legend';
+  legend.innerHTML = PUBLICATIONS_LEGEND;
+  container.appendChild(legend);
+}
+
+function buildSkills(){
+  var container = document.getElementById('skillsContainer');
+  if (!container) return;
+
+  SKILLS_GROUPS.forEach(function(group){
+    var supergroupEl = document.createElement('h3');
+    supergroupEl.className = 'skill-supergroup';
+    supergroupEl.textContent = group.supergroup;
+    container.appendChild(supergroupEl);
+
+    group.categories.forEach(function(cat){
+      var catWrap = document.createElement('div');
+      catWrap.className = 'skill-cat';
+
+      var h3 = document.createElement('h3');
+      h3.textContent = cat.title;
+      catWrap.appendChild(h3);
+
+      var chipsWrap = document.createElement('div');
+      chipsWrap.className = 'skill-chips';
+      chipsWrap.setAttribute('data-group', cat.key);
+      catWrap.appendChild(chipsWrap);
+
+      var panel = document.createElement('div');
+      panel.className = 'skill-panel';
+      panel.setAttribute('data-panel', cat.key);
+      catWrap.appendChild(panel);
+
+      cat.items.forEach(function(skill, idx){
         var chip = document.createElement('div');
         chip.className = 'skill-chip';
         chip.textContent = skill.name;
-        chip.addEventListener('click', function(){ toggleSkillPanel(group, idx, chip); });
-        chipWrap.appendChild(chip);
-      })(group, i, list[i]);
-    }
-  }
+        chip.addEventListener('click', function(){
+          toggleSkillPanel(cat.key, idx, chip, cat.items, panel);
+        });
+        chipsWrap.appendChild(chip);
+      });
+
+      container.appendChild(catWrap);
+    });
+  });
 }
 
-function toggleSkillPanel(group, idx, chip){
-  var panel = document.querySelector('[data-panel="' + group + '"]');
-  var skill = SKILLS[group][idx];
+function toggleSkillPanel(groupKey, idx, chip, items, panel){
+  var skill = items[idx];
   var isSame = (activeChip === chip);
 
   var openChips = document.querySelectorAll('.skill-chip.open');
@@ -596,7 +728,17 @@ function toggleSkillPanel(group, idx, chip){
   activeChip = chip;
 }
 
-/* ---------------- Research / Activities entry lists ---------------- */
+function buildLanguages(){
+  var container = document.getElementById('languagesList');
+  if (!container) return;
+  LANGUAGES.forEach(function(l){
+    var row = document.createElement('div');
+    row.className = 'lang-row';
+    row.innerHTML = '<span class="lang-name">' + l.name + '</span><span class="lang-detail">' + l.detail + '</span>';
+    container.appendChild(row);
+  });
+}
+
 function buildEntryList(containerId, data){
   var container = document.getElementById(containerId);
   if (!container) return;
@@ -612,18 +754,31 @@ function buildEntryList(containerId, data){
 
     var date = document.createElement('div');
     date.className = 'entry-date';
-    date.textContent = e.date;
+    date.innerHTML = e.date;
     row.appendChild(date);
 
-    var sub = document.createElement('div');
-    sub.className = 'entry-sub';
-    sub.innerHTML = e.sub;
-    row.appendChild(sub);
+    if (e.sub){
+      var sub = document.createElement('div');
+      sub.className = 'entry-sub';
+      sub.innerHTML = e.sub;
+      row.appendChild(sub);
+    }
 
-    var detail = document.createElement('div');
-    detail.className = 'entry-detail';
-    detail.innerHTML = e.detail;
-    row.appendChild(detail);
+    if (e.bullets && e.bullets.length > 0){
+      var ul = document.createElement('ul');
+      ul.className = 'entry-bullets';
+      e.bullets.forEach(function(b){
+        var li = document.createElement('li');
+        li.innerHTML = b;
+        ul.appendChild(li);
+      });
+      row.appendChild(ul);
+    } else if (e.detail){
+      var detail = document.createElement('div');
+      detail.className = 'entry-detail';
+      detail.innerHTML = e.detail;
+      row.appendChild(detail);
+    }
 
     if (e.imgs && e.imgs.length > 0){
       var gwrap = document.createElement('div');
@@ -638,7 +793,6 @@ function buildEntryList(containerId, data){
   }
 }
 
-/* ---------------- Awards list ---------------- */
 function buildAwardsList(){
   var ul = document.getElementById('awardsList');
   if (!ul) return;
@@ -651,12 +805,12 @@ function buildAwardsList(){
 
     var nameSpan = document.createElement('span');
     nameSpan.className = 'award-name';
-    nameSpan.innerHTML = '<strong>' + a.name + '</strong> - ' + a.org;
+    nameSpan.innerHTML = '<strong>' + a.name + '</strong>, ' + a.org;
     rowDiv.appendChild(nameSpan);
 
     var dateSpan = document.createElement('span');
     dateSpan.className = 'award-date';
-    dateSpan.textContent = a.date;
+    dateSpan.innerHTML = a.date;
     rowDiv.appendChild(dateSpan);
 
     li.appendChild(rowDiv);
@@ -674,7 +828,32 @@ function buildAwardsList(){
   }
 }
 
-/* ---------------- Image lightbox modal ---------------- */
+function buildTeaching(){
+  var container = document.getElementById('teachingList');
+  if (!container) return;
+  TEACHING.forEach(function(t){
+    var item = document.createElement('div');
+    item.className = 'teach-item';
+
+    var role = document.createElement('div');
+    role.className = 'teach-role';
+    role.textContent = 'Teaching Assistant, ' + t.course + ' \u201c' + t.title + '\u201d';
+    item.appendChild(role);
+
+    var date = document.createElement('div');
+    date.className = 'teach-date';
+    date.textContent = t.date;
+    item.appendChild(date);
+
+    var advisor = document.createElement('div');
+    advisor.className = 'teach-advisor';
+    advisor.textContent = t.advisor;
+    item.appendChild(advisor);
+
+    container.appendChild(item);
+  });
+}
+
 function openModal(src, cap){
   var modal = document.getElementById('imgModal');
   var img = document.getElementById('imgModalImg');
@@ -690,12 +869,15 @@ function closeModal(){
   document.body.style.overflow = '';
 }
 
-/* ---------------- init ---------------- */
 function init(){
-  buildSkillChips();
+  buildResearchInterest();
+  buildPublications();
+  buildSkills();
+  buildLanguages();
   buildEntryList('researchList', RESEARCH);
   buildEntryList('activitiesList', ACTIVITIES);
   buildAwardsList();
+  buildTeaching();
 
   var modal = document.getElementById('imgModal');
   modal.addEventListener('click', function(e){
