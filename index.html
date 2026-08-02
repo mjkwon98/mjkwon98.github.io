@@ -333,7 +333,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-ebeamlitho.jpeg', cap: 'SEM image of electron beam lithography HSQ pattern for nanohole fabrication.' },
               { src: 'Ryu-ebeamlitho2.jpeg', cap: 'Dose sweep for PMMA-C4 PR electron beam lithography.' }
           ]},
-          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer.', imgs: [] },
+          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer.', imgs: [], noPanel: false },
           { name: 'Nanoimprint Lithography (NIL)', desc: 'Nanostructure replication via mold-based, UV-curable nanoimprint lithography.', imgs: [
               { src: 'Ryu-Nanoimprint.jpeg', cap: 'Lab-built nanoimprint setup for large-area imprinting.' },
               { src: 'Ryu-Nanoimprint1.jpeg', cap: 'Vacuum chamber with UV-curing exposure module.' },
@@ -359,7 +359,7 @@ var SKILLS_GROUPS = [
               { src: 'ebeam_example_003.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' },
               { src: 'ebeam_example_004.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' }
           ]},
-          { name: 'Sputter Deposition', desc: 'Sputter deposition of thin films.', imgs: [] }
+          { name: 'Sputter Deposition', desc: 'Sputter deposition of thin films.', imgs: [], noPanel: false }
         ]
       },
       {
@@ -370,7 +370,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-ALD.jpeg', cap: 'ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant.' },
               { src: 'Ryu-ALD-loading.jpeg', cap: 'Batch of chip samples loaded onto the wafer carrier prior to SiO2 thin-film deposition.' }
           ]},
-          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition.', imgs: [] }
+          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition.', imgs: [], noPanel: false }
         ]
       },
       {
@@ -418,7 +418,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-Alphastep.jpeg', cap: 'KLA D-100 Alpha-Step.' },
               { src: 'Ryu-VKX3000.jpeg', cap: 'Keyence VK-X3000 3D Surface Profiler.' }
           ] },
-          { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant characterization.', imgs: [] },
+          { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant characterization.', imgs: [], noPanel: false },
           { name: 'Reflectance Spectroscopy', desc: 'Optical reflectance characterization of thin films.', imgs: [
               { src: 'Ryu-Kymera.jpeg', cap: 'Andor Kymera 322i spectrometer for reflectance spectroscopy.' }
           ]},
@@ -438,10 +438,10 @@ var SKILLS_GROUPS = [
         key: 'design',
         title: 'Design',
         items: [
-          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [] },
-          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [] },
-          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [] },
-          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [] }
+          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [], noPanel: false },
+          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [], noPanel: false },
+          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [], noPanel: false },
+          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [], noPanel: false }
         ]
       }
     ]
@@ -453,26 +453,26 @@ var SKILLS_GROUPS = [
         key: 'language',
         title: 'Language',
         items: [
-          { name: 'Python', desc: 'Primary language for data analysis and automation.', imgs: [] },
-          { name: 'C / C++', desc: 'Systems and embedded programming.', imgs: [] },
-          { name: 'LaTeX', desc: 'Scientific document preparation.', imgs: [] },
-          { name: 'MATLAB', desc: 'Numerical computing and signal processing.', imgs: [] }
+          { name: 'Python', desc: 'Primary language for data analysis and automation.', imgs: [], noPanel: false },
+          { name: 'C / C++', desc: 'Systems and embedded programming.', imgs: [], noPanel: false },
+          { name: 'LaTeX', desc: 'Scientific document preparation.', imgs: [], noPanel: false },
+          { name: 'MATLAB', desc: 'Numerical computing and signal processing.', imgs: [], noPanel: false }
         ]
       },
       {
         key: 'fea',
         title: 'FEA Simulation',
         items: [
-          { name: 'COMSOL Multiphysics', desc: 'FEA simulation of optical/electrical phenomena.', imgs: [] },
-          { name: 'Lumerical FDTD', desc: 'Finite-difference time-domain electromagnetic simulation for nanophotonic structures.', imgs: [] }
+          { name: 'COMSOL Multiphysics', desc: 'FEA simulation of optical/electrical phenomena.', imgs: [], noPanel: false },
+          { name: 'Lumerical FDTD', desc: 'Finite-difference time-domain electromagnetic simulation for nanophotonic structures.', imgs: [], noPanel: false }
         ]
       },
       {
         key: 'dataanalysis',
         title: 'Data Analysis',
         items: [
-          { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [] },
-          { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [] },
+          { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [], noPanel: false },
+          { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [], noPanel: false },
           { name: 'Python-based data analysis', desc: 'Custom image/data processing using ML (Machine Learning), OpenCV, etc.', imgs: [
             { src: 'fig_cv_pipeline.png', cap: 'Automated SEM image analysis for particle capture classification using ML.'}
           ] }
