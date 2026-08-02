@@ -104,6 +104,9 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .skill-chip.open{background:var(--accent);color:#fff;border-color:var(--accent);}
 .skill-chip::after{content:'+';font-size:14px;line-height:1;opacity:0.5;}
 .skill-chip.open::after{content:'\2212';opacity:1;}
+.skill-chip.static{cursor:default;}
+.skill-chip.static::after{content:none;}
+.skill-chip.static:hover{border-color:var(--line);color:var(--text);}
 .skill-panel{display:none;margin-top:12px;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:1.25rem;}
 .skill-panel.open{display:block;animation:slidein 0.25s ease;}
 @keyframes slidein{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
@@ -315,7 +318,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-Aligner.jpeg', cap: 'Mask aligner setup used for UV photolithography.' },
               { src: 'Ryu-Aligner2.jpeg', cap: 'UV exposure step during photolithography.' },
               { src: 'aligner_example_001.jpeg', cap: 'Alignment of 20um scale array over the 50um scale array.' },
-              { src: 'aligner_example_002.jpeg', cap: 'SEM result of alignment, pattern was lift-offed after Ti/Al2O3 thin film deposition.' }
+              { src: 'aligner_example_002.jpeg', cap: 'SEM result of alignment, pattern was lifted off after Ti/Al2O3 thin film deposition.' }
           ]},
           { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication.', imgs: [
               { src: 'Ryu-LIL.jpeg', cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
@@ -376,7 +379,7 @@ var SKILLS_GROUPS = [
         items: [
           { name: 'Reactive Ion Etching (RIE)', desc: 'Dry etching of metal and oxide thin films.', imgs: [
               { src: 'Ryu-RIE.jpeg', cap: 'Femto Science COVANCE-RF (RIE, Bottom) and CUTE (plasma asher, Top) on the same cleanroom bench: RIE system with 3 gas lines.' },
-              { src: 'RIE_example.jpeg', cap: 'Using RIE to etch pV3D3 thin film' }
+              { src: 'RIE_example.jpeg', cap: 'Using RIE to etch pV3D3 thin film.' }
           ]},
           { name: 'Inductively Coupled Plasma Reactive Ion Etching (ICP-RIE)', desc: 'High-anisotropy dry etching for deep, fine-featured nanostructures.', imgs: [
               { src: 'KIST-ICPRIE.jpeg', cap: 'Plasmart Miniplasma ICP-RIE system with 6 gas lines.' },
@@ -450,7 +453,7 @@ var SKILLS_GROUPS = [
         key: 'language',
         title: 'Language',
         items: [
-          { name: 'Python', desc: 'Primary language for data analysis and automation', imgs: [] },
+          { name: 'Python', desc: 'Primary language for data analysis and automation.', imgs: [] },
           { name: 'C / C++', desc: 'Systems and embedded programming.', imgs: [] },
           { name: 'LaTeX', desc: 'Scientific document preparation.', imgs: [] },
           { name: 'MATLAB', desc: 'Numerical computing and signal processing.', imgs: [] }
@@ -470,7 +473,7 @@ var SKILLS_GROUPS = [
         items: [
           { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [] },
           { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [] },
-          { name: 'Python-based data analysis', desc: 'Custom image/data processing using ML(Machine Learning), OpenCV, etc.', imgs: [
+          { name: 'Python-based data analysis', desc: 'Custom image/data processing using ML (Machine Learning), OpenCV, etc.', imgs: [
             { src: 'fig_cv_pipeline.png', cap: 'Automated SEM image analysis for particle capture classification using ML.'}
           ] }
         ]
@@ -700,9 +703,15 @@ function buildSkills(){
         var chip = document.createElement('div');
         chip.className = 'skill-chip';
         chip.textContent = skill.name;
-        chip.addEventListener('click', function(){
-          toggleSkillPanel(cat.key, idx, chip, cat.items, panel);
-        });
+        // Set `noPanel: true` on a skill entry (see SKILLS_GROUPS above) to turn its
+        // mini-window off: no "+" icon, not clickable, no hover highlight.
+        if (skill.noPanel){
+          chip.classList.add('static');
+        } else {
+          chip.addEventListener('click', function(){
+            toggleSkillPanel(cat.key, idx, chip, cat.items, panel);
+          });
+        }
         chipsWrap.appendChild(chip);
       });
 
