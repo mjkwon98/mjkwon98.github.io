@@ -333,7 +333,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-ebeamlitho.jpeg', cap: 'SEM image of electron beam lithography HSQ pattern for nanohole fabrication.' },
               { src: 'Ryu-ebeamlitho2.jpeg', cap: 'Dose sweep for PMMA-C4 PR electron beam lithography.' }
           ]},
-          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer.', imgs: [], noPanel: false },
+          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer.', imgs: [], noPanel: true },
           { name: 'Nanoimprint Lithography (NIL)', desc: 'Nanostructure replication via mold-based, UV-curable nanoimprint lithography.', imgs: [
               { src: 'Ryu-Nanoimprint.jpeg', cap: 'Lab-built nanoimprint setup for large-area imprinting.' },
               { src: 'Ryu-Nanoimprint1.jpeg', cap: 'Vacuum chamber with UV-curing exposure module.' },
@@ -438,10 +438,17 @@ var SKILLS_GROUPS = [
         key: 'design',
         title: 'Design',
         items: [
-          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [], noPanel: false },
-          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [], noPanel: false },
-          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [], noPanel: false },
-          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [], noPanel: false }
+          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [], noPanel: true },
+          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [
+            { src: 'Ryu-3dprinter.jpeg', cap: '3D Printer setup for demonstrative experiment equipment design.' }
+          ], noPanel: false },
+          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [
+            { src: 'Ryu-maskholder.jpeg', cap: 'Self-designed Electron Beam Evaporator mask / wafer holder, SUS304.' }
+          ], noPanel: false },
+          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [
+            { src: 'Ryu-chunglaser.jpeg', cap: 'Laser cutter for wafer dicing / shadow mask design.' },
+            { src: 'Ryu-shadowmask.jpeg', cap: 'Self-designed shadow mask for deposition.' }
+          ], noPanel: false }
         ]
       }
     ]
@@ -453,10 +460,10 @@ var SKILLS_GROUPS = [
         key: 'language',
         title: 'Language',
         items: [
-          { name: 'Python', desc: 'Primary language for data analysis and automation.', imgs: [], noPanel: false },
-          { name: 'C / C++', desc: 'Systems and embedded programming.', imgs: [], noPanel: false },
-          { name: 'LaTeX', desc: 'Scientific document preparation.', imgs: [], noPanel: false },
-          { name: 'MATLAB', desc: 'Numerical computing and signal processing.', imgs: [], noPanel: false }
+          { name: 'Python', desc: 'Primary language for data analysis and automation.', imgs: [], noPanel: true },
+          { name: 'C / C++', desc: 'Systems and embedded programming.', imgs: [], noPanel: true },
+          { name: 'LaTeX', desc: 'Scientific document preparation.', imgs: [], noPanel: true },
+          { name: 'MATLAB', desc: 'Numerical computing and signal processing.', imgs: [], noPanel: true }
         ]
       },
       {
@@ -464,15 +471,15 @@ var SKILLS_GROUPS = [
         title: 'FEA Simulation',
         items: [
           { name: 'COMSOL Multiphysics', desc: 'FEA simulation of optical/electrical phenomena.', imgs: [], noPanel: false },
-          { name: 'Lumerical FDTD', desc: 'Finite-difference time-domain electromagnetic simulation for nanophotonic structures.', imgs: [], noPanel: false }
+          { name: 'Lumerical FDTD', desc: 'Finite-difference time-domain electromagnetic simulation for nanophotonic structures.', imgs: [], noPanel: true }
         ]
       },
       {
         key: 'dataanalysis',
         title: 'Data Analysis',
         items: [
-          { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [], noPanel: false },
-          { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [], noPanel: false },
+          { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [], noPanel: true },
+          { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [], noPanel: true },
           { name: 'Python-based data analysis', desc: 'Custom image/data processing using ML (Machine Learning), OpenCV, etc.', imgs: [
             { src: 'fig_cv_pipeline.png', cap: 'Automated SEM image analysis for particle capture classification using ML.'}
           ] }
@@ -590,8 +597,8 @@ var ACTIVITIES = [
 ];
 
 var AWARDS = [
-  { name: 'Best Poster Presentation Award', org: 'Korean Biochip Fall Symposium 2025', date: 'Nov 2025', imgs: [] },
   { name: 'BK21 FOUR Graduate Research Scholarship', org: 'Ministry of Education (Full Tuition)', date: 'Sep 2025 &ndash; Present', imgs: [] },
+  { name: 'Best Poster Presentation Award', org: 'Korean Biochip Fall Symposium 2025', date: 'Nov 2025', imgs: [] },
   { name: 'Outstanding New Student Scholarships', org: 'Korea University', date: 'Sep 2025', imgs: [] },
   { name: 'Runner-up', org: 'Changemakers Forum', date: 'Nov 2024', imgs: [] },
   { name: 'Best Startup Award', org: 'Korea University', date: 'Nov 2024', imgs: [] },
