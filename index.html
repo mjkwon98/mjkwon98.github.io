@@ -307,7 +307,7 @@ var PUBLICATIONS_LEGEND = '<sup>&#8225;</sup>Equal contribution, <sup>*</sup>Cor
 
 var SKILLS_GROUPS = [
   {
-    supergroup: 'Experiment related',
+    supergroup: 'Fabrication & Characterization Skills',
     categories: [
       {
         key: 'lithography',
@@ -405,7 +405,7 @@ var SKILLS_GROUPS = [
         key: 'analysis',
         title: 'Material / Structure Analysis',
         items: [
-          { name: 'Scanning Electron Microscope (SEM)', desc: 'Scanning electron microscopy for nanostructure imaging. ', imgs: [
+          { name: 'Scanning Electron Microscope (SEM)', desc: 'Scanning electron microscopy for nanostructure imaging. Certified independent operator of the FE-SEM.', imgs: [
               { src: 'Ryu-SEM.jpeg', cap: 'JEOL JSM-6701F FE-SEM.' },
               { src: 'Tabletop.jpeg', cap: 'Emcrafts Cube-II Tabletop SEM.' }
           ]},
@@ -433,29 +433,11 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-microscope2.jpeg', cap: 'Biological microscope.' }
           ]}
         ]
-      },
-      {
-        key: 'design',
-        title: 'Design',
-        items: [
-          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [], noPanel: true },
-          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [
-            { src: 'Ryu-3dprinter.jpeg', cap: '3D Printer setup for demonstrative experiment equipment design.' },
-            { src: '3dprinter_example_001.jpeg', cap: 'Demo shadow-mask prototypes 3D-printed in PPS-CF, a high-vacuum-compatible material, shown as the bare mask (left, center) and after use for patterned metal deposition (right).' }
-          ], noPanel: false },
-          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [
-            { src: 'Ryu-maskholder.jpeg', cap: 'Self-designed Electron Beam Evaporator mask / wafer holder, SUS304.' }
-          ], noPanel: false },
-          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [
-            { src: 'Ryu-chunglaser.jpeg', cap: 'Laser cutter for wafer dicing / shadow mask design.' },
-            { src: 'Ryu-shadowmask.jpeg', cap: 'Self-designed shadow mask for patterned deposition.' }
-          ], noPanel: false }
-        ]
       }
     ]
   },
   {
-    supergroup: 'Computer related',
+    supergroup: 'Computational & Design Skills',
     categories: [
       {
         key: 'language',
@@ -497,6 +479,24 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-Rhino-Raman-setup-figure.png', cap: '3D-rendered schematic of the custom Raman measurement setup (785 nm laser, top/bottom electrodes, PDMS ring, specimen holder), prepared as a publication figure.' }
           ]}
         ]
+      },
+      {
+        key: 'design',
+        title: 'Physical Design',
+        items: [
+          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [], noPanel: true },
+          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [
+            { src: 'Ryu-3dprinter.jpeg', cap: '3D Printer setup for demonstrative experiment equipment design.' },
+            { src: '3dprinter_example_001.jpeg', cap: 'Demo shadow-mask prototypes 3D-printed in PPS-CF, a high-vacuum-compatible material, shown as the bare mask (left, center) and after use for patterned metal deposition (right).' }
+          ], noPanel: false },
+          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [
+            { src: 'Ryu-maskholder.jpeg', cap: 'Self-designed Electron Beam Evaporator mask / wafer holder, SUS304.' }
+          ], noPanel: false },
+          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [
+            { src: 'Ryu-chunglaser.jpeg', cap: 'Laser cutter for wafer dicing / shadow mask design.' },
+            { src: 'Ryu-shadowmask.jpeg', cap: 'Self-designed shadow mask for patterned deposition.' }
+          ], noPanel: false }
+        ]
       }
     ]
   }
@@ -509,22 +509,14 @@ var LANGUAGES = [
 
 var RESEARCH = [
   {
-    head: 'Researcher, Ryu Group',
-    date: 'Sep 2025 &ndash; Present',
-    sub: 'Department of Bioengineering, Korea University',
+    head: 'Undergraduate/Graduate Student Researcher, Ryu Group',
+    date: 'Aug 2024 &ndash; Present',
+    sub: 'Korea University',
     bullets: [
       'Advised by Prof. Yong-Sang Ryu',
-      'Current work: Fabricating nanohole plasmonic metasurface sensors capable of concentrating nanoparticles/biomolecules via electrokinetic phenomena for enhanced optical (SERS) detection.',
-      'Affiliated Researcher of KIST (Korea Institute of Science and Technology)'
-    ],
-    imgs: []
-  },
-  {
-    head: 'Undergraduate Researcher, Ryu Group',
-    date: 'Aug 2024 &ndash; Aug 2025',
-    sub: 'School of Biomedical Engineering, Korea University',
-    bullets: [
-      'Advised by Prof. Yong-Sang Ryu'
+      'Current work: Designing and fabricating periodic nanohole plasmonic metasurfaces with nanometer-scale control of feature geometry across large-area substrates. Simulating optical and electrokinetic field distributions to identify nanohole geometries yielding up to ~1.8&times;10<sup>5</sup>-fold electric-field intensity enhancement at sensing hotspots. Building on the prior co-authored work, studying single-particle-level trapping and signal detection by incorporating dielectrophoretic (DEP) and AC electroosmotic (ACEO) transport to capture individual nanoparticles at the field hotspots for single-particle-resolved SERS detection.',
+      'Coworking project: Core nanofabrication support for concurrent lab projects such as FRET (F&ouml;rster Resonance Energy Transfer)-based metasurface, hydrogen-sensing MEMS platform, electrochemical-sensing nanostructure.',
+      'Affiliated Researcher of Nanophotonics Research Center, KIST (Korea Institute of Science and Technology), developing label-free plasmonic sensing platforms for GPCR (G protein-coupled receptor) conformational dynamics in a drug-discovery initiative.'
     ],
     imgs: []
   },
@@ -541,20 +533,20 @@ var RESEARCH = [
 
 var ACTIVITIES = [
   {
-    head: 'Biosensor Team Lead Organizer, Biomedical Engineering Academic Team (BEAT)',
+    head: 'Founder &amp; President, KU Biomedical Eng. Abroad Mentorship (KUBEAM)',
     date: 'Aug 2025 &ndash; Present',
     sub: 'School of Biomedical Engineering, Korea University',
     bullets: [
-      'Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors.'
+      'Founded an initiative connecting 50+ Biomedical Engineering students and alumni to pursue opportunities abroad, organizing study groups, lectures, and feedback sessions for Ph.D. applications and international careers.'
     ],
     imgs: []
   },
   {
-    head: 'Founder &amp; President, KU Biomedical Eng. Abroad Mentorship (KUBEAM)',
-    date: 'Aug 2025 &ndash; Present',
+    head: 'Biosensor Team Lead Organizer, Biomedical Engineering Academic Team (BEAT)',
+    date: 'Aug 2025 &ndash; Jul 2026',
     sub: '',
     bullets: [
-      'Founded an initiative connecting 50+ Biomedical Engineering students and alumni to pursue opportunities abroad, organizing study groups, lectures, and feedback sessions for Ph.D. applications and international careers.'
+      'Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors (e.g., SEM imaging, data analysis, critical literature review, and journal-club presentations).'
     ],
     imgs: []
   },
