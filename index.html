@@ -319,7 +319,7 @@ var SKILLS_GROUPS = [
               { src: 'aligner_example_001.jpeg', cap: 'Alignment of 20um scale array over the 50um scale array.' },
               { src: 'aligner_example_002.jpeg', cap: 'SEM result of alignment, pattern was lifted off after Ti/Al2O3 thin film deposition.' }
           ]},
-          { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication. Certified independent operator.', imgs: [
+          { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication. Certified independent operator. Used to pattern the periodic nanopost template for my MIM plasmonic nanohole sensor.', imgs: [
               { src: 'Ryu-LIL.jpeg', cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
               { src: 'LIL_example_001.jpeg', cap: 'Periodic post-shaped large-surface nanopattern produced by LIL, Period of 840nm.' },
               { src: 'LIL_example_002.jpeg', cap: 'Periodic post-shaped large-surface nanopattern produced by LIL, Period of 500nm.' },
@@ -344,13 +344,13 @@ var SKILLS_GROUPS = [
       {
         key: 'pvd',
         title: 'PVD (Physical Vapor Deposition)',
-        items: 
+        items: [
           { name: 'Thermal Deposition', desc: 'Resistive thermal evaporation of metal thin films. Certified independent operator.', imgs: [
               { src: 'Ryu-Thermal.jpeg', cap: 'ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers.' },
               { src: 'thermal_example_001.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, before deposition.' },
               { src: 'thermal_example_002.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, after deposition.' }
           ]},
-          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Utilized for high aspect ratio deposition for nanostructure, electrical insulation via oxide film. Certified independent operator.', imgs: [
+          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Certified independent operator. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry.', imgs: [
               { src: 'Ryu-ebeam.jpeg', cap: 'KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions.' },
               { src: 'Ryu-ebeam2.jpeg', cap: 'High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder.' },
               { src: 'Ryu-ebeam3.jpeg', cap: 'Six-pocket crucible carousel loaded with representative source materials used for multi-source e-beam deposition.' },
@@ -359,7 +359,7 @@ var SKILLS_GROUPS = [
               { src: 'ebeam_example_003.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' },
               { src: 'ebeam_example_004.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' }
           ]},
-          { name: 'Sputter Deposition', desc: 'Sputter deposition of thin films. Used for deposit oxide film without thermal exposure.', imgs: [
+          { name: 'Sputter Deposition', desc: 'Sputter deposition of thin films.', imgs: [
               { src: 'Ryu-sputter.jpeg', cap: 'Co-Sputtering System (SiO2/Ti targets) used for multi-target sputter deposition.' }
           ], noPanel: false }
         ]
@@ -368,7 +368,7 @@ var SKILLS_GROUPS = [
         key: 'cvd',
         title: 'CVD (Chemical Vapor Deposition)',
         items: [
-          { name: 'Atomic Layer Deposition (ALD)', desc: 'Conformal thin-film deposition via ALD. Used for passivation and initial layer of oxide thin film for insulation. Certified independent operator.', imgs: [
+          { name: 'Atomic Layer Deposition (ALD)', desc: 'Conformal thin-film deposition via ALD. Certified independent operator. Used to deposit the conformal oxide insulator layer of the MIM stack.', imgs: [
               { src: 'Ryu-ALD.jpeg', cap: 'ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant.' },
               { src: 'Ryu-ALD-loading.jpeg', cap: 'Batch of chip samples loaded onto the wafer carrier prior to SiO2 thin-film deposition.' }
           ]},
@@ -383,7 +383,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-RIE.jpeg', cap: 'Femto Science COVANCE-RF (RIE, Bottom) and CUTE (plasma asher, Top) on the same cleanroom bench: RIE system with 3 gas lines.' },
               { src: 'RIE_example.jpeg', cap: 'Using RIE to etch pV3D3 thin film.' }
           ]},
-          { name: 'Inductively Coupled Plasma Reactive Ion Etching (ICP-RIE)', desc: 'High-anisotropy dry etching for deep, fine-featured nanostructures. Certified independent operator.', imgs: [
+          { name: 'Inductively Coupled Plasma Reactive Ion Etching (ICP-RIE)', desc: 'High-anisotropy dry etching for deep, fine-featured nanostructures. Certified independent operator. Used to etch open the nanohole apertures through the MIM stack, and to fabricate the silicon mold for nanoimprint replication.', imgs: [
               { src: 'KIST-ICPRIE.jpeg', cap: 'Plasmart Miniplasma ICP-RIE system with 6 gas lines.' },
               { src: 'KIST-ICPRIE1.jpeg', cap: 'ICP-RIE chamber and control system.' },
               { src: 'ICPRIE_example_sio2.jpeg', cap: 'Highly anisotropic oxide etching via ICP-RIE.' },
@@ -407,7 +407,7 @@ var SKILLS_GROUPS = [
         key: 'analysis',
         title: 'Material / Structure Analysis',
         items: [
-          { name: 'Scanning Electron Microscope (SEM)', desc: 'Scanning electron microscopy for nanostructure imaging.', imgs: [
+          { name: 'Scanning Electron Microscope (SEM)', desc: 'Scanning electron microscopy for nanostructure imaging. Certified independent operator of the FE-SEM. Used to image and verify nanohole array geometry and MIM layer structure.', imgs: [
               { src: 'Ryu-SEM.jpeg', cap: 'JEOL JSM-6701F FE-SEM.' },
               { src: 'Tabletop.jpeg', cap: 'Emcrafts Cube-II Tabletop SEM.' }
           ]},
@@ -421,10 +421,10 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-VKX3000.jpeg', cap: 'Keyence VK-X3000 3D Surface Profiler.' }
           ] },
           { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant characterization.', imgs: [], noPanel: false },
-          { name: 'Reflectance Spectroscopy', desc: 'Optical reflectance characterization of thin films.', imgs: [
+          { name: 'Reflectance Spectroscopy', desc: "Optical reflectance characterization of thin films. Used to measure the nanohole array's optical resonance spectrum, validated against COMSOL simulation.", imgs: [
               { src: 'Ryu-Kymera.jpeg', cap: 'Andor Kymera 322i spectrometer for reflectance spectroscopy.' }
           ]},
-          { name: 'Raman Spectroscopy', desc: 'Raman spectroscopy systems for SERS analysis. Certified independent operator of the RAMANtouch confocal Raman microscope.', imgs: [
+          { name: 'Raman Spectroscopy', desc: 'Raman spectroscopy systems for SERS analysis. Certified independent operator of the RAMANtouch confocal Raman microscope. Used to measure SERS signal from analytes captured at the nanohole hotspots.', imgs: [
               { src: 'Ryu-RAMANtouch.jpeg', cap: 'Bruker RAMANtouch confocal Raman microscope for single-nanohole SERS analysis.' },
               { src: 'KIST-Renishaw.jpeg', cap: 'Renishaw inVia confocal Raman microscope for large-area surface mapping and signal analysis.' },
               { src: 'Ryu-Exopert.jpeg', cap: 'Exopert ARM-Dx for AI-assisted target spectrum analysis.' },
