@@ -562,7 +562,9 @@ var ACTIVITIES = [
     bullets: [
       'Lead and mentor undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors (e.g., SEM imaging, data analysis, critical literature review, and journal-club presentations).'
     ],
-    imgs: []
+    imgs: [
+      { src: 'Ryu-BEAT-mentoring.jpeg', cap: 'BEAT biosensor team, with mentored undergraduate members in the cleanroom.' }
+    ]
   },
   {
     head: 'Senior Advisor &amp; Vice President, Department Student Council',
@@ -601,13 +603,18 @@ var ACTIVITIES = [
       'Selected for the KATUSA (Korean Augmentation to the U.S. Army) program. Served in the Physical Performance Service Line for outpatient care and on the COVID-19 Response Team for quarantine operations and vaccine administration.',
       'Contributed to the accountability of over $10M worth of medical equipment and supplies for the entire clinic. Honorably discharged as Sergeant (E-5); recipient of the Army Achievement Medal and Army Commendation Medal.'
     ],
-    imgs: []
+    imgs: [
+      { src: 'Ryu-KATUSA1.jpeg', cap: 'Senior KATUSA, 65th Medical Brigade, 8th U.S. Army.' },
+      { src: 'Ryu-KATUSA2.jpeg', cap: 'With ROK and U.S. Army leadership, BDAACH (549th Hospital Center).' }
+    ]
   }
 ];
 
 var AWARDS = [
   { name: 'BK21 FOUR Graduate Research Scholarship', org: 'Ministry of Education (Full Tuition)', date: 'Sep 2025 &ndash; Present', imgs: [] },
-  { name: 'Best Poster Presentation Award', org: 'Korean Biochip Fall Symposium 2025', date: 'Nov 2025', imgs: [] },
+  { name: 'Best Poster Presentation Award', org: 'Korean Biochip Fall Symposium 2025', date: 'Nov 2025', imgs: [
+      { src: 'Ryu-poster-award.jpeg', cap: 'Presenting the award-winning poster, "Electrical Tweezing Assisted Surface Enhanced Raman Detection for Extremely Low Concentration of Nanoparticles."' }
+  ] },
   { name: 'Outstanding New Student Scholarships', org: 'Korea University', date: 'Sep 2025', imgs: [] },
   { name: "Dean's List (Highest Honors, 2 semesters)", org: 'Korea University', date: 'Mar 2023 &ndash; Jun 2025', imgs: [] },
   { name: 'Runner-up', org: 'Changemakers Forum', date: 'Nov 2024', imgs: [] },
@@ -617,8 +624,11 @@ var AWARDS = [
 ];
 
 var TEACHING = [
-  { course: 'BMED442', title: 'Biomedical Semiconductor Process', advisor: 'Prof. Yong-Sang Ryu', date: 'Fall 2025, Fall 2026' },
-  { course: 'HBL514', title: 'Biomedical Design', advisor: 'Prof. Yong-Sang Ryu', date: 'Spring 2026' }
+  { course: 'BMED442', title: 'Biomedical Semiconductor Process', advisor: 'Prof. Yong-Sang Ryu', date: 'Fall 2025, Fall 2026', imgs: [
+      { src: 'Ryu-TA-lecture1.jpeg', cap: 'Guest lecturing on lithography strategies and their trade-offs, in place of the instructor.' },
+      { src: 'Ryu-TA-lecture2.jpeg', cap: 'Comparing EUV, e-beam, and photolithography resolution limits during the same lecture.' }
+  ] },
+  { course: 'HBL514', title: 'Biomedical Design', advisor: 'Prof. Yong-Sang Ryu', date: 'Spring 2026', imgs: [] }
 ];
 
 var PHOTO_SVG = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M3 17l5-4 4 3 3-2 6 5\"/></svg>";
@@ -908,6 +918,15 @@ function buildTeaching(){
     advisor.className = 'teach-advisor';
     advisor.textContent = t.advisor;
     item.appendChild(advisor);
+
+    if (t.imgs && t.imgs.length > 0){
+      var gwrap = document.createElement('div');
+      gwrap.className = 'entry-gallery';
+      for (var k = 0; k < t.imgs.length; k++){
+        gwrap.appendChild(createLightboxThumb(t.imgs[k].src, t.imgs[k].cap || ''));
+      }
+      item.appendChild(gwrap);
+    }
 
     container.appendChild(item);
   });
