@@ -69,6 +69,12 @@ section{padding:76px 0 20px;}
 
 .entry-gallery{grid-column:1 / -1;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:0.75rem;}
 
+.supporting-toggle{grid-column:1 / -1;display:flex;align-items:center;gap:0.35rem;width:fit-content;margin-left:auto;margin-top:0.65rem;font-size:0.78rem;color:var(--muted);background:var(--bg-alt);border:1px solid var(--line);border-radius:999px;padding:0.3rem 0.8rem;cursor:pointer;transition:background 0.15s,color 0.15s,border-color 0.15s;}
+.supporting-toggle:hover{background:var(--accent-soft);color:var(--accent);border-color:var(--accent);}
+.supporting-toggle .chevron{font-size:0.65rem;transition:transform 0.15s;}
+.supporting-toggle.is-open .chevron{transform:rotate(180deg);}
+.supporting-gallery[hidden]{display:none;}
+
 .award-list{list-style:none;}
 .award-list li{padding:0.85rem 0;}
 .award-list li:not(:last-child){border-bottom:1px solid var(--line);}
@@ -532,7 +538,7 @@ var RESEARCH = [
     bullets: [
       'Advised by Prof. Yong-Sang Ryu',
       '<strong>Current Project: MIM Nanohole Single Particle Analysis Metasurface (SPAM)</strong><ul class="sub-bullets"><li><strong>Fabrication:</strong> Building on our co-authored work (in review, Advanced Materials), fabricating large-area, nanometer-precision nanohole plasmonic metasurfaces via laser interference lithography (LIL), electron-beam deposition, and ICP-RIE etching &mdash; engineering a SERS-optimized biosensor capable of quantifying SERS signal through DEP- and ACEO-driven single-nanoparticle capture at the sensing hotspots.</li><li><strong>Simulation:</strong> Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields to identify nanohole geometries yielding up to ~1.8&times;10<sup>5</sup>-fold electric-field intensity enhancement at sensing hotspots, and modeling DEP/ACEO-driven single-particle capture dynamics to validate experimental trapping behavior.</li><li><strong>CNN Analysis:</strong> Applying convolutional neural networks (CNNs) to analyze SEM images for evaluating the relative standard deviation (RSD) of single-nanoparticle capture, providing a quantitative measure of biosensor uniformity and the resulting SERS signal.</li></ul>',
-      '<strong>Coworking Projects</strong><ul class="sub-bullets"><li><strong>FRET (F&ouml;rster Resonance Energy Transfer) metasurface:</strong> Collaborating with Prof. Junsuk Noh (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it.</li><li><strong>Hydrogen-sensing MEMS platform:</strong> Providing deposition and lithography support for fabricating a terahertz-resonant chip structure.</li><li><strong>Electrochemical-sensing nanostructure:</strong> Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.</li></ul>',
+      '<strong>Coworking Projects</strong><ul class="sub-bullets"><li><strong>FRET (F&ouml;rster Resonance Energy Transfer) metasurface:</strong> Collaborating with Prof. Junsuk Noh (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it.</li><li><strong>Hydrogen-sensing MEMS platform:</strong> Providing deposition and lithography support for fabricating a terahertz-resonant MEMS chip structure whose resonance shifts depending on the presence and concentration of hydrogen gas, enabling label-free hydrogen sensing.</li><li><strong>Electrochemical-sensing nanostructure:</strong> Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.</li></ul>',
       'Affiliated Researcher of Nanophotonics Research Center, KIST (Korea Institute of Science and Technology), developing label-free plasmonic sensing platforms for GPCR (G protein-coupled receptor) conformational dynamics in a drug-discovery initiative.'
     ],
     imgs: []
@@ -675,6 +681,30 @@ function buildGalleryInto(container, imgs){
     wrap.appendChild(createLightboxThumb(imgs[i].src, imgs[i].cap || ''));
   }
   container.appendChild(wrap);
+}
+
+function appendSupportingGallery(parent, imgs, galleryClass){
+  if (!imgs || imgs.length === 0) return;
+
+  var gwrap = document.createElement('div');
+  gwrap.className = galleryClass + ' supporting-gallery';
+  gwrap.hidden = true;
+  for (var k = 0; k < imgs.length; k++){
+    gwrap.appendChild(createLightboxThumb(imgs[k].src, imgs[k].cap || ''));
+  }
+
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'supporting-toggle';
+  btn.innerHTML = '<span class="label">Supporting materials</span><span class="chevron">▾</span>';
+  btn.addEventListener('click', function(){
+    var willOpen = gwrap.hidden;
+    gwrap.hidden = !willOpen;
+    btn.classList.toggle('is-open', willOpen);
+  });
+
+  parent.appendChild(btn);
+  parent.appendChild(gwrap);
 }
 
 function buildResearchInterest(){
@@ -853,12 +883,7 @@ function buildEntryList(containerId, data){
     }
 
     if (e.imgs && e.imgs.length > 0){
-      var gwrap = document.createElement('div');
-      gwrap.className = 'entry-gallery';
-      for (var k = 0; k < e.imgs.length; k++){
-        gwrap.appendChild(createLightboxThumb(e.imgs[k].src, e.imgs[k].cap || ''));
-      }
-      row.appendChild(gwrap);
+      appendSupportingGallery(row, e.imgs, 'entry-gallery');
     }
 
     container.appendChild(row);
@@ -888,12 +913,7 @@ function buildAwardsList(){
     li.appendChild(rowDiv);
 
     if (a.imgs && a.imgs.length > 0){
-      var gwrap = document.createElement('div');
-      gwrap.className = 'award-gallery';
-      for (var k = 0; k < a.imgs.length; k++){
-        gwrap.appendChild(createLightboxThumb(a.imgs[k].src, a.imgs[k].cap || ''));
-      }
-      li.appendChild(gwrap);
+      appendSupportingGallery(li, a.imgs, 'award-gallery');
     }
 
     ul.appendChild(li);
@@ -923,12 +943,7 @@ function buildTeaching(){
     item.appendChild(advisor);
 
     if (t.imgs && t.imgs.length > 0){
-      var gwrap = document.createElement('div');
-      gwrap.className = 'entry-gallery';
-      for (var k = 0; k < t.imgs.length; k++){
-        gwrap.appendChild(createLightboxThumb(t.imgs[k].src, t.imgs[k].cap || ''));
-      }
-      item.appendChild(gwrap);
+      appendSupportingGallery(item, t.imgs, 'entry-gallery');
     }
 
     container.appendChild(item);
