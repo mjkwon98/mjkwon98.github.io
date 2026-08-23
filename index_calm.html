@@ -63,6 +63,9 @@ section{padding:76px 0 20px;}
 .entry-bullets{grid-column:1 / -1;margin-top:0.5rem;padding-left:1.1rem;}
 .entry-bullets li{font-size:0.9rem;color:var(--muted);margin-bottom:0.3rem;}
 .entry-bullets li:last-child{margin-bottom:0;}
+.entry-bullets .sub-bullets{list-style:circle;padding-left:1.3rem;margin-top:0.4rem;margin-bottom:0.6rem;}
+.entry-bullets .sub-bullets li{margin-bottom:0.35rem;}
+.entry-bullets .sub-bullets li:last-child{margin-bottom:0;}
 
 .entry-gallery{grid-column:1 / -1;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:0.75rem;}
 
@@ -528,13 +531,8 @@ var RESEARCH = [
     sub: 'Korea University',
     bullets: [
       'Advised by Prof. Yong-Sang Ryu',
-      'Building on our co-authored work (in review, Advanced Materials), fabricating large-area, nanometer-precision nanohole plasmonic metasurfaces via laser interference lithography (LIL), electron-beam deposition, and ICP-RIE etching &mdash; engineering a SERS-optimized biosensor capable of quantifying SERS signal through DEP- and ACEO-driven single-nanoparticle capture at the sensing hotspots.',
-      'Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields to identify nanohole geometries yielding up to ~1.8&times;10<sup>5</sup>-fold electric-field intensity enhancement at sensing hotspots, and modeling DEP/ACEO-driven single-particle capture dynamics to validate experimental trapping behavior.',
-      'Applying convolutional neural networks (CNNs) to analyze SEM images for evaluating the relative standard deviation (RSD) of single-nanoparticle capture, providing a quantitative measure of biosensor uniformity and the resulting SERS signal.',
-      'Coworking projects: Providing core nanofabrication support for concurrent lab initiatives.',
-      '<strong>FRET (F&ouml;rster Resonance Energy Transfer) metasurface</strong>: Collaborating with Prof. Junsuk Noh (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it.',
-      '<strong>Hydrogen-sensing MEMS platform</strong>: Providing deposition and lithography support for fabricating a terahertz-resonant chip structure.',
-      '<strong>Electrochemical-sensing nanostructure</strong>: Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.',
+      '<strong>Current Project: MIM Nanohole Single Particle Analysis Metasurface (SPAM)</strong><ul class="sub-bullets"><li><strong>Fabrication:</strong> Building on our co-authored work (in review, Advanced Materials), fabricating large-area, nanometer-precision nanohole plasmonic metasurfaces via laser interference lithography (LIL), electron-beam deposition, and ICP-RIE etching &mdash; engineering a SERS-optimized biosensor capable of quantifying SERS signal through DEP- and ACEO-driven single-nanoparticle capture at the sensing hotspots.</li><li><strong>Simulation:</strong> Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields to identify nanohole geometries yielding up to ~1.8&times;10<sup>5</sup>-fold electric-field intensity enhancement at sensing hotspots, and modeling DEP/ACEO-driven single-particle capture dynamics to validate experimental trapping behavior.</li><li><strong>CNN Analysis:</strong> Applying convolutional neural networks (CNNs) to analyze SEM images for evaluating the relative standard deviation (RSD) of single-nanoparticle capture, providing a quantitative measure of biosensor uniformity and the resulting SERS signal.</li></ul>',
+      '<strong>Coworking Projects</strong><ul class="sub-bullets"><li><strong>FRET (F&ouml;rster Resonance Energy Transfer) metasurface:</strong> Collaborating with Prof. Junsuk Noh (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it.</li><li><strong>Hydrogen-sensing MEMS platform:</strong> Providing deposition and lithography support for fabricating a terahertz-resonant chip structure.</li><li><strong>Electrochemical-sensing nanostructure:</strong> Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.</li></ul>',
       'Affiliated Researcher of Nanophotonics Research Center, KIST (Korea Institute of Science and Technology), developing label-free plasmonic sensing platforms for GPCR (G protein-coupled receptor) conformational dynamics in a drug-discovery initiative.'
     ],
     imgs: []
