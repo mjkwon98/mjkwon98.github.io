@@ -332,7 +332,9 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-Aligner2.jpeg', cap: 'UV exposure step during photolithography.' },
               { src: 'aligner_example_001.jpeg', cap: 'Alignment of 20um scale array over the 50um scale array.' },
               { src: 'aligner_example_002.jpeg', cap: 'SEM result of alignment, pattern was lifted off after Ti/Al2O3 thin film deposition.' },
-              { src: 'Ryu-photomask.jpeg', cap: 'Custom photomask I designed in CAD, with the nanohole array and alignment patterns used for the mask-aligner exposure step.' }
+              { src: 'Ryu-photomask.jpeg', cap: 'Custom photomask I designed in CAD, with the nanohole array and alignment patterns used for the mask-aligner exposure step.' },
+              { src: 'Ryu-SU8-fluidic-channel1.jpeg', cap: 'Cross-sectional SEM of an SU-8 (TF 6000) fluidic channel sidewall, patterned by mask-aligner photolithography.' },
+              { src: 'Ryu-SU8-fluidic-channel2.jpeg', cap: 'Cross-sectional SEM of the SU-8 (TF 6000) fluidic channel edge profile at a second location.' }
           ]},
           { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication. Certified independent operator. Used to pattern the periodic nanopost template for my MIM plasmonic nanohole sensor.', imgs: [
               { src: 'Ryu-LIL.jpeg', cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
@@ -487,8 +489,9 @@ var SKILLS_GROUPS = [
         items: [
           { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [], noPanel: true },
           { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [], noPanel: true },
-          { name: 'Python-based data analysis', desc: 'Custom image/data processing using ML (Machine Learning), OpenCV, etc.', imgs: [
-            { src: 'fig_cv_pipeline.png', cap: 'Automated SEM image analysis for particle capture classification using ML.'}
+          { name: 'Python-based data analysis', desc: 'Custom CNN-based image/data processing using PyTorch and OpenCV, applied to quantify single-particle capture uniformity (RSD) from SEM images as a measure of biosensor performance.', imgs: [
+            { src: 'fig_cv_pipeline.png', cap: 'Automated SEM image analysis for particle capture classification using ML.'},
+            { src: 'Ryu-CNN-particle-detection.jpeg', cap: 'CNN-based classification of nanohole particle capture from SEM images (SINGLE/EMPTY/MULTI/low-confidence HOLD), shown at anchor (4,500x) and zoom (25,000x) magnification, upgraded from the earlier ML pipeline.' }
           ] }
         ]
       },
@@ -550,7 +553,7 @@ var RESEARCH = [
     date: 'Mar 2024 &ndash; Aug 2025',
     sub: 'Radicheck (Seoul, Republic of Korea)',
     bullets: [
-      'Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment; two patents are currently pending on the radiation detection platform.'
+      'Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment; two patents are currently pending on this platform.'
     ],
     imgs: []
   }
