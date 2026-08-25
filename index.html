@@ -52,6 +52,13 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .about-meta span{display:inline-flex;align-items:center;gap:5px;}
 .research-interest{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin-top:1.5rem;font-size:0.95rem;}
 .research-interest strong{font-weight:600;}
+.ri-heading{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:700;margin-bottom:0.55rem;}
+.ri-summary{font-size:0.95rem;margin-bottom:0.85rem;}
+.ri-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.4rem;}
+.ri-list li{font-size:0.9rem;line-height:1.5;}
+.ri-label{color:var(--accent);font-weight:600;}
+.ri-keywords{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.9rem;}
+.ri-keyword{font-size:0.76rem;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:0.25rem 0.7rem;color:var(--muted);}
 
 .entry{display:grid;grid-template-columns:1fr auto;gap:0.25rem 1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line);}
 .entry:last-child{border-bottom:none;}
@@ -301,9 +308,20 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 "use strict";
 
 var RESEARCH_INTEREST_HTML =
-  '<strong>Nanofabrication</strong> of periodic/3D nanostructures with tailored optical/mechanical/interfacial properties; ' +
-  '<strong>Plasmonic/metasurface-based optical sensing</strong>; <strong>Structure-mediated particle and fluid control</strong> via ' +
-  'electrokinetic phenomena; <strong>Finite Element Analysis (FEA)</strong> for optical/electrical simulations.';
+  '<div class="ri-heading">Research Interests</div>' +
+  '<div class="ri-summary">Driven by the development of novel optical and electrical biosensors for precision diagnostics through nanofabrication and computational modeling.</div>' +
+  '<ul class="ri-list">' +
+    '<li><span class="ri-label">Nanofabrication</span> &mdash; periodic/3D nanostructures with tailored optical, mechanical, and interfacial properties.</li>' +
+    '<li><span class="ri-label">Plasmonics &amp; Metasurfaces</span> &mdash; metasurface-based optical biosensing platforms.</li>' +
+    '<li><span class="ri-label">Electrokinetics</span> &mdash; structure-mediated particle and fluid control via electrokinetic (DEP/ACEO) phenomena.</li>' +
+    '<li><span class="ri-label">FEA Simulation</span> &mdash; finite element analysis for optical and electrical field modeling.</li>' +
+  '</ul>' +
+  '<div class="ri-keywords">' +
+    '<span class="ri-keyword">Nanofabrication</span>' +
+    '<span class="ri-keyword">Plasmonics &amp; Metasurfaces</span>' +
+    '<span class="ri-keyword">Electrokinetics</span>' +
+    '<span class="ri-keyword">FEA Simulation</span>' +
+  '</div>';
 
 var PUBLICATIONS = [
   {
@@ -366,14 +384,17 @@ var SKILLS_GROUPS = [
               { src: 'thermal_example_001.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, before deposition.' },
               { src: 'thermal_example_002.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, after deposition.' }
           ]},
-          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Certified independent operator. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry.', imgs: [
+          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Certified independent operator. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry. As the equipment&rsquo;s operator, also led periodic maintenance &mdash; crucible shield replacement, internal chamber cleaning, and full system overhaul.', imgs: [
               { src: 'Ryu-ebeam.jpeg', cap: 'KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions.' },
               { src: 'Ryu-ebeam2.jpeg', cap: 'High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder.' },
               { src: 'Ryu-ebeam3.jpeg', cap: 'Six-pocket crucible carousel loaded with representative source materials used for multi-source e-beam deposition.' },
               { src: 'ebeam_example_001.jpeg', cap: 'E-beam deposition above LIL nanopost array, forming an inclined nanohole array via intentional directional shadowing.' },
               { src: 'ebeam_example_002.jpeg', cap: 'E-beam deposition above LIL nanopost array, forming a vertical nanohole array.' },
               { src: 'ebeam_example_003.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' },
-              { src: 'ebeam_example_004.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' }
+              { src: 'ebeam_example_004.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' },
+              { src: 'Ryu-ebeam-overhaul-before.jpeg', cap: 'Chamber interior before overhaul, showing deposition residue and shield discoloration accumulated from repeated multi-source depositions.' },
+              { src: 'Ryu-ebeam-overhaul-shield.jpeg', cap: 'Removing and remounting the crucible shields as part of the overhaul.' },
+              { src: 'Ryu-ebeam-overhaul-after.jpeg', cap: 'Chamber after internal cleaning and shield replacement, restored to a clean, deposition-ready state.' }
           ]},
           { name: 'Sputter Deposition', desc: 'Sputter deposition of thin films.', imgs: [
               { src: 'Ryu-sputter.jpeg', cap: 'Co-Sputtering System (SiO2/Ti targets) used for multi-target sputter deposition.' }
@@ -725,7 +746,7 @@ function appendSupportingGallery(parent, imgs, galleryClass){
 function buildResearchInterest(){
   var box = document.getElementById('researchInterestBox');
   if (!box) return;
-  box.innerHTML = '<strong>Research Interests:</strong> ' + RESEARCH_INTEREST_HTML;
+  box.innerHTML = RESEARCH_INTEREST_HTML;
 }
 
 function buildPublications(){
