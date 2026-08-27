@@ -50,6 +50,9 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .about-intro .affil{font-size:0.95rem;color:var(--muted);}
 .about-meta{font-size:0.85rem;color:var(--muted);margin-top:0.75rem;display:flex;gap:1rem;flex-wrap:wrap;}
 .about-meta span{display:inline-flex;align-items:center;gap:5px;}
+.hero-links{display:flex;gap:0.6rem;margin-top:0.85rem;flex-wrap:wrap;}
+.hero-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);border-radius:999px;padding:0.4rem 1rem;text-decoration:none;transition:background 0.15s,color 0.15s;}
+.hero-btn:hover{background:var(--accent);color:#fff;}
 .research-interest{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin-top:1.5rem;font-size:0.95rem;}
 .research-interest strong{font-weight:600;}
 .ri-heading{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:700;margin-bottom:0.55rem;}
@@ -58,7 +61,8 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .ri-list li{font-size:0.9rem;line-height:1.5;}
 .ri-label{color:var(--accent);font-weight:600;}
 .ri-keywords{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.9rem;}
-.ri-keyword{font-size:0.76rem;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:0.25rem 0.7rem;color:var(--muted);}
+.ri-keywords .skill-chip{font-size:0.8rem;}
+.ri-related-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;margin-bottom:0.5rem;margin-top:0.25rem;}
 
 .entry{display:grid;grid-template-columns:1fr auto;gap:0.25rem 1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line);}
 .entry:last-child{border-bottom:none;}
@@ -81,6 +85,8 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .supporting-toggle .chevron{font-size:0.65rem;transition:transform 0.15s;}
 .supporting-toggle.is-open .chevron{transform:rotate(180deg);}
 .supporting-gallery[hidden]{display:none;}
+.supporting-toggle.is-empty{opacity:0.55;cursor:default;}
+.supporting-toggle.is-empty:hover{background:var(--bg-alt);color:var(--muted);border-color:var(--line);}
 
 .award-list{list-style:none;}
 .award-list li{padding:0.7rem 0;border-bottom:1px solid var(--line);font-size:0.95rem;}
@@ -90,12 +96,16 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .award-date{color:var(--muted);font-size:0.85rem;white-space:nowrap;}
 .award-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:0.6rem;max-width:420px;}
 
-.pub-item{padding:0.9rem 0;border-bottom:1px solid var(--line);font-size:0.94rem;}
+.pub-item{padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.94rem;}
 .pub-item:last-child{border-bottom:none;}
-.pub-num{color:var(--accent);font-weight:600;margin-right:0.3rem;}
-.pub-title{font-style:italic;}
-.pub-venue{color:var(--text);}
-.pub-legend{font-size:0.8rem;color:var(--muted);margin-top:0.5rem;}
+.pub-authors{margin-bottom:0.3rem;}
+.pub-title{font-style:italic;font-weight:600;color:var(--text);margin-bottom:0.5rem;}
+.pub-meta{display:flex;align-items:center;flex-wrap:wrap;gap:0.45rem;font-size:0.82rem;color:var(--muted);}
+.pub-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.pub-status{color:var(--text);}
+.pub-sep{color:var(--line);}
+.pub-topic{color:var(--accent);font-weight:600;}
+.pub-legend{font-size:0.8rem;color:var(--muted);margin-top:0.75rem;}
 
 .teach-item{display:grid;grid-template-columns:1fr auto;gap:0.2rem 1.5rem;padding:0.9rem 0;border-bottom:1px solid var(--line);}
 .teach-item:last-child{border-bottom:none;}
@@ -114,9 +124,9 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .skill-supergroup:first-of-type{margin-top:0;}
 .skill-cat{margin-bottom:1.5rem;}
 .skill-cat h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;font-weight:600;}
-.skill-chips{display:flex;flex-wrap:wrap;gap:8px;}
-.skill-chip{font-size:0.875rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:6px;padding:6px 13px;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:6px;user-select:none;}
-.skill-chip:hover{border-color:var(--accent);color:var(--accent);}
+.skill-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.skill-chip{font-size:0.92rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:10px 18px;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:6px;user-select:none;}
+.skill-chip:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.06);}
 .skill-chip.open{background:var(--accent);color:#fff;border-color:var(--accent);}
 .skill-chip::after{content:'+';font-size:14px;line-height:1;opacity:0.5;}
 .skill-chip.open::after{content:'\2212';opacity:1;}
@@ -155,9 +165,16 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 
 footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem;}
 
+@media (max-width:700px){
+  .nav-inner{flex-wrap:nowrap;}
+  .nav-name{flex-shrink:0;}
+  .nav-links{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;min-width:0;gap:0.9rem;scrollbar-width:none;mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent 100%);-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent 100%);}
+  .nav-links::-webkit-scrollbar{display:none;}
+}
 @media (max-width:600px){
   .about-head{flex-direction:column;text-align:center;}
   .about-meta{justify-content:center;}
+  .hero-links{justify-content:center;}
   .entry{grid-template-columns:1fr;}
   .entry-date{text-align:left;}
   .award-row{flex-direction:column;gap:2px;}
@@ -202,6 +219,10 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
         <div class="about-meta">
           <span>Seoul, Republic of Korea</span>
           <span>rnjs0830@korea.ac.kr</span>
+        </div>
+        <div class="hero-links">
+          <a class="hero-btn" href="mailto:rnjs0830@korea.ac.kr">Email</a>
+          <a class="hero-btn" href="Minjae_Kwon_CV.pdf" target="_blank" rel="noopener">CV</a>
         </div>
       </div>
     </div>
@@ -315,19 +336,43 @@ var RESEARCH_INTEREST_HTML =
     '<li><span class="ri-label">Plasmonics &amp; Metasurfaces</span> &mdash; metasurface engineering for plasmonic field enhancement and optical sensing.</li>' +
     '<li><span class="ri-label">Electrokinetics</span> &mdash; structure-mediated particle and fluid control via electrokinetic (DEP/ACEO) phenomena.</li>' +
     '<li><span class="ri-label">FEA Simulation</span> &mdash; finite element analysis for optical and electrical field modeling.</li>' +
-  '</ul>' +
-  '<div class="ri-keywords">' +
-    '<span class="ri-keyword">Nanofabrication</span>' +
-    '<span class="ri-keyword">Plasmonics &amp; Metasurfaces</span>' +
-    '<span class="ri-keyword">Electrokinetics</span>' +
-    '<span class="ri-keyword">FEA Simulation</span>' +
-  '</div>';
+  '</ul>';
+
+var RESEARCH_INTEREST_TOPICS = [
+  {
+    name: 'Nanofabrication',
+    desc: 'Building large-area, periodic nanostructures with tailored optical, mechanical, and interfacial properties, mainly for plasmonic biosensing platforms. My process flow combines laser interference lithography (LIL) and electron beam lithography (EBL) to define nanohole/nanopost geometry, atomic layer deposition (ALD) and electron-beam evaporation to control insulator and metal layer thicknesses to within 5 nm, and reactive-ion etching (RIE / ICP-RIE) to open apertures and fabricate imprint molds — with photolithography, sputter deposition, PECVD, and surface treatment (oxygen plasma ashing, UV-ozone) supporting the surrounding process steps.',
+    relatedSkills: ['Lithography', 'PVD (Physical Vapor Deposition)', 'CVD (Chemical Vapor Deposition)', 'Etching', 'Surface Treatment'],
+    imgs: []
+  },
+  {
+    name: 'Plasmonics & Metasurfaces',
+    desc: 'Engineering MIM (metal-insulator-metal) nanohole metasurfaces for plasmonic field enhancement and optical sensing, then verifying that design against measurement. I use reflectance spectroscopy to measure a nanohole array’s optical resonance spectrum and validate it against COMSOL simulation, and Raman spectroscopy (RAMANtouch confocal microscope) to read out the SERS signal from analytes captured at the nanohole hotspots — geometries in this platform have reached up to ~1.8×10⁵-fold electric-field intensity enhancement at the sensing hotspots.',
+    relatedSkills: ['Reflectance Spectroscopy', 'Raman Spectroscopy'],
+    imgs: []
+  },
+  {
+    name: 'Electrokinetics',
+    desc: 'Using electrokinetic (DEP/ACEO) phenomena to steer single nanoparticles onto plasmonic sensing hotspots, so each hotspot captures one particle rather than a random cluster. I simulate the electrokinetic fields (COMSOL ec/spf) driving this AC-driven transport to identify capture-favorable geometries, then validate the predicted trapping behavior against SEM images of the actual capture outcome.',
+    relatedSkills: ['COMSOL Multiphysics'],
+    imgs: []
+  },
+  {
+    name: 'FEA Simulation',
+    desc: 'Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields side by side to guide nanostructure design before fabrication — identifying nanohole geometries for field enhancement and modeling DEP/ACEO-driven particle-capture dynamics — with Lumerical FDTD for complementary electromagnetic simulation of nanophotonic structures.',
+    relatedSkills: ['COMSOL Multiphysics', 'Lumerical FDTD'],
+    imgs: []
+  }
+];
 
 var PUBLICATIONS = [
   {
     authorsHTML: 'S. Lee<sup>&#8225;</sup>, S. Choi<sup>&#8225;</sup>, T. Kim, <strong>M. Kwon</strong>, T. J. Mun, S. Son, H. Seong, K. Lee, H. Im, E.-S. Yu, M.-K. Kim<sup>*</sup>, and Y.-S. Ryu<sup>*</sup>',
     title: 'Analyte-accessible field volume as a governing design principle for nanophotonic sensing',
-    venue: 'under review, Advanced Materials (2026).'
+    venue: 'Advanced Materials',
+    status: 'Under review',
+    year: '2026',
+    topic: 'Plasmonics & Metasurfaces'
   }
 ];
 var PUBLICATIONS_LEGEND = '<sup>&#8225;</sup>Equal contribution, <sup>*</sup>Corresponding author';
@@ -752,22 +797,121 @@ function appendSupportingGallery(parent, imgs, galleryClass){
   parent.appendChild(gwrap);
 }
 
+function appendSupportingGalleryPlaceholder(parent){
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'supporting-toggle is-empty';
+  btn.disabled = true;
+  btn.innerHTML = '<span class="label">Supporting materials coming soon</span>';
+  parent.appendChild(btn);
+}
+
+var activeRiChip = null;
+
 function buildResearchInterest(){
   var box = document.getElementById('researchInterestBox');
   if (!box) return;
   box.innerHTML = RESEARCH_INTEREST_HTML;
+
+  var chipsWrap = document.createElement('div');
+  chipsWrap.className = 'ri-keywords';
+
+  var panel = document.createElement('div');
+  panel.className = 'skill-panel';
+
+  RESEARCH_INTEREST_TOPICS.forEach(function(topic, idx){
+    var chip = document.createElement('div');
+    chip.className = 'skill-chip ri-chip';
+    chip.textContent = topic.name;
+    chip.addEventListener('click', function(){
+      toggleResearchPanel(idx, chip, panel);
+    });
+    chipsWrap.appendChild(chip);
+  });
+
+  box.appendChild(chipsWrap);
+  box.appendChild(panel);
+}
+
+function toggleResearchPanel(idx, chip, panel){
+  var topic = RESEARCH_INTEREST_TOPICS[idx];
+  var isSame = (activeRiChip === chip);
+
+  var openChips = document.querySelectorAll('.ri-chip.open');
+  for (var a = 0; a < openChips.length; a++){ openChips[a].classList.remove('open'); }
+
+  if (isSame){
+    panel.classList.remove('open');
+    activeRiChip = null;
+    return;
+  }
+
+  panel.innerHTML = '';
+
+  var title = document.createElement('div');
+  title.className = 'skill-panel-title';
+  title.textContent = topic.name;
+  panel.appendChild(title);
+
+  var desc = document.createElement('div');
+  desc.className = 'skill-panel-desc';
+  desc.textContent = topic.desc;
+  panel.appendChild(desc);
+
+  if (topic.relatedSkills && topic.relatedSkills.length > 0){
+    var relLabel = document.createElement('div');
+    relLabel.className = 'ri-related-label';
+    relLabel.textContent = 'Related skills';
+    panel.appendChild(relLabel);
+
+    var relWrap = document.createElement('div');
+    relWrap.className = 'skill-chips';
+    topic.relatedSkills.forEach(function(name){
+      var pill = document.createElement('div');
+      pill.className = 'skill-chip static';
+      pill.textContent = name;
+      relWrap.appendChild(pill);
+    });
+    panel.appendChild(relWrap);
+  }
+
+  if (topic.imgs && topic.imgs.length > 0){
+    buildGalleryInto(panel, topic.imgs);
+  }
+
+  panel.classList.add('open');
+  chip.classList.add('open');
+  activeRiChip = chip;
 }
 
 function buildPublications(){
   var container = document.getElementById('publicationsList');
   if (!container) return;
-  PUBLICATIONS.forEach(function(p, i){
+  PUBLICATIONS.forEach(function(p){
     var item = document.createElement('div');
     item.className = 'pub-item';
-    item.innerHTML =
-      '<span class="pub-num">[' + (i + 1) + ']</span>' +
-      p.authorsHTML + ', &ldquo;<span class="pub-title">' + p.title + '</span>,&rdquo; ' +
-      '<span class="pub-venue">' + p.venue + '</span>';
+
+    var authors = document.createElement('div');
+    authors.className = 'pub-authors';
+    authors.innerHTML = p.authorsHTML;
+    item.appendChild(authors);
+
+    var title = document.createElement('div');
+    title.className = 'pub-title';
+    title.textContent = p.title;
+    item.appendChild(title);
+
+    var meta = document.createElement('div');
+    meta.className = 'pub-meta';
+    meta.innerHTML =
+      '<span class="pub-dot"></span>' +
+      '<span class="pub-status">' + p.status + ', ' + p.year + '</span>' +
+      '<span class="pub-sep">&middot;</span>' +
+      '<span class="pub-venue">' + p.venue + '</span>' +
+      '<span class="pub-sep">&middot;</span>' +
+      '<span class="pub-topic">' + p.topic + '</span>';
+    item.appendChild(meta);
+
     container.appendChild(item);
   });
   var legend = document.createElement('div');
@@ -881,7 +1025,7 @@ function buildLanguages(){
   });
 }
 
-function buildEntryList(containerId, data){
+function buildEntryList(containerId, data, alwaysShowSupporting){
   var container = document.getElementById(containerId);
   if (!container) return;
   for (var i = 0; i < data.length; i++){
@@ -924,6 +1068,8 @@ function buildEntryList(containerId, data){
 
     if (e.imgs && e.imgs.length > 0){
       appendSupportingGallery(row, e.imgs, 'entry-gallery');
+    } else if (alwaysShowSupporting){
+      appendSupportingGalleryPlaceholder(row);
     }
 
     container.appendChild(row);
@@ -1011,7 +1157,7 @@ function init(){
   buildSkills();
   buildLanguages();
   buildEntryList('researchList', RESEARCH);
-  buildEntryList('activitiesList', ACTIVITIES);
+  buildEntryList('activitiesList', ACTIVITIES, true);
   buildAwardsList();
   buildTeaching();
 
