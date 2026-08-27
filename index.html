@@ -63,6 +63,10 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .ri-keywords{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.9rem;}
 .ri-keywords .skill-chip{font-size:0.8rem;}
 .ri-related-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;margin-bottom:0.5rem;margin-top:0.25rem;}
+.ri-related-cat{margin-bottom:1.1rem;}
+.ri-related-cat:last-child{margin-bottom:0;}
+.ri-related-cat h3{font-size:0.72rem;}
+.ri-related-cat .skill-chip{font-size:0.82rem;padding:7px 14px;}
 
 .entry{display:grid;grid-template-columns:1fr auto;gap:0.25rem 1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line);}
 .entry:last-child{border-bottom:none;}
@@ -104,7 +108,6 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .pub-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;}
 .pub-status{color:var(--text);}
 .pub-sep{color:var(--line);}
-.pub-topic{color:var(--accent);font-weight:600;}
 .pub-legend{font-size:0.8rem;color:var(--muted);margin-top:0.75rem;}
 
 .teach-item{display:grid;grid-template-columns:1fr auto;gap:0.2rem 1.5rem;padding:0.9rem 0;border-bottom:1px solid var(--line);}
@@ -342,25 +345,25 @@ var RESEARCH_INTEREST_TOPICS = [
   {
     name: 'Nanofabrication',
     desc: 'Building large-area, periodic nanostructures with tailored optical, mechanical, and interfacial properties, mainly for plasmonic biosensing platforms. My process flow combines laser interference lithography (LIL) and electron beam lithography (EBL) to define nanohole/nanopost geometry, atomic layer deposition (ALD) and electron-beam evaporation to control insulator and metal layer thicknesses to within 5 nm, and reactive-ion etching (RIE / ICP-RIE) to open apertures and fabricate imprint molds — with photolithography, sputter deposition, PECVD, and surface treatment (oxygen plasma ashing, UV-ozone) supporting the surrounding process steps.',
-    relatedSkills: ['Lithography', 'PVD (Physical Vapor Deposition)', 'CVD (Chemical Vapor Deposition)', 'Etching', 'Surface Treatment'],
+    relatedSkills: [{ categoryKey: 'lithography' }, { categoryKey: 'pvd' }, { categoryKey: 'cvd' }, { categoryKey: 'etching' }, { categoryKey: 'surface' }],
     imgs: []
   },
   {
     name: 'Plasmonics & Metasurfaces',
     desc: 'Engineering MIM (metal-insulator-metal) nanohole metasurfaces for plasmonic field enhancement and optical sensing, then verifying that design against measurement. I use reflectance spectroscopy to measure a nanohole array’s optical resonance spectrum and validate it against COMSOL simulation, and Raman spectroscopy (RAMANtouch confocal microscope) to read out the SERS signal from analytes captured at the nanohole hotspots — geometries in this platform have reached up to ~1.8×10⁵-fold electric-field intensity enhancement at the sensing hotspots.',
-    relatedSkills: ['Reflectance Spectroscopy', 'Raman Spectroscopy'],
+    relatedSkills: [{ categoryKey: 'analysis', itemNames: ['Reflectance Spectroscopy', 'Raman Spectroscopy'] }],
     imgs: []
   },
   {
     name: 'Electrokinetics',
     desc: 'Using electrokinetic (DEP/ACEO) phenomena to steer single nanoparticles onto plasmonic sensing hotspots, so each hotspot captures one particle rather than a random cluster. I simulate the electrokinetic fields (COMSOL ec/spf) driving this AC-driven transport to identify capture-favorable geometries, then validate the predicted trapping behavior against SEM images of the actual capture outcome.',
-    relatedSkills: ['COMSOL Multiphysics'],
+    relatedSkills: [{ categoryKey: 'fea', itemNames: ['COMSOL Multiphysics'] }],
     imgs: []
   },
   {
     name: 'FEA Simulation',
     desc: 'Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields side by side to guide nanostructure design before fabrication — identifying nanohole geometries for field enhancement and modeling DEP/ACEO-driven particle-capture dynamics — with Lumerical FDTD for complementary electromagnetic simulation of nanophotonic structures.',
-    relatedSkills: ['COMSOL Multiphysics', 'Lumerical FDTD'],
+    relatedSkills: [{ categoryKey: 'fea' }],
     imgs: []
   }
 ];
@@ -371,8 +374,7 @@ var PUBLICATIONS = [
     title: 'Analyte-accessible field volume as a governing design principle for nanophotonic sensing',
     venue: 'Advanced Materials',
     status: 'Under review',
-    year: '2026',
-    topic: 'Plasmonics & Metasurfaces'
+    year: '2026'
   }
 ];
 var PUBLICATIONS_LEGEND = '<sup>&#8225;</sup>Equal contribution, <sup>*</sup>Corresponding author';
@@ -833,6 +835,87 @@ function buildResearchInterest(){
   box.appendChild(panel);
 }
 
+function findSkillCategory(key){
+  for (var g = 0; g < SKILLS_GROUPS.length; g++){
+    var cats = SKILLS_GROUPS[g].categories;
+    for (var c = 0; c < cats.length; c++){
+      if (cats[c].key === key) return cats[c];
+    }
+  }
+  return null;
+}
+
+function renderRelatedSkillCategory(container, ref){
+  var cat = findSkillCategory(ref.categoryKey);
+  if (!cat) return;
+  var items = cat.items;
+  if (ref.itemNames && ref.itemNames.length > 0){
+    items = items.filter(function(it){ return ref.itemNames.indexOf(it.name) !== -1; });
+  }
+  if (!items.length) return;
+
+  var catWrap = document.createElement('div');
+  catWrap.className = 'skill-cat ri-related-cat';
+
+  var h3 = document.createElement('h3');
+  h3.textContent = cat.title;
+  catWrap.appendChild(h3);
+
+  var chipsWrap = document.createElement('div');
+  chipsWrap.className = 'skill-chips';
+  catWrap.appendChild(chipsWrap);
+
+  var subPanel = document.createElement('div');
+  subPanel.className = 'skill-panel';
+  catWrap.appendChild(subPanel);
+
+  items.forEach(function(skill, idx){
+    var chip = document.createElement('div');
+    chip.className = 'skill-chip';
+    chip.textContent = skill.name;
+    if (skill.noPanel){
+      chip.classList.add('static');
+    } else {
+      chip.addEventListener('click', function(){
+        toggleNestedSkillPanel(catWrap, idx, chip, items, subPanel);
+      });
+    }
+    chipsWrap.appendChild(chip);
+  });
+
+  container.appendChild(catWrap);
+}
+
+function toggleNestedSkillPanel(scope, idx, chip, items, panel){
+  var skill = items[idx];
+  var isSame = chip.classList.contains('open');
+
+  var openChips = scope.querySelectorAll('.skill-chip.open');
+  for (var a = 0; a < openChips.length; a++){ openChips[a].classList.remove('open'); }
+  panel.classList.remove('open');
+
+  if (isSame) return;
+
+  panel.innerHTML = '';
+
+  var title = document.createElement('div');
+  title.className = 'skill-panel-title';
+  title.textContent = skill.name;
+  panel.appendChild(title);
+
+  var desc = document.createElement('div');
+  desc.className = 'skill-panel-desc';
+  desc.textContent = skill.desc;
+  panel.appendChild(desc);
+
+  if (skill.imgs && skill.imgs.length > 0){
+    buildGalleryInto(panel, skill.imgs);
+  }
+
+  panel.classList.add('open');
+  chip.classList.add('open');
+}
+
 function toggleResearchPanel(idx, chip, panel){
   var topic = RESEARCH_INTEREST_TOPICS[idx];
   var isSame = (activeRiChip === chip);
@@ -864,15 +947,9 @@ function toggleResearchPanel(idx, chip, panel){
     relLabel.textContent = 'Related skills';
     panel.appendChild(relLabel);
 
-    var relWrap = document.createElement('div');
-    relWrap.className = 'skill-chips';
-    topic.relatedSkills.forEach(function(name){
-      var pill = document.createElement('div');
-      pill.className = 'skill-chip static';
-      pill.textContent = name;
-      relWrap.appendChild(pill);
+    topic.relatedSkills.forEach(function(ref){
+      renderRelatedSkillCategory(panel, ref);
     });
-    panel.appendChild(relWrap);
   }
 
   if (topic.imgs && topic.imgs.length > 0){
@@ -907,9 +984,7 @@ function buildPublications(){
       '<span class="pub-dot"></span>' +
       '<span class="pub-status">' + p.status + ', ' + p.year + '</span>' +
       '<span class="pub-sep">&middot;</span>' +
-      '<span class="pub-venue">' + p.venue + '</span>' +
-      '<span class="pub-sep">&middot;</span>' +
-      '<span class="pub-topic">' + p.topic + '</span>';
+      '<span class="pub-venue">' + p.venue + '</span>';
     item.appendChild(meta);
 
     container.appendChild(item);
