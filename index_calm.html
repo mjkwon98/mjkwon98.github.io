@@ -418,7 +418,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-ebeamlitho2.jpeg', cap: 'Dose sweep for PMMA-C4 PR electron beam lithography.' },
               { src: 'Ryu-HSQ-resist.jpeg', cap: 'H-SiQ 10% (Hydrogen Silsesquioxane), the negative-tone EBL resist used for high-resolution direct-write nanopatterning.' }
           ]},
-          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer.', imgs: [], noPanel: true },
+          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer — used to fabricate PDMS chambers for dielectrophoresis (DEP) experimental setups and to form microfluidic channels.', imgs: [], noPanel: false },
           { name: 'Nanoimprint Lithography (NIL)', desc: 'Nanostructure replication via mold-based, UV-curable nanoimprint lithography.', imgs: [
               { src: 'Ryu-Nanoimprint.jpeg', cap: 'Lab-built nanoimprint setup for large-area imprinting.' },
               { src: 'Ryu-Nanoimprint1.jpeg', cap: 'Vacuum chamber with UV-curing exposure module.' },
@@ -448,7 +448,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-ebeam-overhaul-shield.jpeg', cap: 'Removing and remounting the crucible shields as part of the overhaul.' },
               { src: 'Ryu-ebeam-overhaul-after.jpeg', cap: 'Chamber after internal cleaning and shield replacement, restored to a clean, deposition-ready state.' }
           ]},
-          { name: 'Sputter Deposition', desc: 'Sputter deposition of thin films.', imgs: [
+          { name: 'Sputter Deposition', desc: 'Low-temperature sputter deposition of thin films (e.g., SiO2), used to control film roughness and quality — factors that affect supported lipid bilayer (SLB) formation on the surface — while minimizing thermal load on the substrate.', imgs: [
               { src: 'Ryu-sputter.jpeg', cap: 'Co-Sputtering System (SiO2/Ti targets) used for multi-target sputter deposition.' }
           ], noPanel: false }
         ]
@@ -470,11 +470,11 @@ var SKILLS_GROUPS = [
         key: 'etching',
         title: 'Etching',
         items: [
-          { name: 'Reactive Ion Etching (RIE)', desc: 'Dry etching of metal and oxide thin films.', imgs: [
+          { name: 'Reactive Ion Etching (RIE)', desc: 'Dry etching of metal, oxide (SiO2), nitride, and polymer (e.g., PVP, pV3D3) thin films using O2, CF4, and Ar chemistries — including post-lithography trimming to shrink developed photoresist nanopost features.', imgs: [
               { src: 'Ryu-RIE.jpeg', cap: 'Femto Science COVANCE-RF (RIE, Bottom) and CUTE (plasma asher, Top) on the same cleanroom bench: RIE system with 3 gas lines.' },
               { src: 'RIE_example.jpeg', cap: 'Using RIE to etch pV3D3 thin film.' }
           ]},
-          { name: 'Inductively Coupled Plasma Reactive Ion Etching (ICP-RIE)', desc: 'High-anisotropy dry etching for deep, fine-featured nanostructures. Certified independent operator. Used to etch open the nanohole apertures through the MIM stack, and to fabricate the silicon mold for nanoimprint replication.', imgs: [
+          { name: 'Inductively Coupled Plasma Reactive Ion Etching (ICP-RIE)', desc: 'High-anisotropy dry etching for deep, fine-featured nanostructures, using a 6-gas-line system (Ar, O2, CF4, SF6, C4F8, CHF3) for tunable etch chemistry. Certified independent operator. Used to etch open the nanohole apertures through the MIM stack, and to fabricate the silicon mold for nanoimprint replication.', imgs: [
               { src: 'KIST-ICPRIE.jpeg', cap: 'Plasmart Miniplasma ICP-RIE system with 6 gas lines.' },
               { src: 'KIST-ICPRIE1.jpeg', cap: 'ICP-RIE chamber and control system.' },
               { src: 'ICPRIE_example_sio2.jpeg', cap: 'Highly anisotropic oxide etching via ICP-RIE.' },
@@ -521,7 +521,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-Alphastep3.jpeg', cap: 'Alpha-Step measurement of a ~160 nm step-height thin film, used to calibrate the tooling factor of the electron-beam evaporator.' },
               { src: 'Ryu-VKX3000.jpeg', cap: 'Keyence VK-X3000 3D Surface Profiler (laser confocal + white-light interferometry + focus variation, 0.01 nm height resolution, up to 50×50 mm scan area).' }
           ] },
-          { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant characterization.', imgs: [], noPanel: false },
+          { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant (n, k) characterization — used to verify the tooling factor and optical constants of SiO2 films deposited by ALD and PECVD.', imgs: [], noPanel: false },
           { name: 'Reflectance Spectroscopy', desc: "Optical reflectance characterization of thin films. Used to measure the nanohole array's optical resonance spectrum, validated against COMSOL simulation.", imgs: [
               { src: 'Ryu-Kymera.jpeg', cap: 'Andor Kymera 322i spectrometer for reflectance spectroscopy.' }
           ]},
@@ -531,7 +531,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-Exopert.jpeg', cap: 'Exopert ARM-Dx for AI-assisted target spectrum analysis.' },
               { src: 'Ryu-BWTEK.jpeg', cap: 'BWTEK i-Raman Plus for preliminary Raman spectrum screening.' }
           ]},
-          { name: 'Biological / Metallographic Microscope', desc: 'Optical microscopy for samples and devices.', imgs: [
+          { name: 'Optical & Epi-fluorescence Microscope', desc: 'Optical microscopy for samples and devices, including epi-fluorescence imaging with DAPI, Texas Red, and FITC filter sets, alongside brightfield (BF) and darkfield (DF) observation modes.', imgs: [
               { src: 'Ryu-microscope.jpeg', cap: 'Metallographic microscope.' },
               { src: 'Ryu-microscope2.jpeg', cap: 'Biological microscope.' }
           ]}
