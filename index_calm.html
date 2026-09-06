@@ -62,6 +62,10 @@ section{padding:76px 0 20px;}
 .ri-label{color:var(--accent);font-weight:600;}
 .ri-keywords{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.9rem;}
 .ri-keywords .skill-chip{font-size:0.8rem;}
+.ri-hero{margin-top:0.9rem;}
+.ri-hero img{width:100%;max-height:420px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:10px;cursor:pointer;display:block;transition:transform 0.2s ease,box-shadow 0.2s ease;}
+.ri-hero img:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(90,80,60,0.12);}
+.ri-hero[hidden]{display:none;}
 .ri-related-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;margin-bottom:0.5rem;margin-top:0.25rem;}
 .ri-related-cat{margin-bottom:1.1rem;}
 .ri-related-cat:last-child{margin-bottom:0;}
@@ -833,6 +837,17 @@ function buildResearchInterest(){
   if (!box) return;
   box.innerHTML = RESEARCH_INTEREST_HTML;
 
+  var heroWrap = document.createElement('div');
+  heroWrap.className = 'ri-hero';
+  heroWrap.hidden = true;
+
+  var heroImg = document.createElement('img');
+  heroImg.alt = '';
+  heroImg.addEventListener('click', function(){
+    openModal(heroImg.src, '');
+  });
+  heroWrap.appendChild(heroImg);
+
   var chipsWrap = document.createElement('div');
   chipsWrap.className = 'ri-keywords';
 
@@ -844,11 +859,12 @@ function buildResearchInterest(){
     chip.className = 'skill-chip ri-chip';
     chip.textContent = topic.name;
     chip.addEventListener('click', function(){
-      toggleResearchPanel(idx, chip, panel);
+      toggleResearchPanel(idx, chip, panel, heroWrap, heroImg);
     });
     chipsWrap.appendChild(chip);
   });
 
+  box.appendChild(heroWrap);
   box.appendChild(chipsWrap);
   box.appendChild(panel);
 }
@@ -934,7 +950,7 @@ function toggleNestedSkillPanel(scope, idx, chip, items, panel){
   chip.classList.add('open');
 }
 
-function toggleResearchPanel(idx, chip, panel){
+function toggleResearchPanel(idx, chip, panel, heroWrap, heroImg){
   var topic = RESEARCH_INTEREST_TOPICS[idx];
   var isSame = (activeRiChip === chip);
 
@@ -944,6 +960,7 @@ function toggleResearchPanel(idx, chip, panel){
   if (isSame){
     panel.classList.remove('open');
     activeRiChip = null;
+    if (heroWrap) heroWrap.hidden = true;
     return;
   }
 
@@ -971,7 +988,15 @@ function toggleResearchPanel(idx, chip, panel){
   }
 
   if (topic.imgs && topic.imgs.length > 0){
-    buildGalleryInto(panel, topic.imgs);
+    if (heroWrap && heroImg){
+      heroImg.src = topic.imgs[0].src;
+      heroWrap.hidden = false;
+    }
+    if (topic.imgs.length > 1){
+      buildGalleryInto(panel, topic.imgs.slice(1));
+    }
+  } else if (heroWrap){
+    heroWrap.hidden = true;
   }
 
   panel.classList.add('open');
