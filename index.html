@@ -337,8 +337,8 @@ var RESEARCH_INTEREST_HTML =
   '<ul class="ri-list">' +
     '<li><span class="ri-label">Nanofabrication</span> &mdash; periodic/3D nanostructures with tailored optical, mechanical, and interfacial properties.</li>' +
     '<li><span class="ri-label">Plasmonics &amp; Metasurfaces</span> &mdash; metasurface engineering for plasmonic field enhancement and optical sensing.</li>' +
-    '<li><span class="ri-label">Electrokinetics</span> &mdash; structure-mediated particle and fluid control via electrokinetic (DEP/ACEO) phenomena.</li>' +
-    '<li><span class="ri-label">FEA Simulation</span> &mdash; finite element analysis for optical and electrical field modeling.</li>' +
+    '<li><span class="ri-label">Electrokinetics &amp; Simulations</span> &mdash; multiphysics FEA optimizing electrokinetic particle capture and optical field enhancement.</li>' +
+    '<li><span class="ri-label">Deep-Learning Readout</span> &mdash; CNN-based image analysis for quantitative particle-capture recognition.</li>' +
   '</ul>';
 
 var RESEARCH_INTEREST_TOPICS = [
@@ -346,25 +346,33 @@ var RESEARCH_INTEREST_TOPICS = [
     name: 'Nanofabrication',
     desc: 'Building large-area, periodic nanostructures with tailored optical, mechanical, and interfacial properties, mainly for plasmonic biosensing platforms. My process flow combines laser interference lithography (LIL) and electron beam lithography (EBL) to define nanohole/nanopost geometry, atomic layer deposition (ALD) and electron-beam evaporation to control insulator and metal layer thicknesses to within 5 nm, and reactive-ion etching (RIE / ICP-RIE) to open apertures and fabricate imprint molds — with photolithography, sputter deposition, PECVD, and surface treatment (oxygen plasma ashing, UV-ozone) supporting the surrounding process steps.',
     relatedSkills: [{ categoryKey: 'lithography' }, { categoryKey: 'pvd' }, { categoryKey: 'cvd' }, { categoryKey: 'etching' }, { categoryKey: 'surface' }],
-    imgs: []
+    imgs: [
+      { src: 'fig1@2x.png', cap: 'Six-step nanofabrication process for the DEP-SERS nanowell chip: bottom electrode, ALD/e-beam insulating spacer, laser interference lithography, top-electrode lift-off, Al2O3 microhole windows, and ICP-RIE cavity etch.' }
+    ]
   },
   {
     name: 'Plasmonics & Metasurfaces',
     desc: 'Engineering MIM (metal-insulator-metal) nanohole metasurfaces for plasmonic field enhancement and optical sensing, then verifying that design against measurement. I use reflectance spectroscopy to measure a nanohole array’s optical resonance spectrum and validate it against COMSOL simulation, and Raman spectroscopy (RAMANtouch confocal microscope) to read out the SERS signal from analytes captured at the nanohole hotspots — geometries in this platform have reached up to ~1.8×10⁵-fold electric-field intensity enhancement at the sensing hotspots.',
     relatedSkills: [{ categoryKey: 'analysis', itemNames: ['Reflectance Spectroscopy', 'Raman Spectroscopy'] }],
-    imgs: []
+    imgs: [
+      { src: 'fig2@2x.png', cap: 'Nanohole MIM metasurface: the lattice period phase-matches the incident light to the Au/SiO2 plasmon, localizing the field at each aperture rim (COMSOL near-field, peak |E/E0|⁴ enhancement ~1.8×10⁵).' }
+    ]
   },
   {
-    name: 'Electrokinetics',
-    desc: 'Using electrokinetic (DEP/ACEO) phenomena to steer single nanoparticles onto plasmonic sensing hotspots, so each hotspot captures one particle rather than a random cluster. I simulate the electrokinetic fields (COMSOL ec/spf) driving this AC-driven transport to identify capture-favorable geometries, then validate the predicted trapping behavior against SEM images of the actual capture outcome.',
-    relatedSkills: [{ categoryKey: 'fea', itemNames: ['COMSOL Multiphysics'] }],
-    imgs: []
-  },
-  {
-    name: 'FEA Simulation',
-    desc: 'Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields side by side to guide nanostructure design before fabrication — identifying nanohole geometries for field enhancement and modeling DEP/ACEO-driven particle-capture dynamics — with Lumerical FDTD for complementary electromagnetic simulation of nanophotonic structures.',
+    name: 'Electrokinetics & Simulations',
+    desc: 'Using electrokinetic (DEP/ACEO) phenomena to steer single nanoparticles onto plasmonic sensing hotspots, so each hotspot captures one particle rather than a random cluster — validated against SEM images of the actual capture outcome. I drive this with multiphysics FEA in COMSOL, simulating optical (ewfd) and electrokinetic (ec/spf) fields side by side to identify capture-favorable, field-enhancing geometries before fabrication, with Lumerical FDTD for complementary electromagnetic simulation of nanophotonic structures.',
     relatedSkills: [{ categoryKey: 'fea' }],
-    imgs: []
+    imgs: [
+      { src: 'fig3@2x.png', cap: 'AC-driven single-particle capture at each nanowell: ACEO flow delivers particles to the surface and DEP seats one per well at the top-electrode aperture edge, validated against SEM (COMSOL multiphysics: ec + spf).' }
+    ]
+  },
+  {
+    name: 'Deep-Learning Readout',
+    desc: 'Reading out plasmonic capture uniformity at scale with a convolutional neural network that classifies every well in every SEM window as empty, single-particle, or multi-particle occupancy. Self-supervised pretraining on 136,784 unlabeled patches, fine-tuned on 10,426 labeled holes, and run as a 5-network ensemble — across 71,404 wells over 77 windows, this reads out a 98.8% capture rate (97.6% exactly one particle) with 0.87% window-to-window RSD, the structural statistic that makes the array quantitative.',
+    relatedSkills: [{ categoryKey: 'dataanalysis', itemNames: ['Python-based data analysis'] }],
+    imgs: [
+      { src: 'fig4@2x.png', cap: 'CNN-based per-well occupancy classification across 71,404 wells in 77 SEM windows: 98.8% capture rate, 97.6% single-particle occupancy, 0.87% window-to-window RSD.' }
+    ]
   }
 ];
 
