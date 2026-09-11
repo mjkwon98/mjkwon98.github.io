@@ -1,0 +1,144 @@
+{
+ "units": "um",
+ "source": "for_claude*.dxf (2026-09-06)",
+ "die": {
+  "x0": 59910,
+  "y0": 1790,
+  "x1": 83710,
+  "y1": 21590,
+  "w": 23800,
+  "h": 19800,
+  "stack": "Si + 300 nm wet SiO2"
+ },
+ "chip_ref": "lower-left chip (index 0); chip 2 = +7800 um in y; right pair (chips 1,3) = mirror of left pair about die centre x = 71,810 um (DXF re-checked 2026-09-06)",
+ "bottom_electrode": {
+  "material": "Cr 5 / Au 100 nm (shadow mask)",
+  "color": "blue",
+  "pts": [
+   [
+    60860,
+    6740
+   ],
+   [
+    67310,
+    6740
+   ],
+   [
+    67310,
+    5940
+   ],
+   [
+    71310,
+    5940
+   ],
+   [
+    71310,
+    9940
+   ],
+   [
+    67310,
+    9940
+   ],
+   [
+    67310,
+    8340
+   ],
+   [
+    60860,
+    8340
+   ]
+  ],
+  "pad": "6450 x 1600 strip to the left",
+  "square": "4000 x 4000 (67310-71310, 5940-9940)"
+ },
+ "dielectric": {
+  "material": "SiO2 ALD 5 / e-beam 140 / ALD 5 = 150 nm",
+  "blanket": true
+ },
+ "top_electrode": {
+  "material": "Ti 3 / Au 140 nm (shadow mask, after LIL + secondary exposure)",
+  "color": "red",
+  "pts": [
+   [
+    67710,
+    6540
+   ],
+   [
+    67710,
+    10240
+   ],
+   [
+    62710,
+    10240
+   ],
+   [
+    62710,
+    11840
+   ],
+   [
+    70710,
+    11840
+   ],
+   [
+    70710,
+    6540
+   ]
+  ],
+  "pad": "8000 x 1600 strip to the upper-left",
+  "square": "3000 x 3700 (67710-70710, 6540-10240)"
+ },
+ "overlap": {
+  "x0": 67710,
+  "y0": 6540,
+  "x1": 70710,
+  "y1": 9940,
+  "w": 3000,
+  "h": 3400
+ },
+ "nano_fields": {
+  "n": "16 x 16 = 256",
+  "size": 50,
+  "pitch": 100,
+  "x0": 68510,
+  "y0": 7140,
+  "x1": 70060,
+  "y1": 8690,
+  "nanohole": {
+   "diameter_nm": 200,
+   "pitch_nm": 500,
+   "array": "square, LIL 0/90 deg"
+  }
+ },
+ "al2o3": {
+  "material": "Ti 10 / Al2O3 150 nm (negative PR lift-off)",
+  "rect": [
+   68285,
+   6915,
+   70285,
+   11367.43
+  ],
+  "w": 2000,
+  "h": 4452.4
+ },
+ "microholes": {
+  "n": "10 x 10 = 100",
+  "diameter_cad": 15,
+  "diameter_target": 20,
+  "diameter_options": [
+   10,
+   15,
+   20
+  ],
+  "pitch": 100,
+  "cx0": 68835,
+  "cy0": 7465,
+  "cx1": 69735,
+  "cy1": 8365,
+  "note": "each microhole centered on a 50-um nano field"
+ },
+ "etch": {
+  "ICP-RIE": "SiO2 150 nm through nanoholes inside microholes -> bottom Au exposed"
+ },
+ "planned": "PR shield against top/bottom hard short (later)",
+ "chip_layout": "four 4 mm squares cluster at the die centre, pads point outward"
+}
