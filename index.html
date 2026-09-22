@@ -409,7 +409,7 @@ var SKILLS_GROUPS = [
         key: 'lithography',
         title: 'Lithography',
         items: [
-          { name: 'Aligner-assisted Photolithography', desc: 'UV photolithography for micro-patterning, including secondary exposure on selected regions of interest. Certified independent operator.', imgs: [
+          { name: 'Aligner-assisted Photolithography', desc: 'UV photolithography for micro-patterning, including secondary exposure on selected regions of interest. Certified independent operator. Used across many chip-level steps — electrode patterning and lift-off, Al2O3 microhole windows, and SU-8 fluidic channels — with photomasks I designed in CAD.', imgs: [
               { src: 'Ryu-Aligner.jpeg', cap: 'Mask aligner setup used for UV photolithography.' },
               { src: 'Ryu-Aligner2.jpeg', cap: 'UV exposure step during photolithography.' },
               { src: 'aligner_example_001.jpeg', cap: 'Alignment of 20um scale array over the 50um scale array.' },
@@ -428,7 +428,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-LIL2-1.jpeg', cap: 'Sub-130 nm nanopost array (500 nm period), 4-layer Cr/SiO2/Cr/Au stack over a large-area substrate.' },
               { src: 'LIL_example_005.jpeg', cap: 'PR line pattern on Si substrate via LIL (500 nm period, 58 mW×2 exposure), shown at X20,000 (overview) and X30,000 (212.5 nm linewidth measured) magnification.' }
           ]},
-          { name: 'Electron Beam Lithography (EBL)', desc: 'High-resolution direct-write nanopatterning for complex, arbitrary geometries beyond the resolution limit of optical lithography.', imgs: [
+          { name: 'Electron Beam Lithography (EBL)', desc: 'High-resolution direct-write nanopatterning on a TESCAN MIRA3 FE-SEM with a Raith ELPHY Quantum pattern generator, using HSQ (negative-tone) and PMMA (positive-tone) resists with dose-sweep optimization. Used for rapid small-area prototyping of multi-period nanohole arrays, to benchmark the spectral response of the large-area LIL-fabricated metasurfaces.', imgs: [
               { src: 'Ryu-EBL-TESCAN1.jpeg', cap: 'TESCAN MIRA3 FE-SEM with Raith ELPHY Quantum EBL pattern generator, our EBL system for direct-write nanopatterning.' },
               { src: 'Ryu-EBL-TESCAN2.jpeg', cap: 'TESCAN MIRA3 EBL station: beam column, ELPHY control PC, and pattern-design workstation.' },
               { src: 'Ryu-EBL-TESCAN3.jpeg', cap: 'ELPHY Quantum pattern generator (GDSII fracturing, dose-sweep exposure queue) alongside the Tescan MIRA3 SEM control panel in "External scanning" mode — the two consoles driving one EBL patterning run.' },
@@ -449,12 +449,12 @@ var SKILLS_GROUPS = [
         key: 'pvd',
         title: 'PVD (Physical Vapor Deposition)',
         items: [
-          { name: 'Thermal Deposition', desc: 'Resistive thermal evaporation of metal thin films. Certified independent operator.', imgs: [
+          { name: 'Thermal Deposition', desc: 'Resistive thermal evaporation of metal thin films (Cr, Pd, Au), including shadow-mask patterning. Certified independent operator. Used for electrode pads and hydrogen-sensor films.', imgs: [
               { src: 'Ryu-Thermal.jpeg', cap: 'ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers.' },
               { src: 'thermal_example_001.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, before deposition.' },
               { src: 'thermal_example_002.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, after deposition.' }
           ]},
-          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Certified independent operator. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry. As the equipment&rsquo;s operator, also led periodic maintenance &mdash; crucible shield replacement, internal chamber cleaning, and full system overhaul.', imgs: [
+          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Certified independent operator. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry. As the equipment’s operator, also led periodic maintenance — crucible shield replacement, internal chamber cleaning, and full system overhaul.', imgs: [
               { src: 'Ryu-ebeam.jpeg', cap: 'KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions.' },
               { src: 'Ryu-ebeam2.jpeg', cap: 'High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder.' },
               { src: 'Ryu-ebeam3.jpeg', cap: 'Six-pocket crucible carousel loaded with representative source materials used for multi-source e-beam deposition.' },
@@ -475,11 +475,11 @@ var SKILLS_GROUPS = [
         key: 'cvd',
         title: 'CVD (Chemical Vapor Deposition)',
         items: [
-          { name: 'Atomic Layer Deposition (ALD)', desc: 'Conformal thin-film deposition via ALD. Certified independent operator. Used to deposit the conformal oxide insulator layer of the MIM stack.', imgs: [
+          { name: 'Atomic Layer Deposition (ALD)', desc: 'Conformal Al2O3 and SiO2 thin-film deposition via ALD, typically under 10 nm per run with cycle-level thickness control. Certified independent operator. Used to deposit the conformal oxide insulator layer of the MIM stack.', imgs: [
               { src: 'Ryu-ALD.jpeg', cap: 'ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant.' },
               { src: 'Ryu-ALD-loading.jpeg', cap: 'Batch of chip samples loaded onto the wafer carrier prior to SiO2 thin-film deposition.' }
           ]},
-          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition.', imgs: [
+          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition — e.g., 140 nm SiO2 at 200 °C from a SiH4/N2O source — with film thickness and optical constants (n, k) verified by spectroscopic ellipsometry.', imgs: [
               { src: 'PECVD_example_sio2.jpeg', cap: '140 nm SiO2 thin film deposited via PECVD at 200°C using a SiH4/N2O precursor source, shown here on a patterned chip array.' }
           ] }
         ]
@@ -504,10 +504,10 @@ var SKILLS_GROUPS = [
         key: 'surface',
         title: 'Surface Treatment',
         items: [
-          { name: 'Oxygen Plasma Ashing', desc: 'Photoresist stripping and surface cleaning.', imgs: [
+          { name: 'Oxygen Plasma Ashing', desc: 'Photoresist descum and stripping, post-cleaning residue removal, and surface hydrophilization.', imgs: [
               { src: 'Ryu-RIE.jpeg', cap: 'Femto Science CUTE (plasma asher, Top) and COVANCE-RF (RIE, Bottom) on the same cleanroom bench: oxygen plasma ashing for surface treatment.' },
           ]},
-          { name: 'UV-Ozone', desc: 'UV-ozone surface activation and organic contaminant removal.', imgs: [
+          { name: 'UV-Ozone', desc: 'UV-ozone surface activation and organic contaminant removal — used as a surface treatment before ALD and for surface hydrophilization.', imgs: [
               { src: 'Ryu-UVOzone.jpeg', cap: 'Omniscience UVC-150 UV-Ozone generator for surface treatment.' }
           ]}
         ]
@@ -528,12 +528,12 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-EDS-INCA1.jpeg', cap: 'Using Oxford INCA EDS software to confirm detected elements (carbon, oxygen, aluminum, silicon, gold) from the acquired X-ray spectrum.' },
               { src: 'Ryu-EDS-INCA2.jpeg', cap: 'INCA EDS quantification report: electron image of the nanohole array alongside the X-ray spectrum and elemental composition by weight % and atomic % (C, O, Al, Si, Au).' }
           ]},
-          { name: 'Atomic Force Microscope (AFM)', desc: 'Surface topography and nanoscale roughness measurement.', imgs: [
+          { name: 'Atomic Force Microscope (AFM)', desc: 'Surface topography and nanoscale roughness measurement (Bruker Innova) — used to evaluate the quality of deposited SiO2 films and for GPCR analysis in the KU-KIST joint project.', imgs: [
               { src: 'Ryu-AFM.jpeg', cap: 'Bruker Innova AFM system.' },
               { src: 'Ryu-AFM-cantilever-focus.jpeg', cap: 'Focusing the optical camera on the AFM cantilever tip prior to scanning.' },
               { src: 'Ryu-AFM-probes.jpeg', cap: 'Bruker AFM cantilever probe set.' }
           ]},
-          { name: 'Stylus / Optical Surface Profiler', desc: 'Surface profile and step-height measurement.', imgs: [
+          { name: 'Stylus / Optical Surface Profiler', desc: 'Surface profile, step-height, and roughness measurement (KLA Alpha-Step stylus profiler, Keyence VK-X3000 3D surface profiler) — used to measure deposited film thickness and to calibrate the e-beam evaporator’s tooling factor from ~160 nm step heights.', imgs: [
               { src: 'Ryu-Alphastep.jpeg', cap: 'KLA D-100 Alpha-Step stylus profiler (sub-1-Å vertical resolution, 30 mm scan length, 0.03–10 mg stylus force control) for thin-film thickness and surface roughness measurement.' },
               { src: 'Ryu-Alphastep2.jpeg', cap: 'Measuring thin-film thickness on a sample with the Alpha-Step stylus profiler.' },
               { src: 'Ryu-Alphastep3.jpeg', cap: 'Alpha-Step measurement of a ~160 nm step-height thin film, used to calibrate the tooling factor of the electron-beam evaporator.' },
@@ -574,7 +574,7 @@ var SKILLS_GROUPS = [
         key: 'fea',
         title: 'FEA Simulation',
         items: [
-          { name: 'COMSOL Multiphysics', desc: 'FEA simulation of optical/electrical phenomena.', imgs: [
+          { name: 'COMSOL Multiphysics', desc: 'Finite-element multiphysics simulation of optical and electrokinetic phenomena: electromagnetic-wave (ewfd/emw) modeling of reflectance spectra and plasmonic near-field enhancement (up to ~1.8×10⁵-fold at the nanohole hotspots), and coupled electric-current / laminar-flow (ec/spf) modeling of nanoparticle transport under AC-driven DEP and ACEO — used to select nanohole geometries before fabrication.', imgs: [
               { src: 'comsol_example_001.jpeg', cap: 'Optical and electrokinetic COMSOL simulation suite for a plasmonic nanostructure: (a) reflectance spectrum (ewfd/emw), (b) plasmonic near-field enhancement (ewfd), (c) nanoparticle transport under AC-driven DEP, ACEO, buoyancy, and gravity in fluid (ec/spf).' }
             ], noPanel: false },
           { name: 'Lumerical FDTD', desc: 'Finite-difference time-domain electromagnetic simulation for nanophotonic structures.', imgs: [], noPanel: true }
@@ -597,7 +597,7 @@ var SKILLS_GROUPS = [
         key: '2d3d',
         title: '2D/3D Design',
         items: [
-          { name: 'Rhino / AutoCAD / Keyshot', desc: '2D/3D design and rendering.', imgs: [
+          { name: 'Rhino / AutoCAD / Keyshot', desc: '2D CAD and 3D modeling/rendering: designing my own photomasks (nanohole arrays and alignment marks) in CAD, and building 3D scientific illustrations and publication figures in Rhino and KeyShot — a workflow I also teach in HBL514 (Biomedical Design).', imgs: [
               { src: 'Ryu-Rhino-nanohole-illustration.png', cap: '3D-rendered schematic of the nanohole capture mechanism, illustrating selective analyte trapping within the nanostructure.' },
               { src: 'Ryu-Rhino-nanohole-capture-concept.png', cap: 'Concept illustration of AC-driven single-particle capture at gold nanohole hotspots, from initial trapping through Raman-based single-particle interrogation to full-array operation.' },
               { src: 'Ryu-Rhino-Raman-setup-figure.png', cap: '3D-rendered schematic of the custom Raman measurement setup (785 nm laser, top/bottom electrodes, PDMS ring, specimen holder), prepared as a publication figure.' }
