@@ -48,7 +48,7 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .section-title::after{content:'';position:absolute;left:0;bottom:0;width:42px;height:3px;background:var(--accent);border-radius:2px;}
 
 .about{padding-top:48px;}
-.about-head{display:flex;gap:2rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;}
+.about-head{display:flex;gap:2rem;align-items:flex-start;margin-bottom:1.5rem;flex-wrap:wrap;}
 
 .profile-photo{width:150px;height:190px;flex-shrink:0;border-radius:12px;background:var(--bg-alt);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;cursor:pointer;position:relative;}
 .profile-photo svg{width:38px;height:38px;color:#c2c8d0;}
@@ -69,6 +69,11 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .ri-summary{font-size:0.95rem;margin-bottom:0.85rem;}
 .ri-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.4rem;}
 .ri-list li{font-size:0.9rem;line-height:1.5;}
+.ri-list li.ri-item{cursor:pointer;padding:0.3rem 0.6rem;margin-left:-0.6rem;border-radius:6px;transition:background 0.15s;}
+.ri-list li.ri-item:hover{background:rgba(37,99,168,0.08);}
+.ri-list li.ri-item:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+.ri-list li.ri-item.open{background:#fff;box-shadow:inset 3px 0 0 var(--accent);}
+.about-bio{font-size:0.95rem;line-height:1.6;margin-top:0.9rem;max-width:560px;}
 .ri-label{color:var(--accent);font-weight:600;}
 .ri-keywords{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.9rem;}
 .ri-keywords .skill-chip{font-size:0.8rem;}
@@ -189,9 +194,10 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   .nav-links::-webkit-scrollbar{display:none;}
 }
 @media (max-width:600px){
-  .about-head{flex-direction:column;text-align:center;}
+  .about-head{flex-direction:column;text-align:center;align-items:center;}
   .about-meta{justify-content:center;}
   .hero-links{justify-content:center;}
+  .about-bio{text-align:left;}
   .entry{grid-template-columns:1fr;}
   .entry-date{text-align:left;}
   .award-row{flex-direction:column;gap:2px;}
@@ -237,6 +243,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
           <span>Seoul, Republic of Korea</span>
           <span>rnjs0830@korea.ac.kr</span>
         </div>
+        <p class="about-bio">I am an M.S. student in Prof. Yong-Sang Ryu&rsquo;s group at Korea University, where I build large-area plasmonic metasurfaces and use electrokinetics to place single nanoparticles onto their sensing hotspots. My work incorporates computational approaches throughout &mdash; COMSOL for device design and dynamic analysis, and deep learning for experimental readout. I am applying to Ph.D. programs for Fall 2027.</p>
         <div class="hero-links">
           <a class="hero-btn" href="mailto:rnjs0830@korea.ac.kr">Email</a>
           <a class="hero-btn" href="Minjae_Kwon_CV.pdf" target="_blank" rel="noopener">CV</a>
@@ -418,7 +425,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-SU8-fluidic-channel1.jpeg', cap: 'Cross-sectional SEM of an SU-8 (TF 6000) fluidic channel sidewall, patterned by mask-aligner photolithography.' },
               { src: 'Ryu-SU8-fluidic-channel2.jpeg', cap: 'Cross-sectional SEM of the SU-8 (TF 6000) fluidic channel edge profile at a second location.' }
           ]},
-          { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication. Certified independent operator. Used to pattern the periodic nanopost template for my MIM plasmonic nanohole sensor.', imgs: [
+          { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records, and vendor coordination. Used to pattern the periodic nanopost template for my MIM plasmonic nanohole sensor.', imgs: [
               { src: 'Ryu-LIL.jpeg', cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
               { src: 'LIL_example_001.jpeg', cap: 'Periodic post-shaped large-surface nanopattern produced by LIL, Period of 840nm.' },
               { src: 'LIL_example_002.jpeg', cap: 'Periodic post-shaped large-surface nanopattern produced by LIL, Period of 500nm.' },
@@ -543,7 +550,7 @@ var SKILLS_GROUPS = [
           { name: 'Reflectance Spectroscopy', desc: "Optical reflectance characterization of thin films. Used to measure the nanohole array's optical resonance spectrum, validated against COMSOL simulation.", imgs: [
               { src: 'Ryu-Kymera.jpeg', cap: 'Andor Kymera 322i spectrometer for reflectance spectroscopy.' }
           ]},
-          { name: 'Raman Spectroscopy', desc: 'Raman spectroscopy systems for SERS analysis. Certified independent operator of the RAMANtouch confocal Raman microscope. Used to measure SERS signal from analytes captured at the nanohole hotspots.', imgs: [
+          { name: 'Raman Spectroscopy', desc: 'Raman spectroscopy systems for SERS analysis. Equipment manager of the RAMANtouch confocal Raman microscope — responsible for maintenance and part replacement, user training and approval, measurement setup and records, and vendor coordination. Used to measure SERS signal from analytes captured at the nanohole hotspots.', imgs: [
               { src: 'Ryu-RAMANtouch.jpeg', cap: 'Bruker RAMANtouch confocal Raman microscope for single-nanohole SERS analysis.' },
               { src: 'KIST-Renishaw.jpeg', cap: 'Renishaw inVia confocal Raman microscope for large-area surface mapping and signal analysis.' },
               { src: 'Ryu-Exopert.jpeg', cap: 'Exopert ARM-Dx for AI-assisted target spectrum analysis.' },
@@ -860,25 +867,25 @@ function buildResearchInterest(){
   });
   heroWrap.appendChild(heroImg);
 
-  var chipsWrap = document.createElement('div');
-  chipsWrap.className = 'ri-keywords';
-
   var panel = document.createElement('div');
   panel.className = 'skill-panel';
 
-  RESEARCH_INTEREST_TOPICS.forEach(function(topic, idx){
-    var chip = document.createElement('div');
-    chip.className = 'skill-chip ri-chip';
-    chip.textContent = topic.name;
-    chip.addEventListener('click', function(){
-      toggleResearchPanel(idx, chip, panel, heroWrap, heroImg);
-    });
-    chipsWrap.appendChild(chip);
-  });
-
   box.appendChild(heroWrap);
-  box.appendChild(chipsWrap);
   box.appendChild(panel);
+
+  var items = box.querySelectorAll('.ri-list li');
+  for (var i = 0; i < items.length && i < RESEARCH_INTEREST_TOPICS.length; i++){
+    (function(idx, li){
+      li.classList.add('ri-chip', 'ri-item');
+      li.setAttribute('role', 'button');
+      li.setAttribute('tabindex', '0');
+      li.addEventListener('click', function(){ toggleResearchPanel(idx, li, panel, heroWrap, heroImg); });
+      li.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleResearchPanel(idx, li, panel, heroWrap, heroImg); }
+      });
+    })(i, items[i]);
+  }
+  if (items.length) toggleResearchPanel(0, items[0], panel, heroWrap, heroImg);
 }
 
 function findSkillCategory(key){
@@ -1104,11 +1111,13 @@ function toggleSkillPanel(groupKey, idx, chip, items, panel){
   var isSame = (activeChip === chip);
 
   var openChips = document.querySelectorAll('.skill-chip.open');
-  for (var a = 0; a < openChips.length; a++){ openChips[a].classList.remove('open'); }
+  for (var a = 0; a < openChips.length; a++){
+    if (!openChips[a].closest('#researchInterestBox')){ openChips[a].classList.remove('open'); }
+  }
 
   var openPanels = document.querySelectorAll('.skill-panel.open');
   for (var b = 0; b < openPanels.length; b++){
-    if (openPanels[b] !== panel){ openPanels[b].classList.remove('open'); }
+    if (openPanels[b] !== panel && !openPanels[b].closest('#researchInterestBox')){ openPanels[b].classList.remove('open'); }
   }
 
   if (isSame){
