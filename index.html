@@ -165,6 +165,7 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .lightbox-thumb{margin:0;background:#fff;border:1px solid #e2e7ee;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.15s ease,box-shadow 0.15s ease;display:flex;flex-direction:column;}
 .lightbox-thumb:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
 .lightbox-thumb img{width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;}
+.lightbox-thumb.is-figure img{object-fit:contain;background:#fff;padding:4px;box-sizing:border-box;}
 .lightbox-thumb figcaption{font-size:0.72rem;line-height:1.35;color:var(--muted);padding:7px 9px;border-top:1px solid #eef1f5;}
 .lightbox-thumb.img-missing{aspect-ratio:4 / 3;border-style:dashed;color:#aab2bd;align-items:center;justify-content:center;gap:6px;cursor:default;}
 .lightbox-thumb.img-missing:hover{transform:none;box-shadow:none;}
@@ -801,6 +802,7 @@ var activeChip = null;
 function createLightboxThumb(src, cap){
   var fig = document.createElement('figure');
   fig.className = 'lightbox-thumb';
+  if (/^(fig|Ryu-Rhino)/.test(src)) fig.classList.add('is-figure');
   fig.title = 'Click to enlarge';
 
   var img = document.createElement('img');
