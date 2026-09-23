@@ -393,8 +393,7 @@ var RESEARCH_INTEREST_TOPICS = [
     desc: 'Reading out plasmonic capture uniformity at scale with a convolutional neural network that classifies every well in every SEM window as empty, single-particle, or multi-particle occupancy. Self-supervised pretraining on ~194k unlabeled patches, fine-tuned on ~10.6k labeled wells, and run as a 5-network ensemble with a confidence gate, the network scores 99.0% on 2,116 held-out wells and agrees with an independent fluorescence readout. Across 70,983 wells in 75 SEM windows at 4 Vpp, it reads out a 98.99 ± 0.84% capture rate per window (98.2% single-particle, 0.85% RSD) — the structural statistic that makes the array quantitative.',
     relatedSkills: [{ categoryKey: 'dataanalysis', itemNames: ['Python-based data analysis'] }],
     imgs: [
-      { src: 'fig4_cnn_readout.png', cap: 'CNN readout: every well in every SEM window is classified as empty, single, or multi (99.0% accuracy on 2,116 held-out wells, matched by an independent fluorescence readout). Capture switches on with DEP voltage (0.11% at 0 Vpp, 41.3% at 2 Vpp, 99.0% at 4 Vpp), and at 4 Vpp reaches 98.99 ± 0.84% per window across 70,983 wells in 75 windows (RSD 0.85%).' },
-      { src: 'fig_om_readout_pipeline.png', cap: 'Optical-microscope extension: a five-channel fluorescence readout calls the bead colour (red/green/blue) in every well for multiplexed capture, validated against SEM of the same wells.' }
+      { src: 'fig4_cnn_readout.png', cap: 'CNN readout: every well in every SEM window is classified as empty, single, or multi (99.0% accuracy on 2,116 held-out wells, matched by an independent fluorescence readout). Capture switches on with DEP voltage (0.11% at 0 Vpp, 41.3% at 2 Vpp, 99.0% at 4 Vpp), and at 4 Vpp reaches 98.99 ± 0.84% per window across 70,983 wells in 75 windows (RSD 0.85%).' }
     ]
   }
 ];
@@ -680,7 +679,7 @@ var RESEARCH = [
       { src: 'Ryu-VineRobot1.jpeg', cap: 'Bench-test setup for the soft-robot colonoscopy platform, evaluating the tendon-driven bending mechanism.' },
       { src: 'Ryu-VineRobot2.jpeg', cap: 'Colon phantom model used to validate the platform under anatomically realistic conditions.' },
       { src: 'Ryu-VineRobot3.jpeg', cap: 'Bending performance test: straight (unactuated) configuration.' },
-      { src: 'Ryu-VineRobot4.jpeg', cap: 'Bending performance test: actuated configuration, demonstrating the platform&rsquo;s bending capability.' }
+      { src: 'Ryu-VineRobot4.jpeg', cap: 'Bending performance test: actuated configuration, demonstrating the platform’s bending capability.' }
     ]
   }
 ];
@@ -772,7 +771,7 @@ var AWARDS = [
   ] },
   { name: 'Best Startup Award', org: 'Korea University', date: 'Nov 2024', imgs: [] },
   { name: 'Third Place', org: 'Capstone Design Fair', date: 'Sep 2024', imgs: [
-      { src: 'Ryu-award-capstone-certificate.jpeg', cap: 'Certificate, Third Place (Bronze): 2024 Creative Integrated Design Competition, Korea University Engineering Education Innovation Center &mdash; Team RoboStride, "Quadruped Robot."' }
+      { src: 'Ryu-award-capstone-certificate.jpeg', cap: 'Certificate, Third Place (Bronze): 2024 Creative Integrated Design Competition, Korea University Engineering Education Innovation Center — Team RoboStride, "Quadruped Robot."' }
   ] },
   { name: 'Excellence Award', org: '15th Creative Challenger Program', date: 'Feb 2024', imgs: [
       { src: 'Ryu-award-CCP-certificate.jpeg', cap: 'Certificate, Excellence Award (signed by the University President): 15th Creative Challenger Program, Korea University, for the Vine Robot Colonoscopy Project.' }
@@ -864,6 +863,7 @@ function appendSupportingGallery(parent, imgs, galleryClass){
 }
 
 function appendSupportingGalleryPlaceholder(parent){
+  return; /* hide empty 'coming soon' placeholders on the public site */
   var btn = document.createElement('button');
   btn.type = 'button';
   btn.className = 'supporting-toggle is-empty';
