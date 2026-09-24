@@ -263,7 +263,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
     <div class="entry">
       <div class="entry-head">Korea University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
       <div class="entry-date">Sep 2025 &ndash; Present</div>
-      <div class="entry-sub">Master's student in Department of Bioengineering</div>
+      <div class="entry-sub">Master's student in the Department of Bioengineering</div>
       <div class="entry-detail">Advised by Prof. Yong-Sang Ryu</div>
     </div>
 
@@ -360,7 +360,7 @@ var RESEARCH_INTEREST_HTML =
   '<ul class="ri-list">' +
     '<li><span class="ri-label">Nanofabrication</span> &mdash; periodic/3D nanostructures with tailored optical, mechanical, and interfacial properties.</li>' +
     '<li><span class="ri-label">Plasmonics &amp; Metasurfaces</span> &mdash; metasurface engineering for plasmonic field enhancement and optical sensing.</li>' +
-    '<li><span class="ri-label">Electrokinetics &amp; Simulations</span> &mdash; multiphysics FEA optimizing electrokinetic particle capture and optical field enhancement.</li>' +
+    '<li><span class="ri-label">Electrokinetics &amp; Simulation</span> &mdash; multiphysics FEA optimizing electrokinetic particle capture and optical field enhancement.</li>' +
     '<li><span class="ri-label">Deep-Learning Readout</span> &mdash; CNN-based image analysis for quantitative particle-capture recognition.</li>' +
   '</ul>';
 
@@ -382,7 +382,7 @@ var RESEARCH_INTEREST_TOPICS = [
     ]
   },
   {
-    name: 'Electrokinetics & Simulations',
+    name: 'Electrokinetics & Simulation',
     desc: 'Using electrokinetic (DEP/ACEO) phenomena to steer single nanoparticles onto plasmonic sensing hotspots, so each hotspot captures one particle rather than a random cluster — validated against SEM images of the actual capture outcome. I drive this with multiphysics FEA in COMSOL, simulating optical (ewfd) and electrokinetic (ec/spf) fields side by side to identify capture-favorable, field-enhancing geometries before fabrication, with Lumerical FDTD for complementary electromagnetic simulation of nanophotonic structures.',
     relatedSkills: [{ categoryKey: 'fea' }],
     imgs: [
@@ -458,12 +458,12 @@ var SKILLS_GROUPS = [
         key: 'pvd',
         title: 'PVD (Physical Vapor Deposition)',
         items: [
-          { name: 'Thermal Deposition', desc: 'Resistive thermal evaporation of metal thin films (Cr, Pd, Au), including shadow-mask patterning. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records, and vendor coordination. Used for electrode pads and hydrogen-sensor films.', imgs: [
+          { name: 'Thermal Evaporation', desc: 'Resistive thermal evaporation of metal thin films (Cr, Pd, Au), including shadow-mask patterning. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records, and vendor coordination. Used for electrode pads and hydrogen-sensor films.', imgs: [
               { src: 'Ryu-Thermal.jpeg', cap: 'ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers.' },
               { src: 'thermal_example_001.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, before deposition.' },
               { src: 'thermal_example_002.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, after deposition.' }
           ]},
-          { name: 'Electron Beam Deposition', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records (including tooling-factor calibration), and vendor coordination. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry. Maintenance work has included crucible shield replacement, internal chamber cleaning, and full system overhaul.', imgs: [
+          { name: 'Electron Beam Evaporation', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records (including tooling-factor calibration), and vendor coordination. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry. Maintenance work has included crucible shield replacement, internal chamber cleaning, and full system overhaul.', imgs: [
               { src: 'Ryu-ebeam.jpeg', cap: 'KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions.' },
               { src: 'Ryu-ebeam2.jpeg', cap: 'High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder.' },
               { src: 'Ryu-ebeam3.jpeg', cap: 'Six-pocket crucible carousel loaded with representative source materials used for multi-source e-beam deposition.' },
@@ -475,7 +475,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-ebeam-overhaul-shield.jpeg', cap: 'Removing and remounting the crucible shields as part of the overhaul.' },
               { src: 'Ryu-ebeam-overhaul-after.jpeg', cap: 'Chamber after internal cleaning and shield replacement, restored to a clean, deposition-ready state.' }
           ]},
-          { name: 'Sputter Deposition', desc: 'Low-temperature sputter deposition of thin films (e.g., SiO2), used to control film roughness and quality — factors that affect supported lipid bilayer (SLB) formation on the surface — while minimizing thermal load on the substrate.', imgs: [
+          { name: 'Sputtering', desc: 'Low-temperature sputter deposition of thin films (e.g., SiO2), used to control film roughness and quality — factors that affect supported lipid bilayer (SLB) formation on the surface — while minimizing thermal load on the substrate.', imgs: [
               { src: 'Ryu-sputter.jpeg', cap: 'Co-Sputtering System (SiO2/Ti targets) used for multi-target sputter deposition.' }
           ], noPanel: false }
         ]
@@ -558,7 +558,7 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-Exopert.jpeg', cap: 'Exopert ARM-Dx for AI-assisted target spectrum analysis.' },
               { src: 'Ryu-BWTEK.jpeg', cap: 'BWTEK i-Raman Plus for preliminary Raman spectrum screening.' }
           ]},
-          { name: 'Optical & Epi-fluorescence Microscope', desc: 'Optical microscopy for samples and devices, including epi-fluorescence imaging with DAPI, Texas Red, and FITC filter sets, alongside brightfield (BF) and darkfield (DF) observation modes.', imgs: [
+          { name: 'Optical & Epi-fluorescence Microscopy', desc: 'Optical microscopy for samples and devices, including epi-fluorescence imaging with DAPI, Texas Red, and FITC filter sets, alongside brightfield (BF) and darkfield (DF) observation modes.', imgs: [
               { src: 'Ryu-microscope.jpeg', cap: 'Metallographic microscope.' },
               { src: 'Ryu-microscope2.jpeg', cap: 'Biological microscope.' }
           ]}
@@ -581,7 +581,7 @@ var SKILLS_GROUPS = [
       },
       {
         key: 'fea',
-        title: 'FEA Simulation',
+        title: 'Simulation',
         items: [
           { name: 'COMSOL Multiphysics', desc: 'Finite-element multiphysics simulation of optical and electrokinetic phenomena: electromagnetic-wave (ewfd/emw) modeling of reflectance spectra and plasmonic near-field enhancement (|E/E₀|⁴ up to ~1.8×10⁵ at the nanohole hotspots), and coupled electric-current / laminar-flow (ec/spf) modeling of nanoparticle transport under AC-driven DEP and ACEO — used to select nanohole geometries before fabrication.', imgs: [
               { src: 'comsol_example_001.jpeg', cap: 'Optical and electrokinetic COMSOL simulation suite for a plasmonic nanostructure: (a) reflectance spectrum (ewfd/emw), (b) plasmonic near-field enhancement (ewfd), (c) nanoparticle transport under AC-driven DEP, ACEO, buoyancy, and gravity in fluid (ec/spf).' }
@@ -608,7 +608,7 @@ var SKILLS_GROUPS = [
         key: '2d3d',
         title: '2D/3D Design',
         items: [
-          { name: 'Rhino / AutoCAD / Keyshot', desc: '2D CAD and 3D modeling/rendering: designing my own photomasks (nanohole arrays and alignment marks) in CAD, and building 3D scientific illustrations and publication figures in Rhino and KeyShot — a workflow I also teach in HBL514 (Biomedical Design).', imgs: [
+          { name: 'Rhino / AutoCAD / KeyShot', desc: '2D CAD and 3D modeling/rendering: designing my own photomasks (nanohole arrays and alignment marks) in CAD, and building 3D scientific illustrations and publication figures in Rhino and KeyShot — a workflow I also teach in HBL514 (Biomedical Design).', imgs: [
               { src: 'Ryu-Rhino-nanohole-illustration.png', cap: '3D-rendered schematic of the nanohole capture mechanism, illustrating selective analyte trapping within the nanostructure.' },
               { src: 'Ryu-Rhino-nanohole-capture-concept.png', cap: 'Concept illustration of AC-driven single-particle capture at gold nanohole hotspots, from initial trapping through Raman-based single-particle interrogation to full-array operation.' },
               { src: 'Ryu-Rhino-Raman-setup-figure.png', cap: '3D-rendered schematic of the custom Raman measurement setup (785 nm laser, top/bottom electrodes, PDMS ring, specimen holder), prepared as a publication figure.' }
@@ -653,7 +653,7 @@ var RESEARCH = [
     advisor: 'Advised by Prof. Yong-Sang Ryu',
     bullets: [
       '<strong>Current Project: MIM Nanohole Plasmonic Metasurface for Single-Particle Analysis</strong><ul class="sub-bullets"><li><strong>Fabrication:</strong> Building on our co-authored work (in review, Advanced Materials), fabricating large-area nanohole plasmonic metasurfaces via laser interference lithography (LIL) and electron beam lithography (EBL) to define nanohole period and diameter, atomic layer deposition (ALD) and electron-beam evaporation to control insulator and metal layer thicknesses to within 5 nm, and ICP-RIE etching &mdash; engineering a SERS-optimized biosensor capable of quantifying SERS signal through DEP- and ACEO-driven single-nanoparticle capture at the sensing hotspots.</li><li><strong>Simulation:</strong> Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields to identify nanohole geometries yielding a near-field enhancement of |<i>E</i>/<i>E</i><sub>0</sub>|<sup>4</sup> up to ~1.8&times;10<sup>5</sup> at sensing hotspots, and modeling DEP/ACEO-driven single-particle capture dynamics to validate experimental trapping behavior.</li><li><strong>CNN Analysis:</strong> Built a convolutional neural network (CNN) that classifies every nanowell in SEM images as empty, single-, or multi-particle occupied (self-supervised pretraining on ~194k unlabeled patches, fine-tuned on ~10.6k labeled wells, 5-network ensemble; 99.0% accuracy on 2,116 held-out wells). Across 70,983 wells in 75 SEM windows at 4 Vpp, it reads out a 98.99 &plusmn; 0.84% capture rate per window (98.2% single-particle) with 0.85% window-to-window relative standard deviation (RSD) &mdash; a quantitative measure of biosensor uniformity and the resulting SERS signal. Extended the readout to optical microscopy: a five-channel fluorescence pipeline calls the bead colour in every well (78,581 wells across 30 microholes) for multiplexed red/green/blue capture, validated against SEM of the same wells &mdash; a faster, non-destructive alternative to SEM (Fig. 6).</li></ul>',
-      '<strong>Collaborative Projects</strong><ul class="sub-bullets"><li><strong>PRET (Plasmonic Resonance Energy Transfer) metasurface:</strong> Collaborating with Prof. Junsuk Noh (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it, enabling active electrokinetic concentration of target analytes in aqueous solution.</li><li><strong>Hydrogen-sensing MEMS platform:</strong> Providing deposition and lithography support for fabricating a terahertz-resonant MEMS chip structure whose resonance shifts depending on the presence and concentration of hydrogen gas, enabling label-free hydrogen sensing.</li><li><strong>Electrochemical-sensing nanostructure:</strong> Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.</li><li><strong>KU-KIST Joint Project:</strong> Collaborating Researcher at the Nanophotonics Research Center, KIST (Korea Institute of Science and Technology), developing label-free plasmonic sensing platforms for GPCR (G protein-coupled receptor) conformational dynamics in a drug-discovery initiative.</li></ul>'
+      '<strong>Collaborative Projects</strong><ul class="sub-bullets"><li><strong>PRET (Plasmon Resonance Energy Transfer) metasurface:</strong> Collaborating with Prof. Junsuk Rho (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it, enabling active electrokinetic concentration of target analytes in aqueous solution.</li><li><strong>Hydrogen-sensing MEMS platform:</strong> Providing deposition and lithography support for fabricating a terahertz-resonant MEMS chip structure whose resonance shifts depending on the presence and concentration of hydrogen gas, enabling label-free hydrogen sensing.</li><li><strong>Electrochemical-sensing nanostructure:</strong> Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.</li><li><strong>KU-KIST Joint Project:</strong> Collaborating Researcher at the Nanophotonics Research Center, KIST (Korea Institute of Science and Technology), developing label-free plasmonic sensing platforms for GPCR (G protein-coupled receptor) conformational dynamics in a drug-discovery initiative.</li></ul>'
     ],
     imgs: [
       { src: 'fig1_nanofab.png', cap: 'Fig. 1 — Eight-step nanofabrication of the DEP-SERS nanowell chip, rendered from the mask CAD: Cr/Au bottom electrodes, ALD/e-beam/ALD SiO2 insulation, laser interference lithography (200 nm posts, 500 nm pitch), secondary exposure, Ti/Au e-beam deposition and lift-off, photoresist micropillars, and Ti/Al2O3 capping with ICP-RIE of the SiO2 to open the nanowells.' },
@@ -672,7 +672,7 @@ var RESEARCH = [
     sub: 'Creative Challenger Program, Korea University',
     advisor: 'Advised by Prof. Daehee Hong and Dr. Sang-Hyun Kim',
     bullets: [
-      'Developed and validated a novel soft-robot colonoscopy platform; conducted in-vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center.',
+      'Developed and validated a novel soft-robot colonoscopy platform; conducted in vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center.',
       'Recognized with the Excellence Awards at the 15th Creative Challenger Program and the 2nd Changemakers Forum for the platform.'
     ],
     imgs: [
@@ -764,7 +764,7 @@ var ACTIVITIES = [
 var AWARDS = [
   { name: 'BK21 FOUR Graduate Research Scholarship', org: 'Ministry of Education (Full Tuition)', date: 'Sep 2025 &ndash; Present', imgs: [] },
   { name: 'Best Poster Presentation Award', org: 'Korean Biochip Fall Symposium 2025', date: 'Nov 2025', imgs: [] },
-  { name: 'Outstanding New Student Scholarships', org: 'Korea University', date: 'Sep 2025', imgs: [] },
+  { name: 'Outstanding New Student Scholarship', org: 'Korea University', date: 'Sep 2025', imgs: [] },
   { name: "Dean's List (Highest Honors, 2 semesters)", org: 'Korea University', date: 'Mar 2023 &ndash; Jun 2025', imgs: [] },
   { name: 'Excellence Award', org: '2nd Changemakers Forum', date: 'Nov 2024', imgs: [
       { src: 'Ryu-award-changemakers-certificate.jpeg', cap: 'Certificate, Excellence Award: 2nd Korea University Changemakers Forum, hosted by the Korea University Center for Sustainable Development.' }
