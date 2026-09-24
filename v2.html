@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minjae Kwon</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Minjae Kwon — M.S. student in Bioengineering at Korea University (Ryu Group). Nanofabrication, plasmonic metasurfaces, electrokinetics, and deep-learning readout for SERS biosensing.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://mjkwon98.github.io/">
+<meta property="og:title" content="Minjae Kwon — Nanofabrication &amp; Plasmonic Biosensing">
+<meta property="og:description" content="M.S. student, Ryu Group, Korea University. Engineering nanostructures that shape light and fluidic behavior, guided by computational modeling.">
+<meta property="og:image" content="https://mjkwon98.github.io/Kwon_profile.jpeg">
+<meta property="og:image:width" content="1158">
+<meta property="og:image:height" content="1491">
+<meta property="og:image:alt" content="Portrait of Minjae Kwon">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-alt:#f6f7f9;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --accent:#2563a8;
+  --accent-soft:#eef4fb;
+  --sans:'Source Sans 3',sans-serif;
+  --serif:'Source Serif 4',serif;
+  --maxw:860px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;}
+a{color:var(--accent);}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.nav-name{font-weight:700;font-size:15px;letter-spacing:0.01em;}
+.nav-links{display:flex;gap:1.1rem;list-style:none;flex-wrap:wrap;}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);border-bottom-color:var(--accent);}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;}
+section{padding:56px 0 16px;}
+section:not(:last-child){border-bottom:1px solid var(--line);}
+.section-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;margin-bottom:1.75rem;color:var(--text);position:relative;padding-bottom:0.5rem;}
+.section-title::after{content:'';position:absolute;left:0;bottom:0;width:42px;height:3px;background:var(--accent);border-radius:2px;}
+
+.about{padding-top:48px;}
+.about-head{display:flex;gap:2rem;align-items:flex-start;margin-bottom:1.5rem;flex-wrap:wrap;}
+
+.profile-photo{width:150px;height:190px;flex-shrink:0;border-radius:12px;background:var(--bg-alt);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;cursor:pointer;position:relative;}
+.profile-photo svg{width:38px;height:38px;color:#c2c8d0;}
+.profile-photo .ph-label{font-size:10px;color:var(--muted);text-align:center;padding:0 8px;}
+.profile-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+.about-intro h1{font-family:var(--serif);font-size:2.1rem;font-weight:600;letter-spacing:-0.01em;line-height:1.15;margin-bottom:0.35rem;}
+.about-intro .role{font-size:1.05rem;color:var(--accent);font-weight:600;margin-bottom:0.5rem;}
+.about-intro .affil{font-size:0.95rem;color:var(--muted);}
+.about-meta{font-size:0.85rem;color:var(--muted);margin-top:0.75rem;display:flex;gap:1rem;flex-wrap:wrap;}
+.about-meta span{display:inline-flex;align-items:center;gap:5px;}
+.hero-links{display:flex;gap:0.6rem;margin-top:0.85rem;flex-wrap:wrap;}
+.hero-btn{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);border-radius:999px;padding:0.4rem 1rem;text-decoration:none;transition:background 0.15s,color 0.15s;}
+.hero-btn:hover{background:var(--accent);color:#fff;}
+.research-interest{background:var(--accent-soft);border-left:3px solid var(--accent);padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin-top:1.5rem;font-size:0.95rem;}
+.research-interest strong{font-weight:600;}
+.ri-heading{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:700;margin-bottom:0.55rem;}
+.ri-summary{font-size:0.95rem;margin-bottom:0.85rem;}
+.ri-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.4rem;}
+.ri-list li{font-size:0.95rem;line-height:1.55;}
+.ri-list li.ri-item{cursor:pointer;padding:0.3rem 0.6rem;margin-left:-0.6rem;border-radius:6px;transition:background 0.15s;}
+.ri-list li.ri-item:hover{background:rgba(37,99,168,0.08);}
+.ri-list li.ri-item:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+.ri-list li.ri-item.open{background:#fff;box-shadow:inset 3px 0 0 var(--accent);}
+.about-bio{font-size:0.95rem;line-height:1.6;margin-top:0.9rem;max-width:580px;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:0.85rem 1.1rem;color:var(--text);}
+.ri-label{color:var(--accent);font-weight:600;}
+.ri-keywords{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.9rem;}
+.ri-keywords .skill-chip{font-size:0.8rem;}
+.ri-hero{margin-top:0.9rem;}
+.ri-hero img{width:100%;max-height:420px;object-fit:contain;background:#fff;border:1px solid #e2e7ee;border-radius:8px;cursor:pointer;display:block;transition:transform 0.15s ease,box-shadow 0.15s ease;}
+.ri-hero img:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
+.ri-hero[hidden]{display:none;}
+.ri-related-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;margin-bottom:0.5rem;margin-top:0.25rem;}
+.ri-related-cat{margin-bottom:1.1rem;}
+.ri-related-cat:last-child{margin-bottom:0;}
+.ri-related-cat h3{font-size:0.72rem;}
+.ri-related-cat .skill-chip{font-size:0.82rem;padding:7px 14px;}
+
+.entry{display:grid;grid-template-columns:1fr auto;gap:0.25rem 1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line);}
+.entry:last-child{border-bottom:none;}
+.entry-head{font-weight:600;font-size:1.02rem;}
+.entry-date{font-size:0.85rem;color:var(--muted);white-space:nowrap;text-align:right;}
+.entry-sub{font-style:italic;color:var(--text);font-size:0.92rem;grid-column:1 / -1;margin-top:1px;}
+.entry-detail{grid-column:1 / -1;font-size:0.9rem;color:var(--muted);margin-top:0.4rem;}
+.entry-detail .gpa{color:var(--accent);font-weight:600;}
+.entry-bullets{grid-column:1 / -1;margin-top:0.4rem;padding-left:1.1rem;}
+.entry-bullets li{font-size:0.97rem;color:#374151;margin-bottom:0.3rem;}
+.entry-bullets li:last-child{margin-bottom:0;}
+.proj-status{font-weight:400;font-style:italic;color:var(--muted);}
+.entry-bullets .sub-bullets{list-style:circle;padding-left:1.3rem;margin-top:0.4rem;margin-bottom:0.6rem;}
+.entry-bullets .sub-bullets li{margin-bottom:0.35rem;}
+.entry-bullets .sub-bullets li:last-child{margin-bottom:0;}
+
+.entry-gallery{grid-column:1 / -1;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:0.65rem;}
+
+.supporting-toggle{grid-column:1 / -1;display:flex;align-items:center;gap:0.35rem;width:fit-content;margin-left:auto;margin-top:0.65rem;font-size:0.78rem;color:var(--muted);background:var(--bg-alt);border:1px solid var(--line);border-radius:999px;padding:0.3rem 0.8rem;cursor:pointer;transition:background 0.15s,color 0.15s,border-color 0.15s;}
+.supporting-toggle:hover{background:var(--accent-soft);color:var(--accent);border-color:var(--accent);}
+.supporting-toggle .chevron{font-size:0.65rem;transition:transform 0.15s;}
+.supporting-toggle.is-open .chevron{transform:rotate(180deg);}
+.supporting-gallery[hidden]{display:none;}
+.supporting-toggle.is-empty{opacity:0.55;cursor:default;}
+.supporting-toggle.is-empty:hover{background:var(--bg-alt);color:var(--muted);border-color:var(--line);}
+
+.award-list{list-style:none;}
+.award-list li{padding:0.7rem 0;border-bottom:1px solid var(--line);font-size:0.95rem;}
+.award-list li:last-child{border-bottom:none;}
+.award-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.award-name strong{font-weight:600;}
+.award-date{color:var(--muted);font-size:0.85rem;white-space:nowrap;}
+.award-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:0.6rem;max-width:420px;}
+
+.pub-item{padding:1rem 0;border-bottom:1px solid var(--line);font-size:0.94rem;}
+.pub-item:last-child{border-bottom:none;}
+.pub-authors{margin-bottom:0.3rem;}
+.pub-title{font-style:italic;font-weight:600;color:var(--text);margin-bottom:0.5rem;}
+.pub-meta{display:flex;align-items:center;flex-wrap:wrap;gap:0.45rem;font-size:0.82rem;color:var(--muted);}
+.pub-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.pub-status{color:var(--text);}
+.pub-sep{color:var(--line);}
+.pub-legend{font-size:0.8rem;color:var(--muted);margin-top:0.75rem;}
+
+.teach-item{display:grid;grid-template-columns:1fr auto;gap:0.2rem 1.5rem;padding:0.9rem 0;border-bottom:1px solid var(--line);}
+.teach-item:last-child{border-bottom:none;}
+.teach-role{font-weight:600;font-size:0.98rem;}
+.teach-date{font-size:0.85rem;color:var(--muted);white-space:nowrap;text-align:right;}
+.teach-advisor{grid-column:1 / -1;font-style:italic;font-size:0.88rem;color:var(--muted);margin-top:1px;}
+
+.lang-list{display:flex;flex-direction:column;gap:0.5rem;}
+.lang-row{display:flex;justify-content:space-between;font-size:0.95rem;padding:0.4rem 0;border-bottom:1px solid var(--line);}
+.lang-row:last-child{border-bottom:none;}
+.lang-row .lang-name{font-weight:600;}
+.lang-row .lang-detail{color:var(--muted);}
+
+.skill-intro{font-size:0.92rem;color:var(--muted);margin-bottom:1.25rem;}
+.skill-supergroup{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:700;margin:1.75rem 0 0.75rem;}
+.skill-supergroup:first-of-type{margin-top:0;}
+.skill-cat{margin-bottom:1.5rem;}
+.skill-cat h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.75rem;font-weight:600;}
+.skill-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.skill-chip{font-size:0.92rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:10px 18px;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:6px;user-select:none;}
+.skill-chip:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.skill-chip.open{background:var(--accent);color:#fff;border-color:var(--accent);}
+.skill-chip::after{content:'+';font-size:14px;line-height:1;opacity:0.5;}
+.skill-chip.open::after{content:'\2212';opacity:1;}
+.skill-chip.static{cursor:default;}
+.skill-chip.static::after{content:none;}
+.skill-chip.static:hover{border-color:var(--line);color:var(--text);}
+.skill-panel{display:none;margin-top:12px;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:1.25rem;}
+.skill-panel.open{display:block;animation:slidein 0.25s ease;}
+@keyframes slidein{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+.skill-panel-title{font-weight:600;font-size:1rem;margin-bottom:0.25rem;color:var(--accent);}
+.skill-panel-desc{font-size:0.97rem;color:var(--text);margin-bottom:1rem;}
+
+.skill-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;}
+.lightbox-thumb{margin:0;background:#fff;border:1px solid #e2e7ee;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform 0.15s ease,box-shadow 0.15s ease;display:flex;flex-direction:column;}
+.lightbox-thumb:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
+.lightbox-thumb img{width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;}
+.lightbox-thumb.is-figure img{object-fit:contain;background:#fff;padding:4px;box-sizing:border-box;}
+.lightbox-thumb figcaption{font-size:0.72rem;line-height:1.35;color:var(--muted);padding:7px 9px 0;margin-bottom:7px;border-top:1px solid #eef1f5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.mgr-badge{display:inline-block;margin-left:6px;font-size:0.62rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0f766e;background:#e6f4f1;border:1px solid #9fd6cb;border-radius:999px;padding:1px 6px;vertical-align:1px;}
+.lightbox-thumb.img-missing{aspect-ratio:4 / 3;border-style:dashed;color:#aab2bd;align-items:center;justify-content:center;gap:6px;cursor:default;}
+.lightbox-thumb.img-missing:hover{transform:none;box-shadow:none;}
+.lightbox-thumb.img-missing svg{width:26px;height:26px;}
+.lightbox-thumb.img-missing span{font-size:10px;text-align:center;padding:0 6px;}
+
+.img-modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(15,18,22,0.85);align-items:center;justify-content:center;padding:4vh 4vw;animation:fadein 0.18s ease;}
+.img-modal.open{display:flex;}
+@keyframes fadein{from{opacity:0;}to{opacity:1;}}
+.img-modal-inner{max-width:820px;max-height:92vh;display:flex;flex-direction:column;align-items:center;}
+.img-modal img{max-width:100%;max-height:68vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.45);background:#fff;}
+.img-modal-cap{color:#f5f6f8;font-size:1rem;line-height:1.65;margin-top:16px;text-align:left;max-width:640px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:14px 20px;}
+.img-modal-close{position:absolute;top:18px;right:24px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.12);color:#fff;border:none;cursor:pointer;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.15s ease;}
+.img-modal-close:hover{background:rgba(255,255,255,0.25);}
+
+.contact-box{background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:1.5rem;text-align:center;}
+.contact-box .label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.5rem;}
+.contact-box a{font-size:1.25rem;font-weight:600;text-decoration:none;}
+.contact-box a:hover{text-decoration:underline;}
+
+footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem;}
+
+@media (max-width:700px){
+  .nav-inner{flex-wrap:nowrap;gap:1.1rem;}
+  .nav-name{flex-shrink:0;padding-right:1.1rem;border-right:1px solid var(--line);}
+  .nav-links{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;min-width:0;gap:0.9rem;scrollbar-width:none;mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent 100%);-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent 100%);}
+  .nav-links::-webkit-scrollbar{display:none;}
+}
+@media (max-width:600px){
+  .about-head{flex-direction:column;text-align:center;align-items:center;}
+  .about-meta{justify-content:center;}
+  .hero-links{justify-content:center;}
+  .about-bio{text-align:left;}
+  .entry{grid-template-columns:1fr;}
+  .entry-date{text-align:left;}
+  .award-row{flex-direction:column;gap:2px;}
+  .teach-item{grid-template-columns:1fr;}
+  .teach-date{text-align:left;}
+}
+
+/* ===== v2 layout ===== */
+:root{--maxw:1000px;--card-r:12px;}
+.hero2{padding:64px 0 40px;background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%);}
+.hero-grid{display:grid;grid-template-columns:1fr 200px;gap:2.5rem;align-items:start;}
+.eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;}
+.hero2 h1{font-family:var(--serif);font-size:3rem;font-weight:600;letter-spacing:-0.015em;line-height:1.05;margin-bottom:0.5rem;}
+.hero2 .role{font-size:1.05rem;color:var(--text);font-weight:600;}
+.hero2 .affil{font-size:0.95rem;color:var(--muted);margin-top:2px;}
+.hero-mission{font-family:var(--serif);font-size:1.25rem;line-height:1.45;color:var(--text);margin:1.1rem 0 0.9rem;max-width:620px;}
+.hero2 .about-bio{background:none;border:none;padding:0;max-width:640px;color:#374151;font-size:0.98rem;margin-top:0;}
+.hero2 .hero-links{margin-top:1.1rem;}
+.hero2 .profile-photo{width:200px;height:250px;border-radius:14px;box-shadow:0 6px 24px rgba(15,23,42,0.08);}
+.theme-head{display:flex;align-items:baseline;justify-content:space-between;margin:2.75rem 0 0.9rem;}
+.theme-head span{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.theme-head em{font-style:normal;font-size:0.82rem;color:var(--muted);}
+.theme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.theme-card{background:#fff;border:1px solid var(--line);border-radius:var(--card-r);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:border-color .15s,box-shadow .15s,transform .15s;text-align:left;font:inherit;color:inherit;padding:0;}
+.theme-card:hover,.theme-card:focus-visible{border-color:var(--accent);box-shadow:0 6px 20px rgba(37,99,168,0.12);transform:translateY(-2px);outline:none;}
+.theme-card .tc-img{aspect-ratio:16/10;background:#fff;border-bottom:1px solid #eef1f5;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.theme-card .tc-img img{width:100%;height:100%;object-fit:contain;padding:6px;}
+.theme-card .tc-body{padding:0.85rem 1rem 1rem;display:flex;flex-direction:column;flex:1;}
+.tc-num{font-size:0.72rem;font-weight:700;color:var(--accent);letter-spacing:0.08em;}
+.tc-name{font-weight:700;font-size:1rem;line-height:1.3;margin:0.2rem 0 0.35rem;}
+.tc-line{font-size:0.86rem;color:#4b5563;line-height:1.45;flex:1;}
+.tc-open{font-size:0.8rem;font-weight:700;color:var(--accent);margin-top:0.7rem;}
+
+/* theme detail page */
+.theme-panel{position:fixed;inset:0;z-index:300;background:#fff;overflow-y:auto;display:none;}
+.theme-panel.open{display:block;animation:fadein .2s ease;}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.tp-bar{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:2;}
+.tp-bar .wrap{height:56px;display:flex;align-items:center;justify-content:space-between;}
+.tp-back{font:inherit;font-size:0.9rem;font-weight:600;color:var(--accent);background:none;border:none;cursor:pointer;padding:6px 0;}
+.tp-steps{display:flex;gap:6px;}
+.tp-steps button{font:inherit;font-size:0.8rem;font-weight:600;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;}
+.tp-steps button.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+.tp-body{padding:48px 0 72px;}
+.tp-head{border-left:3px solid var(--accent);padding-left:1.1rem;margin-bottom:2rem;max-width:760px;}
+.tp-head .eyebrow{margin-bottom:0.3rem;}
+.tp-head h2{font-family:var(--serif);font-size:2.3rem;font-weight:600;line-height:1.15;margin-bottom:0.8rem;}
+.tp-head p{font-size:1.02rem;line-height:1.7;color:#374151;}
+.tp-fig{border:1px solid var(--line);border-radius:var(--card-r);overflow:hidden;background:#fff;cursor:zoom-in;}
+.tp-fig img{width:100%;display:block;}
+.tp-figcap{font-size:0.86rem;color:var(--muted);line-height:1.55;margin:0.7rem 0 0;max-width:820px;}
+.tp-extra{margin-top:1.4rem;}
+.tp-sub{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin:2.5rem 0 1rem;}
+.tp-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);}
+.tp-nav button{font:inherit;background:none;border:1px solid var(--line);border-radius:10px;padding:0.7rem 1rem;cursor:pointer;text-align:left;color:var(--text);max-width:48%;}
+.tp-nav button:hover{border-color:var(--accent);}
+.tp-nav small{display:block;font-size:0.72rem;color:var(--muted);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;}
+.tp-nav b{font-size:0.95rem;}
+
+/* research experience status pill */
+.proj-status{display:inline-block;font-style:normal;font-weight:600;font-size:0.72rem;color:var(--accent);background:var(--accent-soft);border:1px solid #cfe0f3;border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px;}
+
+/* skills as cards */
+.skill-intro{margin-bottom:0.5rem;}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.sk-card{background:#fff;border:1px solid var(--line);border-radius:var(--card-r);padding:0.95rem 1.05rem;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:0.3rem;transition:border-color .15s,box-shadow .15s;position:relative;}
+.sk-card:hover,.sk-card.open{border-color:var(--accent);box-shadow:0 4px 16px rgba(37,99,168,0.10);}
+.sk-card.open{background:var(--accent-soft);}
+.sk-card.static{cursor:default;}
+.sk-card.static:hover{border-color:var(--line);box-shadow:none;}
+.sk-card .sk-title{font-weight:700;font-size:0.98rem;padding-right:1.6rem;}
+.sk-card .sk-items{font-size:0.84rem;color:#4b5563;line-height:1.45;}
+.sk-card .sk-plus{position:absolute;right:0.9rem;top:0.85rem;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:var(--muted);background:#fff;transition:transform .15s;}
+.sk-card.open .sk-plus{transform:rotate(45deg);color:var(--accent);border-color:var(--accent);}
+.sk-card .sk-mgr{margin-top:0.25rem;}
+.sk-card .sk-mgr .mgr-badge{margin-left:0;}
+.sk-detail{grid-column:1 / -1;display:none;background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--card-r);padding:1.1rem 1.2rem;}
+.sk-detail.open{display:block;animation:slidein .25s ease;}
+.sk-detail .skill-cat{margin-bottom:0;}
+.sk-detail .skill-cat h3{display:none;}
+.sk-detail .skill-panel{background:#fff;}
+
+/* activities as cards */
+.act-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.act-card{border:1px solid var(--line);border-radius:var(--card-r);padding:1.1rem 1.2rem;background:#fff;display:flex;flex-direction:column;}
+.act-card .ac-head{font-weight:700;font-size:1rem;line-height:1.35;}
+.act-card .ac-meta{font-size:0.84rem;color:var(--muted);margin:0.25rem 0 0.55rem;}
+.act-card .entry-bullets{margin-top:0;}
+.act-card .entry-bullets li{font-size:0.92rem;}
+.act-card .supporting-toggle{margin-top:auto;padding-top:0.3rem;margin-left:0;}
+.act-card .entry-gallery{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}
+.act-card .ac-spacer{flex:1;min-height:0.6rem;}
+
+/* contact footer */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.contact-grid .cg-label{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;}
+.contact-grid a,.contact-grid span{font-size:1rem;font-weight:600;text-decoration:none;color:var(--text);}
+.contact-grid a:hover{color:var(--accent);}
+
+@media (max-width:860px){
+  .theme-grid{grid-template-columns:repeat(2,1fr);}
+  .sk-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:640px){
+  .hero-grid{grid-template-columns:1fr;gap:1.25rem;}
+  .hero2 .profile-photo{order:-1;width:150px;height:188px;margin:0 auto;}
+  .hero2 h1{font-size:2.3rem;}
+  .hero2 .hero-text{text-align:left;}
+  .hero-mission{font-size:1.1rem;}
+  .theme-grid{grid-template-columns:1fr 1fr;gap:10px;}
+  .tc-line{display:none;}
+  .theme-head em{display:none;}
+  .sk-grid,.act-grid,.contact-grid{grid-template-columns:1fr;}
+  .tp-head h2{font-size:1.8rem;}
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Minjae Kwon</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="about" class="about hero2">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow">Korea University &middot; Ryu Group</div>
+        <h1>Minjae Kwon</h1>
+        <div class="role">Master's student, Department of Bioengineering</div>
+        <div class="affil">Seoul, Republic of Korea &middot; rnjs0830@korea.ac.kr</div>
+        <p class="hero-mission">Engineering nanostructures that shape light and fluidic behavior, guided by computational modeling.</p>
+        <p class="about-bio">I am an M.S. student in Prof. Yong-Sang Ryu&rsquo;s group at Korea University, where I build large-area plasmonic metasurfaces and use electrokinetics to place single nanoparticles onto their sensing hotspots. My work incorporates computational approaches throughout &mdash; COMSOL for device design and dynamic analysis, and deep learning for experimental readout. I am applying to Ph.D. programs for Fall 2027.</p>
+        <div class="hero-links">
+          <a class="hero-btn" href="mailto:rnjs0830@korea.ac.kr">Email</a>
+          <a class="hero-btn" href="Minjae_Kwon_CV.pdf?v=20260924b" target="_blank" rel="noopener">CV</a>
+        </div>
+      </div>
+      <div class="profile-photo" id="profilePhoto">
+        <img src="Kwon_profile.jpeg" alt="Minjae Kwon" id="profileImg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none" id="profileSvg">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+        </svg>
+        <span class="ph-label" style="display:none" id="profileLabel">Photo</span>
+      </div>
+    </div>
+    <div class="theme-head"><span>Research interests</span><em>Open a card for figures and methods</em></div>
+    <div class="theme-grid" id="themeGrid"></div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2 class="section-title">Education</h2>
+
+    <div class="entry">
+      <div class="entry-head">Korea University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
+      <div class="entry-date">Sep 2025 &ndash; Present</div>
+      <div class="entry-sub">Master's student in the Department of Bioengineering</div>
+      <div class="entry-detail">Advised by Prof. Yong-Sang Ryu</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Korea University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
+      <div class="entry-date">Mar 2023 &ndash; Aug 2025</div>
+      <div class="entry-sub">B.S. in Biomedical Engineering &amp; Electrical Engineering (Double Major)</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Konkuk University <span style="font-weight:400;color:var(--muted);font-size:0.9rem;">(Seoul, Republic of Korea)</span></div>
+      <div class="entry-date">Mar 2017 &ndash; Feb 2023</div>
+      <div class="entry-sub">Majored in Electronic and Electrical Engineering</div>
+      <div class="entry-detail">Transferred to Korea University. Leave of absence due to national military service: Jul. 2019 &ndash; Jan. 2021.</div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2 class="section-title">Publications</h2>
+    <div id="publicationsList"></div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2 class="section-title">Research Experience</h2>
+    <div class="entry-list" id="researchList"></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Technical Proficiency</h2>
+    <p class="skill-intro">Open a card for equipment photos, results, and descriptions. <span class="mgr-badge" style="margin-left:2px">Manager</span> marks equipment I manage.</p>
+    <div id="skillsContainer"></div>
+
+    <h3 class="skill-supergroup" style="margin-top:2.25rem;">Languages</h3>
+    <div class="lang-list" id="languagesList"></div>
+  </div>
+</section>
+
+<section id="activities">
+  <div class="wrap">
+    <h2 class="section-title">Leadership &amp; Extracurricular Activities</h2>
+    <div class="entry-list" id="activitiesList"></div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <h2 class="section-title">Awards and Scholarships</h2>
+    <ul class="award-list" id="awardsList"></ul>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <h2 class="section-title">Teaching Experience</h2>
+    <div id="teachingList"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div><div class="cg-label">Email</div><a href="mailto:rnjs0830@korea.ac.kr">rnjs0830@korea.ac.kr</a></div>
+      <div><div class="cg-label">Document</div><a href="Minjae_Kwon_CV.pdf?v=20260924b" target="_blank" rel="noopener">Curriculum vitae (PDF)</a></div>
+      <div><div class="cg-label">Location</div><span>Korea University, Seoul</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="theme-panel" id="themePanel" aria-hidden="true">
+  <div class="tp-bar"><div class="wrap"><button class="tp-back" id="tpBack">&larr; All research interests</button><div class="tp-steps" id="tpSteps"></div></div></div>
+  <div class="wrap tp-body" id="tpBody"></div>
+</div>
+
+<div class="img-modal" id="imgModal">
+  <button class="img-modal-close" id="modalCloseBtn" aria-label="close">&times;</button>
+  <div class="img-modal-inner">
+    <img id="imgModalImg" src="" alt="">
+    <div class="img-modal-cap" id="imgModalCap"></div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Minjae Kwon &middot; Last updated September 2026
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+var RESEARCH_INTEREST_HTML =
+  '<div class="ri-heading">Research Interests</div>' +
+  '<div class="ri-summary">Engineering nanostructures that shape light and fluidic behavior, guided by computational modeling.</div>' +
+  '<ul class="ri-list">' +
+    '<li><span class="ri-label">Nanofabrication</span> &mdash; periodic/3D nanostructures with tailored optical, mechanical, and interfacial properties.</li>' +
+    '<li><span class="ri-label">Plasmonics &amp; Metasurfaces</span> &mdash; metasurface engineering for plasmonic field enhancement and optical sensing.</li>' +
+    '<li><span class="ri-label">Electrokinetics &amp; Simulation</span> &mdash; multiphysics FEA optimizing electrokinetic particle capture and optical field enhancement.</li>' +
+    '<li><span class="ri-label">Deep-Learning Readout</span> &mdash; CNN-based image analysis for quantitative particle-capture recognition.</li>' +
+  '</ul>';
+
+var RESEARCH_INTEREST_TOPICS = [
+  {
+    name: 'Nanofabrication',
+    desc: 'Building large-area, periodic nanostructures with tailored optical, mechanical, and interfacial properties, mainly for plasmonic biosensing platforms. My process flow combines laser interference lithography (LIL) and electron beam lithography (EBL) to define nanohole/nanopost geometry, atomic layer deposition (ALD) and electron-beam evaporation to control insulator and metal layer thicknesses to within 5 nm, and reactive-ion etching (RIE / ICP-RIE) to open apertures and fabricate imprint molds — with photolithography, sputter deposition, PECVD, and surface treatment (oxygen plasma ashing, UV-ozone) supporting the surrounding process steps.',
+    relatedSkills: [{ categoryKey: 'lithography' }, { categoryKey: 'pvd' }, { categoryKey: 'cvd' }, { categoryKey: 'etching' }, { categoryKey: 'surface' }],
+    imgs: [
+      { src: 'fig1_nanofab.png', cap: 'Eight-step nanofabrication of the DEP-SERS nanowell chip, rendered from the mask CAD: Cr/Au bottom electrodes, ALD/e-beam/ALD SiO2 insulation, laser interference lithography (200 nm posts, 500 nm pitch), secondary exposure, Ti/Au e-beam deposition and lift-off, photoresist micropillars, and Ti/Al2O3 capping with ICP-RIE of the SiO2 to open the nanowells.' }
+    ]
+  },
+  {
+    name: 'Plasmonics & Metasurfaces',
+    desc: 'Engineering MIM (metal-insulator-metal) nanohole metasurfaces for plasmonic field enhancement and optical sensing, then verifying that design against measurement. I use reflectance spectroscopy to measure a nanohole array’s optical resonance spectrum and validate it against COMSOL simulation, and Raman spectroscopy (RAMANtouch confocal microscope) to read out the SERS signal from analytes captured at the nanohole hotspots — geometries in this platform have reached a near-field enhancement of |E/E₀|⁴ up to ~1.8×10⁵ at the sensing hotspots.',
+    relatedSkills: [{ categoryKey: 'analysis', itemNames: ['Reflectance Spectroscopy', 'Raman Spectroscopy'] }],
+    imgs: [
+      { src: 'fig2_plasmonics.png', cap: 'Plasmonic MIM nanohole metasurface: the 500 nm lattice phase-matches 785 nm light to the Au/SiO2 surface plasmon, and each aperture rim concentrates it into two lobes along E (COMSOL: |E/E₀|⁴ ≈ 1.8×10⁵); a period sweep shows how the lattice sets the hot spot.' }
+    ]
+  },
+  {
+    name: 'Electrokinetics & Simulation',
+    desc: 'Using electrokinetic (DEP/ACEO) phenomena to steer single nanoparticles onto plasmonic sensing hotspots, so each hotspot captures one particle rather than a random cluster — validated against SEM images of the actual capture outcome. I drive this with multiphysics FEA in COMSOL, simulating optical (ewfd) and electrokinetic (ec/spf) fields side by side to identify capture-favorable, field-enhancing geometries before fabrication, with Lumerical FDTD for complementary electromagnetic simulation of nanophotonic structures.',
+    relatedSkills: [{ categoryKey: 'fea' }],
+    imgs: [
+      { src: 'fig3_electrokinetics.png', cap: 'Electrokinetic capture: ACEO delivers 200 nm beads to the surface and DEP seats one bead per well at the top-Au rim — the plasmonic hot spot — shown against SEM of a filled microhole and COMSOL (ec + spf) modeling.' }
+    ]
+  },
+  {
+    name: 'Deep-Learning Readout',
+    desc: 'Reading out plasmonic capture uniformity at scale with a convolutional neural network that classifies every well in every SEM window as empty, single-particle, or multi-particle occupancy. Self-supervised pretraining on ~194k unlabeled patches, fine-tuned on ~10.6k labeled wells, and run as a 5-network ensemble with a confidence gate, the network scores 99.0% on 2,116 held-out wells and agrees with an independent fluorescence readout. Across 70,983 wells in 75 SEM windows at 4 Vpp, it reads out a 98.99 ± 0.84% capture rate per window (98.2% single-particle, 0.85% RSD) — the structural statistic that makes the array quantitative.',
+    relatedSkills: [{ categoryKey: 'dataanalysis', itemNames: ['Python-based data analysis'] }],
+    imgs: [
+      { src: 'fig4_cnn_readout.png', cap: 'CNN readout: every well in every SEM window is classified as empty, single, or multi (99.0% accuracy on 2,116 held-out wells, matched by an independent fluorescence readout). Capture switches on with DEP voltage (0.11% at 0 Vpp, 41.3% at 2 Vpp, 99.0% at 4 Vpp), and at 4 Vpp reaches 98.99 ± 0.84% per window across 70,983 wells in 75 windows (RSD 0.85%).' }
+    ]
+  }
+];
+
+var PUBLICATIONS = [
+  {
+    authorsHTML: 'S. Lee<sup>&#8225;</sup>, S. Choi<sup>&#8225;</sup>, T. Kim, <strong>M. Kwon</strong>, T. J. Mun, S. Son, H. Seong, K. Lee, H. Im, E.-S. Yu, M.-K. Kim<sup>*</sup>, and Y.-S. Ryu<sup>*</sup>',
+    title: 'Analyte-accessible field volume as a governing design principle for nanophotonic sensing',
+    venue: 'Advanced Materials',
+    status: 'Under review',
+    year: '2026'
+  }
+];
+var PUBLICATIONS_LEGEND = '<sup>&#8225;</sup>Equal contribution, <sup>*</sup>Corresponding author';
+
+var SKILLS_GROUPS = [
+  {
+    supergroup: 'Fabrication & Characterization Skills',
+    categories: [
+      {
+        key: 'lithography',
+        title: 'Lithography',
+        items: [
+          { name: 'Aligner-assisted Photolithography', desc: 'UV photolithography for micro-patterning, including secondary exposure on selected regions of interest. Certified independent operator. Used across many chip-level steps — electrode patterning and lift-off, Al2O3 microhole windows, and SU-8 fluidic channels — with photomasks I designed in CAD.', imgs: [
+              { src: 'Ryu-Aligner.jpeg', cap: 'Mask aligner setup used for UV photolithography.' },
+              { src: 'Ryu-Aligner2.jpeg', cap: 'UV exposure step during photolithography.' },
+              { src: 'aligner_example_001.jpeg', cap: 'Alignment of 20um scale array over the 50um scale array.' },
+              { src: 'aligner_example_002.jpeg', cap: 'SEM result of alignment, pattern was lifted off after Ti/Al2O3 thin film deposition.' },
+              { src: 'Ryu-photomask.jpeg', cap: 'Custom photomask I designed in CAD, with the nanohole array and alignment patterns used for the mask-aligner exposure step.' },
+              { src: 'Ryu-SU8-fluidic-channel1.jpeg', cap: 'Cross-sectional SEM of an SU-8 (TF 6000) fluidic channel sidewall, patterned by mask-aligner photolithography.' },
+              { src: 'Ryu-SU8-fluidic-channel2.jpeg', cap: 'Cross-sectional SEM of the SU-8 (TF 6000) fluidic channel edge profile at a second location.' }
+          ]},
+          { name: 'Laser Interference Lithography (LIL)', desc: 'Large-area, periodic nanopatterning via laser interference for metasurface fabrication. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records, and vendor coordination. Used to pattern the periodic nanopost template for my MIM plasmonic nanohole sensor.', imgs: [
+              { src: 'Ryu-LIL.jpeg', cap: "Home-built Lloyd's-mirror LIL setup: 325 nm He-Cd laser, beam expander and pinhole spatial filter, and mirror for interference exposure." },
+              { src: 'LIL_example_001.jpeg', cap: 'Periodic post-shaped large-surface nanopattern produced by LIL, Period of 840nm.' },
+              { src: 'LIL_example_002.jpeg', cap: 'Periodic post-shaped large-surface nanopattern produced by LIL, Period of 500nm.' },
+              { src: 'LIL_example_003.jpeg', cap: 'Periodic post-shaped large-surface nanopattern produced by LIL, Period of 500nm.' },
+              { src: 'LIL_example_004.jpeg', cap: 'Periodic nanohole pattern after electron beam deposition over LIL nanopattern.' },
+              { src: 'Ryu-LIL2.jpeg', cap: 'Periodic hole-shaped nanopattern produced by LIL.' },
+              { src: 'Ryu-LIL2-1.jpeg', cap: 'Sub-130 nm nanopost array (500 nm period), 4-layer Cr/SiO2/Cr/Au stack over a large-area substrate.' },
+              { src: 'LIL_example_005.jpeg', cap: 'PR line pattern on Si substrate via LIL (500 nm period, 58 mW×2 exposure), shown at X20,000 (overview) and X30,000 (212.5 nm linewidth measured) magnification.' }
+          ]},
+          { name: 'Electron Beam Lithography (EBL)', desc: 'High-resolution direct-write nanopatterning on a TESCAN MIRA3 FE-SEM with a Raith ELPHY Quantum pattern generator, using HSQ (negative-tone) and PMMA (positive-tone) resists with dose-sweep optimization. Used for rapid small-area prototyping of multi-period nanohole arrays, to benchmark the spectral response of the large-area LIL-fabricated metasurfaces.', imgs: [
+              { src: 'Ryu-EBL-TESCAN1.jpeg', cap: 'TESCAN MIRA3 FE-SEM with Raith ELPHY Quantum EBL pattern generator, our EBL system for direct-write nanopatterning.' },
+              { src: 'Ryu-EBL-TESCAN2.jpeg', cap: 'TESCAN MIRA3 EBL station: beam column, ELPHY control PC, and pattern-design workstation.' },
+              { src: 'Ryu-EBL-TESCAN3.jpeg', cap: 'ELPHY Quantum pattern generator (GDSII fracturing, dose-sweep exposure queue) alongside the Tescan MIRA3 SEM control panel in "External scanning" mode — the two consoles driving one EBL patterning run.' },
+              { src: 'Ryu-EBL-PMMA-SEM.jpeg', cap: 'SEM of an EBL-written nanohole array in PMMA-C4 from the dose sweep: the holes are non-uniform, with irregular shapes that depend on the exposure dose and the development result.' },
+              { src: 'Ryu-EBL-PMMA-DF.jpeg', cap: 'Dark-field (DF) optical image of the PMMA-C4 dose-sweep fields (one field per exposure dose), used to screen the patterns before SEM.' },
+              { src: 'Ryu-HSQ-resist.jpeg', cap: 'H-SiQ 10% (Hydrogen Silsesquioxane), the negative-tone EBL resist used for high-resolution direct-write nanopatterning.' }
+          ]},
+          { name: 'Soft Lithography', desc: 'PDMS molding and replica techniques for micro/nanostructure transfer — used to fabricate PDMS chambers for dielectrophoresis (DEP) experimental setups and to form microfluidic channels.', imgs: [], noPanel: false },
+          { name: 'Nanoimprint Lithography (NIL)', desc: 'Nanostructure replication via mold-based, UV-curable nanoimprint lithography.', imgs: [
+              { src: 'Ryu-Nanoimprint.jpeg', cap: 'Lab-built nanoimprint setup for large-area imprinting.' },
+              { src: 'Ryu-Nanoimprint1.jpeg', cap: 'Vacuum chamber with UV-curing exposure module.' },
+              { src: 'NIL_example_001.jpeg', cap: 'UV-NIL, using nanohole structure as a mold to form a nanopost array.' },
+              { src: 'NIL_example_002.jpeg', cap: 'UV-NIL, using nanopost structure as a mold to form a nanohole array.' }
+          ]}
+        ]
+      },
+      {
+        key: 'pvd',
+        title: 'PVD (Physical Vapor Deposition)',
+        items: [
+          { name: 'Thermal Evaporation', desc: 'Resistive thermal evaporation of metal thin films (Cr, Pd, Au), including shadow-mask patterning. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records, and vendor coordination. Used for electrode pads and hydrogen-sensor films.', imgs: [
+              { src: 'Ryu-Thermal.jpeg', cap: 'ULTEC thermal evaporator for batch-scale metal thin-film deposition across multiple wafers.' },
+              { src: 'thermal_example_001.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, before deposition.' },
+              { src: 'thermal_example_002.jpeg', cap: 'Thermal deposition of Cr/Au stack thin film with shadow-mask setup, after deposition.' }
+          ]},
+          { name: 'Electron Beam Evaporation', desc: 'E-beam evaporation of metal/oxide thin films under high vacuum. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records (including tooling-factor calibration), and vendor coordination. Chosen for its highly directional, well-collimated deposition profile to precisely form the MIM (Cr/SiO2/Cr/Au) stack over the LIL-patterned template, defining the nanohole geometry. Maintenance work has included crucible shield replacement, internal chamber cleaning, and full system overhaul.', imgs: [
+              { src: 'Ryu-ebeam.jpeg', cap: 'KVE-E2000 e-beam evaporator for multi-source metal/oxide deposition under high-vacuum, complex process conditions.' },
+              { src: 'Ryu-ebeam2.jpeg', cap: 'High-vacuum chamber with 6 crucibles and a GLAD-enabled substrate holder.' },
+              { src: 'Ryu-ebeam3.jpeg', cap: 'Six-pocket crucible carousel loaded with representative source materials used for multi-source e-beam deposition.' },
+              { src: 'ebeam_example_001.jpeg', cap: 'E-beam deposition above LIL nanopost array, forming a vertical nanohole array.' },
+              { src: 'ebeam_example_002.jpeg', cap: 'E-beam deposition above LIL nanopost array, forming an inclined nanohole array by leveraging the deposition characteristics of the oxide-metal multilayer stack.' },
+              { src: 'ebeam_example_003.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' },
+              { src: 'ebeam_example_004.jpeg', cap: 'E-beam evaporated Ti/Au multilayer stack.' },
+              { src: 'Ryu-ebeam-overhaul-before.jpeg', cap: 'Chamber interior before overhaul, showing deposition residue and shield discoloration accumulated from repeated multi-source depositions.' },
+              { src: 'Ryu-ebeam-overhaul-shield.jpeg', cap: 'Removing and remounting the crucible shields as part of the overhaul.' },
+              { src: 'Ryu-ebeam-overhaul-after.jpeg', cap: 'Chamber after internal cleaning and shield replacement, restored to a clean, deposition-ready state.' }
+          ]},
+          { name: 'Sputtering', desc: 'Low-temperature sputter deposition of thin films (e.g., SiO2), used to control film roughness and quality — factors that affect supported lipid bilayer (SLB) formation on the surface — while minimizing thermal load on the substrate.', imgs: [
+              { src: 'Ryu-sputter.jpeg', cap: 'Co-Sputtering System (SiO2/Ti targets) used for multi-target sputter deposition.' }
+          ], noPanel: false }
+        ]
+      },
+      {
+        key: 'cvd',
+        title: 'CVD (Chemical Vapor Deposition)',
+        items: [
+          { name: 'Atomic Layer Deposition (ALD)', desc: 'Conformal Al2O3 and SiO2 thin-film deposition via ALD, typically under 10 nm per run with cycle-level thickness control. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records, and vendor coordination. Used to deposit the conformal oxide insulator layer of the MIM stack.', imgs: [
+              { src: 'Ryu-ALD.jpeg', cap: 'ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant.' },
+              { src: 'Ryu-ALD-loading.jpeg', cap: 'Batch of chip samples loaded onto the wafer carrier prior to SiO2 thin-film deposition.' }
+          ]},
+          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition — e.g., 140 nm SiO2 at 200 °C from a SiH4/N2O source — with film thickness and optical constants (n, k) verified by spectroscopic ellipsometry.', imgs: [
+              { src: 'PECVD_example_sio2.jpeg', cap: '140 nm SiO2 thin film deposited via PECVD at 200°C using a SiH4/N2O precursor source, shown here on a patterned chip array.' }
+          ] }
+        ]
+      },
+      {
+        key: 'etching',
+        title: 'Etching',
+        items: [
+          { name: 'Reactive Ion Etching (RIE)', desc: 'Dry etching of metal, oxide (SiO2), nitride, and polymer (e.g., PVP, pV3D3) thin films using O2, CF4, and Ar chemistries — including post-lithography trimming to shrink developed photoresist nanopost features.', imgs: [
+              { src: 'Ryu-RIE.jpeg', cap: 'Femto Science COVANCE-RF (RIE, Bottom) and CUTE (plasma asher, Top) on the same cleanroom bench: RIE system with 3 gas lines.' },
+              { src: 'RIE_example.jpeg', cap: 'Using RIE to etch pV3D3 thin film.' }
+          ]},
+          { name: 'Inductively Coupled Plasma Reactive Ion Etching (ICP-RIE)', desc: 'High-anisotropy dry etching for deep, fine-featured nanostructures, using a 6-gas-line system (Ar, O2, CF4, SF6, C4F8, CHF3) for tunable etch chemistry. Equipment manager — responsible for maintenance and part replacement, user training and approval, process setup and records, and vendor coordination. Used to etch open the nanohole apertures through the MIM stack, and to fabricate the silicon mold for nanoimprint replication.', imgs: [
+              { src: 'KIST-ICPRIE.jpeg', cap: 'Plasmart Miniplasma ICP-RIE system with 6 gas lines.' },
+              { src: 'KIST-ICPRIE1.jpeg', cap: 'ICP-RIE chamber and control system.' },
+              { src: 'ICPRIE_example_sio2.jpeg', cap: 'Highly anisotropic oxide etching via ICP-RIE.' },
+              { src: 'ICPRIE_example_mold.jpeg', cap: 'Silicon nanoimprint mold fabricated via ICP-RIE etching.' }
+          ]}
+        ]
+      },
+      {
+        key: 'surface',
+        title: 'Surface Treatment',
+        items: [
+          { name: 'Oxygen Plasma Ashing', desc: 'Photoresist descum and stripping, post-cleaning residue removal, and surface hydrophilization.', imgs: [
+              { src: 'Ryu-RIE.jpeg', cap: 'Femto Science CUTE (plasma asher, Top) and COVANCE-RF (RIE, Bottom) on the same cleanroom bench: oxygen plasma ashing for surface treatment.' },
+          ]},
+          { name: 'UV-Ozone', desc: 'UV-ozone surface activation and organic contaminant removal — used as a surface treatment before ALD and for surface hydrophilization.', imgs: [
+              { src: 'Ryu-UVOzone.jpeg', cap: 'Omniscience UVC-150 UV-Ozone generator for surface treatment.' }
+          ]}
+        ]
+      },
+      {
+        key: 'analysis',
+        title: 'Material / Structure Analysis',
+        items: [
+          { name: 'Scanning Electron Microscope (SEM)', desc: 'Scanning electron microscopy for nanostructure imaging. Certified independent operator of the FE-SEM. Used to image and verify nanohole array geometry and MIM layer structure.', imgs: [
+              { src: 'Ryu-SEM.jpeg', cap: 'JEOL JSM-6701F FE-SEM (cold cathode field-emission gun, 1.0 nm resolution at 15 kV, 0.5–30 kV accelerating voltage, up to ×650,000 magnification).' },
+              { src: 'Ryu-SEM-operation.jpeg', cap: 'Live JEOL JSM-6701F FE-SEM operation, imaging a nanohole array pattern at X4,500 magnification (10.00 kV).' },
+              { src: 'Ryu-Pt-sputtercoater.jpeg', cap: 'Cressington 208HRD Pt sputter coater with MTM-20 thickness controller, used to apply a thin conductive Pt coating on samples prior to SEM imaging.' },
+              { src: 'Ryu-EBL-TESCAN2.jpeg', cap: 'TESCAN MIRA3 LMH FE-SEM (Schottky emitter, 1.0 nm resolution at 30 kV), also equipped with Raith ELPHY Quantum 6 for EBL.' },
+              { src: 'Tabletop.jpeg', cap: 'Emcrafts Cube-II Tabletop SEM.' }
+          ]},
+          { name: 'Energy Dispersive X-ray Spectroscopy (EDS)', desc: 'Elemental composition analysis via characteristic X-ray emission under electron-beam excitation. Used to verify the elemental composition of the MIM stack and the materials captured at the nanohole sensing sites.', imgs: [
+              { src: 'Ryu-EDS-XMax.jpeg', cap: 'Oxford Instruments X-Max 50 mm² EDS detector mounted on the FE-SEM chamber, used to verify the elemental composition of the MIM stack and the materials captured at the nanohole sensor.' },
+              { src: 'Ryu-EDS-INCA1.jpeg', cap: 'Using Oxford INCA EDS software to confirm detected elements (carbon, oxygen, aluminum, silicon, gold) from the acquired X-ray spectrum.' },
+              { src: 'Ryu-EDS-INCA2.jpeg', cap: 'INCA EDS quantification report: electron image of the nanohole array alongside the X-ray spectrum and elemental composition by weight % and atomic % (C, O, Al, Si, Au).' }
+          ]},
+          { name: 'Atomic Force Microscope (AFM)', desc: 'Surface topography and nanoscale roughness measurement (Bruker Innova) — used to evaluate the quality of deposited SiO2 films and for GPCR analysis in the KU-KIST joint project.', imgs: [
+              { src: 'Ryu-AFM.jpeg', cap: 'Bruker Innova AFM system.' },
+              { src: 'Ryu-AFM-cantilever-focus.jpeg', cap: 'Focusing the optical camera on the AFM cantilever tip prior to scanning.' },
+              { src: 'Ryu-AFM-probes.jpeg', cap: 'Bruker AFM cantilever probe set.' }
+          ]},
+          { name: 'Stylus / Optical Surface Profiler', desc: 'Surface profile, step-height, and roughness measurement (KLA Alpha-Step stylus profiler, Keyence VK-X3000 3D surface profiler) — used to measure deposited film thickness and to calibrate the e-beam evaporator’s tooling factor from ~160 nm step heights.', imgs: [
+              { src: 'Ryu-Alphastep.jpeg', cap: 'KLA D-100 Alpha-Step stylus profiler (sub-1-Å vertical resolution, 30 mm scan length, 0.03–10 mg stylus force control) for thin-film thickness and surface roughness measurement.' },
+              { src: 'Ryu-Alphastep2.jpeg', cap: 'Measuring thin-film thickness on a sample with the Alpha-Step stylus profiler.' },
+              { src: 'Ryu-Alphastep3.jpeg', cap: 'Alpha-Step measurement of a ~160 nm step-height thin film, used to calibrate the tooling factor of the electron-beam evaporator.' },
+              { src: 'Ryu-VKX3000.jpeg', cap: 'Keyence VK-X3000 3D Surface Profiler (laser confocal + white-light interferometry + focus variation, 0.01 nm height resolution, up to 50×50 mm scan area).' }
+          ] },
+          { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant (n, k) characterization — used to verify the tooling factor and optical constants of SiO2 films deposited by ALD and PECVD.', imgs: [], noPanel: false },
+          { name: 'Reflectance Spectroscopy', desc: "Optical reflectance characterization of thin films. Used to measure the nanohole array's optical resonance spectrum, validated against COMSOL simulation.", imgs: [
+              { src: 'Ryu-Kymera.jpeg', cap: 'Andor Kymera 322i spectrometer for reflectance spectroscopy.' }
+          ]},
+          { name: 'Raman Spectroscopy', desc: 'Raman spectroscopy systems for SERS analysis. Equipment manager of the RAMANtouch confocal Raman microscope — responsible for maintenance and part replacement, user training and approval, measurement setup and records, and vendor coordination. Used to measure SERS signal from analytes captured at the nanohole hotspots.', imgs: [
+              { src: 'Ryu-RAMANtouch.jpeg', cap: 'Bruker RAMANtouch confocal Raman microscope for single-nanohole SERS analysis.' },
+              { src: 'KIST-Renishaw.jpeg', cap: 'Renishaw inVia confocal Raman microscope for large-area surface mapping and signal analysis.' },
+              { src: 'Ryu-Exopert.jpeg', cap: 'Exopert ARM-Dx for AI-assisted target spectrum analysis.' },
+              { src: 'Ryu-BWTEK.jpeg', cap: 'BWTEK i-Raman Plus for preliminary Raman spectrum screening.' }
+          ]},
+          { name: 'Optical & Epi-fluorescence Microscopy', desc: 'Optical microscopy for samples and devices, including epi-fluorescence imaging with DAPI, Texas Red, and FITC filter sets, alongside brightfield (BF) and darkfield (DF) observation modes.', imgs: [
+              { src: 'Ryu-microscope.jpeg', cap: 'Metallographic microscope.' },
+              { src: 'Ryu-microscope2.jpeg', cap: 'Biological microscope.' }
+          ]}
+        ]
+      }
+    ]
+  },
+  {
+    supergroup: 'Computational & Design Skills',
+    categories: [
+      {
+        key: 'language',
+        title: 'Language',
+        items: [
+          { name: 'Python', desc: 'Primary language for data analysis and automation.', imgs: [], noPanel: true },
+          { name: 'C / C++', desc: 'Systems and embedded programming.', imgs: [], noPanel: true },
+          { name: 'LaTeX', desc: 'Scientific document preparation.', imgs: [], noPanel: true },
+          { name: 'MATLAB', desc: 'Numerical computing and signal processing.', imgs: [], noPanel: true }
+        ]
+      },
+      {
+        key: 'fea',
+        title: 'Simulation',
+        items: [
+          { name: 'COMSOL Multiphysics', desc: 'Finite-element multiphysics simulation of optical and electrokinetic phenomena: electromagnetic-wave (ewfd/emw) modeling of reflectance spectra and plasmonic near-field enhancement (|E/E₀|⁴ up to ~1.8×10⁵ at the nanohole hotspots), and coupled electric-current / laminar-flow (ec/spf) modeling of nanoparticle transport under AC-driven DEP and ACEO — used to select nanohole geometries before fabrication.', imgs: [
+              { src: 'comsol_example_001.jpeg', cap: 'Optical and electrokinetic COMSOL simulation suite for a plasmonic nanostructure: (a) reflectance spectrum (ewfd/emw), (b) plasmonic near-field enhancement (ewfd), (c) nanoparticle transport under AC-driven DEP, ACEO, buoyancy, and gravity in fluid (ec/spf).' }
+            ], noPanel: false },
+          { name: 'Lumerical FDTD', desc: 'Finite-difference time-domain electromagnetic simulation for nanophotonic structures.', imgs: [], noPanel: true }
+        ]
+      },
+      {
+        key: 'dataanalysis',
+        title: 'Data Analysis',
+        items: [
+          { name: 'OriginLab', desc: 'Scientific graphing and data analysis.', imgs: [], noPanel: true },
+          { name: 'Veusz', desc: 'Scientific plotting for publication-quality figures.', imgs: [], noPanel: true },
+          { name: 'Python-based data analysis', desc: 'Custom CNN-based image/data processing using PyTorch and OpenCV, applied to quantify single-particle capture uniformity (RSD) from SEM images as a measure of performance. Extended to an optical-microscope (OM) readout that calls the bead colour in every nanowell from five-channel fluorescence imaging and is validated against SEM of the same wells — a faster, non-destructive alternative to SEM for reading out multiplexed particle capture.', imgs: [
+            { src: 'fig_cnn_pipeline_v7.jpg', cap: 'Automated single-particle trapping analysis: SEM image → lattice fitting (500 nm lattice and microhole edge recovered from the image, no manual input) → per-well CNN classification → quantitative readout. 98.99 ± 0.84% per-window capture across 70,983 wells in 75 windows (RSD 0.85%); 99.0% accuracy on 2,116 held-out wells.' },
+            { src: 'fig_cnn_readout_v7.jpg', cap: 'CNN-based classification (SINGLE/MULTI/EMPTY/low-confidence HOLD) with cnn_ps_v7_1, shown on the anchor (4,500×) and zoom (25,000×) images of the same microhole — one network reads both magnifications, no retraining.' },
+            { src: 'fig_cnn_architecture_v7.jpg', cap: 'cnn_ps_v7_1: 4 conv blocks (64/128/256/256) → global average pooling → FC; self-supervised pretraining on 194k unlabeled patches, fine-tuned on 10,588 labeled wells; 5-network × 8-view ensemble, 99.0% accuracy on 2,116 held-out wells.' },
+            { src: 'fig_om_readout_pipeline.png', cap: 'OM-based capture readout: 200 nm PS beads (red/green/blue, 1:1:1) captured by DEP in MIM nanowells are imaged in five channels (BF, DF, FITC, DAPI, TxRd). Each well is located on a fitted lattice and given one call — green, blue, red, or empty — through a five-step CNN + logistic-model decision cascade. Validated against SEM of the same wells: 95% of called wells hold a bead, with 0/231 false calls on empty wells.' },
+            { src: 'fig_om_readout_map.png', cap: 'Three-colour occupancy map from the OM readout across all 30 microholes (78,581 wells, 8,492 beads called), with per-field colour shares plotted against the 1:1:1 input ratio.' }
+          ] }
+        ]
+      },
+      {
+        key: '2d3d',
+        title: '2D/3D Design',
+        items: [
+          { name: 'Rhino / AutoCAD / KeyShot', desc: '2D CAD and 3D modeling/rendering: designing my own photomasks (nanohole arrays and alignment marks) in CAD, and building 3D scientific illustrations and publication figures in Rhino and KeyShot — a workflow I also teach in HBL514 (Biomedical Design).', imgs: [
+              { src: 'Ryu-Rhino-nanohole-illustration.png', cap: '3D-rendered schematic of the nanohole capture mechanism, illustrating selective analyte trapping within the nanostructure.' },
+              { src: 'Ryu-Rhino-nanohole-capture-concept.png', cap: 'Concept illustration of AC-driven single-particle capture at gold nanohole hotspots, from initial trapping through Raman-based single-particle interrogation to full-array operation.' },
+              { src: 'Ryu-Rhino-Raman-setup-figure.png', cap: '3D-rendered schematic of the custom Raman measurement setup (785 nm laser, top/bottom electrodes, PDMS ring, specimen holder), prepared as a publication figure.' }
+          ]}
+        ]
+      },
+      {
+        key: 'design',
+        title: 'Physical Design',
+        items: [
+          { name: 'PCB/Breadboard Circuit Design', desc: 'Circuit-level electronic design and prototyping.', imgs: [], noPanel: true },
+          { name: '3D Printing', desc: 'Rapid prototyping of fixtures and parts.', imgs: [
+            { src: 'Ryu-3dprinter.jpeg', cap: '3D Printer setup for demonstrative experiment equipment design.' },
+            { src: '3dprinter_example_001.jpeg', cap: 'Demo shadow-mask prototypes 3D-printed in PPS-CF, a high-vacuum-compatible material, shown as the bare mask (left, center) and after use for patterned metal deposition (right).' }
+          ], noPanel: false },
+          { name: 'Metal / Polymer CNC', desc: 'CNC machining of metal and polymer parts.', imgs: [
+            { src: 'Ryu-maskholder.jpeg', cap: 'Self-designed Electron Beam Evaporator mask / wafer holder, SUS304.' }
+          ], noPanel: false },
+          { name: 'Metal / Wafer Laser Cutting', desc: 'Laser cutting of metal sheets and wafers.', imgs: [
+            { src: 'Ryu-chunglaser.jpeg', cap: 'Laser cutter for wafer dicing / shadow mask design.' },
+            { src: 'Ryu-shadowmask.jpeg', cap: 'Self-designed shadow mask for patterned deposition.' },
+            { src: 'Ryu-laserdicing.jpeg', cap: 'KEYENCE 3-Axis UV Laser Marker used for wafer/substrate laser dicing.' },
+            { src: 'Ryu-laserdicing2.jpeg', cap: 'Laser-scribed dicing lines on a wafer, staged on the dicing bed prior to cleaving.' },
+            { src: 'Ryu-laserdicing3.jpeg', cap: 'Diced wafer removed from the laser dicing system with vacuum tweezers.' }
+          ], noPanel: false }
+        ]
+      }
+    ]
+  }
+];
+
+var LANGUAGES = [
+  { name: 'Korean', detail: 'Native speaker' },
+  { name: 'English', detail: 'TOEFL 5.0 / 6.0 (equivalent to 100)' }
+];
+
+var RESEARCH = [
+  {
+    head: 'Undergraduate/Graduate Student Researcher, Ryu Group',
+    date: 'Aug 2024 &ndash; Present',
+    sub: 'Korea University',
+    advisor: 'Advised by Prof. Yong-Sang Ryu',
+    bullets: [
+      '<strong>Current Project: MIM Nanohole Plasmonic Metasurface for Single-Particle Analysis</strong> <span class="proj-status">(First-author, in preparation)</span><ul class="sub-bullets"><li><strong>Fabrication:</strong> Building on our co-authored work (in review, Advanced Materials), fabricating large-area nanohole plasmonic metasurfaces via laser interference lithography (LIL) and electron beam lithography (EBL) to define nanohole period and diameter, atomic layer deposition (ALD) and electron-beam evaporation to control insulator and metal layer thicknesses to within 5 nm, and ICP-RIE etching &mdash; engineering a SERS-optimized biosensor capable of quantifying SERS signal through DEP- and ACEO-driven single-nanoparticle capture at the sensing hotspots.</li><li><strong>Simulation:</strong> Simulating optical (COMSOL ewfd) and electrokinetic (COMSOL ec/spf) fields to identify nanohole geometries yielding a near-field enhancement of |<i>E</i>/<i>E</i><sub>0</sub>|<sup>4</sup> up to ~1.8&times;10<sup>5</sup> at sensing hotspots, and modeling DEP/ACEO-driven single-particle capture dynamics to validate experimental trapping behavior.</li><li><strong>CNN Analysis:</strong> Built a convolutional neural network (CNN) that classifies every nanowell in SEM images as empty, single-, or multi-particle occupied (self-supervised pretraining on ~194k unlabeled patches, fine-tuned on ~10.6k labeled wells, 5-network ensemble; 99.0% accuracy on 2,116 held-out wells). Across 70,983 wells in 75 SEM windows at 4 Vpp, it reads out a 98.99 &plusmn; 0.84% capture rate per window (98.2% single-particle) with 0.85% window-to-window relative standard deviation (RSD) &mdash; a quantitative measure of biosensor uniformity and the resulting SERS signal. Extended the readout to optical microscopy: a five-channel fluorescence pipeline calls the bead colour in every well (78,581 wells across 30 microholes) for multiplexed red/green/blue capture, validated against SEM of the same wells &mdash; a faster, non-destructive alternative to SEM (Fig. 6).</li></ul>',
+      '<strong>Collaborative Projects</strong><ul class="sub-bullets"><li><strong>PRET (Plasmon Resonance Energy Transfer) metasurface:</strong> Collaborating with Prof. Junsuk Rho (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it, enabling active electrokinetic concentration of target analytes in aqueous solution.</li><li><strong>Hydrogen-sensing MEMS platform:</strong> Providing deposition and lithography support for fabricating a terahertz-resonant MEMS chip structure whose resonance shifts depending on the presence and concentration of hydrogen gas, enabling label-free hydrogen sensing.</li><li><strong>Electrochemical-sensing nanostructure:</strong> Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.</li><li><strong>KU-KIST Joint Project:</strong> Collaborating Researcher at the Nanophotonics Research Center, KIST (Korea Institute of Science and Technology), developing label-free plasmonic sensing platforms for GPCR (G protein-coupled receptor) conformational dynamics in a drug-discovery initiative.</li></ul>'
+    ],
+    imgs: [
+      { src: 'fig1_nanofab.png', cap: 'Fig. 1 — Eight-step nanofabrication of the DEP-SERS nanowell chip, rendered from the mask CAD: Cr/Au bottom electrodes, ALD/e-beam/ALD SiO2 insulation, laser interference lithography (200 nm posts, 500 nm pitch), secondary exposure, Ti/Au e-beam deposition and lift-off, photoresist micropillars, and Ti/Al2O3 capping with ICP-RIE of the SiO2 to open the nanowells.' },
+      { src: 'fig2_plasmonics.png', cap: 'Fig. 2 — Plasmonic MIM nanohole metasurface: the 500 nm lattice phase-matches 785 nm light to the Au/SiO2 surface plasmon, and each aperture rim concentrates it into two lobes along E (COMSOL: |E/E₀|⁴ ≈ 1.8×10⁵); a period sweep shows how the lattice sets the hot spot.' },
+      { src: 'fig3_electrokinetics.png', cap: 'Fig. 3 — Electrokinetic capture: ACEO delivers 200 nm beads to the surface and DEP seats one bead per well at the top-Au rim — the plasmonic hot spot — shown against SEM of a filled microhole and COMSOL (ec + spf) modeling.' },
+      { src: 'fig4_cnn_readout.png', cap: 'Fig. 4 — CNN readout: every well in every SEM window is classified as empty, single, or multi (99.0% accuracy on 2,116 held-out wells, matched by an independent fluorescence readout). Capture switches on with DEP voltage (0.11% at 0 Vpp, 41.3% at 2 Vpp, 99.0% at 4 Vpp), and at 4 Vpp reaches 98.99 ± 0.84% per window across 70,983 wells in 75 windows (RSD 0.85%).' },
+      { src: 'fig5_sers_readout.png', cap: 'Fig. 5 — Concept: SERS raster read-out — one well, one bead, one spectrum — building a per-well identity map for multiplexed particle analysis. Spectra are illustrative (literature band positions for PS, PMMA, and PET), not measured on this chip.' },
+      { src: 'fig5b_sers_measured.png', cap: 'Fig. 5b — Measured single-well SERS: the Raman probe (≈ 0.5 µm, about one 500 nm well) parked on a DEP-filled microhole (4 Vpp, 200 nm PS) shows the polystyrene ring-breathing band at 1001 cm⁻¹ (S/N ≈ 17, one 20 s shot); the probe position is registered from the optical view to SEM approximately.' },
+      { src: 'fig_om_readout_pipeline.png', cap: 'Fig. 6a — OM-based multiplexed readout: 200 nm PS beads (red/green/blue, 1:1:1) captured by DEP in MIM nanowells are imaged in five channels (BF, DF, FITC, DAPI, TxRd). Each well is located on a fitted lattice and given one call — green, blue, red, or empty — through a five-step CNN + logistic-model decision cascade. Validated against SEM of the same wells: 95% of called wells hold a bead, with 0/231 false calls on empty wells.' },
+      { src: 'fig_om_readout_map.png', cap: 'Fig. 6b — Three-colour occupancy map from the OM readout across all 30 microholes (78,581 wells, 8,492 beads called), with per-field colour shares plotted against the 1:1:1 input ratio.' }
+    ]
+  },
+  {
+    head: 'Project Leader, Vine Robot Colonoscopy Project',
+    date: 'Aug 2023 &ndash; Feb 2024',
+    sub: 'Creative Challenger Program, Korea University',
+    advisor: 'Advised by Prof. Daehee Hong and Dr. Sang-Hyun Kim',
+    bullets: [
+      'Developed and validated a novel soft-robot colonoscopy platform; conducted in vivo experiments in collaboration with the Department of Gastroenterology, Korea University Medical Center.',
+      'Recognized with the Excellence Awards at the 15th Creative Challenger Program and the 2nd Changemakers Forum for the platform.'
+    ],
+    imgs: [
+      { src: 'Ryu-VineRobot1.jpeg', cap: 'Bench-test setup for the soft-robot colonoscopy platform, evaluating the tendon-driven bending mechanism.' },
+      { src: 'Ryu-VineRobot2.jpeg', cap: 'Colon phantom model used to validate the platform under anatomically realistic conditions.' },
+      { src: 'Ryu-VineRobot3.jpeg', cap: 'Bending performance test: straight (unactuated) configuration.' },
+      { src: 'Ryu-VineRobot4.jpeg', cap: 'Bending performance test: actuated configuration, demonstrating the platform’s bending capability.' }
+    ]
+  }
+];
+
+var ACTIVITIES = [
+  {
+    head: 'Founder &amp; President, KU Biomedical Eng. Abroad Mentorship (KUBEAM)',
+    date: 'Aug 2025 &ndash; Present',
+    sub: 'School of Biomedical Engineering, Korea University',
+    bullets: [
+      'Founded an initiative connecting 80+ biomedical engineering students and alumni to pursue opportunities abroad, such as exchange programs, Ph.D. applications, and international careers.',
+      'Built a curated study-abroad resource hub, alumni interviews, and member database &mdash; establishing KUBEAM as a de facto network connecting overseas alumni and faculty with current applicants.'
+    ],
+    imgs: [
+      { src: 'KUBEAM-info-session.jpg?v=2', cap: 'Presenting the first KUBEAM info session as founder and president: program overview and how members can plan exchange, Ph.D., and international career paths.' },
+      { src: 'KUBEAM-online-session.jpg?v=2', cap: 'Online KUBEAM session introducing the mentorship network to students and alumni.' },
+      { src: 'KUBEAM-alumni-seminars.jpg', cap: 'KUBEAM alumni seminar series: talks and small-group mentoring by KU BME alumni now serving as faculty or pursuing graduate study abroad.' }
+    ]
+  },
+  {
+    head: 'Biosensor Team Lead Organizer, Biomedical Engineering Academic Team (BEAT)',
+    date: 'Aug 2025 &ndash; Jul 2026',
+    sub: '',
+    bullets: [
+      'Led and mentored 60+ undergraduates in acquiring the concepts and technical skills necessary to explore the field of biosensors (e.g., SEM imaging, data analysis, critical literature review, and journal-club presentations).'
+    ],
+    imgs: [
+      { src: 'Ryu-BEAT-session1.jpeg', cap: 'BEAT (Biomedical Engineering Academic Team) weekly biosensor journal-club session.' },
+      { src: 'Ryu-BEAT-session2.jpeg', cap: 'BEAT (Biomedical Engineering Academic Team) weekly biosensor journal-club session.' },
+      { src: 'Ryu-BEAT-presentation.jpeg', cap: "A subteam presenting their journal-club review, \"Biosensors for Detection of Tau Protein as an Alzheimer's Disease Marker,\" to the group." },
+      { src: 'Ryu-BEAT-ceremony.jpeg', cap: 'BEAT members with completion certificates at the semester-closing ceremony.' }
+    ]
+  },
+  {
+    head: 'Senior Advisor &amp; Vice President, Department Student Council',
+    date: 'Nov 2024 &ndash; Nov 2025',
+    sub: 'School of Biomedical Engineering, Korea University',
+    bullets: [
+      'Advised and supported planning and execution of academic, cultural, and community events for 500+ undergraduates.',
+      'Led a 30+ member committee to organize the department alumni day, securing over $22,000 in departmental and corporate sponsorships to deliver a large-scale event.'
+    ],
+    imgs: [
+      { src: 'StudentCouncil-AlumniDay.jpg', cap: 'Student council and organizing committee at the 2nd KU BME Alumni Day (Nov 2025), a sponsored event for students and alumni.' }
+    ]
+  },
+  {
+    head: 'Founder &amp; Chief Technology Officer, Radicheck',
+    date: 'Mar 2024 &ndash; Aug 2025',
+    sub: 'Radicheck (Seoul, Republic of Korea)',
+    bullets: [
+      'Developed an integrated radiation detection platform featuring real-time data-driven labeling systems for seafood safety assessment; two patents are currently pending on this platform.'
+    ],
+    imgs: []
+  },
+  {
+    head: 'President, International Student Volunteer (ISV)',
+    date: 'Jul 2021 &ndash; Aug 2022',
+    sub: 'Office of International Affairs, Konkuk University',
+    bullets: [
+      'Assisted inbound and outbound exchange students by providing language support, administrative assistance, and organizing cultural exchange programs. Accommodated and supported over 600 students throughout the term.'
+    ],
+    imgs: []
+  },
+  {
+    head: 'Combat Medic &amp; Medical Support Assistant, BDAACH (549th Hospital Center)',
+    date: 'Jul 2019 &ndash; Jan 2021',
+    sub: '65th Medical Brigade, 8th U.S. Army',
+    bullets: [
+      'Selected for the KATUSA (Korean Augmentation to the U.S. Army) program based on language proficiency. Served in the Physical Performance Service Line (musculoskeletal rehabilitation and physical therapy) for outpatient care and on the COVID-19 Response Team for quarantine operations and vaccine administration.',
+      'Served as Senior KATUSA of the 65th Medical Brigade &mdash; the ranking KATUSA representative and liaison to U.S. command &mdash; and contributed to the accountability of over $5M worth of medical equipment and supplies for the entire clinic.',
+      'Honorably discharged as Sergeant (E-5); recipient of the Army Achievement Medal and Army Commendation Medal.'
+    ],
+    imgs: [
+      { src: 'Ryu-KATUSA1.jpeg', cap: 'Official Chain of Command portrait as Senior KATUSA, 65th Medical Brigade, 8th U.S. Army.' },
+      { src: 'Ryu-KATUSA3.jpeg', cap: 'Range training, 65th Medical Brigade, 8th U.S. Army.' },
+      { src: 'Ryu-KATUSA2.jpeg', cap: 'Receiving the hospital center coin from Hospital Center leadership.' },
+      { src: 'Ryu-KATUSA4.jpeg', cap: 'With Physical Performance Service Line staff after the ETS (Expiration Term of Service) ceremony.' }
+    ]
+  }
+];
+
+var AWARDS = [
+  { name: 'BK21 FOUR Graduate Research Scholarship', org: 'Ministry of Education (Full Tuition)', date: 'Sep 2025 &ndash; Present', imgs: [] },
+  { name: 'Best Poster Presentation Award', org: 'Korean Biochip Fall Symposium 2025', date: 'Nov 2025', imgs: [] },
+  { name: 'Outstanding New Student Scholarship', org: 'Korea University', date: 'Sep 2025', imgs: [] },
+  { name: "Dean's List (Highest Honors, 2 semesters)", org: 'Korea University', date: 'Mar 2023 &ndash; Jun 2025', imgs: [] },
+  { name: 'Excellence Award', org: '2nd Changemakers Forum', date: 'Nov 2024', imgs: [
+      { src: 'Ryu-award-changemakers-certificate.jpeg', cap: 'Certificate, Excellence Award: 2nd Korea University Changemakers Forum, hosted by the Korea University Center for Sustainable Development.' }
+  ] },
+  { name: 'Best Startup Award', org: 'Korea University', date: 'Nov 2024', imgs: [] },
+  { name: 'Third Place', org: 'Capstone Design Fair', date: 'Sep 2024', imgs: [
+      { src: 'Ryu-award-capstone-certificate.jpeg', cap: 'Certificate, Third Place (Bronze): 2024 Creative Integrated Design Competition, Korea University Engineering Education Innovation Center — Team RoboStride, "Quadruped Robot."' }
+  ] },
+  { name: 'Excellence Award', org: '15th Creative Challenger Program', date: 'Feb 2024', imgs: [
+      { src: 'Ryu-award-CCP-certificate.jpeg', cap: 'Certificate, Excellence Award (signed by the University President): 15th Creative Challenger Program, Korea University, for the Vine Robot Colonoscopy Project.' }
+  ] }
+];
+
+var TEACHING = [
+  { course: 'BMED442', title: 'Biomedical Semiconductor Process', advisor: 'Prof. Yong-Sang Ryu', date: 'Fall 2025, Fall 2026', bullets: [
+      'Delivered guest lectures on advanced lithography &mdash; laser interference lithography (LIL), electron beam lithography (EBL), and EUV &mdash; covering their working principles, resolution limits, and trade-offs.',
+      'Ran hands-on practicums in our lab&rsquo;s lithography room: photoresist (PR) processing, thin-film deposition, and reactive ion etching (RIE).',
+      'Taught 130+ students across two semesters.'
+    ], imgs: [
+      { src: 'Ryu-TA-lecture1.jpeg', cap: 'Guest lecturing on lithography strategies and their trade-offs, in place of the instructor.' },
+      { src: 'Ryu-TA-lecture2.jpeg', cap: 'Comparing EUV, e-beam, and photolithography resolution limits during the same lecture.' },
+      { src: 'Ryu-BEAT-mentoring.jpeg', cap: 'With BMED442 students after a hands-on cleanroom practicum session.' }
+  ] },
+  { course: 'HBL514', title: 'Biomedical Design', advisor: 'Prof. Yong-Sang Ryu', date: 'Spring 2026', bullets: [
+      'Taught how to build 3D scientific figures in Rhino 3D and KeyShot &mdash; from modeling and rendering to post-processing for publication-quality figures.'
+    ], imgs: [] }
+];
+
+var PHOTO_SVG = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M3 17l5-4 4 3 3-2 6 5\"/></svg>";
+
+var activeChip = null;
+
+function createLightboxThumb(src, cap){
+  var fig = document.createElement('figure');
+  fig.className = 'lightbox-thumb';
+  if (/^(fig|Ryu-Rhino)/.test(src)) fig.classList.add('is-figure');
+  fig.title = 'Click to enlarge';
+
+  var img = document.createElement('img');
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.src = src;
+  img.alt = cap || 'photo';
+  img.addEventListener('error', function(){
+    fig.classList.add('img-missing');
+    fig.innerHTML = PHOTO_SVG + '<span>Image not found: ' + src + '</span>';
+  });
+  fig.appendChild(img);
+
+  if (cap){
+    var figcap = document.createElement('figcaption');
+    figcap.textContent = cap;
+    fig.appendChild(figcap);
+  }
+
+  fig.addEventListener('click', function(){
+    if (!fig.classList.contains('img-missing')){
+      openModal(src, cap || '');
+    }
+  });
+
+  return fig;
+}
+
+function buildGalleryInto(container, imgs){
+  if (!imgs || imgs.length === 0) return;
+  var wrap = document.createElement('div');
+  wrap.className = 'skill-gallery';
+  for (var i = 0; i < imgs.length; i++){
+    wrap.appendChild(createLightboxThumb(imgs[i].src, imgs[i].cap || ''));
+  }
+  container.appendChild(wrap);
+}
+
+function appendSupportingGallery(parent, imgs, galleryClass){
+  if (!imgs || imgs.length === 0) return;
+
+  var gwrap = document.createElement('div');
+  gwrap.className = galleryClass + ' supporting-gallery';
+  gwrap.hidden = true;
+  for (var k = 0; k < imgs.length; k++){
+    gwrap.appendChild(createLightboxThumb(imgs[k].src, imgs[k].cap || ''));
+  }
+
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'supporting-toggle';
+  btn.innerHTML = '<span class="label">Supporting materials</span><span class="chevron">▾</span>';
+  btn.addEventListener('click', function(){
+    var willOpen = gwrap.hidden;
+    gwrap.hidden = !willOpen;
+    btn.classList.toggle('is-open', willOpen);
+  });
+
+  parent.appendChild(btn);
+  parent.appendChild(gwrap);
+}
+
+function appendSupportingGalleryPlaceholder(parent){
+  return; /* hide empty 'coming soon' placeholders on the public site */
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'supporting-toggle is-empty';
+  btn.disabled = true;
+  btn.innerHTML = '<span class="label">Supporting materials coming soon</span>';
+  parent.appendChild(btn);
+}
+
+var activeRiChip = null;
+
+function buildResearchInterest(){
+  var box = document.getElementById('researchInterestBox');
+  if (!box) return;
+  box.innerHTML = RESEARCH_INTEREST_HTML;
+
+  var heroWrap = document.createElement('div');
+  heroWrap.className = 'ri-hero';
+  heroWrap.hidden = true;
+
+  var heroImg = document.createElement('img');
+  heroImg.alt = '';
+  heroImg.addEventListener('click', function(){
+    openModal(heroImg.src, '');
+  });
+  heroWrap.appendChild(heroImg);
+
+  var panel = document.createElement('div');
+  panel.className = 'skill-panel';
+
+  box.appendChild(heroWrap);
+  box.appendChild(panel);
+
+  var items = box.querySelectorAll('.ri-list li');
+  for (var i = 0; i < items.length && i < RESEARCH_INTEREST_TOPICS.length; i++){
+    (function(idx, li){
+      li.classList.add('ri-chip', 'ri-item');
+      li.setAttribute('role', 'button');
+      li.setAttribute('tabindex', '0');
+      li.addEventListener('click', function(){ toggleResearchPanel(idx, li, panel, heroWrap, heroImg); });
+      li.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleResearchPanel(idx, li, panel, heroWrap, heroImg); }
+      });
+    })(i, items[i]);
+  }
+  if (items.length) toggleResearchPanel(0, items[0], panel, heroWrap, heroImg);
+}
+
+function findSkillCategory(key){
+  for (var g = 0; g < SKILLS_GROUPS.length; g++){
+    var cats = SKILLS_GROUPS[g].categories;
+    for (var c = 0; c < cats.length; c++){
+      if (cats[c].key === key) return cats[c];
+    }
+  }
+  return null;
+}
+
+function renderRelatedSkillCategory(container, ref){
+  var cat = findSkillCategory(ref.categoryKey);
+  if (!cat) return;
+  var items = cat.items;
+  if (ref.itemNames && ref.itemNames.length > 0){
+    items = items.filter(function(it){ return ref.itemNames.indexOf(it.name) !== -1; });
+  }
+  if (!items.length) return;
+
+  var catWrap = document.createElement('div');
+  catWrap.className = 'skill-cat ri-related-cat';
+
+  var h3 = document.createElement('h3');
+  h3.textContent = cat.title;
+  catWrap.appendChild(h3);
+
+  var chipsWrap = document.createElement('div');
+  chipsWrap.className = 'skill-chips';
+  catWrap.appendChild(chipsWrap);
+
+  var subPanel = document.createElement('div');
+  subPanel.className = 'skill-panel';
+  catWrap.appendChild(subPanel);
+
+  items.forEach(function(skill, idx){
+    var chip = document.createElement('div');
+    chip.className = 'skill-chip';
+    chip.textContent = skill.name;
+    if (/Equipment manager/i.test(skill.desc||'')){ var mb=document.createElement('span'); mb.className='mgr-badge'; mb.textContent='Manager'; chip.appendChild(mb); }
+    if (skill.noPanel){
+      chip.classList.add('static');
+    } else {
+      chip.addEventListener('click', function(){
+        toggleNestedSkillPanel(catWrap, idx, chip, items, subPanel);
+      });
+    }
+    chipsWrap.appendChild(chip);
+  });
+
+  container.appendChild(catWrap);
+}
+
+function toggleNestedSkillPanel(scope, idx, chip, items, panel){
+  var skill = items[idx];
+  var isSame = chip.classList.contains('open');
+
+  var openChips = scope.querySelectorAll('.skill-chip.open');
+  for (var a = 0; a < openChips.length; a++){ openChips[a].classList.remove('open'); }
+  panel.classList.remove('open');
+
+  if (isSame) return;
+
+  panel.innerHTML = '';
+
+  var title = document.createElement('div');
+  title.className = 'skill-panel-title';
+  title.textContent = skill.name;
+  panel.appendChild(title);
+
+  var desc = document.createElement('div');
+  desc.className = 'skill-panel-desc';
+  desc.textContent = skill.desc;
+  panel.appendChild(desc);
+
+  if (skill.imgs && skill.imgs.length > 0){
+    buildGalleryInto(panel, skill.imgs);
+  }
+
+  panel.classList.add('open');
+  chip.classList.add('open');
+}
+
+function toggleResearchPanel(idx, chip, panel, heroWrap, heroImg){
+  var topic = RESEARCH_INTEREST_TOPICS[idx];
+  var isSame = (activeRiChip === chip);
+
+  var openChips = document.querySelectorAll('.ri-chip.open');
+  for (var a = 0; a < openChips.length; a++){ openChips[a].classList.remove('open'); }
+
+  if (isSame){
+    panel.classList.remove('open');
+    activeRiChip = null;
+    if (heroWrap) heroWrap.hidden = true;
+    return;
+  }
+
+  panel.innerHTML = '';
+
+  var title = document.createElement('div');
+  title.className = 'skill-panel-title';
+  title.textContent = topic.name;
+  panel.appendChild(title);
+
+  var desc = document.createElement('div');
+  desc.className = 'skill-panel-desc';
+  desc.textContent = topic.desc;
+  panel.appendChild(desc);
+
+  if (topic.relatedSkills && topic.relatedSkills.length > 0){
+    var relLabel = document.createElement('div');
+    relLabel.className = 'ri-related-label';
+    relLabel.textContent = 'Related skills';
+    panel.appendChild(relLabel);
+
+    topic.relatedSkills.forEach(function(ref){
+      renderRelatedSkillCategory(panel, ref);
+    });
+  }
+
+  if (topic.imgs && topic.imgs.length > 0){
+    if (heroWrap && heroImg){
+      heroImg.src = topic.imgs[0].src;
+      heroWrap.hidden = false;
+    }
+    if (topic.imgs.length > 1){
+      buildGalleryInto(panel, topic.imgs.slice(1));
+    }
+  } else if (heroWrap){
+    heroWrap.hidden = true;
+  }
+
+  panel.classList.add('open');
+  chip.classList.add('open');
+  activeRiChip = chip;
+}
+
+function buildPublications(){
+  var container = document.getElementById('publicationsList');
+  if (!container) return;
+  PUBLICATIONS.forEach(function(p){
+    var item = document.createElement('div');
+    item.className = 'pub-item';
+
+    var authors = document.createElement('div');
+    authors.className = 'pub-authors';
+    authors.innerHTML = p.authorsHTML;
+    item.appendChild(authors);
+
+    var title = document.createElement('div');
+    title.className = 'pub-title';
+    title.textContent = p.title;
+    item.appendChild(title);
+
+    var meta = document.createElement('div');
+    meta.className = 'pub-meta';
+    meta.innerHTML =
+      '<span class="pub-dot"></span>' +
+      '<span class="pub-status">' + p.status + ', ' + p.year + '</span>' +
+      '<span class="pub-sep">&middot;</span>' +
+      '<span class="pub-venue">' + p.venue + '</span>';
+    item.appendChild(meta);
+
+    container.appendChild(item);
+  });
+  var legend = document.createElement('div');
+  legend.className = 'pub-legend';
+  legend.innerHTML = PUBLICATIONS_LEGEND;
+  container.appendChild(legend);
+}
+
+function buildSkills(){
+  var container = document.getElementById('skillsContainer');
+  if (!container) return;
+
+  SKILLS_GROUPS.forEach(function(group){
+    var supergroupEl = document.createElement('h3');
+    supergroupEl.className = 'skill-supergroup';
+    supergroupEl.textContent = group.supergroup;
+    container.appendChild(supergroupEl);
+
+    group.categories.forEach(function(cat){
+      var catWrap = document.createElement('div');
+      catWrap.className = 'skill-cat';
+
+      var h3 = document.createElement('h3');
+      h3.textContent = cat.title;
+      catWrap.appendChild(h3);
+
+      var chipsWrap = document.createElement('div');
+      chipsWrap.className = 'skill-chips';
+      chipsWrap.setAttribute('data-group', cat.key);
+      catWrap.appendChild(chipsWrap);
+
+      var panel = document.createElement('div');
+      panel.className = 'skill-panel';
+      panel.setAttribute('data-panel', cat.key);
+      catWrap.appendChild(panel);
+
+      cat.items.forEach(function(skill, idx){
+        var chip = document.createElement('div');
+        chip.className = 'skill-chip';
+        chip.textContent = skill.name;
+        if (/Equipment manager/i.test(skill.desc||'')){ var mb=document.createElement('span'); mb.className='mgr-badge'; mb.textContent='Manager'; chip.appendChild(mb); }
+        // Set `noPanel: true` on a skill entry (see SKILLS_GROUPS above) to turn its
+        // mini-window off: no "+" icon, not clickable, no hover highlight.
+        if (skill.noPanel){
+          chip.classList.add('static');
+        } else {
+          chip.addEventListener('click', function(){
+            toggleSkillPanel(cat.key, idx, chip, cat.items, panel);
+          });
+        }
+        chipsWrap.appendChild(chip);
+      });
+
+      container.appendChild(catWrap);
+    });
+  });
+}
+
+function toggleSkillPanel(groupKey, idx, chip, items, panel){
+  var skill = items[idx];
+  var isSame = (activeChip === chip);
+
+  var openChips = document.querySelectorAll('.skill-chip.open');
+  for (var a = 0; a < openChips.length; a++){
+    if (!openChips[a].closest('#researchInterestBox')){ openChips[a].classList.remove('open'); }
+  }
+
+  var openPanels = document.querySelectorAll('.skill-panel.open');
+  for (var b = 0; b < openPanels.length; b++){
+    if (openPanels[b] !== panel && !openPanels[b].closest('#researchInterestBox')){ openPanels[b].classList.remove('open'); }
+  }
+
+  if (isSame){
+    panel.classList.remove('open');
+    activeChip = null;
+    return;
+  }
+
+  panel.innerHTML = '';
+
+  var title = document.createElement('div');
+  title.className = 'skill-panel-title';
+  title.textContent = skill.name;
+  panel.appendChild(title);
+
+  var desc = document.createElement('div');
+  desc.className = 'skill-panel-desc';
+  desc.textContent = skill.desc;
+  panel.appendChild(desc);
+
+  if (skill.imgs && skill.imgs.length > 0){
+    buildGalleryInto(panel, skill.imgs);
+  } else {
+    var empty = document.createElement('div');
+    empty.style.fontSize = '0.85rem';
+    empty.style.color = 'var(--muted)';
+    empty.textContent = 'Add photos by filling in the imgs field with {src, cap} in the code.';
+    panel.appendChild(empty);
+  }
+
+  panel.classList.add('open');
+  chip.classList.add('open');
+  activeChip = chip;
+}
+
+function buildLanguages(){
+  var container = document.getElementById('languagesList');
+  if (!container) return;
+  LANGUAGES.forEach(function(l){
+    var row = document.createElement('div');
+    row.className = 'lang-row';
+    row.innerHTML = '<span class="lang-name">' + l.name + '</span><span class="lang-detail">' + l.detail + '</span>';
+    container.appendChild(row);
+  });
+}
+
+function buildEntryList(containerId, data, alwaysShowSupporting){
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  for (var i = 0; i < data.length; i++){
+    var e = data[i];
+    var row = document.createElement('div');
+    row.className = 'entry';
+
+    var head = document.createElement('div');
+    head.className = 'entry-head';
+    head.innerHTML = e.head;
+    row.appendChild(head);
+
+    var date = document.createElement('div');
+    date.className = 'entry-date';
+    date.innerHTML = e.date;
+    row.appendChild(date);
+
+    if (e.sub){
+      var sub = document.createElement('div');
+      sub.className = 'entry-sub';
+      sub.innerHTML = e.sub;
+      row.appendChild(sub);
+    }
+
+    if (e.advisor){
+      var adv = document.createElement('div');
+      adv.className = 'entry-detail entry-advisor';
+      adv.innerHTML = e.advisor;
+      row.appendChild(adv);
+    }
+
+    if (e.bullets && e.bullets.length > 0){
+      var ul = document.createElement('ul');
+      ul.className = 'entry-bullets';
+      e.bullets.forEach(function(b){
+        var li = document.createElement('li');
+        li.innerHTML = b;
+        ul.appendChild(li);
+      });
+      row.appendChild(ul);
+    } else if (e.detail){
+      var detail = document.createElement('div');
+      detail.className = 'entry-detail';
+      detail.innerHTML = e.detail;
+      row.appendChild(detail);
+    }
+
+    if (e.imgs && e.imgs.length > 0){
+      appendSupportingGallery(row, e.imgs, 'entry-gallery');
+    } else if (alwaysShowSupporting){
+      appendSupportingGalleryPlaceholder(row);
+    }
+
+    container.appendChild(row);
+  }
+}
+
+function buildAwardsList(){
+  var ul = document.getElementById('awardsList');
+  if (!ul) return;
+  for (var i = 0; i < AWARDS.length; i++){
+    var a = AWARDS[i];
+    var li = document.createElement('li');
+
+    var rowDiv = document.createElement('div');
+    rowDiv.className = 'award-row';
+
+    var nameSpan = document.createElement('span');
+    nameSpan.className = 'award-name';
+    nameSpan.innerHTML = '<strong>' + a.name + '</strong>, ' + a.org;
+    rowDiv.appendChild(nameSpan);
+
+    var dateSpan = document.createElement('span');
+    dateSpan.className = 'award-date';
+    dateSpan.innerHTML = a.date;
+    rowDiv.appendChild(dateSpan);
+
+    li.appendChild(rowDiv);
+
+    if (a.imgs && a.imgs.length > 0){
+      appendSupportingGallery(li, a.imgs, 'award-gallery');
+    }
+
+    ul.appendChild(li);
+  }
+}
+
+function buildTeaching(){
+  var container = document.getElementById('teachingList');
+  if (!container) return;
+  TEACHING.forEach(function(t){
+    var item = document.createElement('div');
+    item.className = 'teach-item';
+
+    var role = document.createElement('div');
+    role.className = 'teach-role';
+    role.textContent = 'Teaching Assistant, ' + t.course + ' \u201c' + t.title + '\u201d';
+    item.appendChild(role);
+
+    var date = document.createElement('div');
+    date.className = 'teach-date';
+    date.textContent = t.date;
+    item.appendChild(date);
+
+    var advisor = document.createElement('div');
+    advisor.className = 'teach-advisor';
+    advisor.textContent = t.advisor;
+    item.appendChild(advisor);
+
+    if (t.bullets && t.bullets.length > 0){
+      var ul = document.createElement('ul');
+      ul.className = 'entry-bullets';
+      t.bullets.forEach(function(b){
+        var li = document.createElement('li');
+        li.innerHTML = b;
+        ul.appendChild(li);
+      });
+      item.appendChild(ul);
+    }
+
+    if (t.imgs && t.imgs.length > 0){
+      appendSupportingGallery(item, t.imgs, 'entry-gallery');
+    }
+
+    container.appendChild(item);
+  });
+}
+
+function openModal(src, cap){
+  var modal = document.getElementById('imgModal');
+  var img = document.getElementById('imgModalImg');
+  var capEl = document.getElementById('imgModalCap');
+  img.src = src;
+  capEl.textContent = cap || '';
+  capEl.style.display = cap ? 'block' : 'none';
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('imgModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+
+function riLines(){
+  var tmp=document.createElement('div'); tmp.innerHTML=RESEARCH_INTEREST_HTML;
+  var out=[]; tmp.querySelectorAll('.ri-list li').forEach(function(li){
+    var t=li.textContent; var k=t.indexOf('—'); out.push(k>=0?t.slice(k+1).trim():t);
+  }); return out;
+}
+function pad2(n){ return (n<10?'0':'')+n; }
+
+function buildThemeCards(){
+  var grid=document.getElementById('themeGrid'); if(!grid) return;
+  var lines=riLines();
+  RESEARCH_INTEREST_TOPICS.forEach(function(t,i){
+    var c=document.createElement('button'); c.type='button'; c.className='theme-card';
+    var img=(t.imgs&&t.imgs[0])?'<div class="tc-img"><img loading="lazy" src="'+t.imgs[0].src+'" alt=""></div>':'';
+    c.innerHTML=img+'<div class="tc-body"><div class="tc-num">'+pad2(i+1)+'</div><div class="tc-name"></div><div class="tc-line"></div><div class="tc-open">Open &rarr;</div></div>';
+    c.querySelector('.tc-name').textContent=t.name;
+    c.querySelector('.tc-line').textContent=lines[i]||'';
+    c.addEventListener('click',function(){ location.hash='theme-'+(i+1); });
+    grid.appendChild(c);
+  });
+  var steps=document.getElementById('tpSteps');
+  RESEARCH_INTEREST_TOPICS.forEach(function(t,i){
+    var b=document.createElement('button'); b.type='button'; b.textContent=pad2(i+1); b.title=t.name;
+    b.addEventListener('click',function(){ location.hash='theme-'+(i+1); });
+    steps.appendChild(b);
+  });
+  document.getElementById('tpBack').addEventListener('click',function(){
+    if(history.length>1 && lastHashFromCard){ history.back(); } else { location.hash='about'; }
+  });
+  window.addEventListener('hashchange',routeTheme);
+  routeTheme();
+}
+var lastHashFromCard=false;
+function routeTheme(){
+  var m=/^#theme-(\d+)$/.exec(location.hash);
+  var panel=document.getElementById('themePanel');
+  if(!m){ if(panel.classList.contains('open')){ panel.classList.remove('open'); panel.setAttribute('aria-hidden','true'); document.body.style.overflow=''; var g=document.getElementById('themeGrid'); if(g) g.scrollIntoView({block:'center'}); } return; }
+  var i=parseInt(m[1],10)-1; if(i<0||i>=RESEARCH_INTEREST_TOPICS.length) return;
+  lastHashFromCard=true;
+  renderTheme(i);
+  panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); panel.scrollTop=0; document.body.style.overflow='hidden';
+}
+function renderTheme(i){
+  var t=RESEARCH_INTEREST_TOPICS[i], body=document.getElementById('tpBody');
+  body.innerHTML='';
+  document.querySelectorAll('#tpSteps button').forEach(function(b,k){ b.classList.toggle('on',k===i); });
+  var head=document.createElement('div'); head.className='tp-head';
+  head.innerHTML='<div class="eyebrow">'+pad2(i+1)+' &middot; Research interest</div><h2></h2><p></p>';
+  head.querySelector('h2').textContent=t.name; head.querySelector('p').textContent=t.desc;
+  body.appendChild(head);
+  if(t.imgs&&t.imgs[0]){
+    var f=document.createElement('div'); f.className='tp-fig';
+    var im=document.createElement('img'); im.src=t.imgs[0].src; im.alt=t.name; f.appendChild(im);
+    f.addEventListener('click',function(){ openModal(t.imgs[0].src,t.imgs[0].cap||''); });
+    body.appendChild(f);
+    if(t.imgs[0].cap){ var cp=document.createElement('p'); cp.className='tp-figcap'; cp.textContent=t.imgs[0].cap; body.appendChild(cp); }
+    if(t.imgs.length>1){ var ex=document.createElement('div'); ex.className='tp-extra'; buildGalleryInto(ex,t.imgs.slice(1)); body.appendChild(ex); }
+  }
+  if(t.relatedSkills&&t.relatedSkills.length){
+    var sub=document.createElement('div'); sub.className='tp-sub'; sub.textContent='Related skills & equipment'; body.appendChild(sub);
+    t.relatedSkills.forEach(function(ref){ renderRelatedSkillCategory(body,ref); });
+  }
+  var nav=document.createElement('div'); nav.className='tp-nav';
+  var n=RESEARCH_INTEREST_TOPICS.length;
+  [[i-1,'Previous'],[i+1,'Next']].forEach(function(p){
+    var j=p[0]; if(j<0||j>=n){ nav.appendChild(document.createElement('span')); return; }
+    var b=document.createElement('button'); b.type='button';
+    b.innerHTML='<small>'+p[1]+' &middot; '+pad2(j+1)+'</small><b></b>'; b.querySelector('b').textContent=RESEARCH_INTEREST_TOPICS[j].name;
+    if(p[1]==='Next') b.style.textAlign='right';
+    b.addEventListener('click',function(){ location.hash='theme-'+(j+1); });
+    nav.appendChild(b);
+  });
+  body.appendChild(nav);
+}
+
+function shortSkillName(n){
+  var m=/\(([A-Z0-9\-]{2,8})\)\s*$/.exec(n); return m?m[1]:n.replace(/\s*\(.*?\)\s*$/,'');
+}
+function buildSkillCards(){
+  var container=document.getElementById('skillsContainer'); if(!container) return;
+  SKILLS_GROUPS.forEach(function(group){
+    var sg=document.createElement('h3'); sg.className='skill-supergroup'; sg.textContent=group.supergroup; container.appendChild(sg);
+    var grid=document.createElement('div'); grid.className='sk-grid'; container.appendChild(grid);
+    var detail=document.createElement('div'); detail.className='sk-detail';
+    var cards=[];
+    group.categories.forEach(function(cat){
+      var interactive=cat.items.some(function(it){ return !it.noPanel; });
+      var mgr=cat.items.filter(function(it){ return /Equipment manager/i.test(it.desc||''); }).length;
+      var c=document.createElement('button'); c.type='button'; c.className='sk-card'+(interactive?'':' static');
+      c.innerHTML='<div class="sk-title"></div><div class="sk-items"></div>'+(mgr?'<div class="sk-mgr"><span class="mgr-badge">Manager &times; '+mgr+'</span></div>':'')+(interactive?'<span class="sk-plus">+</span>':'');
+      c.querySelector('.sk-title').textContent=cat.title;
+      c.querySelector('.sk-items').textContent=cat.items.map(function(it){return shortSkillName(it.name);}).join(' · ');
+      if(interactive){
+        c.addEventListener('click',function(){
+          var was=c.classList.contains('open');
+          cards.forEach(function(x){x.classList.remove('open');}); detail.classList.remove('open'); detail.innerHTML='';
+          if(was) return;
+          c.classList.add('open');
+          renderRelatedSkillCategory(detail,{categoryKey:cat.key});
+          // place detail right after the clicked card's row
+          var cols=getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+          var idx=cards.indexOf(c); var rowEnd=Math.min(cards.length-1, Math.floor(idx/cols)*cols+cols-1);
+          cards[rowEnd].after(detail);
+          detail.classList.add('open');
+        });
+      } else { c.disabled=false; c.tabIndex=-1; }
+      cards.push(c); grid.appendChild(c);
+    });
+  });
+}
+
+function buildActivityCards(containerId,data){
+  var container=document.getElementById(containerId); if(!container) return;
+  container.className='act-grid';
+  data.forEach(function(e){
+    var c=document.createElement('div'); c.className='act-card';
+    var h=document.createElement('div'); h.className='ac-head'; h.innerHTML=e.head; c.appendChild(h);
+    var m=document.createElement('div'); m.className='ac-meta'; m.innerHTML=(e.sub?e.sub+' &middot; ':'')+e.date; c.appendChild(m);
+    if(e.bullets&&e.bullets.length){ var ul=document.createElement('ul'); ul.className='entry-bullets'; e.bullets.forEach(function(b){ var li=document.createElement('li'); li.innerHTML=b; ul.appendChild(li); }); c.appendChild(ul); }
+    var sp=document.createElement('div'); sp.className='ac-spacer'; c.appendChild(sp);
+    if(e.imgs&&e.imgs.length){ appendSupportingGallery(c,e.imgs,'entry-gallery'); var lb=c.querySelector('.supporting-toggle .label'); if(lb) lb.textContent='Photos · '+e.imgs.length; }
+    container.appendChild(c);
+  });
+}
+
+function init(){
+  buildThemeCards();
+  buildPublications();
+  buildSkillCards();
+  buildLanguages();
+  buildEntryList('researchList', RESEARCH);
+  buildActivityCards('activitiesList', ACTIVITIES);
+  buildAwardsList();
+  buildTeaching();
+
+  var modal = document.getElementById('imgModal');
+  modal.addEventListener('click', function(e){
+    if (e.target === modal){ closeModal(); }
+  });
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ if(document.getElementById('imgModal').classList.contains('open')){ closeModal(); } else if(/^#theme-/.test(location.hash)){ document.getElementById('tpBack').click(); } }
+  });
+
+  var profileImg = document.getElementById('profileImg');
+  var profilePhoto = document.getElementById('profilePhoto');
+  profilePhoto.addEventListener('click', function(){
+    if (profileImg.style.display !== 'none'){
+      openModal('Kwon_profile.jpeg', '');
+    }
+  });
+  profileImg.addEventListener('error', function(){
+    profileImg.style.display = 'none';
+    document.getElementById('profileSvg').style.display = 'block';
+    document.getElementById('profileLabel').style.display = 'block';
+  });
+
+  var navLinks = document.querySelectorAll('.nav-links a');
+  var sections = document.querySelectorAll('section');
+  if (typeof IntersectionObserver !== 'undefined'){
+    var navObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          var id = entry.target.id;
+          navLinks.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function(s){ navObs.observe(s); });
+  }
+}
+
+if (document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
+</script>
+</body>
+</html>
