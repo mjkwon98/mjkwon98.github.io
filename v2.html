@@ -212,7 +212,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 /* ===== v2 layout ===== */
 :root{--maxw:1000px;--card-r:12px;}
 .hero2{padding:64px 0 40px;background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%);}
-.hero-grid{display:grid;grid-template-columns:1fr 200px;gap:2.5rem;align-items:start;}
+.hero-grid{display:grid;grid-template-columns:200px 1fr;gap:2.5rem;align-items:start;}
 .eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;}
 .hero2 h1{font-family:var(--serif);font-size:3rem;font-weight:600;letter-spacing:-0.015em;line-height:1.05;margin-bottom:0.5rem;}
 .hero2 .role{font-size:1.05rem;color:var(--text);font-weight:600;}
@@ -342,6 +342,13 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 <section id="about" class="about hero2">
   <div class="wrap">
     <div class="hero-grid">
+      <div class="profile-photo" id="profilePhoto">
+        <img src="Kwon_profile.jpeg" alt="Minjae Kwon" id="profileImg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none" id="profileSvg">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+        </svg>
+        <span class="ph-label" style="display:none" id="profileLabel">Photo</span>
+      </div>
       <div class="hero-text">
         <div class="eyebrow">Korea University &middot; Ryu Group</div>
         <h1>Minjae Kwon</h1>
@@ -353,13 +360,6 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
           <a class="hero-btn" href="mailto:rnjs0830@korea.ac.kr">Email</a>
           <a class="hero-btn" href="Minjae_Kwon_CV.pdf?v=20260924b" target="_blank" rel="noopener">CV</a>
         </div>
-      </div>
-      <div class="profile-photo" id="profilePhoto">
-        <img src="Kwon_profile.jpeg" alt="Minjae Kwon" id="profileImg">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none" id="profileSvg">
-          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
-        </svg>
-        <span class="ph-label" style="display:none" id="profileLabel">Photo</span>
       </div>
     </div>
     <div class="theme-head"><span>Research interests</span><em>Open a card for figures and methods</em></div>
@@ -1583,7 +1583,7 @@ function init(){
   buildSkillCards();
   buildLanguages();
   buildEntryList('researchList', RESEARCH);
-  buildActivityCards('activitiesList', ACTIVITIES);
+  buildEntryList('activitiesList', ACTIVITIES, true);
   buildAwardsList();
   buildTeaching();
 
