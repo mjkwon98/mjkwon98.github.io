@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minjae Kwon</title>
+<title>Minjae Kwon (v1 backup)</title>
 <meta name="robots" content="noindex">
 <meta name="description" content="Minjae Kwon — M.S. student in Bioengineering at Korea University (Ryu Group). Nanofabrication, plasmonic metasurfaces, electrokinetics, and deep-learning readout for SERS biosensing.">
 <meta property="og:type" content="profile">
@@ -208,116 +208,6 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   .teach-item{grid-template-columns:1fr;}
   .teach-date{text-align:left;}
 }
-
-/* ===== v2 layout ===== */
-:root{--maxw:1000px;--card-r:12px;}
-.hero2{padding:64px 0 40px;background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%);}
-.hero-grid{display:grid;grid-template-columns:200px 1fr;gap:2.5rem;align-items:start;}
-.eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;}
-.hero2 h1{font-family:var(--serif);font-size:3rem;font-weight:600;letter-spacing:-0.015em;line-height:1.05;margin-bottom:0.5rem;}
-.hero2 .role{font-size:1.05rem;color:var(--text);font-weight:600;}
-.hero2 .affil{font-size:0.95rem;color:var(--muted);margin-top:2px;}
-.hero-mission{font-family:var(--serif);font-size:1.25rem;line-height:1.45;color:var(--text);margin:1.1rem 0 0.9rem;max-width:620px;}
-.hero2 .about-bio{background:none;border:none;padding:0;max-width:640px;color:#374151;font-size:0.98rem;margin-top:0;}
-.hero2 .hero-links{margin-top:1.1rem;}
-.hero2 .profile-photo{width:200px;height:250px;border-radius:14px;box-shadow:0 6px 24px rgba(15,23,42,0.08);}
-.theme-head{display:flex;align-items:baseline;justify-content:space-between;margin:2.75rem 0 0.9rem;}
-.theme-head span{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
-.theme-head em{font-style:normal;font-size:0.82rem;color:var(--muted);}
-.theme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.theme-card{background:#fff;border:1px solid var(--line);border-radius:var(--card-r);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:border-color .15s,box-shadow .15s,transform .15s;text-align:left;font:inherit;color:inherit;padding:0;}
-.theme-card:hover,.theme-card:focus-visible{border-color:var(--accent);box-shadow:0 6px 20px rgba(37,99,168,0.12);transform:translateY(-2px);outline:none;}
-.theme-card .tc-img{aspect-ratio:16/10;background:#fff;border-bottom:1px solid #eef1f5;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.theme-card .tc-img img{width:100%;height:100%;object-fit:contain;padding:6px;}
-.theme-card .tc-body{padding:0.85rem 1rem 1rem;display:flex;flex-direction:column;flex:1;}
-.tc-num{font-size:0.72rem;font-weight:700;color:var(--accent);letter-spacing:0.08em;}
-.tc-name{font-weight:700;font-size:1rem;line-height:1.3;margin:0.2rem 0 0.35rem;}
-.tc-line{font-size:0.86rem;color:#4b5563;line-height:1.45;flex:1;}
-.tc-open{font-size:0.8rem;font-weight:700;color:var(--accent);margin-top:0.7rem;}
-
-/* theme detail page */
-.theme-panel{position:fixed;inset:0;z-index:300;background:#fff;overflow-y:auto;display:none;}
-.theme-panel.open{display:block;animation:fadein .2s ease;}
-@keyframes fadein{from{opacity:0}to{opacity:1}}
-.tp-bar{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:2;}
-.tp-bar .wrap{height:56px;display:flex;align-items:center;justify-content:space-between;}
-.tp-back{font:inherit;font-size:0.9rem;font-weight:600;color:var(--accent);background:none;border:none;cursor:pointer;padding:6px 0;}
-.tp-steps{display:flex;gap:6px;}
-.tp-steps button{font:inherit;font-size:0.8rem;font-weight:600;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;}
-.tp-steps button.on{background:var(--accent);border-color:var(--accent);color:#fff;}
-.tp-body{padding:48px 0 72px;}
-.tp-head{border-left:3px solid var(--accent);padding-left:1.1rem;margin-bottom:2rem;max-width:760px;}
-.tp-head .eyebrow{margin-bottom:0.3rem;}
-.tp-head h2{font-family:var(--serif);font-size:2.3rem;font-weight:600;line-height:1.15;margin-bottom:0.8rem;}
-.tp-head p{font-size:1.02rem;line-height:1.7;color:#374151;}
-.tp-fig{border:1px solid var(--line);border-radius:var(--card-r);overflow:hidden;background:#fff;cursor:zoom-in;}
-.tp-fig img{width:100%;display:block;}
-.tp-figcap{font-size:0.86rem;color:var(--muted);line-height:1.55;margin:0.7rem 0 0;max-width:820px;}
-.tp-extra{margin-top:1.4rem;}
-.tp-sub{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin:2.5rem 0 1rem;}
-.tp-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);}
-.tp-nav button{font:inherit;background:none;border:1px solid var(--line);border-radius:10px;padding:0.7rem 1rem;cursor:pointer;text-align:left;color:var(--text);max-width:48%;}
-.tp-nav button:hover{border-color:var(--accent);}
-.tp-nav small{display:block;font-size:0.72rem;color:var(--muted);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;}
-.tp-nav b{font-size:0.95rem;}
-
-/* research experience status pill */
-.proj-status{display:inline-block;font-style:normal;font-weight:600;font-size:0.72rem;color:var(--accent);background:var(--accent-soft);border:1px solid #cfe0f3;border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px;}
-
-/* skills as cards */
-.skill-intro{margin-bottom:0.5rem;}
-.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.sk-card{background:#fff;border:1px solid var(--line);border-radius:var(--card-r);padding:0.95rem 1.05rem;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:0.3rem;transition:border-color .15s,box-shadow .15s;position:relative;}
-.sk-card:hover,.sk-card.open{border-color:var(--accent);box-shadow:0 4px 16px rgba(37,99,168,0.10);}
-.sk-card.open{background:var(--accent-soft);}
-.sk-card.static{cursor:default;}
-.sk-card.static:hover{border-color:var(--line);box-shadow:none;}
-.sk-card .sk-title{font-weight:700;font-size:0.98rem;padding-right:1.6rem;}
-.sk-card .sk-items{font-size:0.84rem;color:#4b5563;line-height:1.45;}
-.sk-card .sk-plus{position:absolute;right:0.9rem;top:0.85rem;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:var(--muted);background:#fff;transition:transform .15s;}
-.sk-card.open .sk-plus{transform:rotate(45deg);color:var(--accent);border-color:var(--accent);}
-.sk-card .sk-mgr{margin-top:0.25rem;}
-.sk-card .sk-mgr .mgr-badge{margin-left:0;}
-.sk-detail{grid-column:1 / -1;display:none;background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--card-r);padding:1.1rem 1.2rem;}
-.sk-detail.open{display:block;animation:slidein .25s ease;}
-.sk-detail .skill-cat{margin-bottom:0;}
-.sk-detail .skill-cat h3{display:none;}
-.sk-detail .skill-panel{background:#fff;}
-
-/* activities as cards */
-.act-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.act-card{border:1px solid var(--line);border-radius:var(--card-r);padding:1.1rem 1.2rem;background:#fff;display:flex;flex-direction:column;}
-.act-card .ac-head{font-weight:700;font-size:1rem;line-height:1.35;}
-.act-card .ac-meta{font-size:0.84rem;color:var(--muted);margin:0.25rem 0 0.55rem;}
-.act-card .entry-bullets{margin-top:0;}
-.act-card .entry-bullets li{font-size:0.92rem;}
-.act-card .supporting-toggle{margin-top:auto;padding-top:0.3rem;margin-left:0;}
-.act-card .entry-gallery{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}
-.act-card .ac-spacer{flex:1;min-height:0.6rem;}
-
-/* contact footer */
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-.contact-grid .cg-label{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;}
-.contact-grid a,.contact-grid span{font-size:1rem;font-weight:600;text-decoration:none;color:var(--text);}
-.contact-grid a:hover{color:var(--accent);}
-
-@media (max-width:860px){
-  .theme-grid{grid-template-columns:repeat(2,1fr);}
-  .sk-grid{grid-template-columns:repeat(2,1fr);}
-}
-@media (max-width:640px){
-  .hero-grid{grid-template-columns:1fr;gap:1.25rem;}
-  .hero2 .profile-photo{order:-1;width:150px;height:188px;margin:0 auto;}
-  .hero2 h1{font-size:2.3rem;}
-  .hero2 .hero-text{text-align:left;}
-  .hero-mission{font-size:1.1rem;}
-  .theme-grid{grid-template-columns:1fr 1fr;gap:10px;}
-  .tc-line{display:none;}
-  .theme-head em{display:none;}
-  .sk-grid,.act-grid,.contact-grid{grid-template-columns:1fr;}
-  .tp-head h2{font-size:1.8rem;}
-}
-
 </style>
 </head>
 <body>
@@ -339,9 +229,9 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   </div>
 </nav>
 
-<section id="about" class="about hero2">
+<section id="about" class="about">
   <div class="wrap">
-    <div class="hero-grid">
+    <div class="about-head">
       <div class="profile-photo" id="profilePhoto">
         <img src="Kwon_profile.jpeg" alt="Minjae Kwon" id="profileImg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none" id="profileSvg">
@@ -349,12 +239,14 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
         </svg>
         <span class="ph-label" style="display:none" id="profileLabel">Photo</span>
       </div>
-      <div class="hero-text">
-        <div class="eyebrow">Korea University &middot; Ryu Group</div>
+      <div class="about-intro">
         <h1>Minjae Kwon</h1>
-        <div class="role">Master's student, Department of Bioengineering</div>
-        <div class="affil">Seoul, Republic of Korea &middot; rnjs0830@korea.ac.kr</div>
-        <p class="hero-mission">Engineering nanostructures that shape light and fluidic behavior, guided by computational modeling.</p>
+        <div class="role">Master's student, Ryu Group</div>
+        <div class="affil">Department of Bioengineering, Korea University</div>
+        <div class="about-meta">
+          <span>Seoul, Republic of Korea</span>
+          <span>rnjs0830@korea.ac.kr</span>
+        </div>
         <p class="about-bio">I am an M.S. student in Prof. Yong-Sang Ryu&rsquo;s group at Korea University, where I build large-area plasmonic metasurfaces and use electrokinetics to place single nanoparticles onto their sensing hotspots. My work incorporates computational approaches throughout &mdash; COMSOL for device design and dynamic analysis, and deep learning for experimental readout. I am applying to Ph.D. programs for Fall 2027.</p>
         <div class="hero-links">
           <a class="hero-btn" href="mailto:rnjs0830@korea.ac.kr">Email</a>
@@ -362,8 +254,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
         </div>
       </div>
     </div>
-    <div class="theme-head"><span>Research interests</span><em>Open a card for figures and methods</em></div>
-    <div class="theme-grid" id="themeGrid"></div>
+    <div class="research-interest" id="researchInterestBox"></div>
   </div>
 </section>
 
@@ -410,7 +301,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 <section id="skills">
   <div class="wrap">
     <h2 class="section-title">Technical Proficiency</h2>
-    <p class="skill-intro">Open a card for equipment photos, results, and descriptions. <span class="mgr-badge" style="margin-left:2px">Manager</span> marks equipment I manage.</p>
+    <p class="skill-intro">Click any skill to view related equipment photos, results, and descriptions.</p>
     <div id="skillsContainer"></div>
 
     <h3 class="skill-supergroup" style="margin-top:2.25rem;">Languages</h3>
@@ -442,18 +333,12 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 <section id="contact">
   <div class="wrap">
     <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-      <div><div class="cg-label">Email</div><a href="mailto:rnjs0830@korea.ac.kr">rnjs0830@korea.ac.kr</a></div>
-      <div><div class="cg-label">Document</div><a href="Minjae_Kwon_CV.pdf?v=20260924b" target="_blank" rel="noopener">Curriculum vitae (PDF)</a></div>
-      <div><div class="cg-label">Location</div><span>Korea University, Seoul</span></div>
+    <div class="contact-box">
+      <div class="label">Email</div>
+      <a href="mailto:rnjs0830@korea.ac.kr">rnjs0830@korea.ac.kr</a>
     </div>
   </div>
 </section>
-
-<div class="theme-panel" id="themePanel" aria-hidden="true">
-  <div class="tp-bar"><div class="wrap"><button class="tp-back" id="tpBack">&larr; All research interests</button><div class="tp-steps" id="tpSteps"></div></div></div>
-  <div class="wrap tp-body" id="tpBody"></div>
-</div>
 
 <div class="img-modal" id="imgModal">
   <button class="img-modal-close" id="modalCloseBtn" aria-label="close">&times;</button>
@@ -1451,136 +1336,10 @@ function closeModal(){
   document.body.style.overflow = '';
 }
 
-
-function riLines(){
-  var tmp=document.createElement('div'); tmp.innerHTML=RESEARCH_INTEREST_HTML;
-  var out=[]; tmp.querySelectorAll('.ri-list li').forEach(function(li){
-    var t=li.textContent; var k=t.indexOf('—'); out.push(k>=0?t.slice(k+1).trim():t);
-  }); return out;
-}
-function pad2(n){ return (n<10?'0':'')+n; }
-
-function buildThemeCards(){
-  var grid=document.getElementById('themeGrid'); if(!grid) return;
-  var lines=riLines();
-  RESEARCH_INTEREST_TOPICS.forEach(function(t,i){
-    var c=document.createElement('button'); c.type='button'; c.className='theme-card';
-    var img=(t.imgs&&t.imgs[0])?'<div class="tc-img"><img loading="lazy" src="'+t.imgs[0].src+'" alt=""></div>':'';
-    c.innerHTML=img+'<div class="tc-body"><div class="tc-num">'+pad2(i+1)+'</div><div class="tc-name"></div><div class="tc-line"></div><div class="tc-open">Open &rarr;</div></div>';
-    c.querySelector('.tc-name').textContent=t.name;
-    c.querySelector('.tc-line').textContent=lines[i]||'';
-    c.addEventListener('click',function(){ location.hash='theme-'+(i+1); });
-    grid.appendChild(c);
-  });
-  var steps=document.getElementById('tpSteps');
-  RESEARCH_INTEREST_TOPICS.forEach(function(t,i){
-    var b=document.createElement('button'); b.type='button'; b.textContent=pad2(i+1); b.title=t.name;
-    b.addEventListener('click',function(){ location.hash='theme-'+(i+1); });
-    steps.appendChild(b);
-  });
-  document.getElementById('tpBack').addEventListener('click',function(){
-    if(history.length>1 && lastHashFromCard){ history.back(); } else { location.hash='about'; }
-  });
-  window.addEventListener('hashchange',routeTheme);
-  routeTheme();
-}
-var lastHashFromCard=false;
-function routeTheme(){
-  var m=/^#theme-(\d+)$/.exec(location.hash);
-  var panel=document.getElementById('themePanel');
-  if(!m){ if(panel.classList.contains('open')){ panel.classList.remove('open'); panel.setAttribute('aria-hidden','true'); document.body.style.overflow=''; var g=document.getElementById('themeGrid'); if(g) g.scrollIntoView({block:'center'}); } return; }
-  var i=parseInt(m[1],10)-1; if(i<0||i>=RESEARCH_INTEREST_TOPICS.length) return;
-  lastHashFromCard=true;
-  renderTheme(i);
-  panel.classList.add('open'); panel.setAttribute('aria-hidden','false'); panel.scrollTop=0; document.body.style.overflow='hidden';
-}
-function renderTheme(i){
-  var t=RESEARCH_INTEREST_TOPICS[i], body=document.getElementById('tpBody');
-  body.innerHTML='';
-  document.querySelectorAll('#tpSteps button').forEach(function(b,k){ b.classList.toggle('on',k===i); });
-  var head=document.createElement('div'); head.className='tp-head';
-  head.innerHTML='<div class="eyebrow">'+pad2(i+1)+' &middot; Research interest</div><h2></h2><p></p>';
-  head.querySelector('h2').textContent=t.name; head.querySelector('p').textContent=t.desc;
-  body.appendChild(head);
-  if(t.imgs&&t.imgs[0]){
-    var f=document.createElement('div'); f.className='tp-fig';
-    var im=document.createElement('img'); im.src=t.imgs[0].src; im.alt=t.name; f.appendChild(im);
-    f.addEventListener('click',function(){ openModal(t.imgs[0].src,t.imgs[0].cap||''); });
-    body.appendChild(f);
-    if(t.imgs[0].cap){ var cp=document.createElement('p'); cp.className='tp-figcap'; cp.textContent=t.imgs[0].cap; body.appendChild(cp); }
-    if(t.imgs.length>1){ var ex=document.createElement('div'); ex.className='tp-extra'; buildGalleryInto(ex,t.imgs.slice(1)); body.appendChild(ex); }
-  }
-  if(t.relatedSkills&&t.relatedSkills.length){
-    var sub=document.createElement('div'); sub.className='tp-sub'; sub.textContent='Related skills & equipment'; body.appendChild(sub);
-    t.relatedSkills.forEach(function(ref){ renderRelatedSkillCategory(body,ref); });
-  }
-  var nav=document.createElement('div'); nav.className='tp-nav';
-  var n=RESEARCH_INTEREST_TOPICS.length;
-  [[i-1,'Previous'],[i+1,'Next']].forEach(function(p){
-    var j=p[0]; if(j<0||j>=n){ nav.appendChild(document.createElement('span')); return; }
-    var b=document.createElement('button'); b.type='button';
-    b.innerHTML='<small>'+p[1]+' &middot; '+pad2(j+1)+'</small><b></b>'; b.querySelector('b').textContent=RESEARCH_INTEREST_TOPICS[j].name;
-    if(p[1]==='Next') b.style.textAlign='right';
-    b.addEventListener('click',function(){ location.hash='theme-'+(j+1); });
-    nav.appendChild(b);
-  });
-  body.appendChild(nav);
-}
-
-function shortSkillName(n){
-  var m=/\(([A-Z0-9\-]{2,8})\)\s*$/.exec(n); return m?m[1]:n.replace(/\s*\(.*?\)\s*$/,'');
-}
-function buildSkillCards(){
-  var container=document.getElementById('skillsContainer'); if(!container) return;
-  SKILLS_GROUPS.forEach(function(group){
-    var sg=document.createElement('h3'); sg.className='skill-supergroup'; sg.textContent=group.supergroup; container.appendChild(sg);
-    var grid=document.createElement('div'); grid.className='sk-grid'; container.appendChild(grid);
-    var detail=document.createElement('div'); detail.className='sk-detail';
-    var cards=[];
-    group.categories.forEach(function(cat){
-      var interactive=cat.items.some(function(it){ return !it.noPanel; });
-      var mgr=cat.items.filter(function(it){ return /Equipment manager/i.test(it.desc||''); }).length;
-      var c=document.createElement('button'); c.type='button'; c.className='sk-card'+(interactive?'':' static');
-      c.innerHTML='<div class="sk-title"></div><div class="sk-items"></div>'+(mgr?'<div class="sk-mgr"><span class="mgr-badge">Manager &times; '+mgr+'</span></div>':'')+(interactive?'<span class="sk-plus">+</span>':'');
-      c.querySelector('.sk-title').textContent=cat.title;
-      c.querySelector('.sk-items').textContent=cat.items.map(function(it){return shortSkillName(it.name);}).join(' · ');
-      if(interactive){
-        c.addEventListener('click',function(){
-          var was=c.classList.contains('open');
-          cards.forEach(function(x){x.classList.remove('open');}); detail.classList.remove('open'); detail.innerHTML='';
-          if(was) return;
-          c.classList.add('open');
-          renderRelatedSkillCategory(detail,{categoryKey:cat.key});
-          // place detail right after the clicked card's row
-          var cols=getComputedStyle(grid).gridTemplateColumns.split(' ').length;
-          var idx=cards.indexOf(c); var rowEnd=Math.min(cards.length-1, Math.floor(idx/cols)*cols+cols-1);
-          cards[rowEnd].after(detail);
-          detail.classList.add('open');
-        });
-      } else { c.disabled=false; c.tabIndex=-1; }
-      cards.push(c); grid.appendChild(c);
-    });
-  });
-}
-
-function buildActivityCards(containerId,data){
-  var container=document.getElementById(containerId); if(!container) return;
-  container.className='act-grid';
-  data.forEach(function(e){
-    var c=document.createElement('div'); c.className='act-card';
-    var h=document.createElement('div'); h.className='ac-head'; h.innerHTML=e.head; c.appendChild(h);
-    var m=document.createElement('div'); m.className='ac-meta'; m.innerHTML=(e.sub?e.sub+' &middot; ':'')+e.date; c.appendChild(m);
-    if(e.bullets&&e.bullets.length){ var ul=document.createElement('ul'); ul.className='entry-bullets'; e.bullets.forEach(function(b){ var li=document.createElement('li'); li.innerHTML=b; ul.appendChild(li); }); c.appendChild(ul); }
-    var sp=document.createElement('div'); sp.className='ac-spacer'; c.appendChild(sp);
-    if(e.imgs&&e.imgs.length){ appendSupportingGallery(c,e.imgs,'entry-gallery'); var lb=c.querySelector('.supporting-toggle .label'); if(lb) lb.textContent='Photos · '+e.imgs.length; }
-    container.appendChild(c);
-  });
-}
-
 function init(){
-  buildThemeCards();
+  buildResearchInterest();
   buildPublications();
-  buildSkillCards();
+  buildSkills();
   buildLanguages();
   buildEntryList('researchList', RESEARCH);
   buildEntryList('activitiesList', ACTIVITIES, true);
@@ -1593,7 +1352,7 @@ function init(){
   });
   document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape'){ if(document.getElementById('imgModal').classList.contains('open')){ closeModal(); } else if(/^#theme-/.test(location.hash)){ document.getElementById('tpBack').click(); } }
+    if (e.key === 'Escape'){ closeModal(); }
   });
 
   var profileImg = document.getElementById('profileImg');
