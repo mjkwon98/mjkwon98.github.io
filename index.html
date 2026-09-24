@@ -166,7 +166,8 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .lightbox-thumb:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);}
 .lightbox-thumb img{width:100%;aspect-ratio:4 / 3;object-fit:cover;display:block;}
 .lightbox-thumb.is-figure img{object-fit:contain;background:#fff;padding:4px;box-sizing:border-box;}
-.lightbox-thumb figcaption{font-size:0.72rem;line-height:1.35;color:var(--muted);padding:7px 9px;border-top:1px solid #eef1f5;}
+.lightbox-thumb figcaption{font-size:0.72rem;line-height:1.35;color:var(--muted);padding:7px 9px 0;margin-bottom:7px;border-top:1px solid #eef1f5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.mgr-badge{display:inline-block;margin-left:6px;font-size:0.62rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0f766e;background:#e6f4f1;border:1px solid #9fd6cb;border-radius:999px;padding:1px 6px;vertical-align:1px;}
 .lightbox-thumb.img-missing{aspect-ratio:4 / 3;border-style:dashed;color:#aab2bd;align-items:center;justify-content:center;gap:6px;cursor:default;}
 .lightbox-thumb.img-missing:hover{transform:none;box-shadow:none;}
 .lightbox-thumb.img-missing svg{width:26px;height:26px;}
@@ -949,6 +950,7 @@ function renderRelatedSkillCategory(container, ref){
     var chip = document.createElement('div');
     chip.className = 'skill-chip';
     chip.textContent = skill.name;
+    if (/Equipment manager/i.test(skill.desc||'')){ var mb=document.createElement('span'); mb.className='mgr-badge'; mb.textContent='Manager'; chip.appendChild(mb); }
     if (skill.noPanel){
       chip.classList.add('static');
     } else {
@@ -1112,6 +1114,7 @@ function buildSkills(){
         var chip = document.createElement('div');
         chip.className = 'skill-chip';
         chip.textContent = skill.name;
+        if (/Equipment manager/i.test(skill.desc||'')){ var mb=document.createElement('span'); mb.className='mgr-badge'; mb.textContent='Manager'; chip.appendChild(mb); }
         // Set `noPanel: true` on a skill entry (see SKILLS_GROUPS above) to turn its
         // mini-window off: no "+" icon, not clickable, no hover highlight.
         if (skill.noPanel){
