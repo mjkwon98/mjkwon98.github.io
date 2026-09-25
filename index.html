@@ -181,6 +181,12 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .img-modal img{max-width:100%;max-height:68vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.45);background:#fff;}
 .img-modal-cap{color:#f5f6f8;font-size:1rem;line-height:1.65;margin-top:16px;text-align:left;max-width:640px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:14px 20px;}
 .img-modal-close{position:absolute;top:18px;right:24px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.12);color:#fff;border:none;cursor:pointer;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.15s ease;}
+.img-modal video{max-width:100%;max-height:68vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.45);background:#000;display:none;}
+.img-modal.is-video video{display:block;}
+.img-modal.is-video img{display:none;}
+.lightbox-thumb.is-video{position:relative;}
+.lightbox-thumb.is-video .play-badge{position:absolute;left:50%;top:0;margin-left:-22px;margin-top:calc((100% * 3 / 8) - 22px);width:44px;height:44px;border-radius:50%;background:rgba(15,23,42,0.72);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;padding-left:3px;box-sizing:border-box;pointer-events:none;box-shadow:0 2px 10px rgba(0,0,0,0.25);}
+.lightbox-thumb.is-video .vid-tag{position:absolute;left:8px;top:8px;font-size:0.62rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#fff;background:rgba(15,23,42,0.72);border-radius:4px;padding:2px 6px;pointer-events:none;}
 .img-modal-close:hover{background:rgba(255,255,255,0.25);}
 
 .contact-box{background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;padding:1.5rem;text-align:center;}
@@ -460,6 +466,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   <button class="img-modal-close" id="modalCloseBtn" aria-label="close">&times;</button>
   <div class="img-modal-inner">
     <img id="imgModalImg" src="" alt="">
+    <video id="imgModalVid" controls loop muted playsinline preload="none"></video>
     <div class="img-modal-cap" id="imgModalCap"></div>
   </div>
 </div>
@@ -775,6 +782,7 @@ var RESEARCH = [
       '<strong>Collaborative Projects</strong><ul class="sub-bullets"><li><strong>PRET (Plasmon Resonance Energy Transfer) metasurface:</strong> Collaborating with Prof. Junsuk Rho (POSTECH), whose group fabricates the base metasurface; performing the deposition (e.g., passivation) of the electrokinetic capture structures designed in our lab to complement it, enabling active electrokinetic concentration of target analytes in aqueous solution.</li><li><strong>Hydrogen-sensing MEMS platform:</strong> Providing deposition and lithography support for fabricating a terahertz-resonant MEMS chip structure whose resonance shifts depending on the presence and concentration of hydrogen gas, enabling label-free hydrogen sensing.</li><li><strong>Electrochemical-sensing nanostructure:</strong> Leading full-chip fabrication for a variant MIM nanohole platform (electrokinetic capture structure removed), tuning period, nanohole size, layer thickness, and constituent materials for electrochemical sensing.</li><li><strong>KU-KIST Joint Project:</strong> Collaborating Researcher at the Nanophotonics Research Center, KIST (Korea Institute of Science and Technology), developing label-free plasmonic sensing platforms for GPCR (G protein-coupled receptor) conformational dynamics in a drug-discovery initiative.</li></ul>'
     ],
     imgs: [
+      { src: 'mim_nanohole_loop_poster.jpg', video: { webm: 'mim_nanohole_loop.webm', mp4: 'mim_nanohole_loop.mp4' }, cap: 'Video — animated overview of the MIM nanohole platform: the chip and its electrode pads, a DEP-active microhole in the nanohole array, and the 785 nm Raman probe on a single well, where the rim hot spots light up around a trapped 200 nm PS particle and return its Raman signature (1001 cm⁻¹; spectrum illustrative).' },
       { src: 'fig1_nanofab.png', cap: 'Fig. 1 — Eight-step nanofabrication of the DEP-SERS nanowell chip, rendered from the mask CAD: Cr/Au bottom electrodes, ALD/e-beam/ALD SiO2 insulation, laser interference lithography (200 nm posts, 500 nm pitch), secondary exposure, Ti/Au e-beam deposition and lift-off, photoresist micropillars, and Ti/Al2O3 capping with ICP-RIE of the SiO2 to open the nanowells.' },
       { src: 'fig2_plasmonics_v2.jpg', cap: 'Fig. 2 — Plasmonic MIM nanohole metasurface: the 500 nm lattice phase-matches 785 nm light to the Au/SiO2 surface plasmon, and each aperture rim concentrates it into two lobes along E (COMSOL: |E/E₀|⁴ ≈ 1.8×10⁵); a period sweep shows how the lattice sets the hot spot.' },
       { src: 'fig3_electrokinetics.png', cap: 'Fig. 3 — Electrokinetic capture: ACEO delivers 200 nm beads to the surface and DEP seats one bead per well at the top-Au rim — the plasmonic hot spot — shown against SEM of a filled microhole and COMSOL (ec + spf) modeling.' },
@@ -916,10 +924,11 @@ var PHOTO_SVG = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\
 
 var activeChip = null;
 
-function createLightboxThumb(src, cap){
+function createLightboxThumb(src, cap, video){
   var fig = document.createElement('figure');
   fig.className = 'lightbox-thumb';
-  if (/^(fig|Ryu-Rhino)/.test(src)) fig.classList.add('is-figure');
+  if (/^(fig|Ryu-Rhino)/.test(src) || video) fig.classList.add('is-figure');
+  if (video){ fig.classList.add('is-video'); fig.title = 'Click to play'; }
   fig.title = 'Click to enlarge';
 
   var img = document.createElement('img');
@@ -932,6 +941,10 @@ function createLightboxThumb(src, cap){
     fig.innerHTML = PHOTO_SVG + '<span>Image not found: ' + src + '</span>';
   });
   fig.appendChild(img);
+  if (video){
+    var pb = document.createElement('span'); pb.className = 'play-badge'; pb.textContent = '\u25B6'; fig.appendChild(pb);
+    var vt = document.createElement('span'); vt.className = 'vid-tag'; vt.textContent = 'Video'; fig.appendChild(vt);
+  }
 
   if (cap){
     var figcap = document.createElement('figcaption');
@@ -941,7 +954,7 @@ function createLightboxThumb(src, cap){
 
   fig.addEventListener('click', function(){
     if (!fig.classList.contains('img-missing')){
-      openModal(src, cap || '');
+      openModal(src, cap || '', video);
     }
   });
 
@@ -953,7 +966,7 @@ function buildGalleryInto(container, imgs){
   var wrap = document.createElement('div');
   wrap.className = 'skill-gallery';
   for (var i = 0; i < imgs.length; i++){
-    wrap.appendChild(createLightboxThumb(imgs[i].src, imgs[i].cap || ''));
+    wrap.appendChild(createLightboxThumb(imgs[i].src, imgs[i].cap || '', imgs[i].video));
   }
   container.appendChild(wrap);
 }
@@ -965,7 +978,7 @@ function appendSupportingGallery(parent, imgs, galleryClass){
   gwrap.className = galleryClass + ' supporting-gallery';
   gwrap.hidden = true;
   for (var k = 0; k < imgs.length; k++){
-    gwrap.appendChild(createLightboxThumb(imgs[k].src, imgs[k].cap || ''));
+    gwrap.appendChild(createLightboxThumb(imgs[k].src, imgs[k].cap || '', imgs[k].video));
   }
 
   var btn = document.createElement('button');
@@ -1438,17 +1451,31 @@ function buildTeaching(){
   });
 }
 
-function openModal(src, cap){
+function openModal(src, cap, video){
   var modal = document.getElementById('imgModal');
   var img = document.getElementById('imgModalImg');
+  var vid = document.getElementById('imgModalVid');
   var capEl = document.getElementById('imgModalCap');
-  img.src = src;
+  if (video){
+    vid.innerHTML = '';
+    if (video.webm){ var s1 = document.createElement('source'); s1.src = video.webm; s1.type = 'video/webm'; vid.appendChild(s1); }
+    if (video.mp4){ var s2 = document.createElement('source'); s2.src = video.mp4; s2.type = 'video/mp4'; vid.appendChild(s2); }
+    vid.poster = src;
+    modal.classList.add('is-video');
+    vid.load();
+    var pr = vid.play(); if (pr && pr.catch) pr.catch(function(){});
+  } else {
+    modal.classList.remove('is-video');
+    img.src = src;
+  }
   capEl.textContent = cap || '';
   capEl.style.display = cap ? 'block' : 'none';
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 function closeModal(){
+  var vid = document.getElementById('imgModalVid');
+  if (vid){ try { vid.pause(); } catch(e){} }
   document.getElementById('imgModal').classList.remove('open');
   document.body.style.overflow = '';
 }
