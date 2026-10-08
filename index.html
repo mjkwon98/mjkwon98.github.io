@@ -472,7 +472,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
 </div>
 
 <footer>
-  &copy; 2026 Minjae Kwon &middot; Last updated September 2026
+  &copy; 2026 Minjae Kwon &middot; Last updated October 2026
 </footer>
 
 <script>
@@ -546,7 +546,7 @@ var SKILLS_GROUPS = [
           { name: 'Aligner-assisted Photolithography', desc: 'UV photolithography for micro-patterning, including secondary exposure on selected regions of interest. Certified independent operator. Used across many chip-level steps — electrode patterning and lift-off, Al2O3 microhole windows, and SU-8 fluidic channels — with photomasks I designed in CAD.', imgs: [
               { src: 'Ryu-Aligner.jpeg', cap: 'Mask aligner setup used for UV photolithography.' },
               { src: 'Ryu-Aligner2.jpeg', cap: 'UV exposure step during photolithography.' },
-              { src: 'aligner_example_001.jpeg', cap: 'Alignment of 20um scale array over the 50um scale array.' },
+              { src: 'aligner_example_001.jpeg', cap: 'Alignment of a micro-scale array over a larger patterned array.' },
               { src: 'aligner_example_002.jpeg', cap: 'SEM result of alignment, pattern was lifted off after Ti/Al2O3 thin film deposition.' },
               { src: 'Ryu-photomask.jpeg', cap: 'Custom photomask I designed in CAD, with the nanohole array and alignment patterns used for the mask-aligner exposure step.' },
               { src: 'Ryu-SU8-fluidic-channel1.jpeg', cap: 'Cross-sectional SEM of an SU-8 (TF 6000) fluidic channel sidewall, patterned by mask-aligner photolithography.' },
@@ -561,7 +561,7 @@ var SKILLS_GROUPS = [
               { src: 'LIL_example_004.jpeg', cap: 'Periodic nanohole pattern after electron beam deposition over LIL nanopattern.' },
               { src: 'Ryu-LIL2.jpeg', cap: 'Periodic hole-shaped nanopattern produced by LIL.' },
               { src: 'Ryu-LIL2-1.jpeg', cap: 'Sub-130 nm nanopost array (500 nm period), 4-layer Cr/SiO2/Cr/Au stack over a large-area substrate.' },
-              { src: 'LIL_example_005.jpeg', cap: 'PR line pattern on Si substrate via LIL (500 nm period, 58 mW×2 exposure), shown at X20,000 (overview) and X30,000 (212.5 nm linewidth measured) magnification.' }
+              { src: 'LIL_example_005.jpeg', cap: 'PR line pattern on Si substrate via LIL (500 nm period), shown at X20,000 (overview) and X30,000 (212.5 nm linewidth measured) magnification.' }
           ]},
           { name: 'Electron Beam Lithography (EBL)', desc: 'High-resolution direct-write nanopatterning on a TESCAN MIRA3 FE-SEM equipped with a Raith ELPHY Quantum pattern generator (SEM-based EBL, up to 30 kV), using HSQ and SU-8 (negative-tone) and PMMA (positive-tone) resists. On a 30 kV writer over an Au film, beam broadening and backscatter proximity effects are significant, so I set each pattern with dose × size sweep matrices before SEM. Used for rapid small-area prototyping of multi-period nanohole arrays, to benchmark the spectral response of the large-area LIL-fabricated metasurfaces.', imgs: [
               { src: 'fig_ebl_single_period.jpg', cap: 'EBL nanohole array in PMMA-C4 on an Au film, followed from optical microscope to SEM: (a) bright-field and (b) dark-field images of the written fields (outlined: the field shown in c–d), (c) SEM ×4,000 of the field and (d) ×25,000 close-up of the round, uniform holes (≈ 225 nm holes, ≈ 500 nm pitch).' },
@@ -617,8 +617,8 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-ALD.jpeg', cap: 'ULTEC ALD system: SiO2/Al2O3 deposition using DIPAS/TMA precursors with O3 oxidant.' },
               { src: 'Ryu-ALD-loading.jpeg', cap: 'Batch of chip samples loaded onto the wafer carrier prior to SiO2 thin-film deposition.' }
           ]},
-          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition — e.g., 140 nm SiO2 at 200 °C from a SiH4/N2O source — with film thickness and optical constants (n, k) verified by spectroscopic ellipsometry.', imgs: [
-              { src: 'PECVD_example_sio2.jpeg', cap: '140 nm SiO2 thin film deposited via PECVD at 200°C using a SiH4/N2O precursor source, shown here on a patterned chip array.' }
+          { name: 'Plasma Enhanced Chemical Vapor Deposition (PECVD)', desc: 'Low-temperature plasma-assisted thin-film deposition — e.g., SiO2 from a SiH4/N2O source — with film thickness and optical constants (n, k) verified by spectroscopic ellipsometry.', imgs: [
+              { src: 'PECVD_example_sio2.jpeg', cap: 'SiO2 thin film deposited via PECVD using a SiH4/N2O precursor source, shown here on a patterned chip array.' }
           ] }
         ]
       },
@@ -671,10 +671,10 @@ var SKILLS_GROUPS = [
               { src: 'Ryu-AFM-cantilever-focus.jpeg', cap: 'Focusing the optical camera on the AFM cantilever tip prior to scanning.' },
               { src: 'Ryu-AFM-probes.jpeg', cap: 'Bruker AFM cantilever probe set.' }
           ]},
-          { name: 'Stylus / Optical Surface Profiler', desc: 'Surface profile, step-height, and roughness measurement (KLA Alpha-Step stylus profiler, Keyence VK-X3000 3D surface profiler) — used to measure deposited film thickness and to calibrate the e-beam evaporator’s tooling factor from ~160 nm step heights.', imgs: [
+          { name: 'Stylus / Optical Surface Profiler', desc: 'Surface profile, step-height, and roughness measurement (KLA Alpha-Step stylus profiler, Keyence VK-X3000 3D surface profiler) — used to measure deposited film thickness and to calibrate the e-beam evaporator’s tooling factor from step heights.', imgs: [
               { src: 'Ryu-Alphastep.jpeg', cap: 'KLA D-100 Alpha-Step stylus profiler (sub-1-Å vertical resolution, 30 mm scan length, 0.03–10 mg stylus force control) for thin-film thickness and surface roughness measurement.' },
               { src: 'Ryu-Alphastep2.jpeg', cap: 'Measuring thin-film thickness on a sample with the Alpha-Step stylus profiler.' },
-              { src: 'Ryu-Alphastep3.jpeg', cap: 'Alpha-Step measurement of a ~160 nm step-height thin film, used to calibrate the tooling factor of the electron-beam evaporator.' },
+              { src: 'Ryu-Alphastep3.jpeg', cap: 'Alpha-Step measurement of a step-height thin film, used to calibrate the tooling factor of the electron-beam evaporator.' },
               { src: 'Ryu-VKX3000.jpeg', cap: 'Keyence VK-X3000 3D Surface Profiler (laser confocal + white-light interferometry + focus variation, 0.01 nm height resolution, up to 50×50 mm scan area).' }
           ] },
           { name: 'Spectroscopic Ellipsometry', desc: 'Thin-film thickness and optical constant (n, k) characterization — used to verify the tooling factor and optical constants of SiO2 films deposited by ALD and PECVD.', imgs: [], noPanel: false },
@@ -787,7 +787,6 @@ var RESEARCH = [
     ],
     imgs: [
       { src: 'mim_nanohole_fab_setup_poster.jpg', video: { mp4: 'mim_nanohole_fab_setup_1440.mp4' }, cap: 'Video — how the chip is made and used (2 min). Fabrication, layer by layer in one fixed view: Cr/Au bottom electrodes, SiO₂ spacer, laser interference lithography (⌀225 nm posts, 500 nm pitch) and a second exposure, Ti/Au top electrodes with lift-off, a Ti/Al₂O₃ cap with micro-windows, ICP-RIE into Au-floored nanowells, and a quartz cover on silica-bead spacers. Then the measurement: capillary action fills the gap with the sample, AC on one electrode pair pulls one 200 nm particle into each nanohole (live fluorescence, 50× objective), the particles stay when the field is off, and a Raman laser reads one nanohole at a time.' },
-      { src: 'mim_nanohole_loop_v5_poster.jpg', video: { mp4: 'mim_nanohole_loop_v5_1440.mp4' }, cap: 'Video — animated overview of the MIM nanohole platform: four identical sensing units on one die, the Au/SiO₂/Au stack of the sensing area assembling layer by layer from an exploded view, an array of microholes per unit, DEP/ACEO trapping one 200 nm PS particle per nanohole (with SEM and CNN readout of the real chip), and the 785 nm Raman probe on a single well, where the rim hot spots return the particle’s Raman signature (1001 cm⁻¹; spectrum illustrative). It closes on the next step, multiplexed identification of PS, PMMA and PET particles (concept; illustrative spectra from literature bands).' },
       { src: 'fig1_nanofab_v5.jpg', cap: 'Fig. 1 — Eight-step nanofabrication of the DEP-SERS nanowell chip, rendered from the mask CAD: Cr/Au bottom electrodes, ALD/e-beam/ALD SiO2 insulation, laser interference lithography (225 nm posts, 500 nm pitch), secondary exposure, Ti/Au e-beam deposition and lift-off, photoresist micropillars, and Ti/Al2O3 capping with ICP-RIE of the SiO2 to open the nanowells.' },
       { src: 'fig2_plasmonics_v6.jpg', cap: 'Fig. 2 — Plasmonic MIM nanohole metasurface: the 500 nm lattice phase-matches 785 nm light to the Au/SiO2 surface plasmon, and each aperture rim concentrates it into two lobes along E (COMSOL: |E/E₀|⁴ ≈ 1.8×10⁵); a period sweep shows how the lattice sets the hot spot.' },
       { src: 'fig3_electrokinetics_v6.jpg', cap: 'Fig. 3 — Electrokinetic capture: ACEO delivers 200 nm beads to the surface and DEP seats one bead per well at the top-Au rim — the plasmonic hot spot — shown against SEM of a filled microhole and COMSOL (ec + spf) modeling.' },
@@ -796,7 +795,7 @@ var RESEARCH = [
       { src: 'fig5b_sers_measured.png', cap: 'Fig. 5b — Measured single-well SERS: the Raman probe (≈ 0.5 µm, about one 500 nm well) parked on a DEP-filled microhole (V₂, 200 nm PS) shows the polystyrene ring-breathing band at 1001 cm⁻¹ (S/N ≈ 17, one 20 s shot); the probe position is registered from the optical view to SEM approximately.' },
       { src: 'fig_om_readout_pipeline.png', cap: 'Fig. 6a — OM-based multiplexed readout: 200 nm PS beads (red/green/blue, 1:1:1) captured by DEP in MIM nanowells are imaged in five channels (BF, DF, FITC, DAPI, TxRd). Each well is located on a fitted lattice and given one call — green, blue, red, or empty — through a five-step CNN + logistic-model decision cascade. Validated against SEM of the same wells: 95% of called wells hold a bead, with 0/231 false calls on empty wells.' },
       { src: 'fig_om_readout_map.png', cap: 'Fig. 6b — Three-colour occupancy map from the OM readout across all 30 microholes (78,581 wells, 8,492 beads called), with per-field colour shares plotted against the 1:1:1 input ratio.' },
-      { src: 'fig6c_fluor_twin.jpg', cap: 'Fig. 6c — Digital twin of the OM readout. Every call the readout makes is turned back into geometry: each called bead is placed, in its called colour, in its own nanowell of a 3D model of the chip built on that field’s measured lattice (Rhino 8, scripted in Python), so the readout can be checked by eye against the raw image, well by well. Shown for one 30 µm microhole (field 30; 200 nm PS beads, red/green/blue 1:1:1, captured by DEP; frozen readout v3.3): (a) TxRd/FITC/DAPI image, (b) one call per well, (c) the twin from the same viewpoint, (d) tilted, (e) the same beads numbered in the image and in the twin. 310 beads in 2,614 wells (G 110 · B 63 · R 85 · R* 52); R* = red by elimination, as TxRd detects only 10–26 % of red beads. Readout precision 0.95 · recall 0.68 against SEM ground truth.' }
+      { src: 'fig6c_fluor_twin.jpg', cap: 'Fig. 6c — Digital twin of the OM readout. Every call the readout makes is turned back into geometry: each called bead is placed, in its called colour, in its own nanowell of a 3D model of the chip built on that field’s measured lattice (Rhino 8, scripted in Python), so the readout can be checked by eye against the raw image, well by well. Shown for one microhole (200 nm PS beads, red/green/blue 1:1:1, captured by DEP; frozen readout v3.3): (a) TxRd/FITC/DAPI image, (b) one call per well, (c) the twin from the same viewpoint, (d) tilted, (e) the same beads numbered in the image and in the twin. 310 beads in 2,614 wells (G 110 · B 63 · R 85 · R* 52); R* = red by elimination, as TxRd detects only 10–26 % of red beads. Readout precision 0.95 · recall 0.68 against SEM ground truth.' }
     ]
   },
   {
