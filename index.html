@@ -1416,6 +1416,7 @@ function buildAwardsList(){
 
     if (a.imgs && a.imgs.length > 0){
       appendSupportingGallery(li, a.imgs, 'award-gallery');
+      var clb = li.querySelector('.supporting-toggle .label'); if (clb) clb.textContent = 'Certificate';
     }
 
     ul.appendChild(li);
