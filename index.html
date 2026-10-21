@@ -53,7 +53,7 @@ section:not(:last-child){border-bottom:1px solid var(--line);}
 .profile-photo{width:150px;height:190px;flex-shrink:0;border-radius:12px;background:var(--bg-alt);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;cursor:pointer;position:relative;}
 .profile-photo svg{width:38px;height:38px;color:#c2c8d0;}
 .profile-photo .ph-label{font-size:10px;color:var(--muted);text-align:center;padding:0 8px;}
-.profile-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.profile-photo img{width:100%;height:100%;object-fit:cover;display:block;}.profile-photo img.alt{position:absolute;inset:0;opacity:0;transition:opacity .35s ease;pointer-events:none;}.profile-photo:hover img.alt,.profile-photo:focus-within img.alt{opacity:1;}@media (prefers-reduced-motion:reduce){.profile-photo img.alt{transition:none;}}
 
 .about-intro h1{font-family:var(--serif);font-size:2.1rem;font-weight:600;letter-spacing:-0.01em;line-height:1.15;margin-bottom:0.35rem;}
 .about-intro .role{font-size:1.05rem;color:var(--accent);font-weight:600;margin-bottom:0.5rem;}
@@ -350,7 +350,8 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
   <div class="wrap">
     <div class="hero-grid">
       <div class="profile-photo" id="profilePhoto">
-        <img src="Kwon_profile.jpeg" alt="Minjae Kwon" id="profileImg">
+        <img src="Kwon_profile.jpeg?v=20261021" alt="Minjae Kwon" id="profileImg">
+        <img src="Kwon_profile_hover.jpg?v=20261021" alt="" aria-hidden="true" class="alt" id="profileImgAlt">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="display:none" id="profileSvg">
           <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
         </svg>
@@ -1642,7 +1643,7 @@ function init(){
   var profilePhoto = document.getElementById('profilePhoto');
   profilePhoto.addEventListener('click', function(){
     if (profileImg.style.display !== 'none'){
-      openModal('Kwon_profile.jpeg', '');
+      openModal('Kwon_profile.jpeg?v=20261021', '');
     }
   });
   profileImg.addEventListener('error', function(){
