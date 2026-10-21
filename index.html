@@ -366,7 +366,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
         <p class="about-bio">I am an M.S. student in Prof. Yong-Sang Ryu&rsquo;s group at Korea University, where I build large-area plasmonic metasurfaces and use electrokinetics to place single nanoparticles onto their sensing hotspots. My work incorporates computational approaches throughout &mdash; COMSOL for device design and dynamic analysis, and deep learning for experimental readout. I am applying to Ph.D. programs for Fall 2027.</p>
         <div class="hero-links">
           <a class="hero-btn" href="mailto:rnjs0830@korea.ac.kr">Email</a>
-          <a class="hero-btn" href="Minjae_Kwon_CV.pdf?v=20261013" target="_blank" rel="noopener">CV</a>
+          <a class="hero-btn" href="Minjae_Kwon_CV.pdf?v=20261021" target="_blank" rel="noopener">CV</a>
         </div>
       </div>
     </div>
@@ -452,7 +452,7 @@ footer{text-align:center;padding:2rem 1.5rem;color:var(--muted);font-size:0.8rem
     <h2 class="section-title">Contact</h2>
     <div class="contact-grid">
       <div><div class="cg-label">Email</div><a href="mailto:rnjs0830@korea.ac.kr">rnjs0830@korea.ac.kr</a></div>
-      <div><div class="cg-label">Document</div><a href="Minjae_Kwon_CV.pdf?v=20261013" target="_blank" rel="noopener">Curriculum vitae (PDF)</a></div>
+      <div><div class="cg-label">Document</div><a href="Minjae_Kwon_CV.pdf?v=20261021" target="_blank" rel="noopener">Curriculum vitae (PDF)</a></div>
       <div><div class="cg-label">Location</div><span>Korea University, Seoul</span></div>
     </div>
   </div>
@@ -527,6 +527,13 @@ var RESEARCH_INTEREST_TOPICS = [
 ];
 
 var PUBLICATIONS = [
+  {
+    authorsHTML: '<strong>M. Kwon</strong><sup>&#8225;</sup>, S. Lee<sup>&#8225;</sup>, S. Choi, D. Pyun, D.-H. Kim, M.-K. Kim<sup>*</sup>, and Y.-S. Ryu<sup>*</sup>',
+    title: 'Scalable nanohole plasmonic metasurface for electrokinetic single-particle capture and SERS analysis',
+    venue: '',
+    status: 'Manuscript in preparation',
+    year: '2026'
+  },
   {
     authorsHTML: 'S. Lee<sup>&#8225;</sup>, S. Choi<sup>&#8225;</sup>, T. Kim, <strong>M. Kwon</strong>, T. J. Mun, S. Son, H. Seong, K. Lee, H. Im, E.-S. Yu, M.-K. Kim<sup>*</sup>, and Y.-S. Ryu<sup>*</sup>',
     title: 'Analyte-accessible field volume as a governing design principle for nanophotonic sensing',
@@ -1214,8 +1221,7 @@ function buildPublications(){
     meta.innerHTML =
       '<span class="pub-dot"></span>' +
       '<span class="pub-status">' + p.status + ', ' + p.year + '</span>' +
-      '<span class="pub-sep">&middot;</span>' +
-      '<span class="pub-venue">' + p.venue + '</span>';
+      (p.venue ? '<span class="pub-sep">&middot;</span>' + '<span class="pub-venue">' + p.venue + '</span>' : '');
     item.appendChild(meta);
 
     container.appendChild(item);
